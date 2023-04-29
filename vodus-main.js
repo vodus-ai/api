@@ -2136,7 +2136,6 @@ function extractHostname(url) {
             var existingToken = vodus.readCookie('Vodus.Token');
             if(existingToken !== null && existingToken !== "")
             {
-                console.log('Updating Vodus.Token expiry');
                 vodus.createCookie(app.cookieName, existingToken, 3650);
             }
             
@@ -4619,7 +4618,7 @@ function extractHostname(url) {
         //Common JS
         var common = document.createElement('script');
         common.type = "text/javascript";
-        common.src = app.cdnUrl + "/cc/scripts/vodus-common.js" + app.cacheCode;
+        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js" + app.cacheCode;
         document.getElementsByTagName('head')[0].appendChild(common);
 
         if (app.debug) {
