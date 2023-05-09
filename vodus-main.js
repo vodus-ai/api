@@ -177,23 +177,23 @@ function extractHostname(url) {
         app.reward3PRootUrl = 'https://uat.vodus.my';
         app.responseRootUrl = 'https://api-uat.vodus.com';
         app.cdnUrl = 'https://api-uat.vodus.com';
-        app.serverlessUrl = 'https://vodus-api-uat-aws-trial.azurewebsites.net';
+        app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
     } else if (app.env == 'dev') {
-        app.rootUrl = 'https://vodus-api-dev.azurewebsites.net/';
-        app.ccRequestUrl = 'https://vodus-api-dev.azurewebsites.net/';
+        app.rootUrl = 'https://vodus-api-dev.azurewebsites.net';
+        app.ccRequestUrl = 'https://vodus-api-dev.azurewebsites.net';
         app.vodus3PRootUrl = 'https://vodus-api-dev.azurewebsites.net';
         app.reward3PRootUrl = 'https://vodus-rewards-dev.azurewebsites.net';
-        app.responseRootUrl = 'https://vodus-dev.azurewebsites.net/';
-        app.cdnUrl = 'https://vodus-api-dev.azurewebsites.net/';
-        app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
+        app.responseRootUrl = 'https://vodus-dev.azurewebsites.net';
+        app.cdnUrl = 'https://vodus-api-dev.azurewebsites.net';
+        app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
     } else if (app.env == 'local') {
-        app.rootUrl = 'http://localhost:5888/';
-        app.ccRequestUrl = 'http://localhost:5888/';
-        app.vodus3PRootUrl = 'http://localhost:5888';
-        app.reward3PRootUrl = 'https://vouppn-uat.azurewebsites.net';
-        app.responseRootUrl = 'http://localhost:5888/';
-        app.cdnUrl = 'http://localhost:5888/';
-        app.serverlessUrl = 'https://localhost:7071/';
+        app.rootUrl = 'http://localhost:7193';
+        app.ccRequestUrl = 'http://localhost:7071';
+        app.vodus3PRootUrl = 'https://api-uat.vodus.com';
+        app.reward3PRootUrl = 'https://uat.vodus.my';
+        app.responseRootUrl = 'http://localhost:7071';
+        app.cdnUrl = 'http://localhost:7193';
+        app.serverlessUrl = 'http://localhost:7071';
     }
     if (global.vodus.modalClosable != null) {
         app.modalClosable = global.vodus.modalClosable
@@ -241,7 +241,7 @@ function extractHostname(url) {
             //resyncApiUrl = 'https://vodus-api-js-uat.azurewebsites.net';
             //resyncRewardsUrl = 'http://voupon-uat.ap-southeast-1.elasticbeanstalk.com';
 
-            resyncServerlessUrl = 'https://vodus-api-uat-aws-trial.azurewebsites.net';
+            resyncServerlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
             resyncApiUrl = 'https://api-uat.vodus.com';
             resyncRewardsUrl = 'https://uat.vodus.my';
         } else if (env == 'dev') {
@@ -249,9 +249,9 @@ function extractHostname(url) {
             resyncApiUrl = 'https://vodus-api-uat.azurewebsites.net';
             resyncRewardsUrl = 'https://voupon-uat.azurewebsites.net';
         } else if (env == 'local') {
-            resyncServerlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
-            resyncApiUrl = 'https://vodus-api-serverless.azurewebsites.net';
-            resyncRewardsUrl = 'https://vouppn-uat.azurewebsites.net';
+            resyncServerlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
+            resyncApiUrl = 'https://api-uat.vodus.com';
+            resyncRewardsUrl = 'https://uat.vodus.my';
         }
         var resyncCookie = vodus.readCookie("Vodus.Token");
         var localMemberProfile = localStorage.getItem('memberProfile');
@@ -1398,12 +1398,12 @@ function extractHostname(url) {
             if (env == 'live') {
                 requestUrl = 'https://vodus-api-serverless.azurewebsites.net/';
             } else if (env == 'uat') {
-                requestUrl = 'https://vodus-api-uat-aws-trial.azurewebsites.net/';
+                requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
                 //requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
             } else if (env == 'dev') {
                 requestUrl = 'https://vodus-api-dev.azurewebsites.net/';
             } else if (env == 'local') {
-                requestUrl = 'http://localhost:5888/';
+                requestUrl = app.ccRequestUrl + '/';
             }
             var hostname = window.location.hostname.replace("www.", "");
             vodus.log("Checking cc parameters...");
@@ -4580,21 +4580,12 @@ function extractHostname(url) {
 
     var cssChecking = function checkRequiredCssBeforeDisplay() {
         var found = true;
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/cc/scripts/plugins/bootstrap-vodus/css/bootstrap-vodus.css' + app.cacheCode + '" />'));
-
-
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/cc/scripts/plugins/tingle/tingle.css' + app.cacheCode + '" />'));
-
-        //  Add survey related css
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/survey.css' + app.cacheCode + '" />'));
-
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/cc/scripts/plugins/toastr/toastr.min.css' + app.cacheCode + '" />'));
-        //$('head').append($('<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />'));
-
-
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-bootstrap-vodus.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-survey.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-toastr.min.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/tingle/0.13.2/tingle.min.js"></script>'));
-
 
         //  Add i18Next
         if (!window.i18Next) {
@@ -4618,7 +4609,7 @@ function extractHostname(url) {
         //Common JS
         var common = document.createElement('script');
         common.type = "text/javascript";
-        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js" + app.cacheCode;
+        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-vodus-common.js" + app.cacheCode;
         document.getElementsByTagName('head')[0].appendChild(common);
 
         if (app.debug) {
@@ -5663,12 +5654,14 @@ function addShowGetQuestionModal() {
         }
     }
     else {
-        if ($($(".answer-box")[0]).attr("id").includes("_")) {
-            for (var item = 0; item < app.questionData.data.SurveyQuestionAnswers.length; item++) {
-                if (document.querySelectorAll(".answer-box")[item] != null) {
-                    document.querySelectorAll(".answer-box")[item].setAttribute("id", app.questionData.data.SurveyQuestionAnswers[item].Id);
-                }
+        if ($(".answer-box").length > 0) {
+            if ($($(".answer-box")[0]).attr("id").includes("_")) {
+                for (var item = 0; item < app.questionData.data.SurveyQuestionAnswers.length; item++) {
+                    if (document.querySelectorAll(".answer-box")[item] != null) {
+                        document.querySelectorAll(".answer-box")[item].setAttribute("id", app.questionData.data.SurveyQuestionAnswers[item].Id);
+                    }
 
+                }
             }
         }
     }
@@ -7010,16 +7003,16 @@ function getQuestionHandler() {
             closeAllVodusModal();
 
             //surveyResponseViewModel.Token = decodeURIComponent(surveyResponseViewModel.Token);
-            $.ajax({
+            /*$.ajax({
                 type: "POST",
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(surveyResponseViewModel),
-                url: app.serverlessUrl + 'api/referralNotification',
+                url: app.serverlessUrl + '/api/referralNotification',
                 success: function (response) {
                     vodus.log('Done with email notification');
                 }
-            });
+            });*/
             var redirectUrl = $(this).attr('data-url');// + "&id=" + surveyResponseViewModel.MemberProfileId + "&sn=" + surveyResponseViewModel.ChunkId;
             vodus.log(redirectUrl);
             var win = window.open(redirectUrl, '_blank');
