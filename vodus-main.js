@@ -4169,7 +4169,7 @@ function extractHostname(url) {
                 if (rewardsAdsData == '') {
                     //  Add multiple default ads
                     adsList.push({
-                        pointRequired: 250,
+                        pointRequired: 167,
                         discountValue: 30,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/143/images/small_01_134c4fd2-41c2-4660-bd05-d4d8c772c07f.jpeg",
@@ -4183,7 +4183,7 @@ function extractHostname(url) {
                     });
 
                     adsList.push({
-                        pointRequired: 167,
+                        pointRequired: 133,
                         discountValue: 20,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/19953/images/small_01_c1e0ab94-116f-47b7-ba8a-1b78489a18b5.jpeg",
@@ -4197,7 +4197,7 @@ function extractHostname(url) {
                     });
 
                     adsList.push({
-                        pointRequired: 83,
+                        pointRequired: 67,
                         discountValue: 10,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/19951/images/small_01_ab92503e-c538-4f8d-9c1d-2b35322e85f0.jpeg",
@@ -4211,7 +4211,7 @@ function extractHostname(url) {
                     });
 
                     adsList.push({
-                        pointRequired: 83,
+                        pointRequired: 50,
                         discountValue: 10,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/127/images/small_01_e88be58c-8177-436e-9c57-38e43c559d38.jpeg",
