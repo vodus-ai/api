@@ -7731,7 +7731,7 @@ function updateRecoRewardImpression(memberProfileId, rewardsAdDemographicStateId
             PartnerWebsiteId: partnerWebsiteId,
             ProductRecoId: productRecoId
         }),
-        url: serverlessUrl + 'api/updateRecoRewardImpression',
+        url: serverlessUrl + '/api/updateRecoRewardImpression',
         success: function (response) {
             if (response.successful) {
                 vodus.log(response.message);
@@ -7757,7 +7757,7 @@ function logDelay(responseQuestion, responseSubmit, timeSpent, functionType, ser
             Is3POn: is3POn,
             PartnerCode: partnerCode
         }),
-        url: serverlessUrl + 'api/sendErrorLogFunction',
+        url: serverlessUrl + '/api/sendErrorLogFunction',
         success: function (response) {
             if (response.successful) {
                 vodus.log(response.message);
