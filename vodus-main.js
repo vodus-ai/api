@@ -5655,12 +5655,14 @@ function addShowGetQuestionModal() {
     }
     else {
         if ($(".answer-box").length > 0) {
-            if ($($(".answer-box")[0]).attr("id").includes("_")) {
-                for (var item = 0; item < app.questionData.data.SurveyQuestionAnswers.length; item++) {
-                    if (document.querySelectorAll(".answer-box")[item] != null) {
-                        document.querySelectorAll(".answer-box")[item].setAttribute("id", app.questionData.data.SurveyQuestionAnswers[item].Id);
-                    }
+            if ($($(".answer-box")[0]).attr("id") != undefined) {
+                if ($($(".answer-box")[0]).attr("id").includes("_")) {
+                    for (var item = 0; item < app.questionData.data.SurveyQuestionAnswers.length; item++) {
+                        if (document.querySelectorAll(".answer-box")[item] != null) {
+                            document.querySelectorAll(".answer-box")[item].setAttribute("id", app.questionData.data.SurveyQuestionAnswers[item].Id);
+                        }
 
+                    }
                 }
             }
         }
