@@ -4076,19 +4076,19 @@ function extractHostname(url) {
                             localStorage.setItem("memberProfile", JSON.stringify(localMemberProfileObject));
                         }
 
+                        let localVodusStoreJson = localStorage.getItem('vodus_store');
+                        if (localVodusStoreJson != null) {
+                            var localVodusStore = JSON.parse(localVodusStoreJson);
+                            localVodusStore.cc.totalCCSinceResponse = 0;
+                            localStorage.setItem("vodus_store", JSON.stringify(localVodusStore));
+                        }
+
                         if (app.isChainQuestion) {
                             app.interval = 0;
                             app.isChainQuestion = true;
                             vodus.getCC();
                             vodus.log('Chain question in progress. Starting another cc...');
                             return;
-                        }
-
-                        let localVodusStoreJson = localStorage.getItem('vodus_store');
-                        if (localVodusStoreJson != null) {
-                            var localVodusStore = JSON.parse(localVodusStoreJson);
-                            localVodusStore.cc.totalCCSinceResponse = 0;
-                            localStorage.setItem("vodus_store", JSON.stringify(localVodusStore));
                         }
 
                         $("#vodusLoader").hide();
