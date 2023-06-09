@@ -4580,10 +4580,10 @@ function extractHostname(url) {
 
     var cssChecking = function checkRequiredCssBeforeDisplay() {
         var found = true;
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-bootstrap-vodus.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-survey.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-toastr.min.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api/230430-tingle.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230430-bootstrap-vodus.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230430-survey.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230430-toastr.min.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230430-tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/tingle/0.13.2/tingle.min.js"></script>'));
 
