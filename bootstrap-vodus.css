@@ -1,0 +1,4189 @@
+.bootstrap-vodus {
+    /*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+    /*!
+ * Generated using the Bootstrap Customizer (<none>)
+ * Config saved to config.json and <none>
+ */
+    /*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+    /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+}
+
+    .bootstrap-vodus .fb-btn {
+        background-color: #337ab7 !important;
+        color: #fff !important;
+        border-color: #2e6da4 !important;
+    }
+
+        .bootstrap-vodus .fb-btn:hover {
+            background-color: #286090 !important;
+            color: #fff !important;
+            border-color: #204d74 !important;
+        }
+
+    .bootstrap-vodus .google-btn {
+        background-color: #DD4B39 !important;
+        color: #fff !important;
+        border-color: #DD4B39 !important;
+    }
+
+        .bootstrap-vodus .google-btn:hover {
+            background-color: #DD4B39 !important;
+            color: #fff !important;
+            border-color: #DD4B39 !important;
+        }
+
+.bootstrap-vodus {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.bootstrap-vodus {
+    margin: 0;
+}
+
+    .bootstrap-vodus article,
+    .bootstrap-vodus aside,
+    .bootstrap-vodus details,
+    .bootstrap-vodus figcaption,
+    .bootstrap-vodus figure,
+    .bootstrap-vodus footer,
+    .bootstrap-vodus header,
+    .bootstrap-vodus hgroup,
+    .bootstrap-vodus main,
+    .bootstrap-vodus menu,
+    .bootstrap-vodus nav,
+    .bootstrap-vodus section,
+    .bootstrap-vodus summary {
+        display: block;
+    }
+
+    .bootstrap-vodus audio,
+    .bootstrap-vodus canvas,
+    .bootstrap-vodus progress,
+    .bootstrap-vodus video {
+        display: inline-block;
+        vertical-align: baseline;
+    }
+
+        .bootstrap-vodus audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+
+    .bootstrap-vodus [hidden],
+    .bootstrap-vodus template {
+        display: none;
+    }
+
+    .bootstrap-vodus a {
+        background-color: transparent;
+    }
+
+        .bootstrap-vodus a:active,
+        .bootstrap-vodus a:hover {
+            outline: 0;
+        }
+
+    .bootstrap-vodus abbr[title] {
+        border-bottom: 1px dotted;
+    }
+
+    .bootstrap-vodus b,
+    .bootstrap-vodus strong {
+        font-weight: bold;
+    }
+
+    .bootstrap-vodus dfn {
+        font-style: italic;
+    }
+
+    .bootstrap-vodus h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+    }
+
+    .bootstrap-vodus mark {
+        background: #ff0;
+        color: #000;
+    }
+
+    .bootstrap-vodus small {
+        font-size: 80%;
+    }
+
+    .bootstrap-vodus sub,
+    .bootstrap-vodus sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    .bootstrap-vodus sup {
+        top: -0.5em;
+    }
+
+    .bootstrap-vodus sub {
+        bottom: -0.25em;
+    }
+
+    .bootstrap-vodus img {
+        border: 0;
+    }
+
+    .bootstrap-vodus svg:not(:root) {
+        overflow: hidden;
+    }
+
+    .bootstrap-vodus figure {
+        margin: 1em 40px;
+    }
+
+    .bootstrap-vodus hr {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        height: 0;
+    }
+
+    .bootstrap-vodus pre {
+        overflow: auto;
+    }
+
+    .bootstrap-vodus code,
+    .bootstrap-vodus kbd,
+    .bootstrap-vodus pre,
+    .bootstrap-vodus samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+    }
+
+
+    .bootstrap-vodus input,
+    .bootstrap-vodus optgroup,
+    .bootstrap-vodus select,
+    .bootstrap-vodus textarea {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+    }
+
+
+
+
+
+
+    .bootstrap-vodus select {
+        text-transform: none;
+    }
+
+
+    .bootstrap-vodus input[type="button"],
+    .bootstrap-vodus input[type="reset"],
+    .bootstrap-vodus input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+
+
+    .bootstrap-vodus input[disabled] {
+        cursor: default;
+    }
+
+
+    .bootstrap-vodus input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    .bootstrap-vodus input {
+        line-height: normal;
+    }
+
+        .bootstrap-vodus input[type="checkbox"],
+        .bootstrap-vodus input[type="radio"] {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        .bootstrap-vodus input[type="number"]::-webkit-inner-spin-button,
+        .bootstrap-vodus input[type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        .bootstrap-vodus input[type="search"] {
+            -webkit-appearance: textfield;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+            .bootstrap-vodus input[type="search"]::-webkit-search-cancel-button,
+            .bootstrap-vodus input[type="search"]::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+
+    .bootstrap-vodus fieldset {
+        border: 1px solid #c0c0c0;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+    }
+
+    .bootstrap-vodus legend {
+        border: 0;
+        padding: 0;
+    }
+
+    .bootstrap-vodus textarea {
+        overflow: auto;
+    }
+
+    .bootstrap-vodus optgroup {
+        font-weight: bold;
+    }
+
+    .bootstrap-vodus table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .bootstrap-vodus td,
+    .bootstrap-vodus th {
+        padding: 0;
+    }
+
+@media print {
+    .bootstrap-vodus *,
+    .bootstrap-vodus *:before,
+    .bootstrap-vodus *:after {
+        background: transparent !important;
+        color: #000 !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    .bootstrap-vodus a,
+    .bootstrap-vodus a:visited {
+        text-decoration: underline;
+    }
+
+        .bootstrap-vodus a[href]:after {
+            content: " (" attr(href) ")";
+        }
+
+    .bootstrap-vodus abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .bootstrap-vodus a[href^="#"]:after,
+    .bootstrap-vodus a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    .bootstrap-vodus pre,
+    .bootstrap-vodus blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    .bootstrap-vodus thead {
+        display: table-header-group;
+    }
+
+    .bootstrap-vodus tr,
+    .bootstrap-vodus img {
+        page-break-inside: avoid;
+    }
+
+    .bootstrap-vodus img {
+        max-width: 100% !important;
+    }
+
+    .bootstrap-vodus p,
+    .bootstrap-vodus h2,
+    .bootstrap-vodus h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    .bootstrap-vodus h2,
+    .bootstrap-vodus h3 {
+        page-break-after: avoid;
+    }
+
+    .bootstrap-vodus .navbar {
+        display: none;
+    }
+
+    .bootstrap-vodus .btn > .caret,
+    .bootstrap-vodus .dropup > .btn > .caret {
+        border-top-color: #000 !important;
+    }
+
+    .bootstrap-vodus .label {
+        border: 1px solid #000;
+    }
+
+    .bootstrap-vodus .table {
+        border-collapse: collapse !important;
+    }
+
+        .bootstrap-vodus .table td,
+        .bootstrap-vodus .table th {
+            background-color: #fff !important;
+        }
+
+    .bootstrap-vodus .table-bordered th,
+    .bootstrap-vodus .table-bordered td {
+        border: 1px solid #ddd !important;
+    }
+}
+
+.bootstrap-vodus * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .bootstrap-vodus *:before,
+    .bootstrap-vodus *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+.bootstrap-vodus {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.bootstrap-vodus {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.1;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+    .bootstrap-vodus input,
+    .bootstrap-vodus select,
+    .bootstrap-vodus textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .bootstrap-vodus a {
+        color: #555555;
+        text-decoration: none;
+    }
+
+        .bootstrap-vodus a:hover,
+        .bootstrap-vodus a:focus {
+            color: #23527c;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .bootstrap-vodus a:focus {
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+    .bootstrap-vodus figure {
+        margin: 0;
+    }
+
+    .bootstrap-vodus img {
+        vertical-align: middle;
+    }
+
+    .bootstrap-vodus .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bootstrap-vodus .img-rounded {
+        border-radius: 6px;
+    }
+
+    .bootstrap-vodus .img-thumbnail {
+        padding: 4px;
+        line-height: 1.42857143;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bootstrap-vodus .img-circle {
+        border-radius: 50%;
+    }
+
+    .bootstrap-vodus hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .bootstrap-vodus .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .bootstrap-vodus .sr-only-focusable:active,
+    .bootstrap-vodus .sr-only-focusable:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+    }
+
+    .bootstrap-vodus [role="button"] {
+        cursor: pointer;
+    }
+
+    .bootstrap-vodus h1,
+    .bootstrap-vodus h2,
+    .bootstrap-vodus h3,
+    .bootstrap-vodus h4,
+    .bootstrap-vodus h5,
+    .bootstrap-vodus h6,
+    .bootstrap-vodus .h1,
+    .bootstrap-vodus .h2,
+    .bootstrap-vodus .h3,
+    .bootstrap-vodus .h4,
+    .bootstrap-vodus .h5,
+    .bootstrap-vodus .h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+
+        .bootstrap-vodus h1 small,
+        .bootstrap-vodus h2 small,
+        .bootstrap-vodus h3 small,
+        .bootstrap-vodus h4 small,
+        .bootstrap-vodus h5 small,
+        .bootstrap-vodus h6 small,
+        .bootstrap-vodus .h1 small,
+        .bootstrap-vodus .h2 small,
+        .bootstrap-vodus .h3 small,
+        .bootstrap-vodus .h4 small,
+        .bootstrap-vodus .h5 small,
+        .bootstrap-vodus .h6 small,
+        .bootstrap-vodus h1 .small,
+        .bootstrap-vodus h2 .small,
+        .bootstrap-vodus h3 .small,
+        .bootstrap-vodus h4 .small,
+        .bootstrap-vodus h5 .small,
+        .bootstrap-vodus h6 .small,
+        .bootstrap-vodus .h1 .small,
+        .bootstrap-vodus .h2 .small,
+        .bootstrap-vodus .h3 .small,
+        .bootstrap-vodus .h4 .small,
+        .bootstrap-vodus .h5 .small,
+        .bootstrap-vodus .h6 .small {
+            font-weight: normal;
+            line-height: 1;
+            color: #777777;
+        }
+
+    .bootstrap-vodus h1,
+    .bootstrap-vodus .h1,
+    .bootstrap-vodus h2,
+    .bootstrap-vodus .h2,
+    .bootstrap-vodus h3,
+    .bootstrap-vodus .h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+        .bootstrap-vodus h1 small,
+        .bootstrap-vodus .h1 small,
+        .bootstrap-vodus h2 small,
+        .bootstrap-vodus .h2 small,
+        .bootstrap-vodus h3 small,
+        .bootstrap-vodus .h3 small,
+        .bootstrap-vodus h1 .small,
+        .bootstrap-vodus .h1 .small,
+        .bootstrap-vodus h2 .small,
+        .bootstrap-vodus .h2 .small,
+        .bootstrap-vodus h3 .small,
+        .bootstrap-vodus .h3 .small {
+            font-size: 65%;
+        }
+
+    .bootstrap-vodus h4,
+    .bootstrap-vodus .h4,
+    .bootstrap-vodus h5,
+    .bootstrap-vodus .h5,
+    .bootstrap-vodus h6,
+    .bootstrap-vodus .h6 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+        .bootstrap-vodus h4 small,
+        .bootstrap-vodus .h4 small,
+        .bootstrap-vodus h5 small,
+        .bootstrap-vodus .h5 small,
+        .bootstrap-vodus h6 small,
+        .bootstrap-vodus .h6 small,
+        .bootstrap-vodus h4 .small,
+        .bootstrap-vodus .h4 .small,
+        .bootstrap-vodus h5 .small,
+        .bootstrap-vodus .h5 .small,
+        .bootstrap-vodus h6 .small,
+        .bootstrap-vodus .h6 .small {
+            font-size: 75%;
+        }
+
+    .bootstrap-vodus h1,
+    .bootstrap-vodus .h1 {
+        font-size: 36px;
+    }
+
+    .bootstrap-vodus h2,
+    .bootstrap-vodus .h2 {
+        font-size: 30px;
+    }
+
+    .bootstrap-vodus h3,
+    .bootstrap-vodus .h3 {
+        font-size: 24px;
+    }
+
+    .bootstrap-vodus h4,
+    .bootstrap-vodus .h4 {
+        font-size: 18px;
+    }
+
+    .bootstrap-vodus h5,
+    .bootstrap-vodus .h5 {
+        font-size: 14px;
+    }
+
+    .bootstrap-vodus h6,
+    .bootstrap-vodus .h6 {
+        font-size: 12px;
+    }
+
+    .bootstrap-vodus p {
+        margin: 0 0 10px;
+    }
+
+    .bootstrap-vodus .lead {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4;
+    }
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .lead {
+        font-size: 21px;
+    }
+}
+
+.bootstrap-vodus small,
+.bootstrap-vodus .small {
+    font-size: 85%;
+}
+
+.bootstrap-vodus mark,
+.bootstrap-vodus .mark {
+    background-color: #fcf8e3;
+    padding: .2em;
+}
+
+.bootstrap-vodus .text-left {
+    text-align: left;
+}
+
+.bootstrap-vodus .text-right {
+    text-align: right;
+}
+
+.bootstrap-vodus .text-center {
+    text-align: center;
+}
+
+.bootstrap-vodus .text-justify {
+    text-align: justify;
+}
+
+.bootstrap-vodus .text-nowrap {
+    white-space: nowrap;
+}
+
+.bootstrap-vodus .text-lowercase {
+    text-transform: lowercase;
+}
+
+.bootstrap-vodus .text-uppercase {
+    text-transform: uppercase;
+}
+
+.bootstrap-vodus .text-capitalize {
+    text-transform: capitalize;
+}
+
+.bootstrap-vodus .text-muted {
+    color: #777777;
+}
+
+.bootstrap-vodus .text-primary {
+    color: #337ab7;
+}
+
+.bootstrap-vodus a.text-primary:hover,
+.bootstrap-vodus a.text-primary:focus {
+    color: #286090;
+}
+
+.bootstrap-vodus .text-success {
+    color: #3c763d;
+}
+
+.bootstrap-vodus a.text-success:hover,
+.bootstrap-vodus a.text-success:focus {
+    color: #2b542c;
+}
+
+.bootstrap-vodus .text-info {
+    color: #31708f;
+}
+
+.bootstrap-vodus a.text-info:hover,
+.bootstrap-vodus a.text-info:focus {
+    color: #245269;
+}
+
+.bootstrap-vodus .text-warning {
+    color: #8a6d3b;
+}
+
+.bootstrap-vodus a.text-warning:hover,
+.bootstrap-vodus a.text-warning:focus {
+    color: #66512c;
+}
+
+.bootstrap-vodus .text-danger {
+    color: #a94442;
+}
+
+.bootstrap-vodus a.text-danger:hover,
+.bootstrap-vodus a.text-danger:focus {
+    color: #843534;
+}
+
+.bootstrap-vodus .bg-primary {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.bootstrap-vodus a.bg-primary:hover,
+.bootstrap-vodus a.bg-primary:focus {
+    background-color: #286090;
+}
+
+.bootstrap-vodus .bg-success {
+    background-color: #dff0d8;
+}
+
+.bootstrap-vodus a.bg-success:hover,
+.bootstrap-vodus a.bg-success:focus {
+    background-color: #c1e2b3;
+}
+
+.bootstrap-vodus .bg-info {
+    background-color: #d9edf7;
+}
+
+.bootstrap-vodus a.bg-info:hover,
+.bootstrap-vodus a.bg-info:focus {
+    background-color: #afd9ee;
+}
+
+.bootstrap-vodus .bg-warning {
+    background-color: #fcf8e3;
+}
+
+.bootstrap-vodus a.bg-warning:hover,
+.bootstrap-vodus a.bg-warning:focus {
+    background-color: #f7ecb5;
+}
+
+.bootstrap-vodus .bg-danger {
+    background-color: #f2dede;
+}
+
+.bootstrap-vodus a.bg-danger:hover,
+.bootstrap-vodus a.bg-danger:focus {
+    background-color: #e4b9b9;
+}
+
+.bootstrap-vodus .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.bootstrap-vodus ul,
+.bootstrap-vodus ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+    .bootstrap-vodus ul ul,
+    .bootstrap-vodus ol ul,
+    .bootstrap-vodus ul ol,
+    .bootstrap-vodus ol ol {
+        margin-bottom: 0;
+    }
+
+.bootstrap-vodus .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.bootstrap-vodus .list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+}
+
+    .bootstrap-vodus .list-inline > li {
+        display: inline-block;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+.bootstrap-vodus dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.bootstrap-vodus dt,
+.bootstrap-vodus dd {
+    line-height: 1.42857143;
+}
+
+.bootstrap-vodus dt {
+    font-weight: bold;
+}
+
+.bootstrap-vodus dd {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .dl-horizontal dt {
+        float: left;
+        width: 160px;
+        clear: left;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .bootstrap-vodus .dl-horizontal dd {
+        margin-left: 180px;
+    }
+}
+
+.bootstrap-vodus abbr[title],
+.bootstrap-vodus abbr[data-original-title] {
+    cursor: help;
+    border-bottom: 1px dotted #777777;
+}
+
+.bootstrap-vodus .initialism {
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.bootstrap-vodus blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eeeeee;
+}
+
+    .bootstrap-vodus blockquote p:last-child,
+    .bootstrap-vodus blockquote ul:last-child,
+    .bootstrap-vodus blockquote ol:last-child {
+        margin-bottom: 0;
+    }
+
+    .bootstrap-vodus blockquote footer,
+    .bootstrap-vodus blockquote small,
+    .bootstrap-vodus blockquote .small {
+        display: block;
+        font-size: 80%;
+        line-height: 1.42857143;
+        color: #777777;
+    }
+
+        .bootstrap-vodus blockquote footer:before,
+        .bootstrap-vodus blockquote small:before,
+        .bootstrap-vodus blockquote .small:before {
+            content: '\2014 \00A0';
+        }
+
+    .bootstrap-vodus .blockquote-reverse,
+    .bootstrap-vodus blockquote.pull-right {
+        padding-right: 15px;
+        padding-left: 0;
+        border-right: 5px solid #eeeeee;
+        border-left: 0;
+        text-align: right;
+    }
+
+        .bootstrap-vodus .blockquote-reverse footer:before,
+        .bootstrap-vodus blockquote.pull-right footer:before,
+        .bootstrap-vodus .blockquote-reverse small:before,
+        .bootstrap-vodus blockquote.pull-right small:before,
+        .bootstrap-vodus .blockquote-reverse .small:before,
+        .bootstrap-vodus blockquote.pull-right .small:before {
+            content: '';
+        }
+
+        .bootstrap-vodus .blockquote-reverse footer:after,
+        .bootstrap-vodus blockquote.pull-right footer:after,
+        .bootstrap-vodus .blockquote-reverse small:after,
+        .bootstrap-vodus blockquote.pull-right small:after,
+        .bootstrap-vodus .blockquote-reverse .small:after,
+        .bootstrap-vodus blockquote.pull-right .small:after {
+            content: '\00A0 \2014';
+        }
+
+.bootstrap-vodus address {
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 1.42857143;
+}
+
+.bootstrap-vodus .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .bootstrap-vodus .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .container {
+        width: 1170px;
+    }
+}
+
+.bootstrap-vodus .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bootstrap-vodus .row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.bootstrap-vodus .col-xs-1,
+.bootstrap-vodus .col-sm-1,
+.bootstrap-vodus .col-md-1,
+.bootstrap-vodus .col-lg-1,
+.bootstrap-vodus .col-xs-2,
+.bootstrap-vodus .col-sm-2,
+.bootstrap-vodus .col-md-2,
+.bootstrap-vodus .col-lg-2,
+.bootstrap-vodus .col-xs-3,
+.bootstrap-vodus .col-sm-3,
+.bootstrap-vodus .col-md-3,
+.bootstrap-vodus .col-lg-3,
+.bootstrap-vodus .col-xs-4,
+.bootstrap-vodus .col-sm-4,
+.bootstrap-vodus .col-md-4,
+.bootstrap-vodus .col-lg-4,
+.bootstrap-vodus .col-xs-5,
+.bootstrap-vodus .col-sm-5,
+.bootstrap-vodus .col-md-5,
+.bootstrap-vodus .col-lg-5,
+.bootstrap-vodus .col-xs-6,
+.bootstrap-vodus .col-sm-6,
+.bootstrap-vodus .col-md-6,
+.bootstrap-vodus .col-lg-6,
+.bootstrap-vodus .col-xs-7,
+.bootstrap-vodus .col-sm-7,
+.bootstrap-vodus .col-md-7,
+.bootstrap-vodus .col-lg-7,
+.bootstrap-vodus .col-xs-8,
+.bootstrap-vodus .col-sm-8,
+.bootstrap-vodus .col-md-8,
+.bootstrap-vodus .col-lg-8,
+.bootstrap-vodus .col-xs-9,
+.bootstrap-vodus .col-sm-9,
+.bootstrap-vodus .col-md-9,
+.bootstrap-vodus .col-lg-9,
+.bootstrap-vodus .col-xs-10,
+.bootstrap-vodus .col-sm-10,
+.bootstrap-vodus .col-md-10,
+.bootstrap-vodus .col-lg-10,
+.bootstrap-vodus .col-xs-11,
+.bootstrap-vodus .col-sm-11,
+.bootstrap-vodus .col-md-11,
+.bootstrap-vodus .col-lg-11,
+.bootstrap-vodus .col-xs-12,
+.bootstrap-vodus .col-sm-12,
+.bootstrap-vodus .col-md-12,
+.bootstrap-vodus .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bootstrap-vodus .col-xs-1,
+.bootstrap-vodus .col-xs-2,
+.bootstrap-vodus .col-xs-3,
+.bootstrap-vodus .col-xs-4,
+.bootstrap-vodus .col-xs-5,
+.bootstrap-vodus .col-xs-6,
+.bootstrap-vodus .col-xs-7,
+.bootstrap-vodus .col-xs-8,
+.bootstrap-vodus .col-xs-9,
+.bootstrap-vodus .col-xs-10,
+.bootstrap-vodus .col-xs-11,
+.bootstrap-vodus .col-xs-12 {
+    float: left;
+}
+
+.bootstrap-vodus .col-xs-12 {
+    width: 100%;
+}
+
+.bootstrap-vodus .col-xs-11 {
+    width: 91.66666667%;
+}
+
+.bootstrap-vodus .col-xs-10 {
+    width: 83.33333333%;
+}
+
+.bootstrap-vodus .col-xs-9 {
+    width: 75%;
+}
+
+.bootstrap-vodus .col-xs-8 {
+    width: 66.66666667%;
+}
+
+.bootstrap-vodus .col-xs-7 {
+    width: 58.33333333%;
+}
+
+.bootstrap-vodus .col-xs-6 {
+    width: 50%;
+}
+
+.bootstrap-vodus .col-xs-5 {
+    width: 41.66666667%;
+}
+
+.bootstrap-vodus .col-xs-4 {
+    width: 33.33333333%;
+}
+
+.bootstrap-vodus .col-xs-3 {
+    width: 25%;
+}
+
+.bootstrap-vodus .col-xs-2 {
+    width: 16.66666667%;
+}
+
+.bootstrap-vodus .col-xs-1 {
+    width: 8.33333333%;
+}
+
+.bootstrap-vodus .col-xs-pull-12 {
+    right: 100%;
+}
+
+.bootstrap-vodus .col-xs-pull-11 {
+    right: 91.66666667%;
+}
+
+.bootstrap-vodus .col-xs-pull-10 {
+    right: 83.33333333%;
+}
+
+.bootstrap-vodus .col-xs-pull-9 {
+    right: 75%;
+}
+
+.bootstrap-vodus .col-xs-pull-8 {
+    right: 66.66666667%;
+}
+
+.bootstrap-vodus .col-xs-pull-7 {
+    right: 58.33333333%;
+}
+
+.bootstrap-vodus .col-xs-pull-6 {
+    right: 50%;
+}
+
+.bootstrap-vodus .col-xs-pull-5 {
+    right: 41.66666667%;
+}
+
+.bootstrap-vodus .col-xs-pull-4 {
+    right: 33.33333333%;
+}
+
+.bootstrap-vodus .col-xs-pull-3 {
+    right: 25%;
+}
+
+.bootstrap-vodus .col-xs-pull-2 {
+    right: 16.66666667%;
+}
+
+.bootstrap-vodus .col-xs-pull-1 {
+    right: 8.33333333%;
+}
+
+.bootstrap-vodus .col-xs-pull-0 {
+    right: auto;
+}
+
+.bootstrap-vodus .col-xs-push-12 {
+    left: 100%;
+}
+
+.bootstrap-vodus .col-xs-push-11 {
+    left: 91.66666667%;
+}
+
+.bootstrap-vodus .col-xs-push-10 {
+    left: 83.33333333%;
+}
+
+.bootstrap-vodus .col-xs-push-9 {
+    left: 75%;
+}
+
+.bootstrap-vodus .col-xs-push-8 {
+    left: 66.66666667%;
+}
+
+.bootstrap-vodus .col-xs-push-7 {
+    left: 58.33333333%;
+}
+
+.bootstrap-vodus .col-xs-push-6 {
+    left: 50%;
+}
+
+.bootstrap-vodus .col-xs-push-5 {
+    left: 41.66666667%;
+}
+
+.bootstrap-vodus .col-xs-push-4 {
+    left: 33.33333333%;
+}
+
+.bootstrap-vodus .col-xs-push-3 {
+    left: 25%;
+}
+
+.bootstrap-vodus .col-xs-push-2 {
+    left: 16.66666667%;
+}
+
+.bootstrap-vodus .col-xs-push-1 {
+    left: 8.33333333%;
+}
+
+.bootstrap-vodus .col-xs-push-0 {
+    left: auto;
+}
+
+.bootstrap-vodus .col-xs-offset-12 {
+    margin-left: 100%;
+}
+
+.bootstrap-vodus .col-xs-offset-11 {
+    margin-left: 91.66666667%;
+}
+
+.bootstrap-vodus .col-xs-offset-10 {
+    margin-left: 83.33333333%;
+}
+
+.bootstrap-vodus .col-xs-offset-9 {
+    margin-left: 75%;
+}
+
+.bootstrap-vodus .col-xs-offset-8 {
+    margin-left: 66.66666667%;
+}
+
+.bootstrap-vodus .col-xs-offset-7 {
+    margin-left: 58.33333333%;
+}
+
+.bootstrap-vodus .col-xs-offset-6 {
+    margin-left: 50%;
+}
+
+.bootstrap-vodus .col-xs-offset-5 {
+    margin-left: 41.66666667%;
+}
+
+.bootstrap-vodus .col-xs-offset-4 {
+    margin-left: 33.33333333%;
+}
+
+.bootstrap-vodus .col-xs-offset-3 {
+    margin-left: 25%;
+}
+
+.bootstrap-vodus .col-xs-offset-2 {
+    margin-left: 16.66666667%;
+}
+
+.bootstrap-vodus .col-xs-offset-1 {
+    margin-left: 8.33333333%;
+}
+
+.bootstrap-vodus .col-xs-offset-0 {
+    margin-left: 0%;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .col-sm-1,
+    .bootstrap-vodus .col-sm-2,
+    .bootstrap-vodus .col-sm-3,
+    .bootstrap-vodus .col-sm-4,
+    .bootstrap-vodus .col-sm-5,
+    .bootstrap-vodus .col-sm-6,
+    .bootstrap-vodus .col-sm-7,
+    .bootstrap-vodus .col-sm-8,
+    .bootstrap-vodus .col-sm-9,
+    .bootstrap-vodus .col-sm-10,
+    .bootstrap-vodus .col-sm-11,
+    .bootstrap-vodus .col-sm-12 {
+        float: left;
+    }
+
+    .bootstrap-vodus .col-sm-12 {
+        width: 100%;
+    }
+
+    .bootstrap-vodus .col-sm-11 {
+        width: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-10 {
+        width: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-9 {
+        width: 75%;
+    }
+
+    .bootstrap-vodus .col-sm-8 {
+        width: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-7 {
+        width: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-6 {
+        width: 50%;
+    }
+
+    .bootstrap-vodus .col-sm-5 {
+        width: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-4 {
+        width: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-3 {
+        width: 25%;
+    }
+
+    .bootstrap-vodus .col-sm-2 {
+        width: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-1 {
+        width: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-12 {
+        right: 100%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-11 {
+        right: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-10 {
+        right: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-9 {
+        right: 75%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-8 {
+        right: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-7 {
+        right: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-6 {
+        right: 50%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-5 {
+        right: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-4 {
+        right: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-3 {
+        right: 25%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-2 {
+        right: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-1 {
+        right: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-pull-0 {
+        right: auto;
+    }
+
+    .bootstrap-vodus .col-sm-push-12 {
+        left: 100%;
+    }
+
+    .bootstrap-vodus .col-sm-push-11 {
+        left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-push-10 {
+        left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-push-9 {
+        left: 75%;
+    }
+
+    .bootstrap-vodus .col-sm-push-8 {
+        left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-push-7 {
+        left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-push-6 {
+        left: 50%;
+    }
+
+    .bootstrap-vodus .col-sm-push-5 {
+        left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-push-4 {
+        left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-push-3 {
+        left: 25%;
+    }
+
+    .bootstrap-vodus .col-sm-push-2 {
+        left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-push-1 {
+        left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-push-0 {
+        left: auto;
+    }
+
+    .bootstrap-vodus .col-sm-offset-12 {
+        margin-left: 100%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-11 {
+        margin-left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-10 {
+        margin-left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-9 {
+        margin-left: 75%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-8 {
+        margin-left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-7 {
+        margin-left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-6 {
+        margin-left: 50%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-5 {
+        margin-left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-4 {
+        margin-left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-3 {
+        margin-left: 25%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-2 {
+        margin-left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-1 {
+        margin-left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-sm-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 992px) {
+    .bootstrap-vodus .col-md-1,
+    .bootstrap-vodus .col-md-2,
+    .bootstrap-vodus .col-md-3,
+    .bootstrap-vodus .col-md-4,
+    .bootstrap-vodus .col-md-5,
+    .bootstrap-vodus .col-md-6,
+    .bootstrap-vodus .col-md-7,
+    .bootstrap-vodus .col-md-8,
+    .bootstrap-vodus .col-md-9,
+    .bootstrap-vodus .col-md-10,
+    .bootstrap-vodus .col-md-11,
+    .bootstrap-vodus .col-md-12 {
+        float: left;
+    }
+
+    .bootstrap-vodus .col-md-12 {
+        width: 100%;
+    }
+
+    .bootstrap-vodus .col-md-11 {
+        width: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-10 {
+        width: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-9 {
+        width: 75%;
+    }
+
+    .bootstrap-vodus .col-md-8 {
+        width: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-7 {
+        width: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-6 {
+        width: 50%;
+    }
+
+    .bootstrap-vodus .col-md-5 {
+        width: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-4 {
+        width: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-3 {
+        width: 25%;
+    }
+
+    .bootstrap-vodus .col-md-2 {
+        width: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-1 {
+        width: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-pull-12 {
+        right: 100%;
+    }
+
+    .bootstrap-vodus .col-md-pull-11 {
+        right: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-pull-10 {
+        right: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-pull-9 {
+        right: 75%;
+    }
+
+    .bootstrap-vodus .col-md-pull-8 {
+        right: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-pull-7 {
+        right: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-pull-6 {
+        right: 50%;
+    }
+
+    .bootstrap-vodus .col-md-pull-5 {
+        right: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-pull-4 {
+        right: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-pull-3 {
+        right: 25%;
+    }
+
+    .bootstrap-vodus .col-md-pull-2 {
+        right: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-pull-1 {
+        right: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-pull-0 {
+        right: auto;
+    }
+
+    .bootstrap-vodus .col-md-push-12 {
+        left: 100%;
+    }
+
+    .bootstrap-vodus .col-md-push-11 {
+        left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-push-10 {
+        left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-push-9 {
+        left: 75%;
+    }
+
+    .bootstrap-vodus .col-md-push-8 {
+        left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-push-7 {
+        left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-push-6 {
+        left: 50%;
+    }
+
+    .bootstrap-vodus .col-md-push-5 {
+        left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-push-4 {
+        left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-push-3 {
+        left: 25%;
+    }
+
+    .bootstrap-vodus .col-md-push-2 {
+        left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-push-1 {
+        left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-push-0 {
+        left: auto;
+    }
+
+    .bootstrap-vodus .col-md-offset-12 {
+        margin-left: 100%;
+    }
+
+    .bootstrap-vodus .col-md-offset-11 {
+        margin-left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-offset-10 {
+        margin-left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-offset-9 {
+        margin-left: 75%;
+    }
+
+    .bootstrap-vodus .col-md-offset-8 {
+        margin-left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-offset-7 {
+        margin-left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-offset-6 {
+        margin-left: 50%;
+    }
+
+    .bootstrap-vodus .col-md-offset-5 {
+        margin-left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-offset-4 {
+        margin-left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-offset-3 {
+        margin-left: 25%;
+    }
+
+    .bootstrap-vodus .col-md-offset-2 {
+        margin-left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-md-offset-1 {
+        margin-left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-md-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .col-lg-1,
+    .bootstrap-vodus .col-lg-2,
+    .bootstrap-vodus .col-lg-3,
+    .bootstrap-vodus .col-lg-4,
+    .bootstrap-vodus .col-lg-5,
+    .bootstrap-vodus .col-lg-6,
+    .bootstrap-vodus .col-lg-7,
+    .bootstrap-vodus .col-lg-8,
+    .bootstrap-vodus .col-lg-9,
+    .bootstrap-vodus .col-lg-10,
+    .bootstrap-vodus .col-lg-11,
+    .bootstrap-vodus .col-lg-12 {
+        float: left;
+    }
+
+    .bootstrap-vodus .col-lg-12 {
+        width: 100%;
+    }
+
+    .bootstrap-vodus .col-lg-11 {
+        width: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-10 {
+        width: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-9 {
+        width: 75%;
+    }
+
+    .bootstrap-vodus .col-lg-8 {
+        width: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-7 {
+        width: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-6 {
+        width: 50%;
+    }
+
+    .bootstrap-vodus .col-lg-5 {
+        width: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-4 {
+        width: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-3 {
+        width: 25%;
+    }
+
+    .bootstrap-vodus .col-lg-2 {
+        width: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-1 {
+        width: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-12 {
+        right: 100%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-11 {
+        right: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-10 {
+        right: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-9 {
+        right: 75%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-8 {
+        right: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-7 {
+        right: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-6 {
+        right: 50%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-5 {
+        right: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-4 {
+        right: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-3 {
+        right: 25%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-2 {
+        right: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-1 {
+        right: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-pull-0 {
+        right: auto;
+    }
+
+    .bootstrap-vodus .col-lg-push-12 {
+        left: 100%;
+    }
+
+    .bootstrap-vodus .col-lg-push-11 {
+        left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-push-10 {
+        left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-push-9 {
+        left: 75%;
+    }
+
+    .bootstrap-vodus .col-lg-push-8 {
+        left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-push-7 {
+        left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-push-6 {
+        left: 50%;
+    }
+
+    .bootstrap-vodus .col-lg-push-5 {
+        left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-push-4 {
+        left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-push-3 {
+        left: 25%;
+    }
+
+    .bootstrap-vodus .col-lg-push-2 {
+        left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-push-1 {
+        left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-push-0 {
+        left: auto;
+    }
+
+    .bootstrap-vodus .col-lg-offset-12 {
+        margin-left: 100%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-11 {
+        margin-left: 91.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-10 {
+        margin-left: 83.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-9 {
+        margin-left: 75%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-8 {
+        margin-left: 66.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-7 {
+        margin-left: 58.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-6 {
+        margin-left: 50%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-5 {
+        margin-left: 41.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-4 {
+        margin-left: 33.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-3 {
+        margin-left: 25%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-2 {
+        margin-left: 16.66666667%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-1 {
+        margin-left: 8.33333333%;
+    }
+
+    .bootstrap-vodus .col-lg-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.bootstrap-vodus .modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+    .bootstrap-vodus .modal .droppable-template {
+        border: 0 !important;
+    }
+
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bootstrap-vodus .modal-dialog {
+    z-index: 1050;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.bootstrap-vodus .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000000 !important;
+}
+
+    .bootstrap-vodus .modal-backdrop.fade {
+        opacity: 0 !important;
+        filter: alpha(opacity=0);
+    }
+
+.modal-backdrop.in {
+    opacity: 0.5 !important;
+    filter: alpha(opacity=50) !important;
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .modal-header .close {
+        margin-top: -2px;
+    }
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+    .modal-footer .btn + .btn {
+        margin-left: 5px;
+        margin-bottom: 0;
+    }
+
+    .modal-footer .btn-group .btn + .btn {
+        margin-left: -1px;
+    }
+
+    .modal-footer .btn-block + .btn-block {
+        margin-left: 0;
+    }
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .modal-dialog {
+        width: 600px;
+        height: 90%;
+        margin: 30px auto;
+    }
+
+    .bootstrap-vodus .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-sm {
+        width: 300px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .modal-lg {
+        width: 900px;
+    }
+}
+
+.bootstrap-vodus .clearfix:before,
+.bootstrap-vodus .clearfix:after,
+.bootstrap-vodus .dl-horizontal dd:before,
+.bootstrap-vodus .dl-horizontal dd:after,
+.bootstrap-vodus .container:before,
+.bootstrap-vodus .container:after,
+.bootstrap-vodus .container-fluid:before,
+.bootstrap-vodus .container-fluid:after,
+.bootstrap-vodus .row:before,
+.bootstrap-vodus .row:after,
+.bootstrap-vodus .modal-header:before,
+.bootstrap-vodus .modal-header:after,
+.bootstrap-vodus .modal-footer:before,
+.bootstrap-vodus .modal-footer:after {
+    content: " ";
+    display: table;
+}
+
+.bootstrap-vodus .clearfix:after,
+.bootstrap-vodus .dl-horizontal dd:after,
+.bootstrap-vodus .container:after,
+.bootstrap-vodus .container-fluid:after,
+.bootstrap-vodus .row:after,
+.bootstrap-vodus .modal-header:after,
+.bootstrap-vodus .modal-footer:after {
+    clear: both;
+}
+
+.bootstrap-vodus .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bootstrap-vodus .pull-right {
+    float: right !important;
+}
+
+.bootstrap-vodus .pull-left {
+    float: left !important;
+}
+
+.bootstrap-vodus .hide {
+    display: none !important;
+}
+
+.bootstrap-vodus .show {
+    display: block !important;
+}
+
+.bootstrap-vodus .invisible {
+    visibility: hidden;
+}
+
+.bootstrap-vodus .text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.bootstrap-vodus .hidden {
+    display: none !important;
+}
+
+.bootstrap-vodus .affix {
+    position: fixed;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.bootstrap-vodus .visible-xs,
+.bootstrap-vodus .visible-sm,
+.bootstrap-vodus .visible-md,
+.bootstrap-vodus .visible-lg {
+    display: none !important;
+}
+
+.bootstrap-vodus .visible-xs-block,
+.bootstrap-vodus .visible-xs-inline,
+.bootstrap-vodus .visible-xs-inline-block,
+.bootstrap-vodus .visible-sm-block,
+.bootstrap-vodus .visible-sm-inline,
+.bootstrap-vodus .visible-sm-inline-block,
+.bootstrap-vodus .visible-md-block,
+.bootstrap-vodus .visible-md-inline,
+.bootstrap-vodus .visible-md-inline-block,
+.bootstrap-vodus .visible-lg-block,
+.bootstrap-vodus .visible-lg-inline,
+.bootstrap-vodus .visible-lg-inline-block {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-xs {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-xs {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-xs,
+    .bootstrap-vodus td.visible-xs {
+        display: table-cell !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-block {
+        display: block !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-inline {
+        display: inline !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-sm {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-sm {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-sm,
+    .bootstrap-vodus td.visible-sm {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-md {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-md {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-md,
+    .bootstrap-vodus td.visible-md {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-lg {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-lg {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-lg,
+    .bootstrap-vodus td.visible-lg {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .hidden-xs {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .hidden-sm {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .hidden-md {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .hidden-lg {
+        display: none !important;
+    }
+}
+
+.bootstrap-vodus .visible-print {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-print {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-print {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-print,
+    .bootstrap-vodus td.visible-print {
+        display: table-cell !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-block {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-block {
+        display: block !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-inline {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-inline {
+        display: inline !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-inline-block {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media print {
+    .bootstrap-vodus .hidden-print {
+        display: none !important;
+    }
+}
+
+.bootstrap-vodus button,
+.bootstrap-vodus input,
+.bootstrap-vodus optgroup,
+.bootstrap-vodus select,
+.bootstrap-vodus textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.bootstrap-vodus button {
+    overflow: visible;
+}
+
+.bootstrap-vodus button,
+.bootstrap-vodus select {
+    text-transform: none;
+}
+
+.bootstrap-vodus button,
+.bootstrap-vodus html input[type="button"],
+.bootstrap-vodus input[type="reset"],
+.bootstrap-vodus input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+    .bootstrap-vodus button[disabled],
+    .bootstrap-vodus html input[disabled] {
+        cursor: default;
+    }
+
+    .bootstrap-vodus button::-moz-focus-inner,
+    .bootstrap-vodus input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+.bootstrap-vodus input {
+    line-height: normal;
+}
+
+    .bootstrap-vodus input[type="checkbox"],
+    .bootstrap-vodus input[type="radio"] {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .bootstrap-vodus input[type="number"]::-webkit-inner-spin-button,
+    .bootstrap-vodus input[type="number"]::-webkit-outer-spin-button {
+        height: auto;
+    }
+
+    .bootstrap-vodus input[type="search"] {
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+        .bootstrap-vodus input[type="search"]::-webkit-search-cancel-button,
+        .bootstrap-vodus input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+.bootstrap-vodus fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+.bootstrap-vodus legend {
+    border: 0;
+    padding: 0;
+}
+
+.bootstrap-vodus textarea {
+    overflow: auto;
+}
+
+.bootstrap-vodus optgroup {
+    font-weight: bold;
+}
+
+.bootstrap-vodus table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.bootstrap-vodus td,
+.bootstrap-vodus th {
+    padding: 0;
+}
+
+.bootstrap-vodus * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .bootstrap-vodus *:before,
+    .bootstrap-vodus *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+.bootstrap-vodus html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.bootstrap-vodus body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.bootstrap-vodus input,
+.bootstrap-vodus button,
+.bootstrap-vodus select,
+.bootstrap-vodus textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.bootstrap-vodus a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+    .bootstrap-vodus a:hover,
+    .bootstrap-vodus a:focus {
+        color: #23527c;
+        text-decoration: underline;
+    }
+
+    .bootstrap-vodus a:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+.bootstrap-vodus figure {
+    margin: 0;
+}
+
+.bootstrap-vodus img {
+    vertical-align: middle;
+}
+
+.bootstrap-vodus .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.bootstrap-vodus .img-rounded {
+    border-radius: 6px;
+}
+
+.bootstrap-vodus .img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.bootstrap-vodus .img-circle {
+    border-radius: 50%;
+}
+
+.bootstrap-vodus hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.bootstrap-vodus .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.bootstrap-vodus .sr-only-focusable:active,
+.bootstrap-vodus .sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
+
+.bootstrap-vodus [role="button"] {
+    cursor: pointer;
+}
+
+.bootstrap-vodus fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.bootstrap-vodus legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.bootstrap-vodus label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bootstrap-vodus input[type="search"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.bootstrap-vodus input[type="radio"],
+.bootstrap-vodus input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+.bootstrap-vodus input[type="file"] {
+    display: block;
+}
+
+.bootstrap-vodus input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+.bootstrap-vodus select[multiple],
+.bootstrap-vodus select[size] {
+    height: auto;
+}
+
+.bootstrap-vodus input[type="file"]:focus,
+.bootstrap-vodus input[type="radio"]:focus,
+.bootstrap-vodus input[type="checkbox"]:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.bootstrap-vodus output {
+    display: block;
+    padding-top: 7px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+}
+
+.bootstrap-vodus .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+    .bootstrap-vodus .form-control:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    .bootstrap-vodus .form-control::-moz-placeholder {
+        color: #999999;
+        opacity: 1;
+    }
+
+    .bootstrap-vodus .form-control:-ms-input-placeholder {
+        color: #999999;
+    }
+
+    .bootstrap-vodus .form-control::-webkit-input-placeholder {
+        color: #999999;
+    }
+
+    .bootstrap-vodus .form-control::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .bootstrap-vodus .form-control[disabled],
+    .bootstrap-vodus .form-control[readonly],
+    .bootstrap-vodus fieldset[disabled] .form-control {
+        background-color: #eeeeee;
+        opacity: 1;
+    }
+
+    .bootstrap-vodus .form-control[disabled],
+    .bootstrap-vodus fieldset[disabled] .form-control {
+        cursor: not-allowed;
+    }
+
+.bootstrap-vodus textarea.form-control {
+    height: auto;
+}
+
+.bootstrap-vodus input[type="search"] {
+    -webkit-appearance: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .bootstrap-vodus input[type="date"].form-control,
+    .bootstrap-vodus input[type="time"].form-control,
+    .bootstrap-vodus input[type="datetime-local"].form-control,
+    .bootstrap-vodus input[type="month"].form-control {
+        line-height: 34px;
+    }
+
+    .bootstrap-vodus input[type="date"].input-sm,
+    .bootstrap-vodus input[type="time"].input-sm,
+    .bootstrap-vodus input[type="datetime-local"].input-sm,
+    .bootstrap-vodus input[type="month"].input-sm,
+    .bootstrap-vodus .input-group-sm input[type="date"],
+    .bootstrap-vodus .input-group-sm input[type="time"],
+    .bootstrap-vodus .input-group-sm input[type="datetime-local"],
+    .bootstrap-vodus .input-group-sm input[type="month"] {
+        line-height: 30px;
+    }
+
+    .bootstrap-vodus input[type="date"].input-lg,
+    .bootstrap-vodus input[type="time"].input-lg,
+    .bootstrap-vodus input[type="datetime-local"].input-lg,
+    .bootstrap-vodus input[type="month"].input-lg,
+    .bootstrap-vodus .input-group-lg input[type="date"],
+    .bootstrap-vodus .input-group-lg input[type="time"],
+    .bootstrap-vodus .input-group-lg input[type="datetime-local"],
+    .bootstrap-vodus .input-group-lg input[type="month"] {
+        line-height: 46px;
+    }
+}
+
+.bootstrap-vodus .form-group {
+    margin-bottom: 15px;
+}
+
+.bootstrap-vodus .radio,
+.bootstrap-vodus .checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .bootstrap-vodus .radio label,
+    .bootstrap-vodus .checkbox label {
+        min-height: 20px;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    .bootstrap-vodus .radio input[type="radio"],
+    .bootstrap-vodus .radio-inline input[type="radio"],
+    .bootstrap-vodus .checkbox input[type="checkbox"],
+    .bootstrap-vodus .checkbox-inline input[type="checkbox"] {
+        position: absolute;
+        margin-left: -20px;
+        margin-top: 4px \9;
+    }
+
+    .bootstrap-vodus .radio + .radio,
+    .bootstrap-vodus .checkbox + .checkbox {
+        margin-top: -5px;
+    }
+
+.bootstrap-vodus .radio-inline,
+.bootstrap-vodus .checkbox-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+    .bootstrap-vodus .radio-inline + .radio-inline,
+    .bootstrap-vodus .checkbox-inline + .checkbox-inline {
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+.bootstrap-vodus input[type="radio"][disabled],
+.bootstrap-vodus input[type="checkbox"][disabled],
+.bootstrap-vodus input[type="radio"].disabled,
+.bootstrap-vodus input[type="checkbox"].disabled,
+.bootstrap-vodus fieldset[disabled] input[type="radio"],
+.bootstrap-vodus fieldset[disabled] input[type="checkbox"] {
+    cursor: not-allowed;
+}
+
+.bootstrap-vodus .radio-inline.disabled,
+.bootstrap-vodus .checkbox-inline.disabled,
+.bootstrap-vodus fieldset[disabled] .radio-inline,
+.bootstrap-vodus fieldset[disabled] .checkbox-inline {
+    cursor: not-allowed;
+}
+
+.bootstrap-vodus .radio.disabled label,
+.bootstrap-vodus .checkbox.disabled label,
+.bootstrap-vodus fieldset[disabled] .radio label,
+.bootstrap-vodus fieldset[disabled] .checkbox label {
+    cursor: not-allowed;
+}
+
+.bootstrap-vodus .form-control-static {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0;
+    min-height: 34px;
+}
+
+    .bootstrap-vodus .form-control-static.input-lg,
+    .bootstrap-vodus .form-control-static.input-sm {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+.bootstrap-vodus .input-sm {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-vodus select.input-sm {
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-vodus textarea.input-sm,
+.bootstrap-vodus select[multiple].input-sm {
+    height: auto;
+}
+
+.bootstrap-vodus .form-group-sm .form-control {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-vodus .form-group-sm select.form-control {
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-vodus .form-group-sm textarea.form-control,
+.bootstrap-vodus .form-group-sm select[multiple].form-control {
+    height: auto;
+}
+
+.bootstrap-vodus .form-group-sm .form-control-static {
+    height: 30px;
+    min-height: 32px;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.bootstrap-vodus .input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.bootstrap-vodus select.input-lg {
+    height: 46px;
+    line-height: 46px;
+}
+
+.bootstrap-vodus textarea.input-lg,
+.bootstrap-vodus select[multiple].input-lg {
+    height: auto;
+}
+
+.bootstrap-vodus .form-group-lg .form-control {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.bootstrap-vodus .form-group-lg select.form-control {
+    height: 46px;
+    line-height: 46px;
+}
+
+.bootstrap-vodus .form-group-lg textarea.form-control,
+.bootstrap-vodus .form-group-lg select[multiple].form-control {
+    height: auto;
+}
+
+.bootstrap-vodus .form-group-lg .form-control-static {
+    height: 46px;
+    min-height: 38px;
+    padding: 11px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+}
+
+.bootstrap-vodus .has-feedback {
+    position: relative;
+}
+
+    .bootstrap-vodus .has-feedback .form-control {
+        padding-right: 42.5px;
+    }
+
+.bootstrap-vodus .form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.bootstrap-vodus .input-lg + .form-control-feedback,
+.bootstrap-vodus .input-group-lg + .form-control-feedback,
+.bootstrap-vodus .form-group-lg .form-control + .form-control-feedback {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+}
+
+.bootstrap-vodus .input-sm + .form-control-feedback,
+.bootstrap-vodus .input-group-sm + .form-control-feedback,
+.bootstrap-vodus .form-group-sm .form-control + .form-control-feedback {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-vodus .has-success .help-block,
+.bootstrap-vodus .has-success .control-label,
+.bootstrap-vodus .has-success .radio,
+.bootstrap-vodus .has-success .checkbox,
+.bootstrap-vodus .has-success .radio-inline,
+.bootstrap-vodus .has-success .checkbox-inline,
+.bootstrap-vodus .has-success.radio label,
+.bootstrap-vodus .has-success.checkbox label,
+.bootstrap-vodus .has-success.radio-inline label,
+.bootstrap-vodus .has-success.checkbox-inline label {
+    color: #3c763d;
+}
+
+.bootstrap-vodus .has-success .form-control {
+    border-color: #3c763d;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+    .bootstrap-vodus .has-success .form-control:focus {
+        border-color: #2b542c;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+    }
+
+.bootstrap-vodus .has-success .input-group-addon {
+    color: #3c763d;
+    border-color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.bootstrap-vodus .has-success .form-control-feedback {
+    color: #3c763d;
+}
+
+.bootstrap-vodus .has-warning .help-block,
+.bootstrap-vodus .has-warning .control-label,
+.bootstrap-vodus .has-warning .radio,
+.bootstrap-vodus .has-warning .checkbox,
+.bootstrap-vodus .has-warning .radio-inline,
+.bootstrap-vodus .has-warning .checkbox-inline,
+.bootstrap-vodus .has-warning.radio label,
+.bootstrap-vodus .has-warning.checkbox label,
+.bootstrap-vodus .has-warning.radio-inline label,
+.bootstrap-vodus .has-warning.checkbox-inline label {
+    color: #8a6d3b;
+}
+
+.bootstrap-vodus .has-warning .form-control {
+    border-color: #8a6d3b;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+    .bootstrap-vodus .has-warning .form-control:focus {
+        border-color: #66512c;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+    }
+
+.bootstrap-vodus .has-warning .input-group-addon {
+    color: #8a6d3b;
+    border-color: #8a6d3b;
+    background-color: #fcf8e3;
+}
+
+.bootstrap-vodus .has-warning .form-control-feedback {
+    color: #8a6d3b;
+}
+
+.bootstrap-vodus .has-error .help-block,
+.bootstrap-vodus .has-error .control-label,
+.bootstrap-vodus .has-error .radio,
+.bootstrap-vodus .has-error .checkbox,
+.bootstrap-vodus .has-error .radio-inline,
+.bootstrap-vodus .has-error .checkbox-inline,
+.bootstrap-vodus .has-error.radio label,
+.bootstrap-vodus .has-error.checkbox label,
+.bootstrap-vodus .has-error.radio-inline label,
+.bootstrap-vodus .has-error.checkbox-inline label {
+    color: #a94442;
+}
+
+.bootstrap-vodus .has-error .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+    .bootstrap-vodus .has-error .form-control:focus {
+        border-color: #843534;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    }
+
+.bootstrap-vodus .has-error .input-group-addon {
+    color: #a94442;
+    border-color: #a94442;
+    background-color: #f2dede;
+}
+
+.bootstrap-vodus .has-error .form-control-feedback {
+    color: #a94442;
+}
+
+.bootstrap-vodus .has-feedback label ~ .form-control-feedback {
+    top: 25px;
+}
+
+.bootstrap-vodus .has-feedback label.sr-only ~ .form-control-feedback {
+    top: 0;
+}
+
+.bootstrap-vodus .help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .bootstrap-vodus .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+
+    .bootstrap-vodus .form-inline .form-control-static {
+        display: inline-block;
+    }
+
+    .bootstrap-vodus .form-inline .input-group {
+        display: inline-table;
+        vertical-align: middle;
+    }
+
+        .bootstrap-vodus .form-inline .input-group .input-group-addon,
+        .bootstrap-vodus .form-inline .input-group .input-group-btn,
+        .bootstrap-vodus .form-inline .input-group .form-control {
+            width: auto;
+        }
+
+        .bootstrap-vodus .form-inline .input-group > .form-control {
+            width: 100%;
+        }
+
+    .bootstrap-vodus .form-inline .control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .bootstrap-vodus .form-inline .radio,
+    .bootstrap-vodus .form-inline .checkbox {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+        .bootstrap-vodus .form-inline .radio label,
+        .bootstrap-vodus .form-inline .checkbox label {
+            padding-left: 0;
+        }
+
+        .bootstrap-vodus .form-inline .radio input[type="radio"],
+        .bootstrap-vodus .form-inline .checkbox input[type="checkbox"] {
+            position: relative;
+            margin-left: 0;
+        }
+
+    .bootstrap-vodus .form-inline .has-feedback .form-control-feedback {
+        top: 0;
+    }
+}
+
+.bootstrap-vodus .form-horizontal .radio,
+.bootstrap-vodus .form-horizontal .checkbox,
+.bootstrap-vodus .form-horizontal .radio-inline,
+.bootstrap-vodus .form-horizontal .checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px;
+}
+
+.bootstrap-vodus .form-horizontal .radio,
+.bootstrap-vodus .form-horizontal .checkbox {
+    min-height: 27px;
+}
+
+.bootstrap-vodus .form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .form-horizontal .control-label {
+        text-align: right;
+        margin-bottom: 0;
+        padding-top: 7px;
+    }
+}
+
+.bootstrap-vodus .form-horizontal .has-feedback .form-control-feedback {
+    right: 15px;
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .form-horizontal .form-group-lg .control-label {
+        padding-top: 11px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .bootstrap-vodus .form-horizontal .form-group-sm .control-label {
+        padding-top: 6px;
+        font-size: 12px;
+    }
+}
+
+.bootstrap-vodus .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .bootstrap-vodus .btn:focus,
+    .bootstrap-vodus .btn:active:focus,
+    .bootstrap-vodus .btn.active:focus,
+    .bootstrap-vodus .btn.focus,
+    .bootstrap-vodus .btn:active.focus,
+    .bootstrap-vodus .btn.active.focus {
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+    .bootstrap-vodus .btn:hover,
+    .bootstrap-vodus .btn:focus,
+    .bootstrap-vodus .btn.focus {
+        text-decoration: none;
+    }
+
+    .bootstrap-vodus .btn:active,
+    .bootstrap-vodus .btn.active {
+        outline: 0;
+        background-image: none;
+        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+
+    .bootstrap-vodus .btn.disabled,
+    .bootstrap-vodus .btn[disabled],
+    .bootstrap-vodus fieldset[disabled] .btn {
+        cursor: not-allowed;
+        opacity: 0.65;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.bootstrap-vodus a.btn.disabled,
+.bootstrap-vodus fieldset[disabled] a.btn {
+    pointer-events: none;
+}
+
+.bootstrap-vodus .btn-default {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+    .bootstrap-vodus .btn-default:focus,
+    .bootstrap-vodus .btn-default.focus {
+        color: #333333;
+        background-color: #e6e6e6;
+        border-color: #8c8c8c;
+    }
+
+    .bootstrap-vodus .btn-default:hover {
+        color: #333333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+
+    .bootstrap-vodus .btn-default:active,
+    .bootstrap-vodus .btn-default.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-default {
+        color: #333333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+
+        .bootstrap-vodus .btn-default:active:hover,
+        .bootstrap-vodus .btn-default.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-default:hover,
+        .bootstrap-vodus .btn-default:active:focus,
+        .bootstrap-vodus .btn-default.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-default:focus,
+        .bootstrap-vodus .btn-default:active.focus,
+        .bootstrap-vodus .btn-default.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-default.focus {
+            color: #333333;
+            background-color: #d4d4d4;
+            border-color: #8c8c8c;
+        }
+
+    .bootstrap-vodus .btn-default:active,
+    .bootstrap-vodus .btn-default.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-default {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-default.disabled:hover,
+    .bootstrap-vodus .btn-default[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-default:hover,
+    .bootstrap-vodus .btn-default.disabled:focus,
+    .bootstrap-vodus .btn-default[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-default:focus,
+    .bootstrap-vodus .btn-default.disabled.focus,
+    .bootstrap-vodus .btn-default[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-default.focus {
+        background-color: #ffffff;
+        border-color: #cccccc;
+    }
+
+    .bootstrap-vodus .btn-default .badge {
+        color: #ffffff;
+        background-color: #333333;
+    }
+
+.bootstrap-vodus .btn-primary {
+    color: #ffffff;
+    background-color: #7030A0;
+    border-color: #7030A0;
+}
+
+    .bootstrap-vodus .btn-primary:focus,
+    .bootstrap-vodus .btn-primary.focus {
+        color: #ffffff;
+        background-color: #371153;
+        border-color: #371153;
+    }
+
+    .bootstrap-vodus .btn-primary:hover {
+        color: #ffffff;
+        background-color: #371153;
+        border-color: #371153;
+    }
+
+    .bootstrap-vodus .btn-primary:active,
+    .bootstrap-vodus .btn-primary.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-primary {
+        color: #ffffff;
+        background-color: #371153;
+        border-color: #371153;
+    }
+
+        .bootstrap-vodus .btn-primary:active:hover,
+        .bootstrap-vodus .btn-primary.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-primary:hover,
+        .bootstrap-vodus .btn-primary:active:focus,
+        .bootstrap-vodus .btn-primary.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-primary:focus,
+        .bootstrap-vodus .btn-primary:active.focus,
+        .bootstrap-vodus .btn-primary.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-primary.focus {
+            color: #ffffff;
+            background-color: #204d74;
+            border-color: #122b40;
+        }
+
+    .bootstrap-vodus .btn-primary:active,
+    .bootstrap-vodus .btn-primary.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-primary {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-primary.disabled:hover,
+    .bootstrap-vodus .btn-primary[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-primary:hover,
+    .bootstrap-vodus .btn-primary.disabled:focus,
+    .bootstrap-vodus .btn-primary[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-primary:focus,
+    .bootstrap-vodus .btn-primary.disabled.focus,
+    .bootstrap-vodus .btn-primary[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-primary.focus {
+        background-color: #337ab7;
+        border-color: #2e6da4;
+    }
+
+    .bootstrap-vodus .btn-primary .badge {
+        color: #337ab7;
+        background-color: #ffffff;
+    }
+
+.bootstrap-vodus .btn-success {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+    .bootstrap-vodus .btn-success:focus,
+    .bootstrap-vodus .btn-success.focus {
+        color: #ffffff;
+        background-color: #449d44;
+        border-color: #255625;
+    }
+
+    .bootstrap-vodus .btn-success:hover {
+        color: #ffffff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .bootstrap-vodus .btn-success:active,
+    .bootstrap-vodus .btn-success.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-success {
+        color: #ffffff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+        .bootstrap-vodus .btn-success:active:hover,
+        .bootstrap-vodus .btn-success.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-success:hover,
+        .bootstrap-vodus .btn-success:active:focus,
+        .bootstrap-vodus .btn-success.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-success:focus,
+        .bootstrap-vodus .btn-success:active.focus,
+        .bootstrap-vodus .btn-success.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-success.focus {
+            color: #ffffff;
+            background-color: #398439;
+            border-color: #255625;
+        }
+
+    .bootstrap-vodus .btn-success:active,
+    .bootstrap-vodus .btn-success.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-success {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-success.disabled:hover,
+    .bootstrap-vodus .btn-success[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-success:hover,
+    .bootstrap-vodus .btn-success.disabled:focus,
+    .bootstrap-vodus .btn-success[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-success:focus,
+    .bootstrap-vodus .btn-success.disabled.focus,
+    .bootstrap-vodus .btn-success[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-success.focus {
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+
+    .bootstrap-vodus .btn-success .badge {
+        color: #5cb85c;
+        background-color: #ffffff;
+    }
+
+.bootstrap-vodus .btn-info {
+    color: #ffffff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+    .bootstrap-vodus .btn-info:focus,
+    .bootstrap-vodus .btn-info.focus {
+        color: #ffffff;
+        background-color: #31b0d5;
+        border-color: #1b6d85;
+    }
+
+    .bootstrap-vodus .btn-info:hover {
+        color: #ffffff;
+        background-color: #31b0d5;
+        border-color: #269abc;
+    }
+
+    .bootstrap-vodus .btn-info:active,
+    .bootstrap-vodus .btn-info.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-info {
+        color: #ffffff;
+        background-color: #31b0d5;
+        border-color: #269abc;
+    }
+
+        .bootstrap-vodus .btn-info:active:hover,
+        .bootstrap-vodus .btn-info.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-info:hover,
+        .bootstrap-vodus .btn-info:active:focus,
+        .bootstrap-vodus .btn-info.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-info:focus,
+        .bootstrap-vodus .btn-info:active.focus,
+        .bootstrap-vodus .btn-info.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-info.focus {
+            color: #ffffff;
+            background-color: #269abc;
+            border-color: #1b6d85;
+        }
+
+    .bootstrap-vodus .btn-info:active,
+    .bootstrap-vodus .btn-info.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-info {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-info.disabled:hover,
+    .bootstrap-vodus .btn-info[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-info:hover,
+    .bootstrap-vodus .btn-info.disabled:focus,
+    .bootstrap-vodus .btn-info[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-info:focus,
+    .bootstrap-vodus .btn-info.disabled.focus,
+    .bootstrap-vodus .btn-info[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-info.focus {
+        background-color: #5bc0de;
+        border-color: #46b8da;
+    }
+
+    .bootstrap-vodus .btn-info .badge {
+        color: #5bc0de;
+        background-color: #ffffff;
+    }
+
+.bootstrap-vodus .btn-warning {
+    color: #ffffff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+    .bootstrap-vodus .btn-warning:focus,
+    .bootstrap-vodus .btn-warning.focus {
+        color: #ffffff;
+        background-color: #ec971f;
+        border-color: #985f0d;
+    }
+
+    .bootstrap-vodus .btn-warning:hover {
+        color: #ffffff;
+        background-color: #ec971f;
+        border-color: #d58512;
+    }
+
+    .bootstrap-vodus .btn-warning:active,
+    .bootstrap-vodus .btn-warning.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-warning {
+        color: #ffffff;
+        background-color: #ec971f;
+        border-color: #d58512;
+    }
+
+        .bootstrap-vodus .btn-warning:active:hover,
+        .bootstrap-vodus .btn-warning.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-warning:hover,
+        .bootstrap-vodus .btn-warning:active:focus,
+        .bootstrap-vodus .btn-warning.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-warning:focus,
+        .bootstrap-vodus .btn-warning:active.focus,
+        .bootstrap-vodus .btn-warning.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-warning.focus {
+            color: #ffffff;
+            background-color: #d58512;
+            border-color: #985f0d;
+        }
+
+    .bootstrap-vodus .btn-warning:active,
+    .bootstrap-vodus .btn-warning.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-warning {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-warning.disabled:hover,
+    .bootstrap-vodus .btn-warning[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-warning:hover,
+    .bootstrap-vodus .btn-warning.disabled:focus,
+    .bootstrap-vodus .btn-warning[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-warning:focus,
+    .bootstrap-vodus .btn-warning.disabled.focus,
+    .bootstrap-vodus .btn-warning[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-warning.focus {
+        background-color: #f0ad4e;
+        border-color: #eea236;
+    }
+
+    .bootstrap-vodus .btn-warning .badge {
+        color: #f0ad4e;
+        background-color: #ffffff;
+    }
+
+.bootstrap-vodus .btn-danger {
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+    .bootstrap-vodus .btn-danger:focus,
+    .bootstrap-vodus .btn-danger.focus {
+        color: #ffffff;
+        background-color: #c9302c;
+        border-color: #761c19;
+    }
+
+    .bootstrap-vodus .btn-danger:hover {
+        color: #ffffff;
+        background-color: #c9302c;
+        border-color: #ac2925;
+    }
+
+    .bootstrap-vodus .btn-danger:active,
+    .bootstrap-vodus .btn-danger.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-danger {
+        color: #ffffff;
+        background-color: #c9302c;
+        border-color: #ac2925;
+    }
+
+        .bootstrap-vodus .btn-danger:active:hover,
+        .bootstrap-vodus .btn-danger.active:hover,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-danger:hover,
+        .bootstrap-vodus .btn-danger:active:focus,
+        .bootstrap-vodus .btn-danger.active:focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-danger:focus,
+        .bootstrap-vodus .btn-danger:active.focus,
+        .bootstrap-vodus .btn-danger.active.focus,
+        .bootstrap-vodus .open > .dropdown-toggle.btn-danger.focus {
+            color: #ffffff;
+            background-color: #ac2925;
+            border-color: #761c19;
+        }
+
+    .bootstrap-vodus .btn-danger:active,
+    .bootstrap-vodus .btn-danger.active,
+    .bootstrap-vodus .open > .dropdown-toggle.btn-danger {
+        background-image: none;
+    }
+
+    .bootstrap-vodus .btn-danger.disabled:hover,
+    .bootstrap-vodus .btn-danger[disabled]:hover,
+    .bootstrap-vodus fieldset[disabled] .btn-danger:hover,
+    .bootstrap-vodus .btn-danger.disabled:focus,
+    .bootstrap-vodus .btn-danger[disabled]:focus,
+    .bootstrap-vodus fieldset[disabled] .btn-danger:focus,
+    .bootstrap-vodus .btn-danger.disabled.focus,
+    .bootstrap-vodus .btn-danger[disabled].focus,
+    .bootstrap-vodus fieldset[disabled] .btn-danger.focus {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+    }
+
+    .bootstrap-vodus .btn-danger .badge {
+        color: #d9534f;
+        background-color: #ffffff;
+    }
+
+.bootstrap-vodus .btn-link {
+    color: #337ab7;
+    font-weight: normal;
+    border-radius: 0;
+}
+
+    .bootstrap-vodus .btn-link,
+    .bootstrap-vodus .btn-link:active,
+    .bootstrap-vodus .btn-link.active,
+    .bootstrap-vodus .btn-link[disabled],
+    .bootstrap-vodus fieldset[disabled] .btn-link {
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+        .bootstrap-vodus .btn-link,
+        .bootstrap-vodus .btn-link:hover,
+        .bootstrap-vodus .btn-link:focus,
+        .bootstrap-vodus .btn-link:active {
+            border-color: transparent;
+        }
+
+            .bootstrap-vodus .btn-link:hover,
+            .bootstrap-vodus .btn-link:focus {
+                color: #23527c;
+                text-decoration: underline;
+                background-color: transparent;
+            }
+
+            .bootstrap-vodus .btn-link[disabled]:hover,
+            .bootstrap-vodus fieldset[disabled] .btn-link:hover,
+            .bootstrap-vodus .btn-link[disabled]:focus,
+            .bootstrap-vodus fieldset[disabled] .btn-link:focus {
+                color: #777777;
+                text-decoration: none;
+            }
+
+.bootstrap-vodus .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.bootstrap-vodus .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-vodus .btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-vodus .btn-block {
+    display: block;
+    width: 100%;
+}
+
+    .bootstrap-vodus .btn-block + .btn-block {
+        margin-top: 5px;
+    }
+
+.bootstrap-vodus input[type="submit"].btn-block,
+.bootstrap-vodus input[type="reset"].btn-block,
+.bootstrap-vodus input[type="button"].btn-block {
+    width: 100%;
+}
+
+.bootstrap-vodus .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+    .bootstrap-vodus .input-group[class*="col-"] {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .bootstrap-vodus .input-group .form-control {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+        .bootstrap-vodus .input-group .form-control:focus {
+            z-index: 3;
+        }
+
+.bootstrap-vodus .input-group-lg > .form-control,
+.bootstrap-vodus .input-group-lg > .input-group-addon,
+.bootstrap-vodus .input-group-lg > .input-group-btn > .btn {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.bootstrap-vodus select.input-group-lg > .form-control,
+.bootstrap-vodus select.input-group-lg > .input-group-addon,
+.bootstrap-vodus select.input-group-lg > .input-group-btn > .btn {
+    height: 46px;
+    line-height: 46px;
+}
+
+.bootstrap-vodus textarea.input-group-lg > .form-control,
+.bootstrap-vodus textarea.input-group-lg > .input-group-addon,
+.bootstrap-vodus textarea.input-group-lg > .input-group-btn > .btn,
+.bootstrap-vodus select[multiple].input-group-lg > .form-control,
+.bootstrap-vodus select[multiple].input-group-lg > .input-group-addon,
+.bootstrap-vodus select[multiple].input-group-lg > .input-group-btn > .btn {
+    height: auto;
+}
+
+.bootstrap-vodus .input-group-sm > .form-control,
+.bootstrap-vodus .input-group-sm > .input-group-addon,
+.bootstrap-vodus .input-group-sm > .input-group-btn > .btn {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-vodus select.input-group-sm > .form-control,
+.bootstrap-vodus select.input-group-sm > .input-group-addon,
+.bootstrap-vodus select.input-group-sm > .input-group-btn > .btn {
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-vodus textarea.input-group-sm > .form-control,
+.bootstrap-vodus textarea.input-group-sm > .input-group-addon,
+.bootstrap-vodus textarea.input-group-sm > .input-group-btn > .btn,
+.bootstrap-vodus select[multiple].input-group-sm > .form-control,
+.bootstrap-vodus select[multiple].input-group-sm > .input-group-addon,
+.bootstrap-vodus select[multiple].input-group-sm > .input-group-btn > .btn {
+    height: auto;
+}
+
+.bootstrap-vodus .input-group-addon,
+.bootstrap-vodus .input-group-btn,
+.bootstrap-vodus .input-group .form-control {
+    display: table-cell;
+}
+
+    .bootstrap-vodus .input-group-addon:not(:first-child):not(:last-child),
+    .bootstrap-vodus .input-group-btn:not(:first-child):not(:last-child),
+    .bootstrap-vodus .input-group .form-control:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+.bootstrap-vodus .input-group-addon,
+.bootstrap-vodus .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.bootstrap-vodus .input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555555;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+    .bootstrap-vodus .input-group-addon.input-sm {
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 3px;
+    }
+
+    .bootstrap-vodus .input-group-addon.input-lg {
+        padding: 10px 16px;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+
+    .bootstrap-vodus .input-group-addon input[type="radio"],
+    .bootstrap-vodus .input-group-addon input[type="checkbox"] {
+        margin-top: 0;
+    }
+
+    .bootstrap-vodus .input-group .form-control:first-child,
+    .bootstrap-vodus .input-group-addon:first-child,
+    .bootstrap-vodus .input-group-btn:first-child > .btn,
+    .bootstrap-vodus .input-group-btn:first-child > .btn-group > .btn,
+    .bootstrap-vodus .input-group-btn:first-child > .dropdown-toggle,
+    .bootstrap-vodus .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+    .bootstrap-vodus .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .bootstrap-vodus .input-group-addon:first-child {
+        border-right: 0;
+    }
+
+    .bootstrap-vodus .input-group .form-control:last-child,
+    .bootstrap-vodus .input-group-addon:last-child,
+    .bootstrap-vodus .input-group-btn:last-child > .btn,
+    .bootstrap-vodus .input-group-btn:last-child > .btn-group > .btn,
+    .bootstrap-vodus .input-group-btn:last-child > .dropdown-toggle,
+    .bootstrap-vodus .input-group-btn:first-child > .btn:not(:first-child),
+    .bootstrap-vodus .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .bootstrap-vodus .input-group-addon:last-child {
+        border-left: 0;
+    }
+
+.bootstrap-vodus .input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+    .bootstrap-vodus .input-group-btn > .btn {
+        position: relative;
+    }
+
+        .bootstrap-vodus .input-group-btn > .btn + .btn {
+            margin-left: -1px;
+        }
+
+        .bootstrap-vodus .input-group-btn > .btn:hover,
+        .bootstrap-vodus .input-group-btn > .btn:focus,
+        .bootstrap-vodus .input-group-btn > .btn:active {
+            z-index: 2;
+        }
+
+    .bootstrap-vodus .input-group-btn:first-child > .btn,
+    .bootstrap-vodus .input-group-btn:first-child > .btn-group {
+        margin-right: -1px;
+    }
+
+    .bootstrap-vodus .input-group-btn:last-child > .btn,
+    .bootstrap-vodus .input-group-btn:last-child > .btn-group {
+        z-index: 2;
+        margin-left: -1px;
+    }
+
+.bootstrap-vodus .clearfix:before,
+.bootstrap-vodus .clearfix:after,
+.bootstrap-vodus .form-horizontal .form-group:before,
+.bootstrap-vodus .form-horizontal .form-group:after {
+    content: " ";
+    display: table;
+}
+
+.bootstrap-vodus .clearfix:after,
+.bootstrap-vodus .form-horizontal .form-group:after {
+    clear: both;
+}
+
+.bootstrap-vodus .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bootstrap-vodus .pull-right {
+    float: right !important;
+}
+
+.bootstrap-vodus .pull-left {
+    float: left !important;
+}
+
+.bootstrap-vodus .hide {
+    display: none !important;
+}
+
+.bootstrap-vodus .show {
+    display: block !important;
+}
+
+.bootstrap-vodus .invisible {
+    visibility: hidden;
+}
+
+.bootstrap-vodus .text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.bootstrap-vodus .hidden {
+    display: none !important;
+}
+
+.bootstrap-vodus .affix {
+    position: fixed;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.bootstrap-vodus .visible-xs,
+.bootstrap-vodus .visible-sm,
+.bootstrap-vodus .visible-md,
+.bootstrap-vodus .visible-lg {
+    display: none !important;
+}
+
+.bootstrap-vodus .visible-xs-block,
+.bootstrap-vodus .visible-xs-inline,
+.bootstrap-vodus .visible-xs-inline-block,
+.bootstrap-vodus .visible-sm-block,
+.bootstrap-vodus .visible-sm-inline,
+.bootstrap-vodus .visible-sm-inline-block,
+.bootstrap-vodus .visible-md-block,
+.bootstrap-vodus .visible-md-inline,
+.bootstrap-vodus .visible-md-inline-block,
+.bootstrap-vodus .visible-lg-block,
+.bootstrap-vodus .visible-lg-inline,
+.bootstrap-vodus .visible-lg-inline-block {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-xs {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-xs {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-xs,
+    .bootstrap-vodus td.visible-xs {
+        display: table-cell !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-block {
+        display: block !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-inline {
+        display: inline !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .visible-xs-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-sm {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-sm {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-sm,
+    .bootstrap-vodus td.visible-sm {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .visible-sm-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-md {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-md {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-md,
+    .bootstrap-vodus td.visible-md {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .visible-md-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-lg {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-lg {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-lg,
+    .bootstrap-vodus td.visible-lg {
+        display: table-cell !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-inline {
+        display: inline !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .visible-lg-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bootstrap-vodus .hidden-xs {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .bootstrap-vodus .hidden-sm {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .bootstrap-vodus .hidden-md {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bootstrap-vodus .hidden-lg {
+        display: none !important;
+    }
+}
+
+.bootstrap-vodus .visible-print {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print {
+        display: block !important;
+    }
+
+    .bootstrap-vodus table.visible-print {
+        display: table !important;
+    }
+
+    .bootstrap-vodus tr.visible-print {
+        display: table-row !important;
+    }
+
+    .bootstrap-vodus th.visible-print,
+    .bootstrap-vodus td.visible-print {
+        display: table-cell !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-block {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-block {
+        display: block !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-inline {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-inline {
+        display: inline !important;
+    }
+}
+
+.bootstrap-vodus .visible-print-inline-block {
+    display: none !important;
+}
+
+@media print {
+    .bootstrap-vodus .visible-print-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media print {
+    .bootstrap-vodus .hidden-print {
+        display: none !important;
+    }
+}
