@@ -479,6 +479,7 @@
     object-fit: cover;
     top: 0;
     left: 0;
+    height: 100%;
 }
 .quesionaire-preview-question-mobile-preview .template-preview-answer-to-display {
     height: auto;
@@ -1677,6 +1678,10 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
 .survey-mcqsa-div > div.s-editable-text,
 .survey-ranking-div > div.s-editable-text {
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     padding: 5px 15px;
     background-color: transparent;
@@ -1923,7 +1928,7 @@ input.ripple {
     background-image: radial-gradient(circle, red 10%, transparent 10.01%);
     background-repeat: no-repeat;
     background-position: 50%;
-    transform: scale(10, 10);
+    transform: scale(1.5, 1.5);
     opacity: 0;
     transition: transform .5s, opacity 1s;
 }
@@ -1941,7 +1946,7 @@ input.ripple {
         background-image: radial-gradient(circle, red 10%, transparent 10.01%);
         background-repeat: no-repeat;
         background-position: 50%;
-        transform: scale(10, 10);
+        transform: scale(1.5, 1.5);
         opacity: 0;
         transition: transform .5s, opacity 1s;
     }
