@@ -4581,7 +4581,7 @@ function extractHostname(url) {
     var cssChecking = function checkRequiredCssBeforeDisplay() {
         var found = true;
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/bootstrap-vodus.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/survey.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-survey.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/toastr.min.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
@@ -4609,7 +4609,7 @@ function extractHostname(url) {
         //Common JS
         var common = document.createElement('script');
         common.type = "text/javascript";
-        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/vodus-common.js" + app.cacheCode;
+        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230430-1-vodus-main.js" + app.cacheCode;
         document.getElementsByTagName('head')[0].appendChild(common);
 
         if (app.debug) {
