@@ -4609,7 +4609,7 @@ function extractHostname(url) {
         //Common JS
         var common = document.createElement('script');
         common.type = "text/javascript";
-        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js" + app.cacheCode;
+        common.src = "https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/vodus-common.js" + app.cacheCode;
         document.getElementsByTagName('head')[0].appendChild(common);
 
         if (app.debug) {
