@@ -595,7 +595,7 @@ function initMcqOpenEndedAnswer(container, isMobile) {
 
     $(container).find(".open-ended-mcq").each(function () {
 
-        $(this).find(".s-editable-text").css("display", "block");
+        $(this).find(".s-editable-text").css("display", "flex");
         $(this).find(".mcq-open-ended-textarea").css("display", "none");
 
         $(this).find(".s-editable-text").unbind("click");
@@ -646,7 +646,7 @@ function initMcqOpenEndedAnswer(container, isMobile) {
 
                     $(this).removeClass("selectedAnswer")
                     $(this).find(".mcq-open-ended-textarea").css("display", "none");
-                    $(this).find(".s-editable-text").css("display", "block");
+                    $(this).find(".s-editable-text").css("display", "flex");
                 }
                 else {
 
