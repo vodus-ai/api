@@ -596,6 +596,7 @@ function initMcqOpenEndedAnswer(container, isMobile) {
     $(container).find(".open-ended-mcq").each(function () {
 
         $(this).find(".s-editable-text").css("display", "flex");
+        $(this).find(".mcqsa-mcqma-image-answer").css("display", "block");
         $(this).find(".mcq-open-ended-textarea").css("display", "none");
 
         $(this).find(".s-editable-text").unbind("click");
@@ -608,9 +609,10 @@ function initMcqOpenEndedAnswer(container, isMobile) {
 
         if ($(this).hasClass("survey-mcqsa-div")) {
             //For MCQSA
-            $(this).find(".s-editable-text").on("click", function (e) {
-
+            $(this).find(".s-editable-text, .mcqsa-mcqma-image-answer").on("click", function (e) {
                 $(this).css("display", "none");
+                $(this).siblings(".s-editable-text").css("display", "none");
+                $(this).siblings(".mcqsa-mcqma-image-answer").css("display", "none");
                 $(this).siblings(".mcq-open-ended-textarea").css("display", "flex");
                 $(this).siblings(".mcq-open-ended-textarea").find("textarea").focus();
 
@@ -629,6 +631,7 @@ function initMcqOpenEndedAnswer(container, isMobile) {
                     $(this).parent().addClass("selectedAnswer");
 
                     $(this).css("display", "none");
+                    $(this).siblings(".mcqsa-mcqma-image-answer").css("display", "none");
                     $(this).siblings(".mcq-open-ended-textarea").css("display", "flex");
                     $(this).siblings(".mcq-open-ended-textarea").find("textarea").focus();
                 }
@@ -646,12 +649,14 @@ function initMcqOpenEndedAnswer(container, isMobile) {
 
                     $(this).removeClass("selectedAnswer")
                     $(this).find(".mcq-open-ended-textarea").css("display", "none");
+                    $(this).find(".mcqsa-mcqma-image-answer").css("display", "block");
                     $(this).find(".s-editable-text").css("display", "flex");
                 }
                 else {
 
                     $(this).addClass("selectedAnswer")
                     $(this).find(".mcq-open-ended-textarea").css("display", "flex");
+                    $(this).find(".mcqsa-mcqma-image-answer").css("display", "none");
                     $(this).find(".s-editable-text").css("display", "none");
                 }
             })
