@@ -576,23 +576,6 @@ function displayPlaceholderContent(obj) {
 }
 
 function initMcqOpenEndedAnswer(container, isMobile) {
-
-    //$(container).find(".survey-mcqma-div").each(function () {
-
-    //    if (!$(this).hasClass("open-ended-mcq")) {
-    //        $(this).on("click", function () {
-
-    //            if ($(this).hasClass("selectedAnswer")) {
-
-    //                $(this).removeClass("selectedAnswer");
-    //            }
-    //            else {
-    //                $(this).addClass("selectedAnswer");
-    //            }
-    //        })
-    //    }
-    //})
-
     $(container).find(".open-ended-mcq").each(function () {
 
         $(this).find(".s-editable-text").css("display", "block");
@@ -609,8 +592,11 @@ function initMcqOpenEndedAnswer(container, isMobile) {
 
         if ($(this).hasClass("survey-mcqsa-div")) {
             //For MCQSA
+            $(this).unbind("click");
+            $(this).unbind("onclick");
+
             $(this).on("click", function (e) {
-               $(this).find(".s-editable-text").css("display", "none");
+                $(this).find(".s-editable-text").css("display", "none");
                 $(this).find(".mcqsa-mcqma-image-answer").css("display", "none");
                 $(this).find(".mcq-open-ended-textarea").css("display", "flex");
                 $(this).find(".mcq-open-ended-textarea").find("textarea").focus();
