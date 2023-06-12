@@ -472,7 +472,7 @@
     padding: 0.2em 0.4em;
     text-align: center;
     overflow-wrap: break-word;
-    width: auto;
+    width: 100%;
     margin: auto;
 }
 .quesionaire-preview-question-mobile-preview .template-background-img > img {
