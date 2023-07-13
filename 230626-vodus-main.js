@@ -169,7 +169,7 @@ function extractHostname(url) {
         app.rootUrl = 'https://api-uat.vodus.com';
         app.ccRequestUrl = 'https://api-uat.vodus.com';
         app.vodus3PRootUrl = 'https://api-uat.vodus.com';
-        app.reward3PRootUrl = 'https://uat.vodus.my';
+        app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
         app.responseRootUrl = 'https://api-uat.vodus.com';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
         app.tingleUrl = 'https://api-uat.vodus.com';
@@ -190,11 +190,11 @@ function extractHostname(url) {
         app.rootUrl = 'http://localhost:7193';
         app.ccRequestUrl = 'http://localhost:7071';
         app.vodus3PRootUrl = 'https://api-uat.vodus.com';
-        app.reward3PRootUrl = 'https://uat.vodus.my';
+        app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
         app.responseRootUrl = 'http://localhost:7071';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'http://localhost:7193/cc/css/creator/survey.css';
-        app.commonjsUrl = 'http://localhost:7193/cc/scripts/vodus-common.js';
+        app.surveycssUrl = 'https://api-uat.vodus.com/cc/css/creator/survey.css';
+        app.commonjsUrl = 'https://api-uat.vodus.com/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'http://localhost:7071';
     }
     if (global.vodus.modalClosable != null) {
@@ -3012,7 +3012,7 @@ function extractHostname(url) {
                                 VodusRewardNoQuestionAvailable()
                             } else {
                                 if (app.isChainQuestion) {
-                                    var pointsGained = 1;
+                                    var pointsGained = 0;
                                     showThankYouMessage(app, pointsGained);
                                 } else {
                                     closeAllVodusModal();
