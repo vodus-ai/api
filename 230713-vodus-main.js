@@ -166,15 +166,15 @@ function extractHostname(url) {
         app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
     } else if (app.env == 'uat') {
-        app.rootUrl = 'https://api-uat.vodus.com';
-        app.ccRequestUrl = 'https://api-uat.vodus.com';
-        app.vodus3PRootUrl = 'https://api-uat.vodus.com';
+        app.rootUrl = 'https://vodus-api-uat.azurewebsites.net';
+        app.ccRequestUrl = 'https://vodus-api-uat.azurewebsites.net';
+        app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
-        app.responseRootUrl = 'https://api-uat.vodus.com';
+        app.responseRootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.tingleUrl = 'https://api-uat.vodus.com';
-        app.surveycssUrl = 'https://api-uat.vodus.com/cc/css/creator/survey.css';
-        app.commonjsUrl = 'https://api-uat.vodus.com/cc/scripts/vodus-common.js';
+        app.tingleUrl = 'https://vodus-api-uat.azurewebsites.net';
+        app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+        app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
     } else if (app.env == 'dev') {
         app.rootUrl = 'https://vodus-api-dev.azurewebsites.net';
@@ -183,18 +183,18 @@ function extractHostname(url) {
         app.reward3PRootUrl = 'https://vodus-rewards-dev.azurewebsites.net';
         app.responseRootUrl = 'https://vodus-dev.azurewebsites.net';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'https://api-uat.vodus.com/cc/css/creator/survey.css';
-        app.commonjsUrl = 'https://api-uat.vodus.com/cc/scripts/vodus-common.js';
+        app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+        app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
     } else if (app.env == 'local') {
         app.rootUrl = 'http://localhost:7193';
         app.ccRequestUrl = 'http://localhost:7071';
-        app.vodus3PRootUrl = 'https://api-uat.vodus.com';
+        app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
         app.responseRootUrl = 'http://localhost:7071';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'https://api-uat.vodus.com/cc/css/creator/survey.css';
-        app.commonjsUrl = 'https://api-uat.vodus.com/cc/scripts/vodus-common.js';
+        app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+        app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'http://localhost:7071';
     }
     if (global.vodus.modalClosable != null) {
@@ -244,7 +244,7 @@ function extractHostname(url) {
             //resyncRewardsUrl = 'http://voupon-uat.ap-southeast-1.elasticbeanstalk.com';
 
             resyncServerlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
-            resyncApiUrl = 'https://api-uat.vodus.com';
+            resyncApiUrl = 'https://vodus-api-uat.azurewebsites.net';
             resyncRewardsUrl = 'https://uat.vodus.my';
         } else if (env == 'dev') {
             resyncServerlessUrl = 'https://vodus-api-uat.azurewebsites.net';
@@ -252,7 +252,7 @@ function extractHostname(url) {
             resyncRewardsUrl = 'https://voupon-uat.azurewebsites.net';
         } else if (env == 'local') {
             resyncServerlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
-            resyncApiUrl = 'https://api-uat.vodus.com';
+            resyncApiUrl = 'https://vodus-api-uat.azurewebsites.net';
             resyncRewardsUrl = 'https://uat.vodus.my';
         }
         var resyncCookie = vodus.readCookie("Vodus.Token");
@@ -2713,6 +2713,7 @@ function extractHostname(url) {
                     scrollFunction(app)
                 }
                 else {
+                    scrollFunction(app);
                     $(window).bind('scroll', function () {
                         scrollFunction(app)
                     });
