@@ -3806,7 +3806,6 @@ input.gridOption {
     letter-spacing: 0.1em;
 }
 
-
 /*Vodus-Banner*/
 .vodus-banner {
     margin: auto;
@@ -3817,25 +3816,8 @@ input.gridOption {
         position: unset;
         bottom: unset;
         right: unset;
-    }
-
-        .vodus-banner .bootstrap-vodus .modal-dialog {
-            margin: auto;
-            max-width: 500px;
-        }
-
-
-
-/*Vodus-Banner*/
-.vodus-banner {
-    margin: auto;
-}
-
-    .vodus-banner .bootstrap-vodus {
-        position: unset;
-        bottom: unset;
-        right: unset;
         width: 100%;
+        line-height: 1.1em;
     }
 
         .vodus-banner .bootstrap-vodus .modal-dialog {
