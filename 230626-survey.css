@@ -642,7 +642,6 @@
     max-width: 100%;
     margin: 0;
     max-height: calc(2rem + 8px);
-    min-height: calc(1rem + 8px);
 }
 
 .bootstrap-vodus .mobile-question-container .left-header-container {
