@@ -3808,17 +3808,14 @@ input.gridOption {
 
 /*Vodus-Banner*/
 .vodus-banner .bootstrap-vodus {
+    position: unset;
+    bottom: unset;
+    right: unset;
+    width: 100%;
+    line-height: 1.1em;
     margin: auto;
     height: fit-content;
 }
-
-    .vodus-banner .bootstrap-vodus {
-        position: unset;
-        bottom: unset;
-        right: unset;
-        width: 100%;
-        line-height: 1.1em;
-    }
 
         .vodus-banner .bootstrap-vodus .modal-dialog {
             margin: auto;
