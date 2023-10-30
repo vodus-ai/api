@@ -3817,11 +3817,11 @@ input.gridOption {
     height: fit-content;
 }
 
-        .vodus-banner .bootstrap-vodus .modal-dialog {
-            margin: auto;
-            max-width: 400px;
-            z-index: 0;
-        }
+    .vodus-banner .bootstrap-vodus .modal-dialog {
+        margin: auto;
+        max-width: 400px;
+        z-index: 0;
+    }
 
     .vodus-banner .tingle-modal-box__content {
         min-width: 300px;
