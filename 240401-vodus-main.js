@@ -3784,8 +3784,6 @@ function extractHostname(url) {
                                     var thankyou_template = $(response);
                                     var pointsGained = 0;
 
-
-                                    $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
                                     $(".bootstrap-vodus").find(".mobile-bar-vodus").hide();
                                     $(".bootstrap-vodus").find(".mobile-footer-vodus").hide();
                                     $(".bootstrap-vodus").addClass("thankyou-banner");
@@ -4591,7 +4589,7 @@ function extractHostname(url) {
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/bootstrap-vodus.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.surveycssUrl + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/toastr.min.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/tingle.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/240404-tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/tingle/0.13.2/tingle.min.js"></script>'));
 
@@ -5086,8 +5084,6 @@ function addShowGetQuestionModal() {
                 } else if ($(".vodus-banner").length > 0 && app.ccType == "2" && app.isBannerMode) {
                     $(".bootstrap-vodus").detach().appendTo(".vodus-banner");
                 }
-
-                ; $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
             }
         }
     });
@@ -7248,7 +7244,6 @@ function showThankYouMessage(appS, pointsGainedS) {
     }
 
     if ((appS.ccType == "2") || (appS.ccType == "3")) {
-        $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
         $(".bootstrap-vodus").find(".mobile-bar-vodus").hide();
         $(".bootstrap-vodus").find(".mobile-footer-vodus").hide();
         $(".bootstrap-vodus").addClass("thankyou-banner");
