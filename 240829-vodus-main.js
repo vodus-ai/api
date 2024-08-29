@@ -2918,6 +2918,7 @@ function extractHostname(url) {
             $.ajax({
                 type: "POST",
                 dataType: 'json',
+                'content-Type': 'application/json',
                 data: JSON.stringify({
                     dmpAudienceTargetCode: app.dmpAudienceTargetCode,
                     ccTargetCode: app.ccTargetCode,
@@ -4914,7 +4915,7 @@ function addShowLoginModalEvent() {
             var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
             var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
             $(".syncType4").attr("href", syncType4).attr("target", "_blank");
-            $(".vodusLoginLink").attr("href", redirectUrl);
+            $(".vodusLoginLink").attr("href", redirectUrl)https://github.com/vodus-ai/api/tree/main;
             $(".vodusSignupLink").attr("href", redirectUrl);
         }
         else {
