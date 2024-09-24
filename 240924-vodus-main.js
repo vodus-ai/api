@@ -1,11 +1,3 @@
-/**
- * Vodus API
- *
- * @summary   Vodus API for commercial calling
- *
- * @link      www.vodus.com/developer/api
- * @since     0.0.2
- */
 var GlobalParameter
 
 function extractHostname(url) {
@@ -81,6 +73,7 @@ function extractHostname(url) {
         ccRequestUrl: '',
         ccTargetCode: (global.vodus.ccTargetCode != null && global.vodus.ccTargetCode != "" ? global.vodus.ccTargetCode : ""),
         dmpTargetCode: '',
+        dmpAudienceTargetCode: [],
         dmpUrl: global.vodus.dmpUrl,
         dmpType: global.vodus.dmpType,
         dmpCode: global.vodus.dmpCode,
@@ -162,7 +155,7 @@ function extractHostname(url) {
         app.reward3PRootUrl = 'https://vodus.my';
         app.responseRootUrl = 'https://api.vodus.com';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/240208-survey.css';
+        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/240912-survey.css';
         app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
     } else if (app.env == 'uat') {
@@ -205,7 +198,7 @@ function extractHostname(url) {
         app.skipQuestionStatusCheck = true;
     }
 
-    app.debug = false;
+    app.debug = true;
     if (global.vodus.q != null) {
         for (var i = 0; i < global.vodus.q.length; i++) {
             //  init
@@ -2135,13 +2128,12 @@ function extractHostname(url) {
         },
         getQuestionBeforeInternal: function getQuestionBeforeInternal() {
 
-           //   Recreate cookie
+            //   Recreate cookie
             var existingToken = vodus.readCookie('Vodus.Token');
-            if(existingToken !== null && existingToken !== "")
-            {
+            if (existingToken !== null && existingToken !== "") {
                 vodus.createCookie(app.cookieName, existingToken, 3650);
             }
-            
+
             if (app.isFingerprintingEnabled) {
                 vodus.getQuestionInternal();
                 return true;
@@ -2546,69 +2538,31 @@ function extractHostname(url) {
                     //  This is for testing purpose
                     if (typeof lotauds !== 'undefined') {
                         var lotaudsListId = [];
-
-                        if (lotauds != null) {
-                            if (lotauds == "test") {
-                                lotaudsListId.push("617060");
-                                lotaudsListId.push("333");
-                            } else {
-                                var obj = lotauds.Profile.Audiences["Audience"];
-                                for (var p in obj) {
-                                    if (obj.hasOwnProperty(p)) {
-                                        lotaudsListId.push(obj[p]["id"]);
-                                    }
-                                }
-                            }
-                        }
-
                         //  Check if single or multiple target code
-                        if (app.dmpTarget != null && app.dmpTarget != "") {
-                            if (app.dmpTarget.indexOf('|') > 0) {
-                                var targetCodeList = app.dmpTarget.split('|');
-                                var targetAudienceList = app.dmpTargetAudience.split(",");
-                                var targetExist = false;
-                                for (var i = 0; i < targetCodeList.length; i++) {
-                                    if (targetExist) {
-                                        break
-                                    }
-                                    var targetAudience = targetAudienceList[i].split(",");
-                                    if (lotaudsListId != null && lotaudsListId.length > 0 && targetAudience != null && targetAudience.length > 0) {
-
-                                        for (var i = 0; i < targetAudience.length; i++) {
-                                            if (lotaudsListId.includes(targetAudience[i])) {
-                                                if (app.dmpTargetCode == "") {
-                                                    app.dmpTargetCode = targetCodeList[i];
-                                                    targetExist = true;
-                                                }
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                            } else {
-                                var targetAudience = targetAudienceList[i].split(",");
-                                if (lotaudsListId != null && targetAudience != null && targetAudience.length > 0) {
-
-                                    for (var i = 0; i < targetAudience.length; i++) {
-                                        if (lotaudsListId.includes(targetAudience[i])) {
-                                            app.dmpTargetCode = app.dmpTargetCode;
-                                            break;
-                                        }
-                                    }
+                        var targetAudienceListContainer = app.dmpTargetAudience.split("|");
+                        console.log('targetAudienceListContainer',targetAudienceListContainer)
+                        for (var audTarget = 0; audTarget < targetAudienceListContainer.length; audTarget++) {
+                            var targetAudience = targetAudienceListContainer[audTarget].split(",");
+                            console.log('targetAudience',targetAudience)
+                            for (var aud = 0; aud < targetAudience.length; aud++) {
+                                if (lotaudsListId.includes(targetAudience[aud])) {
+                                    app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
+                                    targetExist = true;
+                                    break;
                                 }
                             }
                         }
                     }
-                    if (app.dmpTargetCode == null || app.dmpTargetCode == "") {
+                    console.log('aud',app.dmpAudienceTargetCode)
+                    if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
                         vodus.log("No DMP CC Target set, not qualified");
                     }
                     else {
-                        vodus.log("DMP CC Target => " + app.dmpTargetCode);
+                        vodus.log("DMP CC Target => " + app.dmpAudienceTargetCode);
                     }
                     vodus.setupCC();
                 }
                 else if (app.dmpType == "2") {
-
                     if (app.dmpCode != null && app.dmpCode != "") {
                         var lotameProfileWithCode = "lotame_" + app.dmpCode;
                         var lotameProfileId = eval(lotameProfileWithCode).getProfileId();
@@ -2620,20 +2574,23 @@ function extractHostname(url) {
                     var lotaudsList = localStorage.getItem("lotame_" + app.dmpCode + "_auds");
                     if (lotaudsList != null && lotaudsList != "") {
                         var lotaudsListId = lotaudsList.split(",");
-                        var targetAudienceList = app.dmpTargetAudience.split(",");
-                        vodus.log("DMP Target Audience : " + targetAudienceList);
-                        for (var i = 0; i < targetAudienceList.length; i++) {
-                            if (lotaudsListId.includes(targetAudienceList[i])) {
-                                app.dmpTargetCode = app.dmpTargetCode;
-                                vodus.log("DMP Qualified : " + targetAudienceList[i]);
-                                break;
+                        var targetAudienceContainerList = app.dmpTargetAudience.split("|");
+                        for(var aud = 0; aud < targetAudienceContainerList.length; aud++){
+                            var targetAudienceList = targetAudienceContainerList[aud].split(",");
+                            vodus.log("DMP Target Audience : " + targetAudienceList);
+                            for (var i = 0; i < targetAudienceList.length; i++) {
+                                if (lotaudsListId.includes(targetAudienceList[i])) {
+                                    app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
+                                    vodus.log("DMP Qualified : " + targetAudienceList[i]);
+                                    break;
+                                }
                             }
                         }
-                        if (app.dmpTargetCode == null || app.dmpTargetCode == "") {
+                        if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
                             vodus.log("No DMP CC Target set, not qualified");
                         }
                         else {
-                            vodus.log("DMP CC Target => " + app.dmpTargetCode);
+                            vodus.log("DMP CC Target => " + app.dmpAudienceTargetCode);
                         }
                     }
                     vodus.setupCC();
@@ -2651,14 +2608,14 @@ function extractHostname(url) {
             var isAllowed = false;
 
             if (app.userCountryCode) {
-                if(app.debug){
+                if (app.debug) {
                     console.log("Using userCountryCode: " + app.userCountryCode);
                 }
                 if (app.userCountryCode.toUpperCase() == "MY") {
                     isAllowed = true;
                 }
                 else {
-                    if(app.debug) {
+                    if (app.debug) {
                         console.log('CC not allowed from : ' + app.userCountryCode);
                     }
                 }
@@ -2666,7 +2623,6 @@ function extractHostname(url) {
             else {
                 const xhr = new XMLHttpRequest();
 
-                // listen for `onload` event
                 xhr.onload = () => {
                     // process response
                     if (xhr.status == 200) {
@@ -2677,6 +2633,12 @@ function extractHostname(url) {
                                 pair = pair.split('=');
                                 return (obj[pair[0]] = pair[1]), obj;
                             }, {});
+
+                        if(!rawData)
+                        {
+                            isAllowed = true;
+                            return isAllowed;
+                        }
                         if (rawData.loc == "MY") {
                             vodus.log("GEO passed: " + rawData.loc);
                             isAllowed = true;
@@ -2686,6 +2648,7 @@ function extractHostname(url) {
                         }
                     } else {
                         console.error('Error!');
+                        isAllowed = true;
                     }
                     return isAllowed;
                 };
@@ -2955,7 +2918,12 @@ function extractHostname(url) {
             $.ajax({
                 type: "POST",
                 dataType: 'json',
+                'content-Type': 'application/json',
+                "headers": {
+                    "Content-Type": "application/json",
+                },
                 data: JSON.stringify({
+                    dmpAudienceTargetCode: app.dmpAudienceTargetCode,
                     ccTargetCode: app.ccTargetCode,
                     dmpTargetCode: app.dmpTargetCode,
                     localStorageSync: localStorageSync,
@@ -2998,16 +2966,26 @@ function extractHostname(url) {
                 url: app.serverlessUrl + '/api/getQuestion',
                 success: function (response) {
 
-                    if(!response.successful){
+                    if (!response.successful) {
                         if (response.code == 999) {
                             vodus.deleteCookie("Vodus.Token");
                             vodus.deleteCookie("vodus_temp_token");
                             vodus.log('resetting token..');
                             $("#vodus_3PTest").html('<iframe id="vodus3PLogoutTest" width="0" height="0"  src="' + app.vodus3PRootUrl + '/v1/token/delete?partnerCode=' + app.partner_code + '" frameborder="0" allowfullscreen></iframe>');
                             return;
+                        } else if (response.code == 997) {
+                            if (app.partner_code == "vodus-reward") {
+                                VodusRewardSuspended(response.message)
+                            }
+                            console.log('Suspended until ' + response.message);
                         } else {
                             if (app.partner_code == "vodus-reward") {
                                 VodusRewardNoQuestionAvailable()
+                            } else if (app.partner_code == "vodus-mobile-app") {
+                                if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.sendMessage && window.webkit.messageHandlers.sendMessage.postMessage) {
+                                    vodus.log("Close Mobile App Web View");
+                                    noMoreSurveyMessageToApp();
+                                }
                             } else {
                                 if (app.isChainQuestion) {
                                     var pointsGained = 0;
@@ -3020,7 +2998,7 @@ function extractHostname(url) {
                         vodus.log('No more question: \n' + response.message);
                         return;
                     }
-                  
+
                     //response.successful = false;
 
                     /* //Disabled errorLog function//
@@ -3784,8 +3762,6 @@ function extractHostname(url) {
                                     var thankyou_template = $(response);
                                     var pointsGained = 0;
 
-
-                                    $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
                                     $(".bootstrap-vodus").find(".mobile-bar-vodus").hide();
                                     $(".bootstrap-vodus").find(".mobile-footer-vodus").hide();
                                     $(".bootstrap-vodus").addClass("thankyou-banner");
@@ -3996,7 +3972,7 @@ function extractHostname(url) {
             }
 
             var token = vodus.readCookie(app.cookieName);
-            
+
             var redirect = vodus.getRedirectUrl();
             if (redirect == null || redirect == "" || redirect == 'undefined') {
 
@@ -4177,7 +4153,7 @@ function extractHostname(url) {
                 if (rewardsAdsData == '') {
                     //  Add multiple default ads
                     adsList.push({
-                        pointRequired: 167,
+                        pointRequired: 176,
                         discountValue: 30,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/143/images/small_01_134c4fd2-41c2-4660-bd05-d4d8c772c07f.jpeg",
@@ -4191,21 +4167,7 @@ function extractHostname(url) {
                     });
 
                     adsList.push({
-                        pointRequired: 133,
-                        discountValue: 20,
-                        dealExpirationTypeId: 2,
-                        imageUrl: "https://vouponlive.blob.core.windows.net/products/19953/images/small_01_c1e0ab94-116f-47b7-ba8a-1b78489a18b5.jpeg",
-                        productUrl: "https://vodus.my/product/19953",
-                        productTitle: "Starbucks RM 20 Cash Voucher",
-                        merchantName: "Vodus",
-                        discountedPrice: "RM0",
-                        price: "RM20",
-                        totalDiscount: "RM20 OFF",
-                        productRecoId: 126
-                    });
-
-                    adsList.push({
-                        pointRequired: 67,
+                        pointRequired: 59,
                         discountValue: 10,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/19951/images/small_01_ab92503e-c538-4f8d-9c1d-2b35322e85f0.jpeg",
@@ -4219,7 +4181,7 @@ function extractHostname(url) {
                     });
 
                     adsList.push({
-                        pointRequired: 50,
+                        pointRequired: 59,
                         discountValue: 10,
                         dealExpirationTypeId: 2,
                         imageUrl: "https://vouponlive.blob.core.windows.net/products/127/images/small_01_e88be58c-8177-436e-9c57-38e43c559d38.jpeg",
@@ -4591,7 +4553,7 @@ function extractHostname(url) {
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/bootstrap-vodus.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.surveycssUrl + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/toastr.min.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/tingle.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/240404-tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/tingle/0.13.2/tingle.min.js"></script>'));
 
@@ -5086,8 +5048,6 @@ function addShowGetQuestionModal() {
                 } else if ($(".vodus-banner").length > 0 && app.ccType == "2" && app.isBannerMode) {
                     $(".bootstrap-vodus").detach().appendTo(".vodus-banner");
                 }
-
-                ; $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
             }
         }
     });
@@ -5242,7 +5202,7 @@ function addShowGetQuestionModal() {
                             if ($("#divQuestionaireEditorContainer").find(".answer-box").length == response.data.SurveyQuestionAnswers.length) {
                                 $(response.data.SurveyQuestionAnswers).each(function () {
                                     if (response.data.DemographicTypeId === 0) {
-                                        $(".answer-box").eq(answerElementCount).attr('id', this.Id); 
+                                        $(".answer-box").eq(answerElementCount).attr('id', this.Id);
                                         $(".answer-box").eq(answerElementCount).attr('data-redirect-url', this.RedirectUrl);
                                         answerElementCount++;
                                     }
@@ -5884,7 +5844,7 @@ function getQuestionHandler() {
         $(response.data.SurveyQuestionAnswers).each(function () {
             var sequenceNumber = response.data.SurveyQuestionAnswers[answerElementCount].AnswerSequenceNumber - 1;
             if ($(".answer-box .s-editable-text" + "#" + sequenceNumber).length == 1) {
-            //For psycho MCQ to map AnswerID against AnswerSequence
+                //For psycho MCQ to map AnswerID against AnswerSequence
                 $(".answer-box .s-editable-text" + "#" + sequenceNumber).parent().attr("id", app.questionData.data.SurveyQuestionAnswers[answerElementCount].Id);
             } else {
                 $(".answer-box").eq(answerElementCount).attr('id', this.Id);
@@ -6300,6 +6260,7 @@ function getQuestionHandler() {
     //Grid Question
 
     else if (response.data.QuestionTypeId === 5) {
+        submitEnabled = true;
         var currentRow = 0;
         var currentSelectedRow = 1;
         $(".s-selectable-text").css("border", "none");
@@ -6336,7 +6297,7 @@ function getQuestionHandler() {
                     var answerID = $(this).find(".gridOption").eq(0).attr("id");
                 }
                 currentRow++;
-                titleExtra += '<div class="mobileGridTitle" style="display:none;" answer-ID="' + answerID + '" id="mobileGridRow_' + currentRow + '"><span style="font-style:italic;">(' + currentRow + '/' + totalRows + ')</span><span id="mobileGridRowTitle_' + currentRow + '" style="margin-left:0.3em;" default-answer="' + defaultAnswer + '">' + $(this).find('td').eq(0).find('.s-selectable-text').text() + '</span></div>';
+                titleExtra += '<div class="mobileGridTitle" style="display:none;" answer-ID="' + answerID + '" id="mobileGridRow_' + currentRow + '"><span style="font-style:italic;">[' + currentRow + '/' + totalRows + ']</span><span id="mobileGridRowTitle_' + currentRow + '" style="margin-left:0.5em;" default-answer="' + defaultAnswer + '">' + $(this).find('td').eq(0).find('.s-selectable-text').text() + '</span></div>';
             });
 
             title += titleExtra;
@@ -6402,6 +6363,9 @@ function getQuestionHandler() {
 
                 if (!isGridBoolean) {
                     if (totalRows == totalResponded) {
+                        if (!submitEnabled) {
+                            return;
+                        }
                         if (answerIdList.length > 0) {
                             var questionTypeID = response.data.QuestionTypeId;
                             var surveyResponseViewModel = {
@@ -6430,6 +6394,9 @@ function getQuestionHandler() {
                     }
                 } else {
                     if (totalRows == totalResponded) {
+                        if (!submitEnabled) {
+                            return;
+                        }
                         vodus.log('answerIdList.length = ' + answerIdList.length);
                         if (answerIdList.length == 0) {
 
@@ -6526,7 +6493,7 @@ function getQuestionHandler() {
                 $(splittedAnswers).each(function () {
                     var answerID = splittedIds[currentRow - 1];
 
-                    titleExtra += '<div class="mobileGridTitle" style="display:none;" answer-ID="' + answerID + '" id="mobileGridRow_' + currentRow + '"><span style="font-style:italic;">(' + currentRow + '/' + totalRows + ')</span><span id="mobileGridRowTitle_' + currentRow + '" style="margin-left:0.3em;" default-answer="' + splittedDefaultAnswers[currentRow - 1] + '">' + splittedAnswers[currentRow - 1] + '</span></div>';
+                    titleExtra += '<div class="mobileGridTitle" style="display:none;" answer-ID="' + answerID + '" id="mobileGridRow_' + currentRow + '"><span style="font-style:italic;">[' + currentRow + '/' + totalRows + ']</span><span id="mobileGridRowTitle_' + currentRow + '" style="margin-left:0.5em;" default-answer="' + splittedDefaultAnswers[currentRow - 1] + '">' + splittedAnswers[currentRow - 1] + '</span></div>';
                     currentRow++;
                 });
 
@@ -6594,6 +6561,9 @@ function getQuestionHandler() {
 
                     if (!isGridBoolean) {
                         if (totalRows == totalResponded) {
+                            if (!submitEnabled) {
+                                return;
+                            }
                             if (answerIdList.length > 0) {
                                 var questionTypeID = response.data.QuestionTypeId;
                                 var surveyResponseViewModel = {
@@ -6622,6 +6592,9 @@ function getQuestionHandler() {
                         }
                     } else {
                         if (totalRows == totalResponded) {
+                            if (!submitEnabled) {
+                                return;
+                            }
                             if (answerIdList.length == 0) {
 
                                 var noneOfTheAbove = response.data.SurveyQuestionAnswers.filter(x => x.AnswerValue == 'None of the above')[0];
@@ -6805,6 +6778,9 @@ function getQuestionHandler() {
                     ccType: app.ccType,
                 };
 
+                if (!submitEnabled) {
+                    return;
+                }
                 submitEnabled = false;
                 vodus.setSurveyResponse(surveyResponseViewModel);
                 vodus.submitResponse();
@@ -7227,7 +7203,6 @@ function showThankYouMessage(appS, pointsGainedS) {
     }
 
     if ((appS.ccType == "2") || (appS.ccType == "3")) {
-        $(".bootstrap-vodus").append("<style>.tingle-enabled {position:unset;overflow:auto;}</style>");
         $(".bootstrap-vodus").find(".mobile-bar-vodus").hide();
         $(".bootstrap-vodus").find(".mobile-footer-vodus").hide();
         $(".bootstrap-vodus").addClass("thankyou-banner");
