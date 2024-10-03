@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400');
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif:700');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
-@import url('https://fonts.googleapis.com/css?family=Lora:700');
-@import url('https://fonts.googleapis.com/css?family=Merriweather:700');
-@import url('https://fonts.googleapis.com/css?family=Oxygen:400');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Pangolin');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
@@ -502,7 +502,7 @@
 
 .mobileGridTitle {
     margin-top: 0.1em;
-    text-align: left;
+    text-align: justify;
     display: flex;
     justify-content: center;
     font-weight: 600;
@@ -559,10 +559,6 @@
 .question-title-primary {
     background-color: white !important;
     color: #5A168E !important;
-}
-
-.droppable-template img {
-    height: auto;
 }
 
 .bootstrap-vodus .mobile-question-container,
@@ -3823,9 +3819,9 @@ input.gridOption {
         z-index: 0;
     }
 
-    .vodus-banner .tingle-modal-box__content {
-        min-width: 300px;
-    }
+.vodus-banner .tingle-modal-box__content {
+    min-width: 300px;
+}
 
 @media (min-width:400px) {
     .vodus-responded-toast .thankyou-product-container h5.autoclose-message {
