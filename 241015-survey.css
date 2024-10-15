@@ -1,0 +1,3988 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@font-face {
+    font-family: 'Gill Sans Con';
+    src: url("../webfont/ufonts.com_gillsans-condensed-bold.ttf") format("truetype"), url('../webfont/ufonts.com_gillsans-condensed-bold.eot?#iefix') format('embedded-opentype'), url('../webfont/ufonts.com_gillsans-condensed-bold.woff');
+}
+
+#vodus3PCookie, #reward_3PTest {
+    height: 0;
+}
+/* Surveys Content Css*/
+.bootstrap-vodus .modal-dialog {
+    width: 871px;
+    max-width: 871px;
+    font-family: 'Lato';
+    height: auto;
+    padding: 0;
+    margin-top: 0;
+}
+
+.bootstrap-vodus p,
+.bootstrap-vodus b {
+    font-family: 'Lato';
+    font-size: inherit;
+}
+
+#vodusLoader {
+    position: absolute;
+    left: 5px;
+    height: 480px;
+    width: 640px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999999999999;
+    font-size: 50px;
+    display: none;
+    opacity: 1;
+}
+    #vodusLoader .vodusLoaderContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+        #vodusLoader .vodusLoaderContent img {
+            height: 150px;
+        }
+
+.sso-modal {
+    background-size: cover;
+    height: 490px;
+    width: 100%;
+}
+
+#sso-desktop-content {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+    #sso-desktop-content .sso-left-container {
+        background: linear-gradient(#DEEBF7,#F2F2F2);
+        background-size: cover;
+        height: 100%;
+        color: #000;
+        min-height: -webkit-fill-available;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+.rewards-logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+    .rewards-logo-container img {
+        max-height: 40px;
+    }
+
+.sso-description-container {
+    float: left;
+    padding: 0 15px 20px;
+    margin: 8px 0;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bootstrap-vodus a:hover, .bootstrap-vodus a:focus {
+    text-decoration: none;
+}
+
+.bootstrap-vodus .your-vpoints a {
+    font-size: unset;
+    padding: 10px 15px;
+    background-color: #44546A;
+    border-radius: 20px;
+}
+
+.bootstrap-vodus .sso-description-title {
+    font-family: 'Lato';
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-style: italic;
+    color: #000;
+}
+
+.bootstrap-vodus .sso-description-paragraph {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.bootstrap-vodus .sso-description-icon {
+    width: 25%;
+}
+
+    .bootstrap-vodus .sso-description-icon img {
+        max-height: 50px;
+    }
+
+.bootstrap-vodus .sso-description-paragraph h4 {
+    width: 75%;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.bootstrap-vodus .sso-description-list {
+    padding-left: 30px;
+}
+
+    .bootstrap-vodus .sso-description-list li {
+        font-family: 'Lato';
+        font-size: 15px;
+        line-height: 1.2em;
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    .bootstrap-vodus .sso-description-list b {
+        font-weight: 900;
+    }
+
+.sso-left-container .back-button {
+    display: flex;
+    justify-content: center;
+}
+
+    .sso-left-container .back-button button {
+        font-family: 'Lato';
+        color: #fff;
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        transition: ease 0.5s;
+        box-shadow: inset 0 -0.1rem 0.5rem 0.3rem rgb(0 0 0 / 0%);
+        background: linear-gradient(90deg, #8C37F6, #5147FE);
+        border-radius: 5px;
+        text-transform: uppercase;
+        border: none;
+    }
+
+        .sso-left-container .back-button button:hover {
+            box-shadow: inset 0 -0.1rem 0.5rem 0.3rem rgba(0, 0, 0, 0.2);
+            background: linear-gradient(270deg, #8C37F6, #5147FE);
+        }
+
+.login-container,
+.signup-container {
+    float: left;
+    margin: 12px;
+}
+
+.sso-right-container .row {
+    margin: 0;
+}
+
+#vodusLoginDialog form input,
+#vodusSignupDialog form input {
+    font-family: 'Lato';
+}
+
+.bootstrap-vodus #vodusLoginDialog form input.btn,
+.bootstrap-vodus #vodusSignupDialog form input.btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(90deg, #8C37F6, #5147FE);
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+}
+
+    .bootstrap-vodus #vodusLoginModalContent .intro-btn:hover,
+    .bootstrap-vodus #vodusLoginDialog form input.btn:hover,
+    .bootstrap-vodus #vodusSignupDialog form input.btn:hover {
+        background: linear-gradient(270deg, #8C37F6, #5147FE);
+    }
+
+.sso-modal form a {
+    font-weight: lighter;
+    color: #676a6c;
+    font-family: 'Lato';
+}
+
+.sso-modal form #btnForgotPW h5 {
+    text-align: left;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.signup-container {
+    border-top: solid 1px #999;
+    margin-top: 0;
+}
+
+.sso-right-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.sso-right-content {
+    width: 100%;
+}
+
+.sso-right-container h1 {
+    font-size: 24px;
+    text-align: left;
+    font-family: 'Lato';
+    margin-top: 10px;
+}
+
+.sso-right-container form {
+    margin-top: 10px;
+}
+
+.sso-right-container .sso-or {
+    text-align: center;
+    margin-top: -8px;
+}
+
+    .sso-right-container .sso-or span {
+        background: white;
+        padding: 0 5px;
+        color: #999;
+    }
+
+.draggable-template {
+    z-index: 20;
+    cursor: move;
+}
+
+.tingle-modal-box .draggable-template {
+    cursor: auto;
+}
+
+.tingle-modal--overflow {
+    overflow-y: hidden;
+}
+
+.droppable-template {
+    z-index: 20;
+}
+
+    .droppable-template.drag-over {
+        color: red;
+    }
+
+    .droppable-template img {
+        vertical-align: middle;
+    }
+
+.question-countdown-bar-black {
+    display: none;
+    /* position: relative;
+    text-align: center;
+    height: 0.4em;
+    background: #5A168E; 
+    overflow: hidden;
+    -webkit-animation: QUESTION-LOADER 3s !important;
+    -moz-animation: QUESTION-LOADER 3s !important;
+    -o-animation: QUESTION-LOADER 3s !important;
+    animation: QUESTION-LOADER 3s !important;*/
+}
+
+/* Question Frame */
+#vodusQuestionModal {
+    padding-right: 0;
+}
+
+.bootstrap-vodus .modal-dialog {
+    max-width: 650px;
+    margin-bottom: 0;
+}
+
+.bootstrap-vodus .tablet-header-bar-vodus, .bootstrap-vodus .tablet-footer-bar-vodus {
+    display: block;
+}
+
+.bootstrap-vodus .tablet-header-bar-vodus, .question-frame-vodus {
+    margin: 0 auto;
+    float: none;
+}
+
+.bootstrap-vodus .modal-content {
+    float: left;
+    margin: 0 auto;
+    width: auto;
+    background-color: #ffffff;
+    box-shadow: 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.2), 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2), 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 8px;
+    transform: scale(0.9);
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.ctc-container {
+    width: 7%;
+    display: none;
+}
+
+.vodus-reward-response-to-close.text-primary-vodus,
+.vodus-reward-click-to-close {
+    margin: auto;
+    width: 26px;
+    padding: 4px 0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 16px;
+}
+
+.questionaire-editor-container,
+.edit-template-container,
+.s-content-template-preview-left-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+}
+
+.vodus-survey-question-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(255,255,255);
+    border: solid 5px #5A168E;
+    box-sizing: border-box;
+}
+
+.bootstrap-vodus .vodus-research-powered {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.bootstrap-vodus .vodus-research-logo {
+    padding-left: 0;
+}
+
+    .bootstrap-vodus .vodus-research-logo img {
+        float: left;
+        max-height: 18px;
+        max-width: 100%;
+        width: auto;
+        margin: 1px 0;
+    }
+
+.bootstrap-vodus .partnerLogo {
+    max-height: 38px;
+    width: auto;
+    margin: auto;
+}
+
+.bootstrap-vodus #sso-desktop-container .partnerLogo,
+.bootstrap-vodus #vodusAboutModalContent .partnerLogo,
+.bootstrap-vodus .mobile-sso-title-container .partnerLogo {
+    max-height: 30px;
+    width: auto;
+    margin: 0;
+    padding-left: 5px;
+    filter: drop-shadow(0 0px 2px rgba(255,255,256,0.5));
+}
+
+.bootstrap-vodus .vodusAboutLink {
+    cursor: pointer;
+}
+
+.bootstrap-vodus #vodusLoginDialog {
+    width: 650px;
+}
+
+.bootstrap-vodus #sso-desktop-container {
+    border: none;
+}
+
+/*form Mobile Display - Override small css*/
+
+/*Mobile Question format*/
+.mobile-question-container .modal-content {
+    background-color: #ffffff;
+    float: left;
+    border-bottom: 0;
+    width: 100%;
+    transform: none;
+}
+
+.mobile-question-container .modal-body {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.mobile-sso-title-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bootstrap-vodus .mobile-question-container .click-to-close,
+.bootstrap-vodus .mobile-question-container .vodus-reward-click-to-close {
+    font-size: 22px;
+    line-height: 10px;
+}
+
+.quesionaire-preview-question-mobile-preview .question-countdown-bar-black {
+    height: 4px;
+    margin-top: 0 !important;
+    display: none;
+}
+
+.quesionaire-preview-question-mobile-preview .question-countdown-bar {
+    height: 4px;
+}
+
+.bootstrap-vodus .quesionaire-preview-question-mobile-preview .s-editable-text {
+    padding: 0.2em 0.4em;
+    text-align: center;
+    overflow-wrap: break-word;
+    width: 100%;
+    margin: auto;
+}
+.quesionaire-preview-question-mobile-preview .template-background-img > img {
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.quesionaire-preview-question-mobile-preview .template-preview-answer-to-display {
+    height: auto;
+    border-radius: 10px;
+    width: 99% !important;
+    margin: 0.15em 0.5% !important;
+    position: relative;
+}
+
+    .quesionaire-preview-question-mobile-preview .template-preview-answer-to-display > div:nth-child(2) {
+        font-size: 0;
+    }
+
+.quesionaire-preview-question-mobile-preview .template-preview-title-to-display {
+    padding-right: 1%;
+    padding-left: 1%;
+    height: auto !important;
+    border-radius: 10px;
+}
+
+.mobileGridTitle {
+    margin-top: 0.1em;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.mobile-grid-2-col {
+    padding-left: 1px;
+    padding-right: 1px;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .mobile-grid-2-col .selectGridMobileAnswer {
+        width: 49% !important;
+        margin-left: 0.5% !important;
+        margin-right: 0.5% !important;
+    }
+
+.quesionaire-preview-question-mobile-preview > div {
+    -webkit-transition: none !important;
+    transition: none !important;
+    z-index: 2;
+}
+
+.questionaire-container-size-variable {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    height: 50vh;
+    max-height: 60vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1px;
+}
+
+    .questionaire-container-size-variable::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .questionaire-container-size-variable::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0);
+    }
+
+    .questionaire-container-size-variable::-webkit-scrollbar-track-piece {
+        background: rgba(187,187,187,0.7);
+    }
+
+.bootstrap-vodus .questionaire-container-size-variable > div {
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.question-title-primary {
+    background-color: white !important;
+    color: #5A168E !important;
+}
+
+.bootstrap-vodus .mobile-question-container,
+.bootstrap-vodus .mobile-vodusLoginDialog {
+    margin: 0 auto;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+    .bootstrap-vodus .mobile-question-container .vodus-research-mobile-powered {
+        padding: 0 5px 0 0;
+        text-align: right;
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        .bootstrap-vodus .mobile-question-container .vodus-research-mobile-powered span {
+            line-height: 20px;
+            font-size: 11px;
+        }
+
+    .bootstrap-vodus .mobile-question-container .vodus-research-mobile-logo {
+        padding-left: 5px;
+    }
+
+        .bootstrap-vodus .mobile-question-container .vodus-research-mobile-logo img {
+            float: left;
+            max-width: 100%;
+            margin: 2px 0;
+            width: auto;
+            height: 18px;
+        }
+
+.quesionaire-preview-question-mobile-preview .vodus-rating-question-type:not(:checked) > label {
+    margin-right: 37.5% !important;
+    width: 25% !important;
+    overflow: visible;
+}
+
+    .quesionaire-preview-question-mobile-preview .vodus-rating-question-type:not(:checked) > label > span {
+        left: 0 !important;
+    }
+
+    .quesionaire-preview-question-mobile-preview .vodus-rating-question-type:not(:checked) > label:before {
+        float: right;
+    }
+
+
+.mobile-vodusLoginDialog {
+    margin-top: 5%;
+}
+
+.bootstrap-vodus .mobile-question-container .wait-to-close-div,
+.bootstrap-vodus .mobile-question-container .click-to-close-div {
+    margin-bottom: 0;
+    font-size: 11px;
+    line-height: 1.3em;
+    padding: 2px 0;
+}
+
+.bootstrap-vodus .mobile-question-container .close-modal-instruction-container {
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+.bootstrap-vodus .mobile-question-container .close-modal-instruction {
+    text-align: center;
+    line-height: 1.25em;
+}
+
+.bootstrap-vodus .mobile-question-container .partnerLogo {
+    max-width: 100%;
+    margin: 0;
+    max-height: calc(2rem + 8px);
+    min-height: 1.6rem;
+}
+
+.bootstrap-vodus .mobile-question-container .left-header-container {
+    width: 23%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+    .bootstrap-vodus .mobile-question-container .left-header-container a {
+        cursor: pointer;
+        margin: auto;
+        display: flex;
+    }
+
+.bootstrap-vodus .mobile-question-container .center-header-container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.bootstrap-vodus .mobile-question-container .right-header-container {
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    width: 7%;
+    right: 0;
+    position: absolute;
+    z-index: 10000;
+}
+
+.bootstrap-vodus .mobile-question-container .mobile-bar-vodus {
+    margin: 0;
+    padding: 3px 5px 0;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+    .bootstrap-vodus .mobile-question-container .mobile-bar-vodus > div {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+.bootstrap-vodus .mobile-bar-vodus .vodus-reward-response-to-close.text-primary-vodus,
+.bootstrap-vodus .mobile-bar-vodus .vodus-reward-click-to-close-div {
+    width: 24px;
+    padding: 3px 0;
+}
+
+.bootstrap-vodus .mobile-question-container .question-purpose-container {
+    float: left;
+    padding: 0;
+    text-align: center;
+    width: 42%;
+}
+
+.bootstrap-vodus .close-modal-instruction {
+    font-weight: 600;
+}
+
+.bootstrap-vodus .mobile-question-container .more-info {
+    text-decoration: underline;
+}
+
+.bootstrap-vodus .mobile-question-container .more-info {
+    line-height: 1.2em;
+}
+
+.bootstrap-vodus .mobile-question-container .vodusMobileHeaderLoginContainer {
+    float: left;
+    width: 100%;
+    vertical-align: middle;
+}
+
+    .bootstrap-vodus .mobile-question-container .vodusMobileHeaderLoginContainer .signup-login {
+        float: left;
+        line-height: 16px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+.bootstrap-vodus .mobile-question-container .vodusMobileEmailIdContainer {
+    float: left;
+    width: 100%;
+    margin-bottom: -2px;
+    display: none;
+}
+
+.bootstrap-vodus .mobile-question-container .vodusMobileFooterRow {
+    display: flex;
+    align-items: center;
+}
+
+.bootstrap-vodus .mobile-question-container .header-bottom-container {
+    float: left;
+    width: 100%;
+}
+
+.your-vpoints {
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0 10px;
+}
+
+    .your-vpoints span.text-span-vodus {
+        color: #fff !important;
+    }
+
+    .your-vpoints span.vodusAvailablePoints {
+        font-size: 18px;
+        color: #fff !important;
+    }
+
+.bootstrap-vodus .mobile-vodusLoginDialog .intro-btn {
+    float: right;
+    color: white;
+    background: linear-gradient(90deg, #8C37F6, #5147FE);
+    box-shadow: none;
+    border: none;
+    padding: 8px 0;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.bootstrap-vodus .mobile-vodusLoginDialog #sso-back-btn {
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-size: 26px;
+    line-height: 1em;
+    font-weight: bold;
+}
+
+.login-button,
+.signup-button {
+    margin: 0 2.5% 10px;
+}
+
+.back-btn-top-left {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 1;
+}
+
+.bootstrap-vodus .mobile-question-container .email-id-vodus {
+    float: left;
+    max-width: 60%;
+}
+
+    .bootstrap-vodus .mobile-question-container .email-id-vodus p {
+        width: 100%;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        padding: 0;
+        line-height: 20px;
+        text-align: right;
+    }
+
+.bootstrap-vodus .mobile-question-container .logout-btn-vodus {
+    float: left;
+    margin: auto;
+    width: 40%;
+    font-size: 12px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.mobile-question-container .logout-btn-vodus span {
+    font-size: 11px;
+    cursor: pointer;
+    float: left;
+    line-height: 20px;
+}
+
+.bootstrap-vodus .mobile-question-container .vodusMobilePointsContainer {
+    width: 33%;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: flex-start;
+    display: flex;
+}
+
+    .bootstrap-vodus .mobile-question-container .vodusMobilePointsContainer .col-xs-6 {
+        padding: 0;
+    }
+
+.bootstrap-vodus .mobile-question-container .vpoints {
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 0;
+    line-height: 1.3em;
+    font-weight: bold;
+}
+
+.bootstrap-vodus .mobile-question-container .redeem-points-container {
+    float: right;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 0;
+    line-height: 1.3em;
+    padding-bottom: 2px;
+}
+
+.mobile-question-container .answer-box img {
+    height: 100%;
+    width: auto;
+    float: none;
+    position: static;
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
+}
+
+.bootstrap-vodus .mobile-question-container .answer-box {
+    margin: 0.1em 1%;
+    padding: 0.1em 0;
+}
+
+.bootstrap-vodus .mobile-question-container .survey-submit-btn {
+    margin-top: 0.15em;
+}
+
+.mobile-question-container .mcqsa-mcqma-image-answer {
+    height: 70px !important;
+}
+
+.mobile-question-container .mcqsa-mcqma-image-answer {
+    display: block;
+}
+
+.mobile-question-container .template-preview-image-box {
+    height: auto;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.mobile-question-container .hide-mcqsa-mcqma-image-answer,
+.mobile-question-container .hide-mobile-image-box {
+    display: none !important;
+    height: 0 !important;
+}
+
+.template-preview-image-box-with-padding {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-question-container .template-preview-image-box img {
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.mobile-question-container .template-background-img {
+    overflow: hidden;
+    min-height: 270px;
+    height: 100%;
+}
+
+.mobile-question-container .question-header-1 {
+    padding: 0.2em 0.6em !important;
+}
+
+.template-preview-textbox-to-display {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.question-textbox {
+    width: 100%;
+}
+/* Landscape */
+@media only screen and (orientation: landscape) {
+    .questionaire-container-size-variable {
+        height: 70%;
+    }
+
+    .mobile-question-container .img-responsive {
+        max-width: 130px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .ccType2 .mobile-question-container .img-responsive,
+    .ccType3 .mobile-question-container .img-responsive {
+        margin: auto;
+        height: auto;
+    }
+
+    .mobile-question-container {
+        margin: 0 auto;
+    }
+}
+
+/*Mobile SSO*/
+.modal-dialog.mobile-question-container,
+.modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog,
+.modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog {
+    padding: 0 1%;
+    color: #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#vodusLoginModalContent {
+    padding: 0;
+    overflow: hidden;
+    background-size: cover;
+}
+
+    #vodusLoginModalContent::-webkit-scrollbar {
+        width: 0;
+    }
+
+.modal-dialog.mobile-vodusLoginDialog h2,
+.modal-dialog.mobile-vodusLoginDialog h5 {
+    padding: 0 15px;
+}
+
+.modal-dialog.mobile-vodusLoginDialog h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.mobile-vodusLoginDialog .rewards-logo-container {
+    margin: 0 0 10px;
+}
+
+.modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog .modal-content,
+.modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog .modal-content {
+    background: linear-gradient(#DEEBF7,#F2F2F2);
+    background-size: cover;
+    transform: none;
+    width: 100%;
+}
+
+.mobile-vodusLoginDialog .LoginSignupContent {
+    background: transparent;
+    margin: 20px 15px 10px;
+    text-align: left;
+    float: left;
+    width: -webkit-fill-available;
+}
+
+    .mobile-vodusLoginDialog .LoginSignupContent form {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+.bootstrap-vodus .in-partnership {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bootstrap-vodus .in-partnership-text-container {
+    display: flex;
+    align-items: center;
+}
+
+.bootstrap-vodus .in-partnership-logo-container {
+    max-width: 40%;
+    align-items: center;
+    display: flex;
+}
+
+.bootstrap-vodus .partnership-row {
+    padding: 0;
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 100%;
+}
+
+.bootstrap-vodus .mobile-vodusLoginDialog .wisteria-flat-button {
+    background-color: white;
+    color: #371153;
+    border: #371153 solid 1px;
+}
+
+.bootstrap-vodus #sign-in-email {
+    font-size: 16px;
+    margin-top: 7px;
+    background-color: #7030A0;
+    border-color: #7030A0;
+    width: 100%;
+    height: 40px;
+}
+
+.bootstrap-vodus #vodusFacebookLogin {
+    font-size: 15px;
+    margin-top: 7px;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    width: 100%;
+    height: 2.5em;
+    padding: 0 5px;
+}
+
+    .bootstrap-vodus #vodusFacebookLogin .fa-facebook-f {
+        margin-right: 3px;
+        font-size: 15px;
+    }
+
+.bootstrap-vodus .mobile-fb-login-container {
+    text-align: center;
+    padding: 0 25px;
+    margin-bottom: 5px;
+}
+
+    .bootstrap-vodus .mobile-fb-login-container #vodusFacebookLogin {
+        font-size: 15px;
+    }
+
+.bootstrap-vodus #vodusGoogleLogin {
+    font-size: 15px;
+    margin-top: 7px;
+    background-image: none;
+    background-color: #DD4B39;
+    border-color: #DD4B39;
+    width: 100%;
+    height: 2.5em;
+    padding: 0 5px;
+}
+
+bootstrap-vodus #vodusGoogleLogin .fa-google {
+    margin-right: 3px;
+    font-size: 15px;
+}
+
+.bootstrap-vodus .mobile-google-login-container {
+    text-align: center;
+    padding: 0 23px;
+    margin-bottom: 5px;
+}
+
+    .bootstrap-vodus .mobile-google-login-container #vodusGoogleLogin {
+        font-size: 15px;
+    }
+
+.bootstrap-vodus .mobile-vodusLoginDialog .form-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px 0 2px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.mobile-vodusLoginDialog #btnForgotPW h5,
+.mobile-vodusLoginDialog .vodusAboutLink h5 {
+    text-transform: none;
+    font-weight: lighter;
+    font-family: 'Open Sans';
+}
+
+.mobile-vodusLoginDialog .not-yet-signed-up,
+.mobile-vodusLoginDialog .already-signed-up {
+    text-align: center;
+    font-style: italic;
+    color: #8C37F6;
+    margin: 5px 0;
+}
+
+.vodusLoginLink:hover,
+.vodusSignupLink:hover {
+    cursor: pointer;
+}
+
+.mobile-vodusLoginDialog .back-button {
+    display: flex;
+    justify-content: start;
+    margin-left: 5%;
+}
+
+    .mobile-vodusLoginDialog .back-button .btn {
+        text-transform: uppercase;
+    }
+
+.mobile-vodusLoginDialog .login-button,
+.mobile-vodusLoginDialog .signup-button,
+.mobile-vodusLoginDialog .back-button {
+    margin-bottom: 5px;
+    padding: 0;
+    width: 45%;
+}
+
+    .mobile-vodusLoginDialog .login-button button,
+    .mobile-vodusLoginDialog .signup-button button {
+        width: 100%;
+        color: #371153;
+        border: #371153 solid 1px;
+    }
+
+
+/*Tablet*/
+.bootstrap-vodus .tablet-header-bar-vodus {
+    width: 650px;
+    margin: 0;
+}
+
+.tablet-header-bar-vodus .left-container {
+    width: 18%;
+    float: left;
+    height: auto;
+    background: none;
+    padding-left: 8px;
+}
+
+.tablet-footer-bar-vodus .vpoints-container {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tablet-header-bar-vodus .vodusProfileContainer {
+    float: left;
+    width: 100%;
+}
+
+.tablet-footer-bar-vodus .vodusTokenEmail {
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.tablet-footer-bar-vodus .vodusTokenEmail,
+.tablet-footer-bar-vodus .btnVodusLogout,
+.tablet-footer-bar-vodus .vodus-research-powered span {
+    line-height: 20px;
+}
+
+.tablet-header-bar-vodus .question-purpose-container {
+    width: 25%;
+    float: left;
+    color: white;
+    text-align: center;
+}
+
+.tablet-header-bar-vodus .instruction-container {
+    width: 75%;
+    float: left;
+    color: #000000;
+    text-align: left;
+    margin: 0;
+    padding: 3px 15px 2px;
+    font-size: 18px;
+}
+
+.bootstrap-vodus .close-modal-instruction {
+    margin-bottom: 0;
+}
+
+.tablet-footer-bar-vodus .signup-login {
+    font-size: 16px;
+    text-align: center;
+}
+
+.mobile-question-container .vpoints a,
+.tablet-header-bar-vodus .vpoints a {
+    width: auto;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-question-container #vodusLoader {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.img-preloader {
+    background: linear-gradient(45deg, #415215,#C2BE30);
+    height: 0;
+}
+
+/*CC Type 2 & 3*/
+.ccType2.thankyou-banner .modal-content,
+.ccType3.thankyou-banner .modal-content {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.ccType2.thankyou-banner #vodusLoader,
+.ccType3.thankyou-banner #vodusLoader {
+    display: none !important;
+}
+
+/*CC Type 2*/
+.ccType2 .tingle-modal-box {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+
+.ccType2 .tingle-modal-box__content .mobile-question-container {
+    margin-top: 0;
+}
+
+.ccType2 .mobile-question-container .vodus-survey-question-container {
+    background-color: inherit !important;
+    color: #fff !important;
+}
+
+.ccType2.bootstrap-vodus .mobile-question-container .click-to-close,
+.ccType2.bootstrap-vodus .mobile-question-container .vodus-reward-click-to-close {
+    font-size: 12px;
+    line-height: 10px;
+}
+
+.ccType2 #divQuestionaireEditorContainer .template-background-img {
+    background-size: cover;
+    display: none;
+}
+
+.ccType2 .template-preview-answer-to-display div,
+.ccType2 .template-preview-answer-to-display .open-ended-answer {
+    color: #222222 !important;
+}
+
+.ccType2 .template-preview-answer-to-display .selectedAnswer div {
+    color: #371153 !important;
+}
+
+.ccType2 .vodus-slider-question-vertical-slider input[type=range]::-webkit-slider-thumb {
+    background-color: #9752cb !important;
+}
+
+.ccType2 #divQuestionaireEditorContainer {
+    background-color: transparent !important;
+}
+
+.ccType2 .tingle-modal-box__content .mobile-question-container,
+.ccType2 .tingle-modal-box__content .mobile-vodusLoginDialog,
+.ccType2 .tingle-modal-box__content #vodusAboutUsDialog {
+    max-width: 380px;
+    width: 100vw;
+}
+
+.ccType2 .tingle-modal-box__content #vodusLoginModalContent,
+.ccType2 .tingle-modal-box__content #vodusSignupModalContent,
+.ccType2 .tingle-modal-box__content #vodusAboutUsDialog {
+    overflow: auto;
+    min-height: 316px;
+}
+
+.ccType2.bootstrap-vodus .modal-dialog .modal-content,
+.ccType2 .modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog .modal-content,
+.ccType2 .modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog .modal-content {
+    background: #ffffff;
+    transform: none;
+    width: 100%;
+}
+
+.ccType2.bootstrap-vodus .mobile-vodusLoginDialog #vodusLoginModalContent .intro-btn,
+.ccType2.bootstrap-vodus .mobile-vodusLoginDialog #vodusSignupModalContent .intro-btn {
+    background-color: #371153;
+    background-image: none;
+    box-shadow: 0 0 1px 1px #aaaaaa, 0 1px 3px 0 rgba(0,0,0,0), inset 0 0px 5px 0px rgba(0,0,0,0);
+}
+
+    .ccType2.bootstrap-vodus .mobile-vodusLoginDialog #vodusLoginModalContent .intro-btn:hover,
+    .ccType2.bootstrap-vodus .mobile-vodusLoginDialog #vodusSignupModalContent .intro-btn:hover {
+        background-color: #4f1878;
+        background-image: none;
+    }
+
+.ccType2.bootstrap-vodus .close-modal-instruction {
+    color: #000000;
+}
+
+.ccType2.bootstrap-vodus .question-purpose {
+    color: #000000;
+}
+
+.ccType2 .question-countdown-bar-black {
+    display: none;
+}
+
+.ccType2 .quesionaire-preview-question-mobile-preview .template-preview-title-to-display {
+    padding: 0;
+}
+
+.ccType2 .mobile-question-container .survey-submit-btn,
+.ccType2 .mobile-question-container .answer-box {
+    background-color: #f5f5f5 !important;
+    box-shadow: 0 0 1px 1px #aaaaaa, 0 1px 3px 0 rgba(0,0,0,0), inset 0 0px 5px 0px rgba(0,0,0,0);
+}
+
+    .ccType2 .mobile-question-container .survey-submit-btn:hover,
+    .ccType2 .mobile-question-container .answer-box:hover {
+        box-shadow: 0 0 1px 1px #aaaaaa, 0 0.3rem 0.3rem 0 rgba(0,0,0,0.1), inset 0 0px 5px 0px rgba(0,0,0,0.1);
+    }
+
+
+.ccType2 .mobile-question-container .survey-submit-btn {
+    text-shadow: none;
+    font-weight: 600;
+    color: #371153 !important;
+    background-color: #fbf5ff !important;
+    margin-top: 5px;
+}
+
+    .ccType2 .mobile-question-container .survey-submit-btn:hover {
+        text-shadow: 0 0 1px rgba(0,0,0,0.4);
+    }
+
+.ccType2 .selectedAnswer.answer-box {
+    background-color: #fbf5ff !important;
+    color: #371153 !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 1px 2px #aaaaaa, 0 1px 3px 0 rgba(0,0,0,0), inset 0 0px 5px 0px rgba(0,0,0,0) !important;
+}
+
+.ccType2 .survey-submit-btn {
+    color: black !important;
+}
+
+.ccType2.bootstrap-vodus .s-editable-text.question-header-1,
+.ccType2 .mobile-question-container .answer-box {
+    font-family: 'Open Sans' !important;
+    font-weight: normal;
+    color: #000 !important;
+    background-color: transparent !important;
+}
+
+.ccType2.bootstrap-vodus .questionaire-container-size-variable > div {
+    min-height: 100px;
+}
+
+.ccType2 .mobile-footer-vodus {
+    padding-top: 0;
+}
+
+.ccType2 .mobile-footer-inner-container {
+    border-top: solid 1px #ffffff;
+    padding-top: 4px;
+    width: 100%;
+}
+
+.ccType2 .signup-login a {
+    float: left;
+}
+
+.ccType2 .rewards-logo-container img {
+    max-height: 40px;
+    width: auto;
+}
+
+.ccType2.bootstrap-vodus .sso-description-title {
+    font-size: 15px;
+}
+
+.ccType2.bootstrap-vodus .sso-description-list li {
+    font-size: 14px;
+}
+
+.ccType2 .sso-description-container {
+    padding: 0 30px;
+    margin-top: 10px;
+}
+
+.ccType2.bootstrap-vodus .mobile-vodusLoginDialog #sso-back-btn {
+}
+
+.ccType2 .modal-dialog.mobile-vodusLoginDialog h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.ccType2 .modal-dialog.mobile-vodusLoginDialog form {
+    margin-top: 12px;
+    padding: 0 20px;
+}
+
+.ccType2 #vodusLoginDialog form input,
+.ccType2 #vodusSignupDialog form input {
+    height: auto;
+}
+
+    .ccType2 #vodusLoginDialog form input.btn,
+    .ccType2 #vodusSignupDialog form input.btn {
+        font-size: 13px;
+    }
+
+.ccType2 .type2-redeem {
+    color: #fff;
+    font-size: 95%;
+}
+
+.ccType2 .your-vpoints .text-span-vodus,
+.ccType2 .modal-dialog.mobile-vodusLoginDialog h2, .modal-dialog.mobile-vodusLoginDialog h5 {
+    color: #000;
+}
+
+.ccType2 .template-preview-answer-to-display div.ranking-instruction {
+    color: #fff !important;
+}
+
+
+/*Type 3*/
+.ccType3 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    z-index: 9999999999999;
+    background: transparent;
+}
+
+    .ccType3 .tingle-modal-box {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+
+    .ccType3 .tingle-modal-box__content .mobile-question-container {
+        margin-top: 0;
+    }
+
+    .ccType3 .mobile-question-container .vodus-survey-question-container {
+        background-color: inherit !important;
+    }
+
+    .ccType3.bootstrap-vodus .mobile-question-container .click-to-close,
+    .ccType3.bootstrap-vodus .mobile-question-container .closeMessage-ctc-button,
+    .ccType3.bootstrap-vodus .mobile-question-container .vodus-reward-click-to-close {
+        font-size: 18px;
+        line-height: 10px;
+    }
+
+    .ccType3 #divQuestionaireEditorContainer .template-background-img {
+        background-size: cover;
+    }
+
+    .ccType3 .vodus-slider-question-vertical-slider input[type=range]::-webkit-slider-thumb {
+        background-color: #9752cb !important;
+    }
+
+    .ccType3 #divQuestionaireEditorContainer {
+        background-color: transparent !important;
+    }
+
+    .ccType3 .tingle-modal-box__content .mobile-question-container,
+    .ccType3 .tingle-modal-box__content .mobile-vodusLoginDialog,
+    .ccType3 .tingle-modal-box__content #vodusAboutUsDialog {
+        max-width: 380px;
+        width: 100vw;
+    }
+
+    .ccType3 .tingle-modal-box__content #vodusLoginModalContent,
+    .ccType3 .tingle-modal-box__content #vodusSignupModalContent,
+    .ccType3 .tingle-modal-box__content #vodusAboutUsDialog {
+        min-height: 316px;
+    }
+
+    .ccType3.bootstrap-vodus .modal-dialog .modal-content,
+    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog .modal-content,
+    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog .modal-content {
+        transform: none;
+        width: 100%;
+    }
+
+    .ccType3.bootstrap-vodus .mobile-vodusLoginDialog .intro-btn {
+    }
+
+    .ccType3.bootstrap-vodus .close-modal-instruction {
+    }
+
+    .ccType3.bootstrap-vodus a:hover {
+        text-decoration: none;
+    }
+
+    .ccType3 .question-countdown-bar-black {
+        display: none;
+    }
+
+    .ccType3 .quesionaire-preview-question-mobile-preview .template-preview-title-to-display {
+    }
+
+    .ccType3.bootstrap-vodus .s-editable-text.question-header-1,
+    .ccType3 .mobile-question-container .answer-box {
+        font-family: Lato !important;
+        font-weight: normal;
+    }
+
+    .ccType3.bootstrap-vodus .questionaire-container-size-variable > div {
+        min-height: 100px;
+    }
+
+    .ccType3 .mobile-footer-vodus {
+    }
+
+    .ccType3 .mobile-footer-inner-container {
+        border-top: solid 1px #ffffff;
+        padding-top: 4px;
+    }
+
+    .ccType3 .signup-login a {
+        float: left;
+    }
+
+    .ccType3 .rewards-logo-container {
+        background: url(https://api.vodus.com/cc/images/vodus-small-colored-logo.png) no-repeat center;
+        height: 40px;
+        background-size: contain;
+    }
+
+    .ccType3.bootstrap-vodus #vodusLoginModalContent .text-span-vodus,
+    .ccType3.bootstrap-vodus #vodusSignupModalContent .text-span-vodus {
+        color: #000 !important;
+    }
+
+        .ccType3.bootstrap-vodus #vodusLoginModalContent .text-span-vodus.vpoints,
+        .ccType3.bootstrap-vodus #vodusSignupModalContent .text-span-vodus.vpoints {
+            color: #fff !important;
+        }
+
+    .ccType3.bootstrap-vodus .sso-description-title {
+        font-size: 15px;
+        color: #fff;
+    }
+
+
+    .ccType3.bootstrap-vodus .sso-description-list li {
+        font-size: 14px;
+    }
+
+    .ccType3.bootstrap-vodus .mobile-vodusLoginDialog #sso-back-btn {
+        padding: 0;
+    }
+
+    .ccType3 .modal-dialog.mobile-vodusLoginDialog h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .ccType3 .modal-dialog.mobile-vodusLoginDialog form {
+        margin-top: 12px;
+    }
+
+    .ccType3 #vodusLoginDialog form input,
+    .ccType3 #vodusSignupDialog form input {
+        height: auto;
+    }
+
+        .ccType3 #vodusLoginDialog form input.btn,
+        .ccType3 #vodusSignupDialog form input.btn {
+            font-size: 13px;
+        }
+
+    .ccType3 .type2-redeem {
+        color: #371153;
+        font-size: 95%;
+    }
+
+        .ccType3 .type2-redeem:hover {
+            text-decoration: underline;
+        }
+
+
+/*Other styles*/
+.bootstrap-vodus .vodus-rewards-close-div {
+    display: flex;
+    justify-content: center;
+}
+
+.bootstrap-vodus .vodus-reward-click-to-close {
+    display: none;
+}
+
+.question-header-1 {
+    padding: 8px;
+    line-height: 1.3em;
+}
+
+.survey-submit-btn-selected, .s-editable-text-focus {
+    border: 1px dashed black !important;
+}
+
+.ranking-submission-box {
+    width: 100%;
+    padding: 10px;
+    border: dashed 3px #3d85c6;
+    background-color: rgba(61,133,198,0.5);
+}
+
+.survey-mcqma-div > div.s-editable-text-background,
+.survey-mcqsa-div > div.s-editable-text-background,
+.survey-list-question-div > div.s-editable-text-background,
+.survey-ranking-div > div.s-editable-text-background {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10 !important;
+}
+
+.survey-mcqma-div > div.selected_white,
+.survey-mcqsa-div > div.selected_white,
+.survey-list-question-div > div.selected_white,
+.survey-ranking-div > div.selected_white {
+    opacity: 0.5;
+}
+
+.survey-mcqma-div > div.s-editable-text,
+.survey-mcqsa-div > div.s-editable-text,
+.survey-ranking-div > div.s-editable-text {
+    width: 100%;
+    position: relative;
+    padding: 5px 15px;
+    background-color: transparent;
+}
+
+.survey-list-question-div > div.s-editable-text {
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 20 !important;
+    background-color: transparent !important;
+    display: table-cell;
+    vertical-align: middle !important;
+    padding: 5px 0 5px 0;
+}
+
+.template-background-img img {
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-user-drag: none;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.questionaire-template-background-img {
+    z-index: 1 !important;
+    text-align: center !important;
+}
+
+.answer-row {
+    width: 100%;
+    padding: 3px 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* -webkit-flex-flow: row wrap; */
+    justify-content: space-around;
+}
+
+.mcqsa-mcqma-image-answer {
+    text-align: center;
+}
+
+    .mcqsa-mcqma-image-answer img {
+        position: relative;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.survey-submit-btn,
+.mcq-open-ended-textarea-submit-btn {
+    cursor: pointer !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.bootstrap-vodus .survey-submit-btn,
+.bootstrap-vodus .mcq-open-ended-textarea-submit-btn {
+    margin: 0 auto;
+    line-height: 1.4em;
+    background-image: none;
+}
+
+.bootstrap-vodus .wisteria-flat-button,
+.bootstrap-vodus .mcq-open-ended-textarea-submit-btn {
+    position: relative;
+    vertical-align: middle;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 0 0.1rem rgba(0, 0, 0, 0.4), 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0), 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0);
+    border: 0;
+    padding: 4px 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: ease 0.2s;
+    border-radius: 15px;
+}
+
+    .bootstrap-vodus .wisteria-flat-button:hover,
+    .bootstrap-vodus .mcq-open-ended-textarea-submit-btn:hover {
+        box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2), 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2), 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .bootstrap-vodus .wisteria-flat-button:active {
+        top: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.bootstrap-vodus .open-ended-mcq .mcq-open-ended-textarea-submit-btn {
+    margin-top: 0;
+}
+
+.bootstrap-vodus .mobile-question-container .mobile-column-2 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 0.18em;
+    grid-column-gap: 1px;
+    padding-bottom: 5px;
+}
+
+    .bootstrap-vodus .mobile-question-container .mobile-column-2 > div {
+        grid-column: span 2;
+        width: 98% !important;
+    }
+
+        .bootstrap-vodus .mobile-question-container .mobile-column-2 > div:nth-last-child(1):nth-child(odd) {
+            grid-column: 2 / span 2;
+        }
+
+    .bootstrap-vodus .mobile-question-container .mobile-column-2 .survey-mcqma-div,
+    .bootstrap-vodus .mobile-question-container .mobile-column-2 .survey-mcqsa-div {
+    }
+
+.answer-box[data-nota="1"] {
+    display: none;
+}
+
+.survey-mcqma-div tr, .survey-mcqma-div td,
+.survey-mcqsa-div tr, .survey-mcqsa-div td,
+.survey-ranking-div tr, .survey-ranking-div td {
+    padding: 0 !important;
+}
+
+.survey-mcqma-div .s-editable-text, .survey-mcqma-div .s-editable-text,
+.survey-mcqsa-div .s-editable-text, .survey-mcqsa-div .s-editable-text,
+.survey-ranking-div .s-editable-text, .survey-ranking-div .s-editable-text {
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);*/
+    /*box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);*/
+    /*box-shadow: inset 0 -8px 20px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease 0s;*/
+}
+
+    .survey-mcqma-div .s-editable-text:hover,
+    .survey-mcqsa-div .s-editable-text:hover,
+    .survey-ranking-div .s-editable-text:hover {
+        /*box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .4), 0 6px 20px 0 rgba(0, 0, 0, 0.2);*/
+    }
+
+.survey-mcqma-div:focus, .survey-mcqma-div:focus,
+.survey-mcqsa-div:focus, .survey-mcqsa-div:focus,
+.survey-ranking-div:focus, .survey-ranking-div:focus {
+    border: solid 2px black;
+}
+
+
+.answer-box {
+    transition: box-shadow 0.15s ease 0s;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2), -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.2), 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0), 0 0.3rem 0.3rem 0 rgba(0, 0, 0, 0);
+    border-radius: 0.5rem;
+}
+
+.template-preview-answer-to-display-table-content .answer-box:hover {
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2), -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.2), 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2), 0 0.3rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.answer-box .s-editable-text {
+    width: 100%;
+    display: block;
+    padding: 15px;
+}
+
+.answer-box > div {
+    background-color: transparent;
+}
+
+.answer-box:hover .s-editable-text,
+.answer-box:hover .s-editable-text {
+    /*box-shadow: 0 8px 8px 0 rgba(0, 0, 0, .4), 0 8px 16px 0 rgba(0, 0, 0, 0.2), inset 0 -8px 20px 0 rgba(0, 0, 0, 0.4);*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4), 0 6px 20px 0 rgba(0, 0, 0, 0.2);*/
+}
+
+.answer-box.template-preview-answer-to-display-table-content {
+    box-shadow: none;
+}
+
+.grid-boolean {
+    display: flex;
+}
+
+    .grid-boolean .answer-row {
+        display: none;
+    }
+
+    .grid-boolean.grid-col-2 table {
+        width: 50% !important;
+        border-radius: 0;
+    }
+
+.ripple {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    z-index: 99999;
+    /*background-color: #f2f2f2 !important;*/
+}
+
+input.ripple {
+    background-color: #f7f7f7 !important;
+    box-shadow: none !important;
+}
+
+.submitted-question {
+    filter: grayscale(.5);
+    background-color: #d6d6d6;
+}
+
+.disabledButtons {
+    /*filter: grayscale(.1);*/
+}
+
+.greyOutButton {
+    background-color: #aaa !important;
+}
+
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, red 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+@-moz-document url-prefix() {
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5%;
+        top: 50%;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, red 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(1.5, 1.5);
+        opacity: 0;
+        transition: transform .5s, opacity 1s;
+    }
+
+    table {
+        border-collapse: inherit !important;
+    }
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .2;
+    transition: 0s;
+}
+
+/* -- Ripple effect -------------------------------- */
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.ink {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    background: red;
+    opacity: 1;
+}
+
+    .ink.animate {
+        -webkit-animation: ripple .5s linear;
+        -moz-animation: ripple .5s linear;
+        -ms-animation: ripple .5s linear;
+        -o-animation: ripple .5s linear;
+        animation: ripple .5s linear;
+    }
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+
+@-moz-keyframes ripple {
+    100% {
+        opacity: 0;
+        -moz-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+
+@-ms-keyframes ripple {
+    100% {
+        opacity: 0;
+        -ms-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+
+@-o-keyframes ripple {
+    100% {
+        opacity: 0;
+        -o-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+
+img#loader {
+    display: none;
+}
+
+.template-preview-answer-to-display,
+.template-preview-title-to-display {
+    text-align: center;
+}
+
+    .template-preview-answer-to-display select > option {
+        padding: 10px !important;
+    }
+
+    .template-preview-answer-to-display .btn:active {
+        box-shadow: none;
+    }
+
+.survey-mcqma-div, .survey-mcqsa-div, .survey-ranking-div {
+    height: 100%;
+    width: 100%;
+    float: left;
+    cursor: pointer !important;
+    position: relative;
+    /*border: 3px solid transparent;*/
+    margin: 0 3px;
+}
+
+.mobile-grid-div {
+    width: 98%;
+    display: table-cell;
+    float: left;
+    cursor: pointer !important;
+    position: relative;
+    /*border: 3px solid transparent;*/
+    margin: 0 3px;
+}
+
+/*Line Animation*/
+
+@-webkit-keyframes QUESTION-LOADER {
+    0% {
+        width: 0%;
+        left: 50%;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@-moz-keyframes QUESTION-LOADER {
+    0% {
+        width: 0%;
+        left: 50%;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@-o-keyframes QUESTION-LOADER {
+    0% {
+        width: 0%;
+        left: 50%;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@keyframes QUESTION-LOADER {
+    0% {
+        width: 0%;
+        left: 50%;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.table-style {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.wisteria-flat-button {
+    position: relative;
+    vertical-align: top;
+    font-size: 20px;
+    color: white;
+    /*max-width: 100px;*/
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #5A168E;
+    border: 0;
+    /*border-bottom: 2px solid #80399d;*/
+    cursor: pointer;
+    transition: all 0.15s ease 0s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.0), 0 6px 20px 0 rgba(0, 0, 0, 0.0), inset 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+    .wisteria-flat-button:hover {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1), inset 0 2px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .wisteria-flat-button:active {
+        top: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.mcq-image-box {
+    display: table;
+    text-align: center;
+    position: absolute;
+    left: 20px;
+    top: 116px;
+    width: 596px;
+    height: 90px;
+}
+
+.s-editable-text-focussurvey-mcqma-div {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease 0s;
+}
+
+    .s-editable-text-focussurvey-mcqma-div:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+/*Surveys Template*/
+.s-content-hidden {
+    display: none;
+}
+
+.bootstrap-vodus .modal-body {
+    padding: 0;
+}
+
+.template-preview-answer-to-display-table-content {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.quesionaire-preview-question-mobile-preview .template-preview-answer-to-display-table-content {
+    background-color: transparent !important;
+}
+
+.questionaire-background-color-div,
+.template-background-color-div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.open-ended-answer {
+    background: transparent;
+    height: 100%;
+    color: #777777;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #e1e1e1;
+    text-align: left;
+    display: block !important;
+}
+
+    .open-ended-answer[contentEditable=true]:empty:not(:focus):before {
+        content: attr(data-text);
+        opacity: 0.7;
+        font-style: italic;
+        text-align: left;
+        text-decoration: none !important;
+        font-weight: normal;
+    }
+
+.autogen-answer .answer-row {
+    max-height: 6em;
+}
+
+/* Hide editing */
+.remove-imagebox-icon {
+    display: none !important;
+}
+
+desktop-header-bar-vodus .please-specify::-webkit-input-placeholder {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* open sans font */
+.bootstrap-vodus .font-opensans {
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+.bootstrap-vodus .about-us-logo {
+    height: 100%;
+    width: auto;
+    max-width: 160px;
+    max-height: 28px;
+}
+
+/*Question title bar*/
+.bootstrap-vodus .close-modal-instruction,
+.bootstrap-vodus .more-info {
+    margin-bottom: 0;
+}
+
+.more-info:hover {
+    text-decoration: underline;
+}
+
+.bootstrap-vodus .wait-to-close-div,
+.bootstrap-vodus .click-to-close-div {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #000000;
+    padding: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.bootstrap-vodus .click-to-close,
+.bootstrap-vodus .closeMessage-ctc-button,
+.aboutus-header-vodus button.close,
+.vodus-reward-click-to-close {
+    font-size: 24px;
+    line-height: 1.2em;
+}
+
+.bootstrap-vodus .aboutus-header-vodus {
+    padding: 8px;
+}
+
+.bootstrap-vodus .close-modal-instruction {
+    padding: 0;
+}
+
+.bootstrap-vodus .click-to-close {
+    cursor: pointer;
+}
+
+.bootstrap-vodus .partnership-desktop-container {
+    position: absolute;
+    bottom: 30px;
+    float: left;
+    max-height: 2em;
+    padding: 0 5px;
+}
+
+.bootstrap-vodus .in-partnership-desktop {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+}
+
+.bootstrap-vodus .partner-logo-desktop {
+    width: 50%;
+    float: left;
+}
+
+    .bootstrap-vodus .partner-logo-desktop img {
+        padding: 0 3px;
+        max-height: 25px;
+        margin: 5px auto;
+    }
+
+/*About Us*/
+#vodusAboutUsModal .modal-dialog {
+    overflow: hidden;
+    text-align: left;
+    max-width: 868px;
+    width: 100%;
+    margin-top: 10vh;
+    padding: 0;
+}
+
+.aboutus-header-vodus button.close {
+    opacity: 1;
+    color: #fff;
+    box-shadow: none;
+    background: none;
+    margin-top: 0;
+    border: none;
+    padding: 0 25px;
+}
+
+    .aboutus-header-vodus button.close:hover {
+        box-shadow: none;
+    }
+
+#vodusAboutUsModal .modal-content {
+    border-radius: 0;
+}
+
+#vodusAboutModalContent {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 382px;
+    padding: 5px 10px;
+    background: linear-gradient(45deg, #415215,#C2BE30);
+    background-size: cover;
+    color: white;
+}
+
+    #vodusAboutModalContent a {
+        text-decoration: underline;
+        color: white;
+    }
+
+    #vodusAboutModalContent::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    #vodusAboutModalContent::-webkit-scrollbar-thumb {
+        background: linear-gradient(#bbb,#aaa);
+    }
+
+#vodusAboutUsDialog p,
+#vodusAboutUsDialog h4 {
+    line-height: 1.4em;
+}
+
+#vodusAboutUsDialog footer {
+    float: left;
+    width: 100%;
+    box-sizing: content-box;
+    padding: 0;
+}
+
+    #vodusAboutUsDialog footer .text-primary-vodus {
+        text-align: center;
+        max-width: 131px;
+        padding: 5px;
+        margin: auto;
+    }
+
+    #vodusAboutUsDialog footer .col-xs-7,
+    #vodusAboutUsDialog footer .col-xs-5,
+    #vodusAboutUsDialog footer .col-xs-4,
+    #vodusAboutUsDialog footer .col-xs-2 {
+        margin: 10px 0;
+    }
+
+    #vodusAboutUsDialog footer .about-us-links {
+        text-align: center;
+        padding: 0;
+    }
+
+        #vodusAboutUsDialog footer .about-us-links a {
+            color: #000000;
+        }
+
+    #vodusAboutUsDialog footer .info-redeem-container,
+    #vodusAboutUsDialog footer .info-aboutus-container,
+    #vodusAboutUsDialog footer .info-surveyus-container {
+        margin: 15px 0 10px;
+    }
+
+    #vodusAboutUsDialog footer .info-redeem-container,
+    #vodusAboutUsDialog footer .info-aboutus-container,
+    #vodusAboutUsDialog footer .info-surveyus-container {
+        border-left: solid 1px white;
+    }
+
+    #vodusAboutUsDialog footer .info-redeem-container {
+        padding: 0;
+    }
+
+@media (min-height:550px) {
+    .ccType2.bootstrap-vodus .questionaire-container-size-variable,
+    .ccType3.bootstrap-vodus .questionaire-container-size-variable {
+        height: 280px;
+        max-height: 440px;
+    }
+}
+
+@media screen and (max-width:900px) and (min-width:650px) {
+    #vodusAboutUsModal {
+        padding-right: 0 !important;
+    }
+
+        #vodusAboutUsModal #vodusAboutUsDialog {
+            max-width: 95% !important;
+            min-width: 650px;
+        }
+
+    #vodusAboutModalContent {
+        height: 100%;
+        max-height: 448px;
+    }
+
+    #vodusAboutUsDialog footer a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .aboutus-header-vodus button.close {
+        width: 10%;
+    }
+
+    .ccType1 #vodusAboutUsDialog {
+        margin-top: 4vh;
+        width: 95%;
+        padding: 10px 0;
+    }
+
+    #vodusAboutModalContent {
+        max-height: 350px;
+    }
+
+    #vodusAboutUsDialog footer a {
+        font-size: 12px;
+    }
+
+    #vodusAboutUsDialog footer .info-redeem-container {
+        border-right: none;
+    }
+
+    #vodusAboutUsDialog footer .info-rewards-container .about-us-links {
+        text-align: left;
+    }
+
+    #vodusAboutUsDialog footer .info-surveyus-container {
+        display: none;
+        padding: 0;
+    }
+}
+
+@media screen and (max-height: 650px) and (min-width: 650px) {
+    .bootstrap-vodus .modal-dialog {
+        margin-top: 4vh;
+    }
+
+        .bootstrap-vodus .modal-dialog .modal-content {
+            transform: scale(0.8);
+        }
+}
+
+/*Question title bar customization*/
+.tablet-header-bar-vodus,
+.mobile-bar-vodus,
+.aboutus-header-vodus {
+    border-bottom: none;
+}
+
+.tablet-footer-bar-vodus,
+.mobile-footer-vodus,
+#vodusAboutUsDialog footer {
+    background: transparent;
+}
+
+.mobile-footer-vodus {
+    color: white;
+    padding: 4px 10px 6px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.answered-before {
+    display: none;
+}
+
+.answered-before-text {
+    display: flex;
+    justify-content: center;
+    padding-top: 1px;
+    padding-bottom: 6px;
+}
+
+    .answered-before-text span {
+        color: #8C37F6;
+        font-weight: bold;
+        border: 2px solid #8C37F6;
+        padding: 0 5.5px;
+        font-size: 12px;
+        border-radius: 20px;
+        margin-right: 2px;
+    }
+
+    .answered-before-text i {
+        text-decoration: underline;
+        color: #000;
+    }
+
+.tablet-footer-bar-vodus .answered-before-text {
+    padding-bottom: 8px;
+}
+
+    .tablet-footer-bar-vodus .answered-before-text i {
+        font-size: 15px;
+    }
+
+.bootstrap-vodus .desktop-header-bar-vodus {
+    float: left;
+    background: #4B39A5;
+    text-align: center;
+    min-height: 490px;
+    width: 221px;
+    padding: 0;
+    position: relative;
+}
+
+.question-frame-vodus {
+    float: left;
+    padding: 5px;
+    height: 490px;
+    width: 650px;
+}
+
+.text-primary-vodus {
+    color: #000000;
+}
+
+.vpoints-container a {
+    display: flex;
+    align-items: center;
+}
+
+.vodusAvailablePoints {
+    font-size: 13px;
+    font-weight: bold;
+    color: #8C37F6;
+}
+
+.text-span-vodus {
+    color: #000000;
+    line-height: 1.2em;
+}
+
+.bootstrap-vodus a.text-span-vodus {
+    color: #000000;
+}
+
+    .bootstrap-vodus a.text-span-vodus:hover {
+        color: #000000;
+    }
+
+.text-rewards-vodus {
+    background-color: #eee;
+    color: #5A168E;
+}
+
+
+/*Rating Question Type*/
+.vodus-rating-question-type,
+.vodus-slider-question-type {
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+    .vodus-rating-question-type:not(:checked) > input {
+        position: absolute;
+        display: none;
+        clip: rect(0,0,0,0);
+    }
+
+    .vodus-rating-question-type:not(:checked) > label {
+        float: right;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        color: #ddd;
+        text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+        .vodus-rating-question-type:not(:checked) > label:before {
+            content: '★';
+        }
+
+    .vodus-rating-question-type > input:checked ~ label {
+        color: gold;
+        text-shadow: 1px 1px #e0a366, 2px 2px #b77c4c, .1em .1em .2em rgba(0,0,0,.4);
+    }
+
+    .vodus-rating-question-type:not(:checked) > label:hover,
+    .vodus-rating-question-type:not(:checked) > label:hover ~ label {
+        color: gold;
+        text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.6);
+    }
+
+    .vodus-rating-question-type > input:checked + label:hover,
+    .vodus-rating-question-type > input:checked + label:hover ~ label,
+    .vodus-rating-question-type > input:checked ~ label:hover,
+    .vodus-rating-question-type > input:checked ~ label:hover ~ label,
+    .vodus-rating-question-type > label:hover ~ input:checked ~ label {
+        color: gold;
+        text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.6);
+    }
+
+    .vodus-rating-question-type > label:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+    }
+
+    .vodus-rating-question-type label {
+        font-size: inherit;
+    }
+
+/*Slider Question Type*/
+.slider-question-text {
+    width: 30%;
+    height: 20%;
+    float: left;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+    .slider-question-text > .s-editable-text {
+        margin: 10%;
+        height: 80%;
+        width: 95%;
+        text-align: center;
+        border: 0;
+    }
+
+.slider-text-left {
+    margin-left: 3%;
+    margin-right: 17%;
+}
+
+.slider-text-right {
+    margin-left: 17%;
+    margin-right: 3%;
+}
+
+.slider-text-left.slider-question-text .s-editable-text {
+    text-align: left;
+}
+
+.slider-text-right.slider-question-text .s-editable-text {
+    text-align: right;
+}
+
+.slider-question-slider-control {
+    width: 84%;
+    margin: 0 8%;
+    height: 35%;
+    float: left;
+}
+
+    .slider-question-slider-control > input {
+        height: 100%;
+    }
+
+.slider-question-slider-answer {
+    width: 100%;
+    height: 35%;
+    float: left;
+    margin-top: -10px;
+}
+
+.slider-answer-first-last-space {
+    width: 0;
+    min-height: 1px;
+    float: left;
+}
+
+
+.vodus-slider-question-type .s-editable-text {
+    background: transparent;
+    border: 0;
+    height: 100%;
+    float: left;
+    margin: 0;
+    padding: 0 0.5%;
+    text-align: center;
+}
+
+.slider-submit-answer-button {
+    display: none;
+    text-align: center;
+    height: 25%;
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+}
+
+.vodus-template-display-table {
+    display: table !important;
+    box-shadow: none !important;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vodus-slider-question-vertical-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.vodus-slider-question-vertical-title,
+.vodus-slider-question-vertical-text {
+    height: 100%;
+}
+
+.vodus-slider-question-vertical-text-content {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.vodus-slider-question-vertical-text .vodus-slider-question-vertical-text-content {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.vodus-slider-question-vertical-title .vodus-slider-question-vertical-text-content {
+    justify-content: flex-start;
+}
+
+.vodus-slider-question-vertical-text-content > div,
+vodus-slider-question-vertical-title-content > div {
+    vertical-align: middle;
+    line-height: 1em;
+    height: auto;
+    margin: auto 0;
+}
+
+.bootstrap-vodus input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+    .bootstrap-vodus input[type=range]:focus {
+        outline: none;
+    }
+
+    .bootstrap-vodus input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 10px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #000000;
+    }
+
+    .vodus-slider-question-vertical-slider input[type=range]::-webkit-slider-thumb,
+    .bootstrap-vodus input[type=range]::-webkit-slider-thumb {
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2),inset 0px -4px 6px rgba(0,0,0,0.3);
+        border: 1px solid #000000;
+        height: 35px;
+        width: 15px;
+        border-radius: 5px;
+        background: #aaa;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -13px;
+    }
+
+.slider-question-slider-control input[type=range].greySliderThumb::-webkit-slider-thumb,
+.vodus-slider-question-vertical-slider input[type=range].greySliderThumb::-webkit-slider-thumb {
+    background: #aaa !important;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]:focus::-webkit-slider-runnable-track,
+.bootstrap-vodus input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-moz-range-track,
+.bootstrap-vodus input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-moz-range-thumb,
+.bootstrap-vodus input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 35px;
+    width: 15px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-ms-track,
+.bootstrap-vodus input[type=range]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-ms-fill-lower,
+.bootstrap-vodus input[type=range]::-ms-fill-lower {
+    background: #fff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-ms-fill-upper,
+.bootstrap-vodus input[type=range]::-ms-fill-upper {
+    background: #fff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]::-ms-thumb,
+.bootstrap-vodus input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 15px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]:focus::-ms-fill-lower,
+.bootstrap-vodus input[type=range]:focus::-ms-fill-lower {
+    background: #fff;
+}
+
+.vodus-slider-question-vertical-slider input[type=range]:focus::-ms-fill-upper,
+.bootstrap-vodus input[type=range]:focus::-ms-fill-upper {
+    background: #fff;
+}
+
+.vodus-slider-question-vertical-slider input[type=range] {
+    height: 100%;
+    margin: 0 auto;
+    transform: rotate(90deg);
+    position: absolute;
+    border: none;
+}
+
+@media screen and (max-width: 360px) {
+
+    .vodus-slider-question-vertical-slider input[type=range]::-moz-range-track,
+    .bootstrap-vodus input[type=range]::-moz-range-track {
+        height: 5px;
+    }
+
+    .vodus-slider-question-vertical-slider input[type=range]::-ms-track,
+    .bootstrap-vodus input[type=range]::-ms-track {
+        height: 5px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .vodus-slider-question-vertical-slider input[type=range]::-moz-range-track,
+    .bootstrap-vodus input[type=range]::-moz-range-track {
+        height: 8px;
+    }
+
+    .vodus-slider-question-vertical-slider input[type=range]::-ms-track,
+    .bootstrap-vodus input[type=range]::-ms-track {
+        height: 8px;
+    }
+
+    .ranking-answer-move-up,
+    .ranking-answer-move-down {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .bootstrap-vodus .modal-content {
+        transform: none;
+    }
+}
+
+/*Ranking Question Type*/
+.ranking-instruction {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px;
+    max-width: 160px;
+    font-style: italic;
+    text-align: left;
+    margin-left: 3px;
+}
+
+.ranking-instruction-1 {
+    color: white;
+    padding: 5px;
+    font-style: italic;
+    text-align: center;
+    margin-left: 3px;
+}
+
+.ranking-answer-move-up {
+    height: 50%;
+    min-width: 15px;
+    width: 5%;
+    top: 0;
+    left: 9%;
+    position: absolute;
+    /*background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;*/
+    cursor: pointer;
+    display: none;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0);
+    transition: ease-in 0.1s;
+}
+
+.ranking-answer-move-down {
+    height: 50%;
+    min-width: 15px;
+    width: 5%;
+    bottom: 0;
+    left: 9%;
+    position: absolute;
+    /*background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;*/
+    cursor: pointer;
+    display: none;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0);
+    transition: ease-in 0.1s;
+}
+
+.survey-ranking-div:hover > .ranking-answer-move-up,
+.survey-ranking-div:hover > .ranking-answer-move-down {
+    display: block;
+}
+
+.ranking-answer-move-up:hover, .ranking-answer-move-down:hover {
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+}
+
+.ranking-answer-order-number {
+    height: 100%;
+    min-width: 10px;
+    width: 7%;
+    left: 2%;
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+}
+
+.ranking-answer-move-up .fa.fa-chevron-up,
+.ranking-answer-move-down .fa.fa-chevron-down {
+    font-size: 0.5em;
+}
+
+.survey-ranking-div {
+    padding-left: 13%;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.ui-sortable .ibox-title {
+    cursor: move;
+}
+
+.ui-sortable-placeholder {
+    visibility: visible !important;
+    background: rgba(0,0,0,0.5);
+}
+
+.ibox.ui-sortable-placeholder {
+    margin: 0 0 23px !important;
+}
+
+.mcq-open-ended-textarea {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0.7%;
+    color: black;
+}
+
+    .mcq-open-ended-textarea > input[type=button] {
+        position: relative;
+        font-size: 12px !important;
+        height: 97%;
+        width: 27.5%;
+        padding: 0 2%;
+        margin-left: 2%;
+        background: #cccccc;
+        color: black;
+        float: left;
+    }
+
+.quesionaire-preview-question-mobile-preview .mcq-open-ended-textarea > input[type=button] {
+    height: auto;
+}
+
+.mcq-open-ended-textarea > input[type=button]:hover {
+    box-shadow: inset 0px -4px 8px 1px rgba(0,0,0,0.3);
+}
+
+
+.mcq-open-ended-textarea > textarea {
+    font-size: 12px !important;
+    resize: none;
+    height: 97%;
+    padding: 1% 2%;
+    min-height: 20px;
+    float: left;
+    color: black !important;
+}
+
+.survey-mcqsa-div .mcq-open-ended-textarea-submit-btn {
+    display: block;
+}
+
+.survey-mcqma-div .mcq-open-ended-textarea-submit-btn {
+    display: none;
+}
+
+.template-preview-answer-to-display-table-content .selectedAnswer,
+.template-preview-answer-to-display-table-content .selectedAnswer:hover,
+.template-preview-answer-to-display-table-content .selectedAnswer:focus,
+.template-preview-answer-to-display-table-content .selectedAnswer:active {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px -8px 20px 0px inset, rgb(112, 48, 160) 0px 0px 6px 3px inset, rgb(112, 48, 160) 0px 0px 2px 3px inset;
+}
+
+.survey-mcqsa-div .mcq-open-ended-textarea > textarea {
+    width: 70%;
+}
+
+.survey-mcqma-div .mcq-open-ended-textarea > textarea {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.survey-mcqma-div .mcq-open-ended-textarea {
+    padding: 0.3em;
+    padding-right: 10%;
+}
+
+.table-style textarea.editable-text-area {
+}
+
+.s-editable-text textarea.editable-text-area {
+    overflow: hidden auto;
+}
+
+.bootstrap-vodus .s-editable-text a,
+.bootstrap-vodus .s-editable-text a:hover,
+.bootstrap-vodus .s-editable-text a:focus {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+input.gridOption {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile-question-container .grid-header,
+.mobile-question-container .template-preview-title-to-display {
+    border: 0px;
+    height: 15%;
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative;
+}
+
+.grid-header td:nth-child(1) {
+    width: 30%;
+}
+
+.grid-header td:nth-child(n+2) {
+    width: 14%;
+    text-align: center;
+}
+
+.bootstrap-vodus .login-btn-col {
+    width: 100%;
+}
+
+/*Post-response toastr notification*/
+.vodus-responded-toast {
+    width: 30%;
+    min-width: 450px;
+    background: #fff;
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: linear-gradient( 90deg, #8C37F6, #5147FE);
+    padding-top: 5px;
+}
+
+    .vodus-responded-toast .row {
+        margin: 0;
+    }
+
+    #toast-container.vodus-responded-toast > div,
+    .vodus-responded-toast div {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        border-radius: inherit;
+        opacity: 1;
+        max-width: unset;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: stretch;
+    }
+
+#toast-container.vodus-responded-toast > :hover {
+    -webkit-box-shadow: 0 5px 12px #777;
+    box-shadow: 0 5px 12px #777;
+}
+
+#toast-container.vodus-responded-toast > div {
+    -webkit-box-shadow: 0 5px 12px #999;
+    box-shadow: 0 5px 12px #999;
+}
+
+.vodus-responded-toast .rewards-logo {
+    padding-right: 5px;
+    flex-wrap: nowrap;
+}
+
+    .vodus-responded-toast .rewards-logo img {
+        width: auto;
+        height: auto;
+        max-width: 130px;
+        max-height: 25px;
+        margin: auto;
+    }
+
+.vodus-responded-toast .thankyou-message {
+    font-size: 14px;
+    padding-left: 10px;
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.vodus-responded-toast.banner-thankyou {
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: unset;
+}
+
+.ccType2 .point-message-container,
+.ccType3 .point-message-container {
+    padding-left: 5px;
+}
+
+.quesionaire-preview-question-mobile-preview .vodus-responded-toast.banner-thankyou {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#toast-container .toast-message {
+    line-height: 1.5em;
+    padding: 5px;
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 15px;
+    }
+}
+
+.vodus-responded-toast h4,
+.vodus-responded-toast h3,
+.vodus-responded-toast h5,
+.vodus-responded-toast a {
+    text-align: center;
+    font-family: 'Lato';
+    line-height: 1.3em;
+    color: #000;
+    padding-left: 5px;
+}
+
+.vodus-responded-toast h3 {
+    margin: 0;
+    margin-bottom: 2px;
+    font-size: 15px;
+    color: #000;
+    width: 100%;
+    padding-right: 5px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.vodus-responded-toast a {
+    font-size: 12px;
+    line-height: 1.3em;
+    text-align: center;
+    color: rgb(158,128,0);
+    text-decoration: underline;
+    padding: 0;
+}
+
+.vodus-responded-toast .thankyou-message-container .redeem-rewards-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+}
+
+    .vodus-responded-toast .thankyou-message-container .redeem-rewards-container a {
+        padding: 7px 12px;
+        line-height: 1.3em;
+        color: #fff;
+        background-color: #44546A;
+        font-weight: 400;
+        text-transform: uppercase;
+        border-radius: 15px;
+        text-decoration: none;
+        opacity: 0.7;
+    }
+
+        .vodus-responded-toast .thankyou-message-container .redeem-rewards-container a:hover {
+            font-weight: bold;
+            opacity: 1;
+        }
+
+.vodus-banner .vodus-responded-toast .thankyou-product-container h5.autoclose-message {
+    display: none;
+}
+
+.vodus-responded-toast .thankyou-product-container h5.autoclose-message {
+    color: #666;
+    padding-right: 15px;
+    width: auto;
+    margin: 0;
+}
+
+.vodus-responded-toast b {
+    color: #000000;
+}
+
+.vodus-responded-toast .thankyou-message-container {
+    width: 100%;
+}
+
+.vodus-responded-toast .thankyou-productImage-container,
+.vodus-responded-toast .thankyou-product-container {
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+.vodus-responded-toast .thankyou-current-point {
+    white-space: nowrap;
+    font-weight: 800;
+}
+
+.vodus-responded-toast h5 {
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+.vodus-responded-toast .thankyou-message-container h5 {
+    padding-right: 3px;
+}
+
+#toast-container.vodus-responded-toast .toast-close-button,
+.vodus-responded-toast .toast-close-button {
+    top: 3px;
+    right: 3px;
+    font-size: 30px;
+    color: #333;
+    position: absolute;
+    width: 5%;
+    opacity: 1;
+}
+
+    .vodus-responded-toast .toast-close-button:hover {
+        opacity: 0.8;
+    }
+
+.vodus-responded-toast .thankyou-product-container {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+    .vodus-responded-toast .thankyou-product-container h5 {
+        text-align: left;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+        .vodus-responded-toast .thankyou-product-container h5.thankyou-product-title {
+            font-size: 16px;
+            font-weight: 400;
+            color: #555;
+            padding-right: 25px;
+        }
+
+        .vodus-responded-toast .thankyou-product-container h5 strike {
+            font-size: 16px;
+        }
+
+.vodus-responded-toast h5.thankyou-product-shop {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.vodus-responded-toast.banner-thankyou .thankyou-product-container h5.thankyou-product-title {
+    padding-right: 0;
+}
+
+.vodus-responded-toast .thankyou-product-container span.thankyou-product-discounted-price {
+    font-size: 18px;
+    color: #8C37F6;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.vodus-responded-toast .redeem-rewards-container {
+    padding-left: 5px;
+}
+
+    .vodus-responded-toast .redeem-rewards-container a {
+        color: #555;
+        font-size: 14px;
+    }
+
+.vodus-responded-toast .thankyou-productImage-container {
+    width: 36%;
+    padding: 5px 10px;
+}
+
+.vodus-responded-toast .thankyou-message-description-container {
+    width: 100%;
+}
+
+.vodus-responded-toast .thankyou-product-container {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vodus-responded-toast.banner-thankyou .thankyou-message-container {
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+}
+
+    .vodus-responded-toast.banner-thankyou .thankyou-message-container .thankyou-message-top-container {
+        align-items: center;
+    }
+
+.vodus-responded-toast .thankyou-message-top-container {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+
+.vodus-responded-toast .thankyou-message-top-container-left {
+    width: 50px;
+    height: fit-content;
+    padding: 5px;
+}
+
+    .vodus-responded-toast .thankyou-message-top-container-left img {
+        max-height: 100%;
+        width: 100%;
+    }
+
+.vodus-responded-toast .thankyou-message-top-container-right {
+    width: calc(100% - 50px);
+}
+
+.thankyou-message-top-container-right h5.thankyou-required-point,
+.thankyou-message-top-container-right h5.thankyou-required-point b {
+    color: #8C37F6;
+}
+
+.vodus-responded-toast.banner-thankyou .rewards-logo {
+    padding-bottom: 8px;
+}
+
+.vodus-responded-toast .vodus-logo-container,
+.vodus-responded-toast .thankyou-productImage-container {
+    width: 30%;
+    align-content: flex-start;
+}
+
+.vodus-responded-toast .point-message-container,
+.vodus-responded-toast .thankyou-product-container {
+    width: 70%;
+}
+
+.vodus-responded-toast .thankyou-productImage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 90px;
+    overflow: hidden;
+}
+
+    .vodus-responded-toast .thankyou-productImage img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+.questionaire-container-size-variable .vodus-responded-toast .thankyou-productImage {
+    height: 100%;
+    max-height: 105px;
+    border-radius: 0;
+}
+
+.vodus-responded-toast .thankyou-product-discount {
+    background: linear-gradient( 90deg, #DD4B39, #F16C51);
+    position: absolute;
+    bottom: 10px;
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+.vodus-responded-toast .thankyou-productImage-container h5.thankyou-discount-message {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 2em;
+}
+
+/*Type 2 and 3 Thank You Message*/
+.thankyou-banner .questionaire-container-size-variable {
+    height: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0;
+}
+
+.thankyou-banner .tingle-modal-box__content .mobile-question-container,
+.thankyou-banner .tingle-modal-box__content .mobile-vodusLoginDialog,
+.thankyou-banner .tingle-modal-box__content #vodusAboutUsDialog {
+    max-width: 420px;
+}
+
+.thankyou-message-container .click-to-close-div {
+    display: none;
+}
+
+#toast-container .thankyou-message-container .click-to-close-div {
+    display: none !important;
+}
+
+.thankyou-banner .thankyou-message-container .click-to-close-div {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: min-content;
+}
+
+.thankyou-banner .thankyou-message-container .click-to-close {
+    color: #000 !important;
+    display: flex;
+    line-height: 1.2em !important;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.thankyou-banner .vodus-responded-toast .thankyou-message-top-container-right {
+    width: 100%;
+}
+
+.thankyou-banner .vodus-responded-toast .thankyou-message-top-container-left {
+    display: none;
+}
+
+.thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo {
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.ccType2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    z-index: 9999999999999;
+    background: transparent;
+}
+
+.vodus-banner-div .ccType2 {
+    position: unset;
+    bottom: unset;
+    right: unset;
+}
+
+    .vodus-banner-div .ccType2 .tingle-modal-box__content .mobile-question-container,
+    .vodus-banner-div .ccType2 .tingle-modal-box__content .mobile-vodusLoginDialog,
+    .vodus-banner-div .ccType2 .tingle-modal-box__content #vodusAboutUsDialog {
+        max-width: unset;
+        width: unset;
+    }
+
+.ccType2 .vodus-responded-toast .thankyou-message-top-container,
+.ccType3 .vodus-responded-toast .thankyou-message-top-container {
+    padding-left: 10px;
+}
+
+.ccType2 .vodus-logo-container,
+.ccType2 .thankyou-productImage-container,
+.ccType3 .vodus-logo-container,
+.ccType3 .thankyou-productImage-container {
+    width: 34%;
+}
+
+.ccType2 .point-message-container,
+.ccType2 .thankyou-product-container,
+.ccType3 .point-message-container,
+.ccType3 .thankyou-product-container {
+    width: 66%;
+}
+
+.ccType2 .thankyou-product-container,
+.ccType3 .thankyou-product-container {
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+.ccType2.thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo img,
+.ccType3.thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo img {
+    max-height: 35px;
+    width: auto;
+}
+
+.ccType2.thankyou-banner .questionaire-container-size-variable > div,
+.ccType3.thankyou-banner .questionaire-container-size-variable > div {
+    min-height: unset;
+}
+
+/*Closing Message*/
+.closeMessage h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.closeMessage .mobile-bar-vodus {
+    padding-top: 10px !important;
+}
+
+    .closeMessage .mobile-bar-vodus > div {
+        align-items: center;
+    }
+
+.closeMessage .mobile-question-container .left-header-container {
+    width: 20%;
+}
+
+.closeMessage .mobile-question-container .center-header-container {
+    width: 73%;
+}
+
+.closeMessage .right-header-container {
+    margin-top: 0 !important;
+}
+
+.closeMessage .partnerLogo {
+    height: 100% !important;
+}
+
+.closeMessageContent {
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: 0.05em;
+}
+
+    .closeMessageContent > * {
+        padding-bottom: 7px;
+        line-height: 1.3em;
+    }
+
+    .closeMessageContent span {
+        font-size: 17px;
+        color: #000;
+        line-height: 1.2em;
+    }
+
+    .closeMessageContent p {
+        font-size: 15px;
+        color: #666;
+        margin: 0;
+        font-style: italic;
+    }
+
+    .closeMessageContent a {
+        color: #8C37F6;
+        text-decoration: underline;
+    }
+
+#toast-container .closeMessageContent.closeMessageType1 {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Lato';
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 7px;
+}
+
+#toast-container .closeMessageContent .toast-close-button {
+    color: #000;
+    font-family: 'Lato';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+}
+
+#toast-container .closeMessageContent .closeMessage-top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+    padding-right: 12px;
+}
+
+#toast-container .closeMessageContent .closeMessage-logo {
+    height: 40px;
+}
+
+#toast-container .closeMessageContent .partner-logo {
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#toast-container .closeMessageContent h3 {
+    font-size: 20px;
+    padding-left: 15px;
+    margin: 0;
+    line-height: 1.2em;
+}
+
+#toast-container .closeMessageContent .toast-title {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+}
+
+#toast-container .closeMessageContent span {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#toast-container .closeMessageContent p {
+    margin: 0;
+    padding-bottom: 5px;
+    line-height: 1.2em;
+    font-size: 16px;
+    font-style: normal;
+}
+
+#toast-container .closeMessageContent .closeMessage-right {
+    width: 50%;
+    padding: 0 15px;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    color: #666;
+}
+
+#toast-container .closeMessageContent .closeMessage-left {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+
+.closeMessageContent.chinese > * {
+    padding-bottom: 12px;
+}
+
+.closeMessageContent.chinese span {
+    font-size: 18px !important;
+    letter-spacing: 0.05em;
+}
+
+.closeMessageContent.chinese p {
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+
+/*Vodus-Banner*/
+.vodus-banner .bootstrap-vodus {
+    position: unset;
+    bottom: unset;
+    right: unset;
+    width: 100%;
+    line-height: 1.1em;
+    margin: auto;
+    height: fit-content;
+}
+
+    .vodus-banner .bootstrap-vodus .modal-dialog {
+        margin: auto;
+        max-width: 400px;
+        z-index: 0;
+    }
+
+.vodus-banner .tingle-modal-box__content {
+    min-width: 300px;
+}
+
+@media (min-width:400px) {
+    .vodus-responded-toast .thankyou-product-container h5.autoclose-message {
+        padding-right: 15px !important;
+    }
+}
+
+@media (max-width:410px) {
+    /*For wider phones and other wider devices*/
+    .vodus-banner {
+        max-width: 450px !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ccType2.bootstrap-vodus .questionaire-container-size-variable,
+    .ccType3.bootstrap-vodus .questionaire-container-size-variable {
+        height: 280px;
+        max-height: 440px;
+    }
+
+    .thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo {
+        max-height: 35px;
+    }
+
+    .vodus-responded-toast .thankyou-message {
+        font-size: 18px;
+        margin: 0;
+        padding-left: 15px;
+        text-align: left;
+    }
+
+    .vodus-responded-toast .thankyou-message-container {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .vodus-responded-toast .vodus-logo-container,
+    .vodus-responded-toast .point-message-container,
+    .thankyou-banner .vodus-responded-toast .vodus-logo-container,
+    .thankyou-banner .vodus-responded-toast .point-message-container {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .vodus-responded-toast .thankyou-product-container h5.thankyou-product-title {
+        padding-right: 0;
+    }
+
+    .vodus-responded-toast .thankyou-message-container .thankyou-message-top-container {
+        flex-wrap: wrap;
+        align-items: center;
+        padding-right: 15px;
+    }
+
+    .vodus-responded-toast .rewards-logo {
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .vodus-responded-toast .thankyou-message-top-container-left {
+        width: 60px;
+    }
+
+    .thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo {
+        flex-wrap: nowrap;
+    }
+
+    .thankyou-banner .vodus-responded-toast .thankyou-message-top-container-left {
+        display: none;
+    }
+
+
+    .vodus-responded-toast .thankyou-productImage-container {
+        width: 34%;
+    }
+
+    .vodus-responded-toast .thankyou-product-container {
+        width: 66%;
+    }
+
+        .vodus-responded-toast .thankyou-product-container h5.autoclose-message {
+            font-size: 14px;
+            padding-right: 15px;
+        }
+
+    .ccType2 .vodus-responded-toast .thankyou-product-discount,
+    .ccType3 .vodus-responded-toast .thankyou-product-discount {
+        bottom: 10px;
+    }
+
+    .vodus-responded-toast h5 {
+        font-size: 16px;
+    }
+
+    .vodus-responded-toast h3 {
+        font-size: 18px;
+    }
+
+    .vodus-responded-toast {
+        width: 95%;
+        margin: auto;
+        min-width: unset;
+        right: 2.5%;
+        left: 2.5%;
+    }
+
+        .vodus-responded-toast .vodus-mobile-break {
+            display: block;
+        }
+
+        #toast-container.vodus-responded-toast .toast-close-button,
+        .vodus-responded-toast .toast-close-button {
+            right: 3px;
+        }
+
+    .ccType2,
+    .ccType3 {
+        left: 0;
+    }
+
+        .ccType2 .tingle-modal-box__content .mobile-question-container,
+        .ccType2 .tingle-modal-box__content .mobile-vodusLoginDialog,
+        .ccType2 .tingle-modal-box__content #vodusAboutUsDialog,
+        .ccType3 .tingle-modal-box__content .mobile-question-container,
+        .ccType3 .tingle-modal-box__content .mobile-vodusLoginDialog,
+        .ccType3 .tingle-modal-box__content #vodusAboutUsDialog {
+            max-width: 450px;
+        }
+
+    #toast-container .closeMessageContent .closeMessage-right,
+    #toast-container .closeMessageContent .closeMessage-left {
+        width: 100%;
+        padding: 5px 0;
+    }
+}
+/*End Responsive*/
+
+/*catfish*/
+.bottom-left {
+    left: 0;
+    right: unset;
+    bottom: 0;
+    top: unset;
+}
+
+.top-left {
+    left: 0;
+    right: unset;
+    bottom: unset;
+    top: 0;
+}
+
+.top-right {
+    left: unset;
+    right: 0;
+    bottom: unset;
+    top: 0;
+}
