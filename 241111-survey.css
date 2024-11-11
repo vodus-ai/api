@@ -502,7 +502,7 @@
 
 .mobileGridTitle {
     margin-top: 0.1em;
-    text-align: left;
+    text-align: justify;
     display: flex;
     justify-content: center;
     font-weight: 600;
@@ -559,10 +559,6 @@
 .question-title-primary {
     background-color: white !important;
     color: #5A168E !important;
-}
-
-.droppable-template img {
-    height: auto;
 }
 
 .bootstrap-vodus .mobile-question-container,
@@ -641,7 +637,8 @@
 .bootstrap-vodus .mobile-question-container .partnerLogo {
     max-width: 100%;
     margin: 0;
-    max-height: calc(2rem + 8px);
+    min-height: 50%;
+    max-height: 100%;
 }
 
 .bootstrap-vodus .mobile-question-container .left-header-container {
@@ -3969,9 +3966,6 @@ input.gridOption {
 /*End Responsive*/
 
 /*catfish*/
-.bottom-right {
-}
-
 .bottom-left {
     left: 0;
     right: unset;
