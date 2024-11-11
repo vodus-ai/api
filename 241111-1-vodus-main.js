@@ -457,10 +457,9 @@ function extractHostname(url) {
 
                                             app.ctcTimer = 0;
                                             app.interval = 0;
-                                            app.ctcInterval = 0;
                                             app.isBannerMode = true;
                                             DetectingMobile();
-                                            app.ccPageScrollTrigger = 20;
+                                            app.ccPageScrollTrigger = 25;
                                             $(".vodus-banner").css("width", "").css("height", "");
                                         } else {
                                             vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -473,11 +472,8 @@ function extractHostname(url) {
                                                 app.ccType = "3";
                                             }
                                             app.ctcTimer = 0;
-                                            app.interval = 0;
-                                            app.ctcInterval = 0;
                                             app.isBannerMode = true;
                                             DetectingMobile();
-                                            app.ccPageScrollTrigger = 20;
                                             $(".vodus-banner").css("width", "").css("height", "");
                                         } else {
                                             vodus.log('Banner Mode: Vodus Banner div is not found.');
