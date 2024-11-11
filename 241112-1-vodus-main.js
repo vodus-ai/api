@@ -155,7 +155,7 @@ function extractHostname(url) {
         app.reward3PRootUrl = 'https://vodus.my';
         app.responseRootUrl = 'https://api.vodus.com';
         app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/241111-survey.css';
+        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/241112-survey.css';
         app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
     } else if (app.env == 'uat') {
