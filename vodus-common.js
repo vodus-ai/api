@@ -18,7 +18,7 @@ function resizeMobileFontSize_Preview(container, type) {
 
     //Title and Answer
 
-    var maxTitleFontSize = 19;//Answer Font Size Difference= -2
+    var maxTitleFontSize = 18;//Answer Font Size Difference= -3
     var minTitleFontSize = 16;
     var fontDifference = 3;
 
@@ -31,6 +31,7 @@ function resizeMobileFontSize_Preview(container, type) {
                     $(container).find(".question-header-1").css("font-size", i - 2 + "px");
                     $(container).find(".mobileGridTitle").css("font-size", i - 2 + "px");
                 };
+                $(container).find(".template-preview-answer-to-display-table-content").css("font-size", i - fontDifference + "px");
                 $(container).find(".answer-box > .s-editable-text").css("font-size", i - fontDifference + "px");
                 $(container).find(".survey-submit-btn").css("font-size", i - 3 + "px");
 
@@ -452,7 +453,7 @@ function makeRankingAnswerSortable(container, isMobile) {
     $(container).find("div.survey-ranking-div").each(function () {
         //$(this).hover(function () {
 
-        $(this).click(function () {
+        $(this).on('click', function () {
 
             //  submit buttons
             enableSubmitButtonRanking();
@@ -471,7 +472,7 @@ function makeRankingAnswerSortable(container, isMobile) {
         //}
 
         $(divUp)
-            .click(function () {
+            .on('click', function () {
 
                 if (isMobile) {
                     if ($(this).parent().hasClass("survey-ranking-div") && $(this).parent().prev("div").hasClass("survey-ranking-div")) {
@@ -490,7 +491,7 @@ function makeRankingAnswerSortable(container, isMobile) {
             });
 
         $(divDown)
-            .click(function () {
+            .on('click', function () {
 
                 if (isMobile) {
                     if ($(this).parent().hasClass("survey-ranking-div") && $(this).parent().next("div").hasClass("survey-ranking-div")) {
@@ -556,8 +557,8 @@ function displayPlaceholderContent(obj) {
     var defaultText = "";
     //console.log($(obj).find(".open-ended-answer"))
 
-    $(obj).find(".open-ended-answer").unbind("focus");
-    $(obj).find(".open-ended-answer").unbind("blur");
+    $(obj).find(".open-ended-answer").off("focus");
+    $(obj).find(".open-ended-answer").off("blur");
 
     $(obj).find(".open-ended-answer").focus(function () {
         //console.log($(this).html());
@@ -582,18 +583,18 @@ function initMcqOpenEndedAnswer(container, isMobile) {
         $(this).find(".mcqsa-mcqma-image-answer").css("display", "block");
         $(this).find(".mcq-open-ended-textarea").css("display", "none");
 
-        $(this).find(".s-editable-text").unbind("click");
-        $(this).find(".s-editable-text").unbind("onclick");
+        $(this).find(".s-editable-text").off("click");
+        $(this).find(".s-editable-text").off("onclick");
 
-        $(this).find(".mcq-open-ended-textarea > textarea").unbind("blur");
-        $(this).find(".mcq-open-ended-textarea > textarea").unbind("onblur");
-        $(this).find(".mcq-open-ended-textarea > textarea").unbind("click");
-        $(this).find(".mcq-open-ended-textarea > textarea").unbind("onclick");
+        $(this).find(".mcq-open-ended-textarea > textarea").off("blur");
+        $(this).find(".mcq-open-ended-textarea > textarea").off("onblur");
+        $(this).find(".mcq-open-ended-textarea > textarea").off("click");
+        $(this).find(".mcq-open-ended-textarea > textarea").off("onclick");
 
         if ($(this).hasClass("survey-mcqsa-div")) {
             //For MCQSA
-            $(this).unbind("click");
-            $(this).unbind("onclick");
+            $(this).off("click");
+            $(this).off("onclick");
 
             $(this).on("click", function (e) {
                 $(this).find(".s-editable-text").css("display", "none");
@@ -606,8 +607,8 @@ function initMcqOpenEndedAnswer(container, isMobile) {
         }
         else if ($(this).hasClass("survey-mcqma-div")) {
             //For MCQMA
-            $(this).unbind("click");
-            $(this).unbind("onclick");
+            $(this).off("click");
+            $(this).off("onclick");
 
             $(this).find(".s-editable-text").on("click", function (e) {
 

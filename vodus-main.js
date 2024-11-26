@@ -154,9 +154,11 @@ function extractHostname(url) {
         app.vodus3PRootUrl = 'https://api.vodus.com'; // Do not add www, it has to be root https://vodus.my
         app.reward3PRootUrl = 'https://vodus.my';
         app.responseRootUrl = 'https://api.vodus.com';
-        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
-        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/240912-survey.css';
-        app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
+        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+        app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/survey.css';
+        app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js';
+        //app.surveycssUrl = 'https://localhost:7193/cc/css/creator/survey.css';
+        //app.commonjsUrl = 'https://localhost:7193/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
     } else if (app.env == 'uat') {
         app.rootUrl = 'https://vodus-api-uat.azurewebsites.net';
@@ -164,7 +166,7 @@ function extractHostname(url) {
         app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
         app.responseRootUrl = 'https://vodus-api-uat.azurewebsites.net';
-        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
+        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
         app.tingleUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
         app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
@@ -175,7 +177,7 @@ function extractHostname(url) {
         app.vodus3PRootUrl = 'https://vodus-api-dev.azurewebsites.net';
         app.reward3PRootUrl = 'https://vodus-rewards-dev.azurewebsites.net';
         app.responseRootUrl = 'https://vodus-dev.azurewebsites.net';
-        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
+        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
         app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
         app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'https://vodus-api-serverless-uat.azurewebsites.net';
@@ -185,7 +187,7 @@ function extractHostname(url) {
         app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.reward3PRootUrl = 'https://voupon-uat.azurewebsites.net';
         app.responseRootUrl = 'http://localhost:7071';
-        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest';
+        app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
         app.surveycssUrl = 'https://vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
         app.commonjsUrl = 'https://vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
         app.serverlessUrl = 'http://localhost:7071';
@@ -455,12 +457,8 @@ function extractHostname(url) {
                                                 app.ccType = "3";
                                             }
 
-                                            app.ctcTimer = 0;
-                                            app.interval = 0;
-                                            app.ctcInterval = 0;
                                             app.isBannerMode = true;
                                             DetectingMobile();
-                                            app.ccPageScrollTrigger = 20;
                                             $(".vodus-banner").css("width", "").css("height", "");
                                         } else {
                                             vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -473,11 +471,8 @@ function extractHostname(url) {
                                                 app.ccType = "3";
                                             }
                                             app.ctcTimer = 0;
-                                            app.interval = 0;
-                                            app.ctcInterval = 0;
                                             app.isBannerMode = true;
                                             DetectingMobile();
-                                            app.ccPageScrollTrigger = 20;
                                             $(".vodus-banner").css("width", "").css("height", "");
                                         } else {
                                             vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -2144,12 +2139,9 @@ function extractHostname(url) {
                             app.ccType = "3";
                         }
                         app.ctcTimer = 0;
-                        app.interval = 0;
-                        app.ctcInterval = 0;
                         app.isBannerMode = true;
 
                         DetectingMobile();
-                        app.ccPageScrollTrigger = 20;
                         $(".vodus-banner").css("width", "").css("height", "");
                     } else {
                         vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -2162,12 +2154,9 @@ function extractHostname(url) {
                             app.ccType = "3";
                         }
                         app.ctcTimer = 0;
-                        app.interval = 0;
-                        app.ctcInterval = 0;
                         app.isBannerMode = true;
 
                         DetectingMobile();
-                        app.ccPageScrollTrigger = 20;
                         $(".vodus-banner").css("width", "").css("height", "");
                     } else {
                         vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -2322,12 +2311,9 @@ function extractHostname(url) {
                                 app.ccType = "3";
                             }
                             app.ctcTimer = 0;
-                            app.interval = 0;
-                            app.ctcInterval = 0;
                             app.isBannerMode = true;
 
                             DetectingMobile();
-                            app.ccPageScrollTrigger = 20;
                             $(".vodus-banner").css("width", "").css("height", "");
                         } else {
                             vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -2391,12 +2377,9 @@ function extractHostname(url) {
                                 app.ccType = "3";
                             }
                             app.ctcTimer = 0;
-                            app.interval = 0;
-                            app.ctcInterval = 0;
                             app.isBannerMode = true;
 
                             DetectingMobile();
-                            app.ccPageScrollTrigger = 20;
                             $(".vodus-banner").css("width", "").css("height", "");
                         } else {
                             vodus.log('Banner Mode: Vodus Banner div is not found.');
@@ -2540,10 +2523,10 @@ function extractHostname(url) {
                         var lotaudsListId = [];
                         //  Check if single or multiple target code
                         var targetAudienceListContainer = app.dmpTargetAudience.split("|");
-                        console.log('targetAudienceListContainer',targetAudienceListContainer)
+                        console.log('targetAudienceListContainer', targetAudienceListContainer)
                         for (var audTarget = 0; audTarget < targetAudienceListContainer.length; audTarget++) {
                             var targetAudience = targetAudienceListContainer[audTarget].split(",");
-                            console.log('targetAudience',targetAudience)
+                            console.log('targetAudience', targetAudience)
                             for (var aud = 0; aud < targetAudience.length; aud++) {
                                 if (lotaudsListId.includes(targetAudience[aud])) {
                                     app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
@@ -2553,7 +2536,7 @@ function extractHostname(url) {
                             }
                         }
                     }
-                    console.log('aud',app.dmpAudienceTargetCode)
+                    console.log('aud', app.dmpAudienceTargetCode)
                     if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
                         vodus.log("No DMP CC Target set, not qualified");
                     }
@@ -2570,12 +2553,12 @@ function extractHostname(url) {
                             vodus.setPartnerData(lotameProfileId);
                         }
                     }
-                    
+
                     var lotaudsList = localStorage.getItem("lotame_" + app.dmpCode + "_auds");
                     if (lotaudsList != null && lotaudsList != "") {
                         var lotaudsListId = lotaudsList.split(",");
                         var targetAudienceContainerList = app.dmpTargetAudience.split("|");
-                        for(var aud = 0; aud < targetAudienceContainerList.length; aud++){
+                        for (var aud = 0; aud < targetAudienceContainerList.length; aud++) {
                             var targetAudienceList = targetAudienceContainerList[aud].split(",");
                             vodus.log("DMP Target Audience : " + targetAudienceList);
                             for (var i = 0; i < targetAudienceList.length; i++) {
@@ -2634,8 +2617,7 @@ function extractHostname(url) {
                                 return (obj[pair[0]] = pair[1]), obj;
                             }, {});
 
-                        if(!rawData)
-                        {
+                        if (!rawData) {
                             isAllowed = true;
                             return isAllowed;
                         }
@@ -2672,10 +2654,9 @@ function extractHostname(url) {
                 }
                 else {
                     scrollFunction(app);
-                    $(window).bind('scroll', function () {
-                        scrollFunction(app)
+                    $(window).on('scroll', function () {
+                        scrollFunction(app);
                     });
-
                 }
             }
             else {
@@ -2685,19 +2666,19 @@ function extractHostname(url) {
                     vodus.log("Setup cc scroll trigger..");
 
                     if ($("body").height() > $(window).height()) {
-                        $(window).bind('scroll', function () {
+                        $(window).on('scroll', function () {
                             scrollFunction(app)
                         });
                     } else {
                         // For Astro
                         if ($("body").height() == $(window).height() && $("#app").length > 0) {
-                            $(window).bind('scroll', function () {
+                            $(window).on('scroll', function () {
                                 scrollFunction(app);
                             });
                         }
                         else {
                             setTimeout(function () {
-                                $(window).bind('scroll', function () {
+                                $(window).on('scroll', function () {
                                     scrollFunction(app);
                                 })
                             }, 3000);
@@ -2804,14 +2785,12 @@ function extractHostname(url) {
                         app.bannerMode = 0;
                         app.intervalBannerMode = 1;
 
-
                         app.interval = app.stoInterval;
                         app.ctcInterval = app.stoCTCInterval;
                         app.ctcTimer = app.stoCTCTimer;
                         app.ccType = app.stoCCType;
                         app.demographicCCType = app.stoDemographicCCType;
                     }
-
                 } else {
                     if (app.ccType == "1" && app.bannerMode == "1") {
                         app.ccType = "3";
@@ -3772,7 +3751,7 @@ function extractHostname(url) {
 
                                     $(".close-modal-instruction-container").html("");
                                     $(".wait-to-close-div").hide();
-                                    $(".click-to-close-div").show().unbind().html("X");
+                                    $(".click-to-close-div").show().off().html("X");
                                     $("#divQuestionaireEditorContainer").html('<div class="s-editable-text question-header-1 banner-thankyou vodus-responded-toast">' + respondedHeader + responsededMessage + '</div>');
                                     $(".mobile-footer-vodus").html('');
 
@@ -3833,10 +3812,10 @@ function extractHostname(url) {
                                     }
 
                                     clearInterval(app.checkCounterTimer);
-                                    $(".click-to-close-div").click(function () {
+                                    $(".click-to-close-div").on('click', function () {
                                         closeAllVodusModal();
                                     });
-                                    $(".vodus-responded-toast").click(function () {
+                                    $(".vodus-responded-toast").on('click', function () {
                                         if (!app.isBannerMode) {
                                             $('.autoclose-message').hide();
                                             clearInterval(type2CloseTimer);
@@ -4277,7 +4256,7 @@ function extractHostname(url) {
 
             $(".thankyou-product-url").attr("href", redirectUrl);
 
-            $(".thankyou-product-url").click(function () {
+            $(".thankyou-product-url").on('click', function () {
                 vodus.createCookie("vodus_sync_clicked", "Y", 3650);
                 if (app.viewType == "mobile-app") {
                     vodusAndroidSdk.openUrl($(this).attr('href'));
@@ -4290,7 +4269,7 @@ function extractHostname(url) {
                     var memberProfileId = app.questionData.data.UserToken.MemberProfileId;
                 else
                     var memberProfileId = 0;
-                $(".thankyou-product-url").click(function () {
+                $(".thankyou-product-url").on('click', function () {
                     $.ajax({
                         type: "POST",
                         dataType: 'json',
@@ -4550,7 +4529,7 @@ function extractHostname(url) {
 
     var cssChecking = function checkRequiredCssBeforeDisplay() {
         var found = true;
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/bootstrap-vodus.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/241003-bootstrap-vodus.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.surveycssUrl + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/toastr.min.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/240404-tingle.css' + app.cacheCode + '" />'));
@@ -4603,7 +4582,7 @@ function extractHostname(url) {
 
         if (!jqueryExist) {
             jqScript.type = "text/javascript";
-            jqScript.src = "//code.jquery.com/jquery-2.1.1.min.js";
+            jqScript.src = "//code.jquery.com/jquery-3.7.1.min.js";
             jqScript.className = "vodus-include"
             document.getElementsByTagName('head')[0].appendChild(jqScript);
             if (app.debug) {
@@ -4828,8 +4807,8 @@ function BackButtonClick() {
 }
 
 function addLogoutEvent() {
-    $('.btnVodusLogout').unbind('click');
-    $(".btnVodusLogout").click(function () {
+    $('.btnVodusLogout').off('click');
+    $(".btnVodusLogout").on('click', function () {
         isSubmitting = true;
         var app = vodus.getAppData();
 
@@ -4921,11 +4900,11 @@ function addShowLoginModalEvent() {
         $(".vodusSignupLink").attr("href", app.reward3PRootUrl + "/?login");
     }
 
-    $(".closeQuestion").click(function () {
+    $(".closeQuestion").on('click', function () {
         closeAllVodusModal();
     });
 
-    $(".syncType4").click(function () {
+    $(".syncType4").on('click', function () {
         vodus.createCookie("vodus_sync_clicked", "Y", 3650);
         if (app.viewType == "mobile-app") {
             vodusAndroidSdk.openUrl($(this).attr('href'));
@@ -4933,7 +4912,7 @@ function addShowLoginModalEvent() {
         }
     });
 
-    $(".vodusLoginLink").click(function () {
+    $(".vodusLoginLink").on('click', function () {
         vodus.createCookie("vodus_sync_clicked", "Y", 3650);
         closeAllVodusModal();
 
@@ -4943,7 +4922,7 @@ function addShowLoginModalEvent() {
         }
     });
 
-    $(".vodusSignupLink").click(function () {
+    $(".vodusSignupLink").on('click', function () {
         vodus.createCookie("vodus_sync_clicked", "Y", 3650);
         closeAllVodusModal();
     });
@@ -4953,8 +4932,8 @@ function addShowLoginModalEvent() {
         $(".vodusLoginLink").attr("href", "#").attr("target", "");
         $(".vodusSignupLink").attr("href", "#").attr("target", "");
 
-        $(".vodusLoginLink").click(function () {
-            $(".vouponLogin").click();
+        $(".vodusLoginLink").on('click', function () {
+            $(".vouponLogin").trigger('click');
             closeAllVodusModal();
         });
 
@@ -5069,7 +5048,7 @@ function addShowGetQuestionModal() {
     if (app.isUrlSyncRequired) {
         app.surveyType = 1;
         if (!app.thirdPartyEnabled) {
-            $(".iHaveSeenThisQuestionBefore").click(function () {
+            $(".iHaveSeenThisQuestionBefore").on('click', function () {
                 vodus.createCookie("vodus_sync_clicked", "Y", 3650);
             });
             var isSyncClicked = vodus.readCookie("vodus_sync_clicked");
@@ -5081,7 +5060,7 @@ function addShowGetQuestionModal() {
                     $(".answered-before").show();
                     $(".iHaveSeenThisQuestionBefore").attr("href", app.reward3PRootUrl + '/sync?syncType=1&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname));
                     //$(".tablet-footer-bar-vodus").prepend('<a class="closeQuestion i18next" target="_blank" href="' + app.reward3PRootUrl + '/sync?syncType=1&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname) + '" style="display: flex;width: 33%;margin: 10px auto;color: #222;text-decoration: underline;">I have seen this question before</p>');
-                    $(".iHaveSeenThisQuestionBefore").click(function () {
+                    $(".iHaveSeenThisQuestionBefore").on('click', function () {
                         closeAllVodusModal();
                     });
                 }
@@ -5090,7 +5069,7 @@ function addShowGetQuestionModal() {
                         $(".answered-before").show();
                         $(".iHaveSeenThisQuestionBefore").attr("href", app.reward3PRootUrl + '/sync?syncType=1&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname));
                         //$(".tablet-footer-bar-vodus").prepend('<a class="closeQuestion i18next" target="_blank" href="' + app.reward3PRootUrl + '/sync?syncType=1&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname) + '" style="display: flex;width: 33%;margin: 10px auto;color: #222;text-decoration: underline;">I have seen this question before</p>');
-                        $(".iHaveSeenThisQuestionBefore").click(function () {
+                        $(".iHaveSeenThisQuestionBefore").on('click', function () {
                             closeAllVodusModal();
                         });
                     }
@@ -5152,15 +5131,15 @@ function addShowGetQuestionModal() {
             var isPsyPiping = false;
             var isQuestionPiping = false;
             if (i.indexOf('@') >= 0) {
-                newTitle = $('.question-header-1').eq(0).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i]).replace(/\~/g, '&');
+                newTitle = $('.question-header-1').eq(0).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i].replace('&&', '&')).replace(/\~/g, '&');
                 isQuestionPiping = true;
             } else if (i.indexOf('^') >= 0) {
-                newTitle = $('.question-header-1').eq(0).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i]).replace(/\~/g, '&');
+                newTitle = $('.question-header-1').eq(0).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i].replace('&&', '&')).replace(/\~/g, '&');
                 isPsyPiping = true;
             }
 
-            $('.question-header-1').eq(0).html(newTitle);
-            $('.question-header-1').eq(1).html(newTitle);
+            $('.question-header-1').eq(0).html(newTitle.replaceAll('&&', '&'));
+            $('.question-header-1').eq(1).html(newTitle.replaceAll('&&', '&'));
             // Replace answer box
             $(".answer-box").each(function () {
                 $(this).find('.s-editable-text').each(function () {
@@ -5168,12 +5147,12 @@ function addShowGetQuestionModal() {
                         if ($(this).attr('id') == "GridMultipleAnswersPipingId" && app.questionData.data.QuestionTypeId == 5) {
                             return true;
                         }
-                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i]);
+                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i].replace('&&', '&'));
                     } else if (isPsyPiping) {
                         if ($(this).attr('id') == "GridMultipleAnswersPipingId" && app.questionData.data.QuestionTypeId == 5) {
                             return true;
                         }
-                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i]);
+                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i].replace('&&', '&'));
                     }
                     content = content.replace(/\~/g, '&');
                     $(this).html(content);
@@ -5549,7 +5528,7 @@ function addShowGetQuestionModal() {
                 $(".wait-to-close-div").hide();
                 $(".click-to-close-div").show();
 
-                $(".click-to-close-div").click(function () {
+                $(".click-to-close-div").on('click', function () {
                     if (app.checkCounterTimer != null) {
                         clearInterval(app.checkCounterTimer);
                     }
@@ -5561,7 +5540,7 @@ function addShowGetQuestionModal() {
             $(".wait-to-close-div").hide();
             $(".click-to-close-div").show();
 
-            $(".click-to-close-div").click(function () {
+            $(".click-to-close-div").on('click', function () {
                 if (app.checkCounterTimer != null) {
                     clearInterval(app.checkCounterTimer);
                 }
@@ -5607,7 +5586,7 @@ function getQuestionHandler() {
         counter = 5;
     }
 
-    $(".rewardCloseButton").click(function () {
+    $(".rewardCloseButton").on('click', function () {
         closeAllVodusModal();
     });
 
@@ -5640,7 +5619,7 @@ function getQuestionHandler() {
         }).addClass("animate");
 
     };
-    $(".ripple-effect").bind('click', handler);
+    $(".ripple-effect").on('click', handler);
 
     if (app.isMobile) {
         $(".vodus-survey-question-container").css("display", "block");
@@ -5670,7 +5649,7 @@ function getQuestionHandler() {
                 answerElementCount++;
             }
         });
-        $(".answer-box").click(function () {
+        $(".answer-box").on('click', function () {
             if (!submitEnabled) {
                 return false;
             }
@@ -5694,7 +5673,7 @@ function getQuestionHandler() {
 
                 $(this).find('.s-editable-text').parent().html(customAnswer);
                 $(".survey-submit-btn").off();
-                $(".survey-submit-btn").click(function () {
+                $(".survey-submit-btn").on('click', function () {
                     if (
                         $(this).parent().parent().parent().find('.customAnswer').val() === "" ||
                         $(this).parent().parent().parent().find('.customAnswer').val().toLowerCase() === "please specify"
@@ -5784,8 +5763,8 @@ function getQuestionHandler() {
         });
 
         initMcqOpenEndedAnswer($("#divQuestionaireEditorContainer"), app.isMobile);
-        $(".open-ended-mcq").find("input[type=button]").unbind("click");
-        $(".open-ended-mcq").find("input[type=button]").unbind("onclick");
+        $(".open-ended-mcq").find("input[type=button]").off("click");
+        $(".open-ended-mcq").find("input[type=button]").off("onclick");
         $(".open-ended-mcq").find("input[type=button]").on("click", function (e) {
 
 
@@ -5853,7 +5832,7 @@ function getQuestionHandler() {
             answerElementCount++;
         });
 
-        $(".answer-box").click(function () {
+        $(".answer-box").on('click', function () {
             if ($(this).hasClass("selectedAnswer")) {
                 $(this).removeClass("selectedAnswer");
             } else {
@@ -5865,7 +5844,7 @@ function getQuestionHandler() {
 
         initMcqOpenEndedAnswer($("#divQuestionaireEditorContainer"), app.isMobile);
 
-        $('.survey-submit-btn').click(function () {
+        $('.survey-submit-btn').on('click', function () {
             answerIdList = [];
             if (!submitEnabled) {
                 return false;
@@ -5927,7 +5906,7 @@ function getQuestionHandler() {
             answerElementCount++;
         });
 
-        $(".vodus-rating-question-type").find("input[type=radio]").click(function () {
+        $(".vodus-rating-question-type").find("input[type=radio]").on('click', function () {
 
             if (submitEnabled) {
                 var answer = {
@@ -5983,7 +5962,7 @@ function getQuestionHandler() {
             });
         }
 
-        $('.survey-submit-btn').click(function () {
+        $('.survey-submit-btn').on('click', function () {
             answerIdList = [];
             if ($(this).hasClass("greyOutButton")) {
                 return false;
@@ -6205,7 +6184,7 @@ function getQuestionHandler() {
 
         makeRankingAnswerSortable($("#divQuestionaireEditorContainer"), app.isMobile);
 
-        $('.survey-submit-btn').click(function () {
+        $('.survey-submit-btn').on('click', function () {
 
             if ($(this).hasClass("greyOutButton")) {
                 return false;
@@ -6321,7 +6300,7 @@ function getQuestionHandler() {
             $("#mobileGridRow_1").show();
 
             $("#divQuestionaireEditorContainer").find('.survey-submit-btn').hide();
-            $(".answer-box").click(function () {
+            $(".answer-box").on('click', function () {
                 totalResponded++;
                 $(".mobileGridTitle").hide();
                 if (!isGridBoolean) {
@@ -6461,7 +6440,13 @@ function getQuestionHandler() {
                 var splittedDefaultAnswers = [];
                 for (var i in app.pipeList) {
                     var ans = app.pipeList[i].split(':').pop();
-                    var ansDefault = app.pipeListDefault[i].split(':').pop();
+                    var ansDefault = "";
+                    if (app.pipeListDefault[i] != null) {
+                        ansDefault = app.pipeListDefault[i].split(':').pop();
+                    }
+                    else {
+                        ansDefault = ans;
+                    }
 
                     splittedAnswers = ans.split(' && ');
                     splittedDefaultAnswers = ansDefault.split(' && ');
@@ -6518,7 +6503,7 @@ function getQuestionHandler() {
                 $("#mobileGridRow_1").show();
 
                 $("#divQuestionaireEditorContainer").find('.survey-submit-btn').hide();
-                $(".answer-box").click(function () {
+                $(".answer-box").on('click', function () {
                     totalResponded++;
                     $(".mobileGridTitle").hide();
                     if (!isGridBoolean) {
@@ -6653,16 +6638,16 @@ function getQuestionHandler() {
                         $(this).attr('name', 'grid_row_' + currentGridRow).attr('id', 'grid_row_' + currentGridRow);
                     });
                 });
-                $(".gridOption").click(function () {
+                $(".gridOption").on('click', function () {
                     $(this).parent().parent().find('td').removeClass('selectedGridItem');
                     $(this).parent().addClass('selectedGridItem');
-                    $("#divQuestionaireEditorContainer").find('.survey-submit-btn').click();
+                    $("#divQuestionaireEditorContainer").find('.survey-submit-btn').trigger('click');
                 });
             }
 
         }
 
-        $("#divQuestionaireEditorContainer").find('.survey-submit-btn').eq(0).click(function () {
+        $("#divQuestionaireEditorContainer").find('.survey-submit-btn').eq(0).on('click', function () {
             toastr.clear();
             answerIdList = [];
             var haveUnchecked = false;
@@ -6804,7 +6789,7 @@ function getQuestionHandler() {
             Email: vodus.getEmail(),
             MemberProfileId: response.data.UserToken.MemberProfileId
         }
-        $(".referralSkip").click(function () {
+        $(".referralSkip").on('click', function () {
             var endTime = new Date();
             var diff = Math.round((endTime.getTime() / 1000) - (startTime.getTime() / 1000));
             var respondTimeInSeconds = (diff + delayLength);
@@ -6833,7 +6818,7 @@ function getQuestionHandler() {
         }
 
         $(".referralRedirect").attr('data-url', referralRedirectUrl);
-        $(".referralRedirect").click(function () {
+        $(".referralRedirect").on('click', function () {
             closeAllVodusModal();
 
             //surveyResponseViewModel.Token = decodeURIComponent(surveyResponseViewModel.Token);
@@ -7047,7 +7032,7 @@ function getQuestionHandler() {
     $(".survey-mcqsa-div").removeClass("ripple");
     $(".survey-mcqsa-div").removeClass("disabledButtons");
     $(".answer-box").removeClass("ripple");
-    $(".ripple-effect").unbind('click', handler);
+    $(".ripple-effect").off('click', handler);
 
     if (response.data.QuestionTypeId != 6 && response.data.QuestionTypeId != 7 && response.data.QuestionTypeId != 8) {
         //  submit buttons
@@ -7080,8 +7065,8 @@ function getQuestionHandler() {
                             $(".wait-to-close-div").hide();
                             $(".click-to-close-div").show();
                         }
-                        $(".click-to-close-div").unbind("click")
-                        $(".click-to-close-div").click(function () {
+                        $(".click-to-close-div").off("click")
+                        $(".click-to-close-div").on('click', function () {
                             if (app.checkCounterTimer != null) {
                                 clearInterval(app.checkCounterTimer);
                             }
@@ -7098,7 +7083,7 @@ function getQuestionHandler() {
             $(".survey-mcqsa-div").removeClass("ripple");
             $(".survey-mcqsa-div").removeClass("disabledButtons");
             $(".answer-box").removeClass("ripple");
-            $(".ripple-effect").unbind('click', handler);
+            $(".ripple-effect").off('click', handler);
 
             if (response.data.QuestionTypeId != 6 && response.data.QuestionTypeId != 7 && response.data.QuestionTypeId != 8) {
                 //  submit buttons
@@ -7212,15 +7197,15 @@ function showThankYouMessage(appS, pointsGainedS) {
 
         $(".close-modal-instruction-container").html("");
         $(".wait-to-close-div").hide();
-        $(".click-to-close-div").show().unbind().html("X");
+        $(".click-to-close-div").show().off().html("X");
         $("#divQuestionaireEditorContainer").html('<div class="s-editable-text question-header-1 banner-thankyou vodus-responded-toast">' + respondedHeader + responsededMessage + '</div>');
         $(".mobile-footer-vodus").html('');
 
         clearInterval(appS.checkCounterTimer);
-        $(".click-to-close-div").click(function () {
+        $(".click-to-close-div").on('click', function () {
             closeAllVodusModal();
         });
-        $(".vodus-responded-toast").click(function () {
+        $(".vodus-responded-toast").on('click', function () {
             if (!appS.isBannerMode) {
                 $('.autoclose-message').hide();
                 if (typeof type2CloseTimer != "undefined") {
@@ -7364,7 +7349,7 @@ function showCloseMessage() {
                 $(".ctc-container").html("<p class='closeMessage-ctc-button'>&#xd7;</p>");
                 $(".wait-to-close-div").hide();
                 $(".mobile-footer-vodus").hide();
-                $(".closeMessage-ctc-button").click(function () {
+                $(".closeMessage-ctc-button").on('click', function () {
                     $(".bootstrap-vodus").hide();
                 })
                 $("#divQuestionaireEditorContainer").html('<div class="closeMessageContent"></div>');

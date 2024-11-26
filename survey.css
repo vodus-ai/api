@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400');
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif:700');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
-@import url('https://fonts.googleapis.com/css?family=Lora:700');
-@import url('https://fonts.googleapis.com/css?family=Merriweather:700');
-@import url('https://fonts.googleapis.com/css?family=Oxygen:400');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Pangolin');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
@@ -339,7 +339,7 @@
     margin: 0 auto;
     width: auto;
     background-color: #ffffff;
-    box-shadow: 0 -0.3rem 0.3rem rgba(0, 0, 0, 0.2), 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2), 0 0.8rem 1.6rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.2), 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2), 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.2);
     border: none;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -502,7 +502,7 @@
 
 .mobileGridTitle {
     margin-top: 0.1em;
-    text-align: left;
+    text-align: justify;
     display: flex;
     justify-content: center;
     font-weight: 600;
@@ -559,10 +559,6 @@
 .question-title-primary {
     background-color: white !important;
     color: #5A168E !important;
-}
-
-.droppable-template img {
-    height: auto;
 }
 
 .bootstrap-vodus .mobile-question-container,
@@ -639,8 +635,10 @@
 }
 
 .bootstrap-vodus .mobile-question-container .partnerLogo {
-    max-height: 100%;
     max-width: 100%;
+    margin: 0;
+    min-height: 50%;
+    max-height: 2.5em;
 }
 
 .bootstrap-vodus .mobile-question-container .left-header-container {
@@ -648,13 +646,11 @@
     float: left;
     display: flex;
     align-items: center;
-    height: 38px;
 }
 
     .bootstrap-vodus .mobile-question-container .left-header-container a {
         cursor: pointer;
         margin: auto;
-        height: 38px;
         display: flex;
     }
 
@@ -863,7 +859,7 @@
 }
 
 .bootstrap-vodus .mobile-question-container .answer-box {
-    margin: 0.1em 1%;
+    margin: 0.12em 1%;
     padding: 0.1em 0;
 }
 
@@ -1474,7 +1470,7 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
     bottom: 0;
     right: 0;
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     padding: 0;
     z-index: 9999999999999;
     background: transparent;
@@ -1526,11 +1522,11 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
         min-height: 316px;
     }
 
-    .ccType3.bootstrap-vodus .modal-dialog .modal-content,
-    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog .modal-content,
-    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog .modal-content {
+    .ccType3.bootstrap-vodus .modal-dialog .modal-content {
         transform: none;
         width: 100%;
+        height: auto;
+        padding: 0;
     }
 
     .ccType3.bootstrap-vodus .mobile-vodusLoginDialog .intro-btn {
@@ -3807,47 +3803,26 @@ input.gridOption {
     letter-spacing: 0.1em;
 }
 
-
 /*Vodus-Banner*/
-.vodus-banner {
+.vodus-banner .bootstrap-vodus {
+    position: unset;
+    bottom: unset;
+    right: unset;
+    width: 100%;
+    line-height: 1.1em;
     margin: auto;
     height: fit-content;
 }
 
-    .vodus-banner .bootstrap-vodus {
-        position: unset;
-        bottom: unset;
-        right: unset;
+    .vodus-banner .bootstrap-vodus .modal-dialog {
+        margin: auto;
+        max-width: 400px;
+        z-index: 0;
     }
 
-        .vodus-banner .bootstrap-vodus .modal-dialog {
-            margin: auto;
-            max-width: 500px;
-        }
-
-
-
-/*Vodus-Banner*/
-.vodus-banner {
-    margin: auto;
+.vodus-banner .tingle-modal-box__content {
+    min-width: 300px;
 }
-
-    .vodus-banner .bootstrap-vodus {
-        position: unset;
-        bottom: unset;
-        right: unset;
-        width: 100%;
-    }
-
-        .vodus-banner .bootstrap-vodus .modal-dialog {
-            margin: auto;
-            max-width: 400px;
-            z-index: 0;
-        }
-
-    .vodus-banner .tingle-modal-box__content {
-        min-width: 300px;
-    }
 
 @media (min-width:400px) {
     .vodus-responded-toast .thankyou-product-container h5.autoclose-message {
@@ -3991,9 +3966,6 @@ input.gridOption {
 /*End Responsive*/
 
 /*catfish*/
-.bottom-right {
-}
-
 .bottom-left {
     left: 0;
     right: unset;
