@@ -637,7 +637,8 @@
 .bootstrap-vodus .mobile-question-container .partnerLogo {
     max-width: 100%;
     margin: 0;
-    max-height: calc(2rem + 8px);
+    min-height: 50%;
+    max-height: 2.5em;
 }
 
 .bootstrap-vodus .mobile-question-container .left-header-container {
@@ -1469,7 +1470,7 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
     bottom: 0;
     right: 0;
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     padding: 0;
     z-index: 9999999999999;
     background: transparent;
@@ -1521,11 +1522,11 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
         min-height: 316px;
     }
 
-    .ccType3.bootstrap-vodus .modal-dialog .modal-content,
-    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusLoginDialog .modal-content,
-    .ccType3 .modal-dialog.mobile-vodusLoginDialog#vodusSignupDialog .modal-content {
+    .ccType3.bootstrap-vodus .modal-dialog .modal-content {
         transform: none;
         width: 100%;
+        height: auto;
+        padding: 0;
     }
 
     .ccType3.bootstrap-vodus .mobile-vodusLoginDialog .intro-btn {
@@ -3965,9 +3966,6 @@ input.gridOption {
 /*End Responsive*/
 
 /*catfish*/
-.bottom-right {
-}
-
 .bottom-left {
     left: 0;
     right: unset;
