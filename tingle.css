@@ -116,10 +116,8 @@
 -------------------------------------------------------------- */
 
 .tingle-enabled {
-  position: fixed;
-  overflow: hidden;
-  left: 0;
-  right: 0;
+    position: unset;
+    overflow: auto;
 }
 
 .tingle-modal--visible .tingle-modal-box__footer {
