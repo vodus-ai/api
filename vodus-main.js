@@ -4529,10 +4529,10 @@ function extractHostname(url) {
 
     var cssChecking = function checkRequiredCssBeforeDisplay() {
         var found = true;
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/bootstrap-vodus.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '@latest/bootstrap-vodus.css' + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.surveycssUrl + app.cacheCode + '" />'));
         $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/toastr.min.css' + app.cacheCode + '" />'));
-        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '/tingle.css' + app.cacheCode + '" />'));
+        $('head').append($('<link rel="stylesheet" type="text/css" href="' + app.cdnUrl + '@latest/tingle.css' + app.cacheCode + '" />'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>'));
         $('head').append($('<script src="//cdnjs.cloudflare.com/ajax/libs/tingle/0.13.2/tingle.min.js"></script>'));
 
