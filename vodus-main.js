@@ -159,7 +159,7 @@ function extractHostname(url) {
         app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js';
         //app.surveycssUrl = 'https://localhost:7193/cc/css/creator/survey.css';
         //app.commonjsUrl = 'https://localhost:7193/cc/scripts/vodus-common.js';
-        app.serverlessUrl = 'https://vodus-api-serverless-live-2.azurewebsites.net';
+        app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
     } else if (app.env == 'uat') {
         app.rootUrl = 'https://vodus-api-uat.azurewebsites.net';
         app.ccRequestUrl = 'https://vodus-api-uat.azurewebsites.net';
@@ -230,7 +230,7 @@ function extractHostname(url) {
         var resyncApiUrl = "";
         var resyncRewardsUrl = "";
         if (env == 'live') {
-            resyncServerlessUrl = 'https://vodus-api-serverless-live-2.azurewebsites.net';
+            resyncServerlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
             resyncApiUrl = 'https://api.vodus.com/';
             resyncRewardsUrl = 'https://vodus.my/';
         } else if (env == 'uat') {
@@ -1386,7 +1386,7 @@ function extractHostname(url) {
         getCCParameter: function getCCParameter(partnercode, env) {
             var requestUrl = "";
             if (env == 'live') {
-                requestUrl = 'https://vodus-api-serverless-live-2.azurewebsites.net/';
+                requestUrl = 'https://vodus-api-serverless.azurewebsites.net/';
             } else if (env == 'uat') {
                 requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
                 //requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
