@@ -146,6 +146,7 @@ function extractHostname(url) {
         containerHeight: global.vodus.containerHeight,
         cookieSyncType: '',
         userCountryCode: (global.vodus.userCountryCode != null && global.vodus.userCountryCode != "" ? global.vodus.userCountryCode : ""),
+        impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0)
     }
 
     if (app.env == 'live') {
@@ -1448,7 +1449,8 @@ function extractHostname(url) {
                                 app.dmpCode = GlobalParameter.DMPCode;
                                 app.dmpTargetAudience = GlobalParameter.DMPTargetAudience;
                                 app.dmpTargetCode = GlobalParameter.DMPTargetCode;
-                                app.chainQuota = GlobalParameter.ChainQuota
+                                app.chainQuota = GlobalParameter.ChainQuota;
+                                app.impressionInterval = GlobalParameter.ImpressionInterval;
                             } else {
                                 if (app.interval == null || app.interval == "") {
                                     app.interval = GlobalParameter.Interval;
@@ -1536,6 +1538,9 @@ function extractHostname(url) {
                                 }
                                 if (app.chainQuota == null || app.chainQuota == "") {
                                     app.chainQuota = GlobalParameter.ChainQuota;
+                                }
+                                if (app.impressionInterval == null || app.impressionInterval == "") {
+                                    app.impressionInterval = GlobalParameter.ImpressionInterval;
                                 }
                             }
                         }
@@ -1641,6 +1646,10 @@ function extractHostname(url) {
 
                         if (global.vodus.chainQuota === undefined || global.vodus.chainQuota == null || global.vodus.chainQuota == "") {
                             global.vodus.chainQuota = 1
+                        }
+
+                        if (global.vodus.impressionInterval === undefined || global.vodus.impressionInterval == null || global.vodus.impressionInterval == "") {
+                            global.vodus.impressionInterval = 0;
                         }
 
                         vodus.setAppData(app);
@@ -2130,7 +2139,7 @@ function extractHostname(url) {
             }
 
             if (app.isFingerprintingEnabled) {
-                vodus.getQuestionInternal();
+                vodus.getQuestionInternal(null);
                 return true;
             } else {
                 if (app.bannerMode == 1) {
@@ -2177,6 +2186,7 @@ function extractHostname(url) {
                         submitResponseLastUpdatedAt: null,
                         thirdPartyEnabled: app.thirdPartyEnabled,
                         lastSyncAt: "",
+                        impressionLastUpdatedAt: null,
                         globalCC: {
                             status: "",
                             lastUpdatedAt: ""
@@ -2435,7 +2445,7 @@ function extractHostname(url) {
             localMemberProfileObject.session.localCount = totalSession;
             localStorage.setItem('memberProfile', JSON.stringify(localMemberProfileObject));
             if (totalSession >= app.minSessionCount) {
-                vodus.getQuestionInternal();
+                vodus.getQuestionInternal(localMemberProfileObject);
             } else {
                 var sessionLastUpdated = new Date();
                 var currentDate = new Date();
@@ -2452,7 +2462,7 @@ function extractHostname(url) {
                     localMemberProfileObject.session.lastUpdatedAt = new Date();
                     localStorage.setItem('memberProfile', JSON.stringify(localMemberProfileObject));
                     if (totalSession + 1 >= app.minSessionCount) {
-                        vodus.getQuestionInternal();
+                        vodus.getQuestionInternal(localMemberProfileObject);
                     }
                 } else {
                     vodus.log(totalSession + " / " + app.minSessionCount);
@@ -2508,13 +2518,29 @@ function extractHostname(url) {
                 }
             }, 1000);
         },
-        getQuestionInternal: function getQuestionInternal() {
+        getQuestionInternal: function getQuestionInternal(localMemberProfileObject) {
             vodus.setRedirectUrl("");
             //app.dmpCode = 'cc075833-8412-42a7-bfce-0157b6fcf7d7';
             //app.dmpType = "1";
             //app.dmpTarget = '617060';
             var app = vodus.getAppData();
+            
             if (app != null) {
+                //  Check impressionInterval
+                if(localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null){
+                    var currentDate = new Date();
+
+                    vodus.log('Impression time > ' + new Date(localMemberProfileObject.impressionLastUpdatedAt));
+                    vodus.log('Impression interval > ' + Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60));
+                   
+                    if (Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60) >= app.impressionInterval) {
+                        vodus.log('Impression interval passed');
+                    } else {
+                        vodus.log('Impression interval failed');
+                        return;
+                    }
+                }
+                
                 vodus.log("GetQuestionInternal -> Checking available questions...");
 
                 if (app.dmpType == "1") {
@@ -3022,15 +3048,16 @@ function extractHostname(url) {
                         let localMemberProfile = localStorage.getItem('memberProfile');
                         if (localMemberProfile != null) {
                             if (response.message == "global cc inactive") {
-
                                 localMemberProfileObject = JSON.parse(localMemberProfile);
                                 localMemberProfileObject.globalCC.status = "inactive";
                                 localMemberProfileObject.globalCC.lastUpdatedAt = new Date();
+                                localMemberProfileObject.impressionLastUpdatedAt = new Date();
                                 localStorage.setItem("memberProfile", JSON.stringify(localMemberProfileObject));
                             } else {
                                 localMemberProfileObject = JSON.parse(localMemberProfile);
                                 localMemberProfileObject.globalCC.status = "active";
                                 localMemberProfileObject.globalCC.lastUpdatedAt = new Date();
+                                localMemberProfileObject.impressionLastUpdatedAt = new Date();
                                 localStorage.setItem("memberProfile", JSON.stringify(localMemberProfileObject));
                             }
                         }
