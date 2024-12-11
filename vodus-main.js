@@ -2520,27 +2520,25 @@ function extractHostname(url) {
         },
         getQuestionInternal: function getQuestionInternal(localMemberProfileObject) {
             vodus.setRedirectUrl("");
-            //app.dmpCode = 'cc075833-8412-42a7-bfce-0157b6fcf7d7';
-            //app.dmpType = "1";
-            //app.dmpTarget = '617060';
             var app = vodus.getAppData();
-            
+
             if (app != null) {
                 //  Check impressionInterval
-                if(localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null){
-                    var currentDate = new Date();
-
-                    vodus.log('Impression time > ' + new Date(localMemberProfileObject.impressionLastUpdatedAt));
-                    vodus.log('Impression interval > ' + Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60));
-                   
-                    if (Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60) >= app.impressionInterval) {
-                        vodus.log('Impression interval passed');
-                    } else {
-                        vodus.log('Impression interval failed');
-                        return;
+                if (app.impressionInterval != null || app.impressionInterval > 0) {
+                    if (localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null) {
+                        var currentDate = new Date();
+                        var sessionImpressionInterval = 30;
+                        var memberImpressionInterval = Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60);
+                        if (memberImpressionInterval < app.impressionInterval && memberImpressionInterval >= sessionImpressionInterval) {
+                            vodus.log('Impression interval failed');
+                            return;
+                        } else {
+                            vodus.log('Impression interval passed');
+                        }
                     }
                 }
-                
+
+
                 vodus.log("GetQuestionInternal -> Checking available questions...");
 
                 if (app.dmpType == "1") {
