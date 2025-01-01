@@ -3546,22 +3546,19 @@ function extractHostname(url) {
                                     }
                                     if (app.availablePoints < 15) {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Dapatkan Baucar Tunai").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
                                         } else {
                                             $(".close-modal-instruction").html("Harap bantu kajian selidik kami dan").css("font-weight", "400");
-                                            $(".question-purpose").html("Dapatkan Baucar Tunai").css("font-weight", "600");
+                                            $(".question-purpose").html("dapatkan baucar tunai").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.334) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
-                                        } else if (random < 0.667) {
+                                        } else {
                                             $(".close-modal-instruction").html("Dapatkan VPoint untuk").css("font-weight", "400");
                                             $(".question-purpose").html("menebus baucar tunai & diskaun hebat").css("font-weight", "600");
-                                        } else {
-                                            $(".close-modal-instruction").html("Dapatkan 10% diskaun beli-bela").css("font-weight", "600");
-                                            $(".question-purpose").html("dari setiap 10 soalan yang dijawab").css("font-weight", "400");
                                         }
                                     }
                                 } else if (app.language == "zh") {
@@ -3580,16 +3577,13 @@ function extractHostname(url) {
                                             $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.337) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
                                             $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
-                                        } else if (random < 0.667) {
-                                            $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
-                                            $(".question-purpose").html("巨额折扣和现金券").css("font-weight", "600");
                                         } else {
-                                            $(".close-modal-instruction").html("回答每十道简单问题以").css("font-weight", "400");
-                                            $(".question-purpose").html("获取 20% 购物折扣").css("font-weight", "600");
-                                        }
+                                            $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
+                                            $(".question-purpose").html("现金券和巨额折扣").css("font-weight", "600");
+                                        } 
                                     }
                                 } else {
                                     var totQuestionsInstruction = "one ";
@@ -3606,22 +3600,17 @@ function extractHostname(url) {
                                             $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
                                         } else {
-                                            $(".close-modal-instruction").html("Get exclusive vouchers for free").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Gain cash vouchers rewards").css("font-weight", "600");
                                             $(".question-purpose").html("when you join our research").css("font-weight", "400");
-                                            //  $(".close-modal-instruction").html("Help us in our research to").css("font-weight", "400");
-                                            //  $(".question-purpose").html("gain cash vouchers").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.337) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
-                                        } else if (random < 0.667) {
-                                            $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
-                                            $(".question-purpose").html("huge discounts and cash vouchers").css("font-weight", "600");
                                         } else {
-                                            $(".close-modal-instruction").html("Get 20% off your shopping").css("font-weight", "600");
-                                            $(".question-purpose").html("for every 10 questions answered").css("font-weight", "400");
-                                        }
+                                            $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
+                                            $(".question-purpose").html("cash vouchers and shopping discounts").css("font-weight", "600");
+                                        } 
                                     }
                                 }
 
