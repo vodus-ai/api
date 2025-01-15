@@ -146,6 +146,7 @@ function extractHostname(url) {
         containerHeight: global.vodus.containerHeight,
         cookieSyncType: '',
         userCountryCode: (global.vodus.userCountryCode != null && global.vodus.userCountryCode != "" ? global.vodus.userCountryCode : ""),
+        impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0)
     }
 
     if (app.env == 'live') {
@@ -1448,7 +1449,8 @@ function extractHostname(url) {
                                 app.dmpCode = GlobalParameter.DMPCode;
                                 app.dmpTargetAudience = GlobalParameter.DMPTargetAudience;
                                 app.dmpTargetCode = GlobalParameter.DMPTargetCode;
-                                app.chainQuota = GlobalParameter.ChainQuota
+                                app.chainQuota = GlobalParameter.ChainQuota;
+                                app.impressionInterval = GlobalParameter.ImpressionInterval;
                             } else {
                                 if (app.interval == null || app.interval == "") {
                                     app.interval = GlobalParameter.Interval;
@@ -1536,6 +1538,9 @@ function extractHostname(url) {
                                 }
                                 if (app.chainQuota == null || app.chainQuota == "") {
                                     app.chainQuota = GlobalParameter.ChainQuota;
+                                }
+                                if (app.impressionInterval == null || app.impressionInterval == "") {
+                                    app.impressionInterval = GlobalParameter.ImpressionInterval;
                                 }
                             }
                         }
@@ -1641,6 +1646,10 @@ function extractHostname(url) {
 
                         if (global.vodus.chainQuota === undefined || global.vodus.chainQuota == null || global.vodus.chainQuota == "") {
                             global.vodus.chainQuota = 1
+                        }
+
+                        if (global.vodus.impressionInterval === undefined || global.vodus.impressionInterval == null || global.vodus.impressionInterval == "") {
+                            global.vodus.impressionInterval = 0;
                         }
 
                         vodus.setAppData(app);
@@ -2130,7 +2139,7 @@ function extractHostname(url) {
             }
 
             if (app.isFingerprintingEnabled) {
-                vodus.getQuestionInternal();
+                vodus.getQuestionInternal(null);
                 return true;
             } else {
                 if (app.bannerMode == 1) {
@@ -2177,6 +2186,7 @@ function extractHostname(url) {
                         submitResponseLastUpdatedAt: null,
                         thirdPartyEnabled: app.thirdPartyEnabled,
                         lastSyncAt: "",
+                        impressionLastUpdatedAt: null,
                         globalCC: {
                             status: "",
                             lastUpdatedAt: ""
@@ -2435,7 +2445,7 @@ function extractHostname(url) {
             localMemberProfileObject.session.localCount = totalSession;
             localStorage.setItem('memberProfile', JSON.stringify(localMemberProfileObject));
             if (totalSession >= app.minSessionCount) {
-                vodus.getQuestionInternal();
+                vodus.getQuestionInternal(localMemberProfileObject);
             } else {
                 var sessionLastUpdated = new Date();
                 var currentDate = new Date();
@@ -2452,7 +2462,7 @@ function extractHostname(url) {
                     localMemberProfileObject.session.lastUpdatedAt = new Date();
                     localStorage.setItem('memberProfile', JSON.stringify(localMemberProfileObject));
                     if (totalSession + 1 >= app.minSessionCount) {
-                        vodus.getQuestionInternal();
+                        vodus.getQuestionInternal(localMemberProfileObject);
                     }
                 } else {
                     vodus.log(totalSession + " / " + app.minSessionCount);
@@ -2508,13 +2518,27 @@ function extractHostname(url) {
                 }
             }, 1000);
         },
-        getQuestionInternal: function getQuestionInternal() {
+        getQuestionInternal: function getQuestionInternal(localMemberProfileObject) {
             vodus.setRedirectUrl("");
-            //app.dmpCode = 'cc075833-8412-42a7-bfce-0157b6fcf7d7';
-            //app.dmpType = "1";
-            //app.dmpTarget = '617060';
             var app = vodus.getAppData();
+
             if (app != null) {
+                //  Check impressionInterval
+                if (app.impressionInterval != null || app.impressionInterval > 0) {
+                    if (localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null) {
+                        var currentDate = new Date();
+                        var sessionImpressionInterval = 30;
+                        var memberImpressionInterval = Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60);
+                        if (memberImpressionInterval < app.impressionInterval && memberImpressionInterval >= sessionImpressionInterval) {
+                            vodus.log('Impression interval failed');
+                            return;
+                        } else {
+                            vodus.log('Impression interval passed');
+                        }
+                    }
+                }
+
+
                 vodus.log("GetQuestionInternal -> Checking available questions...");
 
                 if (app.dmpType == "1") {
@@ -3022,15 +3046,16 @@ function extractHostname(url) {
                         let localMemberProfile = localStorage.getItem('memberProfile');
                         if (localMemberProfile != null) {
                             if (response.message == "global cc inactive") {
-
                                 localMemberProfileObject = JSON.parse(localMemberProfile);
                                 localMemberProfileObject.globalCC.status = "inactive";
                                 localMemberProfileObject.globalCC.lastUpdatedAt = new Date();
+                                localMemberProfileObject.impressionLastUpdatedAt = new Date();
                                 localStorage.setItem("memberProfile", JSON.stringify(localMemberProfileObject));
                             } else {
                                 localMemberProfileObject = JSON.parse(localMemberProfile);
                                 localMemberProfileObject.globalCC.status = "active";
                                 localMemberProfileObject.globalCC.lastUpdatedAt = new Date();
+                                localMemberProfileObject.impressionLastUpdatedAt = new Date();
                                 localStorage.setItem("memberProfile", JSON.stringify(localMemberProfileObject));
                             }
                         }
@@ -3352,7 +3377,7 @@ function extractHostname(url) {
                         }
 
                         if ("http://localhost:63828" == origin || "https://voupon-uat.azurewebsites.net" == origin || "https://vodus.my" == origin) {
-                            $(".tingle-modal").fadeOut(300);
+                            $(".tingle-modal").fadeOut(50);
                         }
 
                         var questionDelayTimer = setInterval(function () {
@@ -3521,22 +3546,19 @@ function extractHostname(url) {
                                     }
                                     if (app.availablePoints < 15) {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Dapatkan Baucar Tunai").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
                                         } else {
                                             $(".close-modal-instruction").html("Harap bantu kajian selidik kami dan").css("font-weight", "400");
-                                            $(".question-purpose").html("Dapatkan Baucar Tunai").css("font-weight", "600");
+                                            $(".question-purpose").html("dapatkan baucar tunai").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.334) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
-                                        } else if (random < 0.667) {
+                                        } else {
                                             $(".close-modal-instruction").html("Dapatkan VPoint untuk").css("font-weight", "400");
                                             $(".question-purpose").html("menebus baucar tunai & diskaun hebat").css("font-weight", "600");
-                                        } else {
-                                            $(".close-modal-instruction").html("Dapatkan 10% diskaun beli-bela").css("font-weight", "600");
-                                            $(".question-purpose").html("dari setiap 10 soalan yang dijawab").css("font-weight", "400");
                                         }
                                     }
                                 } else if (app.language == "zh") {
@@ -3555,15 +3577,12 @@ function extractHostname(url) {
                                             $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.337) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
                                             $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
-                                        } else if (random < 0.667) {
-                                            $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
-                                            $(".question-purpose").html("巨额折扣和现金券").css("font-weight", "600");
                                         } else {
-                                            $(".close-modal-instruction").html("回答每十道简单问题以").css("font-weight", "400");
-                                            $(".question-purpose").html("获取 20% 购物折扣").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
+                                            $(".question-purpose").html("现金券和巨额折扣").css("font-weight", "600");
                                         }
                                     }
                                 } else {
@@ -3581,21 +3600,16 @@ function extractHostname(url) {
                                             $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
                                         } else {
-                                            $(".close-modal-instruction").html("Get exclusive vouchers for free").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Gain cash vouchers rewards").css("font-weight", "600");
                                             $(".question-purpose").html("when you join our research").css("font-weight", "400");
-                                            //  $(".close-modal-instruction").html("Help us in our research to").css("font-weight", "400");
-                                            //  $(".question-purpose").html("gain cash vouchers").css("font-weight", "600");
                                         }
                                     } else {
-                                        if (random < 0.337) {
+                                        if (random < 0.5) {
                                             $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
-                                        } else if (random < 0.667) {
-                                            $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
-                                            $(".question-purpose").html("huge discounts and cash vouchers").css("font-weight", "600");
                                         } else {
-                                            $(".close-modal-instruction").html("Get 20% off your shopping").css("font-weight", "600");
-                                            $(".question-purpose").html("for every 10 questions answered").css("font-weight", "400");
+                                            $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
+                                            $(".question-purpose").html("cash vouchers and shopping discounts").css("font-weight", "600");
                                         }
                                     }
                                 }
@@ -3719,7 +3733,7 @@ function extractHostname(url) {
                                     }
                                 }
                             }
-                        }, 1000);
+                        }, 30);
                     } else {
                         vodus.log('No more question: \n' + response.message);
                         var pointsGained = 0;
@@ -7590,7 +7604,7 @@ function logDelay(responseQuestion, responseSubmit, timeSpent, functionType, ser
 
 function getBrowser() {
     if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
-        return 'Opera';
+        return 'Opera';s
     } else if (navigator.userAgent.indexOf("Chrome") != -1) {
         return 'Chrome';
     } else if (navigator.userAgent.indexOf("Safari") != -1) {
