@@ -3377,7 +3377,7 @@ function extractHostname(url) {
                         }
 
                         if ("http://localhost:63828" == origin || "https://voupon-uat.azurewebsites.net" == origin || "https://vodus.my" == origin) {
-                            $(".tingle-modal").fadeOut(300);
+                            $(".tingle-modal").fadeOut(30);
                         }
 
                         var questionDelayTimer = setInterval(function () {
@@ -3583,7 +3583,7 @@ function extractHostname(url) {
                                         } else {
                                             $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
                                             $(".question-purpose").html("现金券和巨额折扣").css("font-weight", "600");
-                                        } 
+                                        }
                                     }
                                 } else {
                                     var totQuestionsInstruction = "one ";
@@ -3610,7 +3610,7 @@ function extractHostname(url) {
                                         } else {
                                             $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
                                             $(".question-purpose").html("cash vouchers and shopping discounts").css("font-weight", "600");
-                                        } 
+                                        }
                                     }
                                 }
 
@@ -3733,7 +3733,7 @@ function extractHostname(url) {
                                     }
                                 }
                             }
-                        }, 1000);
+                        }, 30);
                     } else {
                         vodus.log('No more question: \n' + response.message);
                         var pointsGained = 0;
