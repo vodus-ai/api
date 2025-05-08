@@ -2547,10 +2547,8 @@ function extractHostname(url) {
                         var lotaudsListId = [];
                         //  Check if single or multiple target code
                         var targetAudienceListContainer = app.dmpTargetAudience.split("|");
-                        console.log('targetAudienceListContainer', targetAudienceListContainer)
                         for (var audTarget = 0; audTarget < targetAudienceListContainer.length; audTarget++) {
                             var targetAudience = targetAudienceListContainer[audTarget].split(",");
-                            console.log('targetAudience', targetAudience)
                             for (var aud = 0; aud < targetAudience.length; aud++) {
                                 if (lotaudsListId.includes(targetAudience[aud])) {
                                     app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
@@ -2560,7 +2558,6 @@ function extractHostname(url) {
                             }
                         }
                     }
-                    console.log('aud', app.dmpAudienceTargetCode)
                     if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
                         vodus.log("No DMP CC Target set, not qualified");
                     }
@@ -2570,34 +2567,43 @@ function extractHostname(url) {
                     vodus.setupCC();
                 }
                 else if (app.dmpType == "2") {
+                    var isLotameValid = false;
                     if (app.dmpCode != null && app.dmpCode != "") {
                         var lotameProfileWithCode = "lotame_" + app.dmpCode;
-                        var lotameProfileId = eval(lotameProfileWithCode).getProfileId();
-                        if (lotameProfileId != null && lotameProfileId != "") {
-                            vodus.setPartnerData(lotameProfileId);
+                        try{
+                            var lotameProfileId = eval(lotameProfileWithCode).getProfileId();
+                            if (lotameProfileId != null && lotameProfileId != "") {
+                                vodus.setPartnerData(lotameProfileId);
+                                isLotameValid = true;
+                            }
+                        }
+                        catch(err){
+                            console.log('Skiping lotame ' + app.dmpCode)
                         }
                     }
 
-                    var lotaudsList = localStorage.getItem("lotame_" + app.dmpCode + "_auds");
-                    if (lotaudsList != null && lotaudsList != "") {
-                        var lotaudsListId = lotaudsList.split(",");
-                        var targetAudienceContainerList = app.dmpTargetAudience.split("|");
-                        for (var aud = 0; aud < targetAudienceContainerList.length; aud++) {
-                            var targetAudienceList = targetAudienceContainerList[aud].split(",");
-                            vodus.log("DMP Target Audience : " + targetAudienceList);
-                            for (var i = 0; i < targetAudienceList.length; i++) {
-                                if (lotaudsListId.includes(targetAudienceList[i])) {
-                                    app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
-                                    vodus.log("DMP Qualified : " + targetAudienceList[i]);
-                                    break;
+                    if(isLotameValid){
+                        var lotaudsList = localStorage.getItem("lotame_" + app.dmpCode + "_auds");
+                        if (lotaudsList != null && lotaudsList != "") {
+                            var lotaudsListId = lotaudsList.split(",");
+                            var targetAudienceContainerList = app.dmpTargetAudience.split("|");
+                            for (var aud = 0; aud < targetAudienceContainerList.length; aud++) {
+                                var targetAudienceList = targetAudienceContainerList[aud].split(",");
+                                vodus.log("DMP Target Audience : " + targetAudienceList);
+                                for (var i = 0; i < targetAudienceList.length; i++) {
+                                    if (lotaudsListId.includes(targetAudienceList[i])) {
+                                        app.dmpAudienceTargetCode.push(app.dmpTargetCode.split('|')[aud]);
+                                        vodus.log("DMP Qualified : " + targetAudienceList[i]);
+                                        break;
+                                    }
                                 }
                             }
-                        }
-                        if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
-                            vodus.log("No DMP CC Target set, not qualified");
-                        }
-                        else {
-                            vodus.log("DMP CC Target => " + app.dmpAudienceTargetCode);
+                            if (app.dmpAudienceTargetCode == null || app.dmpAudienceTargetCode.length == 0) {
+                                vodus.log("No DMP CC Target set, not qualified");
+                            }
+                            else {
+                                vodus.log("DMP CC Target => " + app.dmpAudienceTargetCode);
+                            }
                         }
                     }
                     vodus.setupCC();
@@ -4909,7 +4915,7 @@ function addShowLoginModalEvent() {
             $(".vodusSignupLink").attr("href", redirectUrl);
         }
     } else {
-        $(".syncType4").attr("href", app.reward3PRootUrl).attr("href", app.reward3PRootUrl).attr("target", "_blank");
+        $(".syncType4").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("target", "_blank");
         $(".vodusLoginLink").attr("href", app.reward3PRootUrl + "/?login");
         $(".vodusSignupLink").attr("href", app.reward3PRootUrl + "/?login");
     }
@@ -5138,6 +5144,13 @@ function addShowGetQuestionModal() {
                     isAutoGen = true;
                 }
             }
+
+            if ($("#RankingAnswersPipingId").length) {
+                if ($("#RankingAnswersPipingId").html().includes(i)) {
+                    isAutoGen = true;
+                }
+            }
+            
             var isPsyAutoGenPiping = false;
             if ($("#PsychographicMultipleAnswersPiping").length) {
                 isPsyAutoGenPiping = true;
@@ -6191,10 +6204,72 @@ function getQuestionHandler() {
 
     } else if (response.data.QuestionTypeId === 8) {
         answerIdList = [];
-        $(response.data.SurveyQuestionAnswers).each(function () {
-            $(".survey-ranking-div").eq(answerElementCount).attr('id', this.Id);
-            answerElementCount++;
-        });
+        if($("#RankingAnswersPipingId").length) {
+            var splittedAnswers = [];
+            var splittedDefaultAnswers = [];
+            for (var i in app.pipeList) {
+                var ans = app.pipeList[i].split(':').pop();
+                var ansDefault = "";
+                if (app.pipeListDefault[i] != null) {
+                    ansDefault = app.pipeListDefault[i].split(':').pop();
+                } else {
+                    ansDefault = ans;
+                }
+
+                splittedAnswers = ans.split(' && ');
+                splittedDefaultAnswers = ansDefault.split(' && ');
+
+                if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
+                    splittedIds = app.pipeAnswerIdList;
+                }
+            }
+            
+            var rankingTemplate = $(".tingle-modal-box__content").find(".template-preview-answer-to-display-table-content").find(".answer-box").eq(0).prop('outerHTML');
+            var rankingItems = "";
+            $(splittedAnswers).each(function () {
+                var answerID = splittedIds[currentRow - 1];
+                var rankingCopy = rankingTemplate;
+                rankingItems += rankingCopy;
+            });
+            
+            $(response.data.SurveyQuestionAnswers).each(function () {
+                if(!this.AnswerValue.includes('@') && !this.AnswerValue.includes('^p'))
+                {
+                    var rankingCopy = rankingTemplate;
+                    rankingItems += rankingCopy;
+                }
+            });
+            
+            if($(".tingle-modal-box__content").find(".template-preview-answer-to-display-table-content").length > 0){
+                $(".tingle-modal-box__content").find(".template-preview-answer-to-display-table-content").html(rankingItems);
+                
+                var currentRow = 1;
+                var answerElement = 0;
+                $(splittedAnswers).each(function () {
+                    $(".survey-ranking-div").eq(answerElement).attr('id', splittedIds[currentRow - 1]);
+                    $(".survey-ranking-div").eq(answerElement).find(".s-editable-text").html(splittedAnswers[currentRow - 1]);
+                    currentRow++;
+                    answerElement++;
+                });
+
+                $(response.data.SurveyQuestionAnswers).each(function () {
+                    if(!this.AnswerValue.includes('@') && !this.AnswerValue.includes('^p'))
+                    {``
+                        $(".survey-ranking-div").eq(answerElement).attr('id', this.Id);
+                        $(".survey-ranking-div").eq(answerElement).find(".s-editable-text").html(this.AnswerValue);
+                        answerElement++;
+                    }
+                });
+            }
+
+        } else {
+            $(response.data.SurveyQuestionAnswers).each(function () {
+                $(".survey-ranking-div").eq(answerElementCount).attr('id', this.Id);
+                $(".survey-ranking-div").eq(answerElementCount).find(".s-editable-text").html(this.AnswerValue);
+                answerElementCount++;
+            });
+        }
+
 
         makeRankingAnswerSortable($("#divQuestionaireEditorContainer"), app.isMobile);
 
@@ -6488,7 +6563,6 @@ function getQuestionHandler() {
                 if ($("#divQuestionaireEditorContainer").find(".question-header-1").first().attr("israndomize") == "true") {
                     randomizeGridBooleanRows($("#divQuestionaireEditorContainer"));
                 }
-
                 $(splittedAnswers).each(function () {
                     var answerID = splittedIds[currentRow - 1];
 
