@@ -4668,7 +4668,7 @@ function extractHostname(url) {
 
             var jqUI = document.createElement('script');
             jqUI.type = "text/javascript";
-            jqUI.src = "//code.jquery.com/ui/1.12.1/jquery-ui.min.js";
+            jqUI.src = "//code.jquery.com/ui/1.14.1/jquery-ui.min.js";
             jqUI.className = "vodus-include"
             document.getElementsByTagName('head')[0].appendChild(jqUI);
             jqUI.onload = function () {
