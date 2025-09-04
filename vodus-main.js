@@ -5237,6 +5237,15 @@ function addShowGetQuestionModal() {
                 }
             }
 
+            if(splittedAnswers.length == 1)
+            {
+                if(splittedAnswers[0].indexOf("~~") > 0)
+                {
+                    splittedAnswers = splittedAnswers[0].split('~~');
+                    ansDefaultArray = ansDefaultArray[0].split('~~');
+                }
+            }
+
             var isAutoGenAnswer = true;
             if ($("#GridMultipleAnswersPipingId").length) {
                 isAutoGenAnswer = true ? $("#GridMultipleAnswersPipingId").html().includes(i) : false;
@@ -5302,7 +5311,7 @@ function addShowGetQuestionModal() {
             }
 
             if ($("#GridMultipleAnswersPipingId").length && app.questionData.data.QuestionTypeId == 1 && app.isMobile) {
-                $(".template-preview-answer-to-display").each(function () {
+                $(".tingle-modal-box .template-preview-answer-to-display").each(function () {
                     $(this).find('.s-editable-text').each(function () {
                         if ($(this).attr("id") == "GridMultipleAnswersPipingId") {
 
@@ -5349,6 +5358,7 @@ function addShowGetQuestionModal() {
 
 
                             var idsCounter = 0;
+                            
                             for (var answer in splittedAnswers) {
                                 var element = $(this).parent().clone(true, true);
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
@@ -5424,6 +5434,7 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
+                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5448,6 +5459,7 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
+                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5480,6 +5492,7 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
+                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(currnetRow).prepend(element);
                                 currentCol++;
@@ -5527,6 +5540,7 @@ function addShowGetQuestionModal() {
                                         $(this).attr("id", "grid_row_" + currentRow);
                                         $(this).attr("name", "grid_row_" + currentRow);
                                         $(this).attr('data-pipe-answer-id', splittedIds[idsCounter]);
+                                        element.attr('default-answer', ansDefaultArray[answer].trim());
                                         $(this).addClass('AutoGenPiping');
                                     });
                                     currentRow++;
@@ -5559,6 +5573,7 @@ function addShowGetQuestionModal() {
                                     splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                     element.find('.s-editable-text').html(splittedAnswers[answer]);
                                     element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
+                                    element.attr('default-answer', ansDefaultArray[answer].trim());
                                     element.addClass('AutoGenPiping');
                                     $(currnetRow).prepend(element);
                                     currentCol++;
