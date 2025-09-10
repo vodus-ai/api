@@ -206,9 +206,9 @@ function initVodus(){
             app.reward3PRootUrl = 'https://vodus.sg';
             app.responseRootUrl = 'https://sg-api.vodus.com';
             app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-            app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/survey.css?build=250101';
-            app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
-            app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
+            app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/240208-survey.css';
+            app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
+            app.serverlessUrl = 'https://sg-vodus-api-serverless.azurewebsites.net';
         }
         else{
             app.rootUrl = 'https://api.vodus.com';
@@ -217,8 +217,8 @@ function initVodus(){
             app.reward3PRootUrl = 'https://vodus.my';
             app.responseRootUrl = 'https://api.vodus.com';
             app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-            app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/survey.css?build=250101';
-            app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+            app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/240208-survey.css';
+            app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@latest/230612-1-vodus-common.js';
             app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
         }
         
@@ -313,7 +313,7 @@ function initVodus(){
                 resyncRewardsUrl = 'https://vodus.my/';
             }
             else{
-                resyncServerlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
+                resyncServerlessUrl = 'https://sg-vodus-api-serverless.azurewebsites.net';
                 resyncApiUrl = 'https://sg-api.vodus.com/';
                 resyncRewardsUrl = 'https://vodus.sg/';
             }
@@ -1481,10 +1481,10 @@ function initVodus(){
             if (env == 'live') {
                 if(app.userCountryCode == "SG")
                 {
-                    requestUrl = `https://sg-vodus-api-serverless-live.azurewebsites.net/`;
+                    requestUrl = `https://vodus-api-serverless.azurewebsites.net/`;
                 }
                 else{
-                    requestUrl = `https://vodus-api-serverless.azurewebsites.net/`;
+                    requestUrl = `https://sg-vodus-api-serverless.azurewebsites.net/`;
                 }
             } else if (env == 'uat') {
                 if(app.userCountryCode == "SG")
@@ -3655,19 +3655,19 @@ function initVodus(){
                                     }
                                     if (app.availablePoints < 15) {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Dapatkan baucar tunai TNG").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
                                         } else {
                                             $(".close-modal-instruction").html("Harap bantu kajian selidik kami dan").css("font-weight", "400");
-                                            $(".question-purpose").html("dapatkan baucar tunai").css("font-weight", "600");
+                                            $(".question-purpose").html("dapatkan baucar tunai TNG.").css("font-weight", "600");
                                         }
                                     } else {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Dapatkan baucar tunai").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Dapatkan baucar tunai TNG").css("font-weight", "600");
                                             $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik").css("font-weight", "400");
                                         } else {
                                             $(".close-modal-instruction").html("Dapatkan VPoint untuk").css("font-weight", "400");
-                                            $(".question-purpose").html("menebus baucar tunai & diskaun hebat").css("font-weight", "600");
+                                            $(".question-purpose").html("menebus baucar tunai TNG.").css("font-weight", "600");
                                         }
                                     }
                                 } else if (app.language == "zh") {
@@ -3680,18 +3680,18 @@ function initVodus(){
                                     if (app.availablePoints < 15) {
                                         if (random < 0.5) {
                                             $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
-                                            $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
+                                            $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
                                         } else {
                                             $(".close-modal-instruction").html("协助我们的研究以").css("font-weight", "400");
-                                            $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
+                                            $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
                                         }
                                     } else {
                                         if (random < 0.5) {
                                             $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
-                                            $(".question-purpose").html("获得现金与购物折扣").css("font-weight", "600");
+                                            $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
                                         } else {
                                             $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
-                                            $(".question-purpose").html("现金券和巨额折扣").css("font-weight", "600");
+                                            $(".question-purpose").html("TNG现金券.").css("font-weight", "600");
                                         }
                                     }
                                 } else {
@@ -3706,19 +3706,19 @@ function initVodus(){
                                     }
                                     if (app.availablePoints < 15) {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Earn TNG cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
                                         } else {
-                                            $(".close-modal-instruction").html("Gain cash vouchers rewards").css("font-weight", "600");
-                                            $(".question-purpose").html("when you join our research").css("font-weight", "400");
+                                            $(".close-modal-instruction").html("Gain TNG cash vouchers rewards").css("font-weight", "600");
+                                            $(".question-purpose").html("when you join our survey.").css("font-weight", "400");
                                         }
                                     } else {
                                         if (random < 0.5) {
-                                            $(".close-modal-instruction").html("Earn cash vouchers").css("font-weight", "600");
+                                            $(".close-modal-instruction").html("Earn TNG cash vouchers").css("font-weight", "600");
                                             $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
                                         } else {
                                             $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
-                                            $(".question-purpose").html("cash vouchers and shopping discounts").css("font-weight", "600");
+                                            $(".question-purpose").html("TNG cash vouchers.").css("font-weight", "600");
                                         }
                                     }
                                 }
@@ -5222,9 +5222,6 @@ function addShowGetQuestionModal() {
             pipelistCount++;
             var ans = app.pipeList[i].split('::').pop();
 
-            var ansDefault = app.pipeListDefault[i].split('::').pop();
-            var ansDefaultArray = ansDefault.split("&&");
-
             var splittedAnswers = ans.split(' && ');
 
             if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
@@ -5234,15 +5231,6 @@ function addShowGetQuestionModal() {
                 if (app.idsForPipeList != null) {
                     var ids = app.idsForPipeList[i].split(':').shift();
                     var splittedIds = ids.split(' & ');
-                }
-            }
-
-            if(splittedAnswers.length == 1)
-            {
-                if(splittedAnswers[0].indexOf("~~") > 0)
-                {
-                    splittedAnswers = splittedAnswers[0].split('~~');
-                    ansDefaultArray = ansDefaultArray[0].split('~~');
                 }
             }
 
@@ -5283,7 +5271,6 @@ function addShowGetQuestionModal() {
             $('.question-header-1').eq(0).html(newTitle.replaceAll('&&', '&'));
             $('.question-header-1').eq(1).html(newTitle.replaceAll('&&', '&'));
             // Replace answer box
-            var answerCount = 0;
             $(".answer-box").each(function () {
                 $(this).find('.s-editable-text').each(function () {
                     if (isQuestionPiping) {
@@ -5311,7 +5298,7 @@ function addShowGetQuestionModal() {
             }
 
             if ($("#GridMultipleAnswersPipingId").length && app.questionData.data.QuestionTypeId == 1 && app.isMobile) {
-                $(".tingle-modal-box .template-preview-answer-to-display").each(function () {
+                $(".template-preview-answer-to-display").each(function () {
                     $(this).find('.s-editable-text').each(function () {
                         if ($(this).attr("id") == "GridMultipleAnswersPipingId") {
 
@@ -5358,13 +5345,11 @@ function addShowGetQuestionModal() {
 
 
                             var idsCounter = 0;
-                            
                             for (var answer in splittedAnswers) {
                                 var element = $(this).parent().clone(true, true);
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
-                                element.find('.s-editable-text').html(splittedAnswers[answer].trim());
+                                element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
-                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5400,9 +5385,8 @@ function addShowGetQuestionModal() {
 
                                 var element = $(this).parent().clone(true, true);
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
-                                element.find('.s-editable-text').html(splittedAnswers[answer].trim());
+                                element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
-                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5434,7 +5418,6 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
-                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5459,7 +5442,6 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
-                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
@@ -5492,7 +5474,6 @@ function addShowGetQuestionModal() {
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
-                                element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
                                 $(currnetRow).prepend(element);
                                 currentCol++;
@@ -5540,7 +5521,6 @@ function addShowGetQuestionModal() {
                                         $(this).attr("id", "grid_row_" + currentRow);
                                         $(this).attr("name", "grid_row_" + currentRow);
                                         $(this).attr('data-pipe-answer-id', splittedIds[idsCounter]);
-                                        element.attr('default-answer', ansDefaultArray[answer].trim());
                                         $(this).addClass('AutoGenPiping');
                                     });
                                     currentRow++;
@@ -5573,7 +5553,6 @@ function addShowGetQuestionModal() {
                                     splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
                                     element.find('.s-editable-text').html(splittedAnswers[answer]);
                                     element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
-                                    element.attr('default-answer', ansDefaultArray[answer].trim());
                                     element.addClass('AutoGenPiping');
                                     $(currnetRow).prepend(element);
                                     currentCol++;
@@ -5793,10 +5772,8 @@ function getQuestionHandler() {
                 if ($(".answer-box .s-editable-text" + "#" + sequenceNumber).length == 1) {
                     //For psycho MCQ to map AnswerID against AnswerSequence
                     $(".answer-box .s-editable-text" + "#" + sequenceNumber).parent().attr("id", app.questionData.data.SurveyQuestionAnswers[answerElementCount].Id);
-                    $(".answer-box .s-editable-text" + "#" + sequenceNumber).parent().attr("default-answer", app.questionData.data.SurveyQuestionAnswers[answerElementCount].DefaultAnswerValue);
                 } else {
                     $(".answer-box").eq(answerElementCount).attr('id', this.Id);
-                    $(".answer-box").eq(answerElementCount).attr('default-answer', this.DefaultAnswerValue);
                 }
                 $(".answer-box").eq(answerElementCount).attr('data-redirect-url', this.RedirectUrl);
                 answerElementCount++;
@@ -5841,11 +5818,9 @@ function getQuestionHandler() {
                         pipeSurveyQuestionAnswerId: ($(".survey-submit-btn").closest('.survey-mcqsa-div').attr('data-pipe-answer-id') == undefined ? 0 : $(".survey-submit-btn").closest('.survey-mcqsa-div').attr('data-pipe-answer-id')),
                         isAutoGenPiping: ($(".survey-submit-btn").closest('.survey-mcqsa-div').hasClass('AutoGenPiping') ? 1 : 0),
                         answerValue: $(this).parent().parent().parent().find('.customAnswer').val(),
-                        defaultAnswerValue: $(this).parent().parent().parent().find('.customAnswer').val(),
                         otherAnswer: $(this).parent().parent().parent().find('.customAnswer').val(),
                         skipDefaultValue: false,
-                        orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number')),
-                        
+                        orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                     }
                     answerIdList.push(answer);
 
@@ -5882,7 +5857,6 @@ function getQuestionHandler() {
                     isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                     redirectUrl: $(this).attr('data-redirect-url'),
                     answerValue: $(this).find('.s-editable-text').text(),
-                    defaultAnswerValue: $(this).attr('default-answer'),
                     skipDefaultValue: false,
                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                 }
@@ -5931,7 +5905,6 @@ function getQuestionHandler() {
                 isAutoGenPiping: ($(this).parent().parent().hasClass('AutoGenPiping') ? 1 : 0),
                 redirectUrl: $(this).parent().parent().attr('data-redirect-url'),
                 answerValue: $(this).siblings("textarea").val(),
-                defaultAnswerValue: $(this).siblings("textarea").val(),
                 skipDefaultValue: true,
                 orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
             }
@@ -5982,10 +5955,8 @@ function getQuestionHandler() {
             if ($(".answer-box .s-editable-text" + "#" + sequenceNumber).length == 1) {
                 //For psycho MCQ to map AnswerID against AnswerSequence
                 $(".answer-box .s-editable-text" + "#" + sequenceNumber).parent().attr("id", app.questionData.data.SurveyQuestionAnswers[answerElementCount].Id);
-                $(".answer-box .s-editable-text" + "#" + sequenceNumber).parent().attr("default-answer", app.questionData.data.SurveyQuestionAnswers[answerElementCount].DefaultAnswerValue);
             } else {
                 $(".answer-box").eq(answerElementCount).attr('id', this.Id);
-                $(".answer-box").eq(answerElementCount).attr('default-answer', this.DefaultAnswerValue);
             }
             answerSequence++;
             answerElementCount++;
@@ -6015,7 +5986,6 @@ function getQuestionHandler() {
                     pipeSurveyQuestionAnswerId: ($(this).attr('data-pipe-answer-id') == undefined ? 0 : $(this).attr('data-pipe-answer-id')),
                     isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                     answerValue: $(this).hasClass("open-ended-mcq") ? $(this).find('.mcq-open-ended-textarea > textarea').val() : $(this).find('.s-editable-text').text(),
-                    defaultAnswerValue: $(this).hasClass("open-ended-mcq") ? $(this).find('.mcq-open-ended-textarea > textarea').val() : $(this).attr("default-answer"),
                     skipDefaultValue: $(this).hasClass("open-ended-mcq"),
                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                 }
@@ -6074,7 +6044,6 @@ function getQuestionHandler() {
                     pipeSurveyQuestionAnswerId: ($(this).attr('data-pipe-answer-id') == undefined ? 0 : $(this).attr('data-pipe-answer-id')),
                     isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                     answerValue: $(this).next("label").attr("title"),
-                    defaultAnswerValue: $(this).next("label").attr("title"),
                     skipDefaultValue: false,
                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                 }
@@ -6143,7 +6112,6 @@ function getQuestionHandler() {
                         id: $(this).attr('id'),
                         AnswerSequenceNumber: (idx + 1),
                         answerValue: $(this).find('.s-editable-text').text(),
-                        defaultAnswerValue: $(this).attr('default-answer'),
                         skipDefaultValue: true,
                         orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                     }
@@ -6155,7 +6123,6 @@ function getQuestionHandler() {
                         id: $(this).attr('id'),
                         AnswerSequenceNumber: (idx + 1),
                         answerValue: $(this).text(),
-                        defaultAnswerValue: $(this).text(),
                         skipDefaultValue: true,
                         orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                     }
@@ -6347,14 +6314,13 @@ function getQuestionHandler() {
                 var ans = app.pipeList[i].split(':').pop();
                 var ansDefault = "";
                 if (app.pipeListDefault[i] != null) {
-                    var ansDefaultList = app.pipeListDefault[i].split(':').pop();
-                    ansDefault = ansDefaultList.split(' && ');
+                    ansDefault = app.pipeListDefault[i].split(':').pop();
                 } else {
-                    ansDefault = ans.split(' && ');
+                    ansDefault = ans;
                 }
 
                 splittedAnswers = ans.split(' && ');
-                splittedDefaultAnswers = ansDefault;
+                splittedDefaultAnswers = ansDefault.split(' && ');
 
                 if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
                     splittedIds = app.pipeAnswerIdList;
@@ -6384,7 +6350,6 @@ function getQuestionHandler() {
                 var answerElement = 0;
                 $(splittedAnswers).each(function () {
                     $(".survey-ranking-div").eq(answerElement).attr('id', splittedIds[currentRow - 1]);
-                    $(".survey-ranking-div").eq(answerElement).attr('default-answer', ansDefault[currentRow - 1]);
                     $(".survey-ranking-div").eq(answerElement).find(".s-editable-text").html(splittedAnswers[currentRow - 1]);
                     currentRow++;
                     answerElement++;
@@ -6394,7 +6359,6 @@ function getQuestionHandler() {
                     if(!this.AnswerValue.includes('@') && !this.AnswerValue.includes('^p'))
                     {``
                         $(".survey-ranking-div").eq(answerElement).attr('id', this.Id);
-                        $(".survey-ranking-div").eq(answerElement).attr('default-answer', this.DefaultAnswerValue);
                         $(".survey-ranking-div").eq(answerElement).find(".s-editable-text").html(this.AnswerValue);
                         answerElement++;
                     }
@@ -6404,7 +6368,6 @@ function getQuestionHandler() {
         } else {
             $(response.data.SurveyQuestionAnswers).each(function () {
                 $(".survey-ranking-div").eq(answerElementCount).attr('id', this.Id);
-                $(".survey-ranking-div").eq(answerElementCount).attr('default-answer', this.DefaultAnswerValue);
                 $(".survey-ranking-div").eq(answerElementCount).find(".s-editable-text").html(this.AnswerValue);
                 answerElementCount++;
             });
@@ -6430,7 +6393,6 @@ function getQuestionHandler() {
                     id: $(this).attr('id'),
                     AnswerSequenceNumber: (idx + 1),
                     answerValue: $(this).find('.s-editable-text').text(),
-                    defaultAnswerValue: $(this).attr('default-answer'),
                     skipDefaultValue: false,
                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                 }
@@ -6489,7 +6451,6 @@ function getQuestionHandler() {
         //Mobile & not Grid Multiple answers question piping
         if (app.isMobile && !$("#GridMultipleAnswersPipingId").length) {
             var templateTable = $(".tingle-modal-box__content").find(".template-preview-answer-to-display-table-content").eq(0).find('table');
-            var defaultTemplateTable = $(".tingle-modal-box__content").find(".template-preview-answer-to-display-table-content").eq(0).find('table');
             var totalRows = $(templateTable).find('.grid-row').length;
             var mobileGridBackgroundColor = $(templateTable).css('background-color');
             var isGridBoolean = $(".grid-boolean").length > 0;
@@ -6500,15 +6461,12 @@ function getQuestionHandler() {
             if ($("#divQuestionaireEditorContainer").find(".question-header-1").first().attr("israndomize") == "true") {
                 randomizeGridBooleanRows($("#divQuestionaireEditorContainer"));
             }
-            var defaultGridHtml = $.parseHTML(window.vodus_grid_tag);
-            var defaultGridHtmlRows = $(defaultGridHtml).find('table').html();
-            
+
             $(templateTable).find('.grid-row').each(function () {
                 if (isGridBoolean) {
-                    //var defaultAnswer = $(defaultGridHtmlRows).find('.grid-row').eq(currentRow).find('.s-selectable-text').text()
+                    var defaultAnswer = $(this).find('.s-editable-text').attr('default-answer');
                     var answerID = $(this).find(".gridOption").eq(0).attr("id");
                 }
-                var defaultAnswer = $(defaultGridHtmlRows).find('.grid-row').eq(currentRow).find('.s-selectable-text').text()
                 currentRow++;
                 titleExtra += '<div class="mobileGridTitle" style="display:none;" answer-ID="' + answerID + '" id="mobileGridRow_' + currentRow + '"><span style="font-style:italic;">[' + currentRow + '/' + totalRows + ']</span><span id="mobileGridRowTitle_' + currentRow + '" style="margin-left:0.5em;" default-answer="' + defaultAnswer + '">' + $(this).find('td').eq(0).find('.s-selectable-text').text() + '</span></div>';
             });
@@ -6524,7 +6482,7 @@ function getQuestionHandler() {
                 var answer = $(this).find('.s-selectable-text').text();
                 if (answer != '') {
                     var defaultAnswer = $(window.vodus_grid_mobile_tag).find('.grid-header').eq(0).find('td').eq(elementCount).find('.s-selectable-text').text();
-                    var answerChoices = '<div class="mobile-grid-div answer-box selectGridMobileAnswer" id="selectGridMobileAnswer_' + elementCount + '" style="width: 98%; background-color:' + mobileGridBackgroundColor + '; float:left;" data-answer="' + answer + '" default-answer="' + defaultAnswer + '"><div class="s-editable-text">' + answer + '</div></div>';
+                    var answerChoices = '<div class="mobile-grid-div answer-box selectGridMobileAnswer" id="selectGridMobileAnswer_' + elementCount + '" style="width: 98%; background-color:' + mobileGridBackgroundColor + '; float:left;" data-answer="' + answer + '" data-default-answer="' + defaultAnswer + '"><div class="s-editable-text">' + answer + '</div></div>';
                     answerDisplay += answerChoices;
                 }
                 elementCount++;
@@ -6536,19 +6494,15 @@ function getQuestionHandler() {
             $("#divQuestionaireEditorContainer").find('.survey-submit-btn').hide();
             $(".answer-box").on('click', function () {
                 totalResponded++;
-               
                 $(".mobileGridTitle").hide();
                 if (!isGridBoolean) {
-                    //var defaultRowAnswer = $(window.vodus_grid_mobile_tag).find('.grid-row').eq(currentSelectedRow - 1).find('.s-selectable-text').attr('default-answer')
-                    defaultRowAnswer = $(defaultGridHtmlRows).find('.grid-row').eq(currentSelectedRow - 1).find('.s-selectable-text').text()
-                    
+                    var defaultRowAnswer = $(window.vodus_grid_mobile_tag).find('.grid-row').eq(currentSelectedRow - 1).find('.s-selectable-text').text();
                     var answer = {
                         id: $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).attr('id'),
                         pipeSurveyQuestionAnswerId: ($(this).attr('data-pipe-answer-id') == undefined ? 0 : $(this).attr('data-pipe-answer-id')),
                         isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                         AnswerSequenceNumber: currentSelectedRow,
-                        answerValue: defaultRowAnswer + " -- " + $(this).attr('default-answer'),
-                        defaultAnswerValue: defaultRowAnswer + " -- " + $(this).attr('default-answer'),
+                        answerValue: defaultRowAnswer + " -- " + $(this).attr('data-default-answer'),
                         skipDefaultValue: false,
                         orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                     }
@@ -6556,7 +6510,7 @@ function getQuestionHandler() {
                 } else {//Grid Boolean Answer Format
                     if ($(this).index() == 0) {
                         var idFromAnswer = response.data.SurveyQuestionAnswers[$("#mobileGridRow_" + currentSelectedRow.toString()).attr("answer-id").split("_")[1]].Id;
-                        var defaultRowAnswer = response.data.SurveyQuestionAnswers.filter(x => x.Id == idFromAnswer)[0].DefaultAnswerValue;
+                        var defaultRowAnswer = response.data.SurveyQuestionAnswers.filter(x => x.Id == idFromAnswer)[0].AnswerValue;
 
                         var answer = {
                             id: idFromAnswer,
@@ -6564,7 +6518,6 @@ function getQuestionHandler() {
                             isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                             AnswerSequenceNumber: currentSelectedRow,
                             answerValue: defaultRowAnswer,
-                            defaultAnswerValue: defaultRowAnswer,
                             otherAnswer: defaultRowAnswer,
                             skipDefaultValue: false,
                             orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
@@ -6578,7 +6531,7 @@ function getQuestionHandler() {
                 var endTime = new Date();
                 var diff = Math.round((endTime.getTime() / 1000) - (startTime.getTime() / 1000));
                 var respondTimeInSeconds = (diff + delayLength);
-                
+
                 if (!isGridBoolean) {
                     if (totalRows == totalResponded) {
                         if (!submitEnabled) {
@@ -6628,7 +6581,6 @@ function getQuestionHandler() {
                                 isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                                 AnswerSequenceNumber: currentSelectedRow,
                                 answerValue: 'None of the above',
-                                defaultAnswerValue: 'None of the above',
                                 otherAnswer: 'None of the above',
                                 skipDefaultValue: false,
                                 orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
@@ -6695,6 +6647,7 @@ function getQuestionHandler() {
                         splittedIds = app.pipeAnswerIdList;
                     }
                 }
+
                 var totalRows = splittedAnswers.length;
 
                 var isGridBoolean = $(".grid-boolean").length > 0;
@@ -6752,7 +6705,6 @@ function getQuestionHandler() {
                             isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                             AnswerSequenceNumber: currentSelectedRow,
                             answerValue: defaultRowAnswer + " -- " + $(this).attr('data-default-answer'),
-                            defaultAnswerValue: defaultRowAnswer + " -- " + $(this).attr('data-default-answer'),
                             skipDefaultValue: false,
                             orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                         }
@@ -6761,14 +6713,13 @@ function getQuestionHandler() {
                         if (this.id.split('_')[1] == 1) {
                             var idFromAnswer = response.data.SurveyQuestionAnswers[$("#mobileGridRow_" + currentSelectedRow.toString()).attr("answer-id").split("_")[1]].Id;
 
-                            var defaultRowAnswer = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentSelectedRow.toString()).find('.s-editable-text').attr('default-answer');
+                            var defaultRowAnswer = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentSelectedRow.toString()).find('.s-editable-text').text();
                             var answer = {
                                 id: idFromAnswer,
                                 pipeSurveyQuestionAnswerId: ($(this).attr('data-pipe-answer-id') == undefined ? 0 : $(this).attr('data-pipe-answer-id')),
                                 isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                                 AnswerSequenceNumber: currentSelectedRow,
                                 answerValue: defaultRowAnswer,
-                                defaultAnswerValue: defaultRowAnswer,
                                 otherAnswer: defaultRowAnswer,
                                 skipDefaultValue: false,
                                 orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
@@ -6832,7 +6783,6 @@ function getQuestionHandler() {
                                     isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                                     AnswerSequenceNumber: currentSelectedRow,
                                     answerValue: 'None of the above',
-                                    defaultAnswerValue: 'None of the above',
                                     otherAnswer: 'None of the above',
                                     skipDefaultValue: false,
                                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
@@ -6906,7 +6856,7 @@ function getQuestionHandler() {
 
                 var defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
-                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').attr('default-answer')
+                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text();
                 var defaultTD = $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).find('table');
 
                 var tdLength = $(this).find("td").length;
@@ -6921,7 +6871,6 @@ function getQuestionHandler() {
                                     AnswerSequenceNumber: ($(this).find("td").eq(i).children().attr('data-pipe-answer-id') == undefined ? ++currentSelectedRow : currentSelectedRow + 100 + currentRow),
                                     //answerValue: rowText + " -- " + $('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                     answerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
-                                    defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').attr('default-answer'),
                                     skipDefaultValue: false,
                                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                                 }
@@ -6939,7 +6888,6 @@ function getQuestionHandler() {
                                         AnswerSequenceNumber: ($(this).find("td").eq(i).children().attr('data-pipe-answer-id') == undefined ? ++currentSelectedRow : currentSelectedRow + 100 + currentRow),
                                         //answerValue: rowText + " -- " + $('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                         answerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
-                                        defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').attr('default-answer'),
                                         skipDefaultValue: false,
                                         orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                                     }
@@ -6976,7 +6924,6 @@ function getQuestionHandler() {
                     isAutoGenPiping: ($(this).hasClass('AutoGenPiping') ? 1 : 0),
                     AnswerSequenceNumber: 1,
                     answerValue: 'None of the above',
-                    defaultAnswerValue: 'None of the above',
                     otherAnswer: 'None of the above',
                     skipDefaultValue: false,
                     orderNumber: 1
@@ -7122,7 +7069,7 @@ function getQuestionHandler() {
                             "sso-list-1-bold": "Gain double VPoints",
                             "sso-list-2-bold": "Exchange your VPoints",
                             "sso-list-1": " by logging into your Vodus account before responding.",
-                            "sso-list-2": " for cash vouchers and discounts on ",
+                            "sso-list-2": " for TNG cash vouchers and discounts on ",
                             "forgot-password": "Forgot password?",
                             "email": "Email",
                             "password": "Password",
@@ -7578,7 +7525,7 @@ function showCloseMessage() {
                         "<span>Vodus is a market research partner of " + app.partnerWebsiteName
                         + " that <b>rewards you for your opinion</b> with a simple one-question survey.</span>";
                     var closeMessage_paragraph =
-                        + "<p>Your VPoints can be exchanged for <b>cash vouchers or shopping discounts</b> (10 VPoints for 10% discount on popular brands!)</p>"
+                        + "<p>Your VPoints can be exchanged for <b>TNG cash vouchers</b>.</p>"
                         + "<p>Check out our rewards offering on <a target='_blank' href='" + $(".syncType4").eq(0).attr("href") + "'>Vodus Rewards</a>.</p>";
                 }
 
@@ -7604,7 +7551,7 @@ function showCloseMessage() {
                         + " yang memberi <b>ganjaran untuk pendapat anda</b> melalui satu soalan tinjauan yang mudah.</span>";
                     var closeMessage_paragraph =
                         "<p>Anda akan mendapat 1 VPoint untuk setiap soalan yang dijawab.</p>"
-                        + "<p>VPoint anda boleh ditukar dengan <b>baucar tunai atau diskaun beli-belah</b> (10 VPoint untuk diskaun 10% bagi jenama terkenal!)</p>"
+                        + "<p>VPoint anda boleh ditukar dengan <b>baucar tunai atau diskaun beli-belah</b>.</p>"
                         + "<p>Lihat tawaran ganjaran kami di <a target='_blank' href='" + $(".syncType4").eq(0).attr("href") + "'>Vodus Rewards</a>.</p>";
                 } else if (app.language == "zh") {
                     $(".close-modal-instruction-container").html("<h3>奖励您所提供的意见</h3>");
@@ -7620,10 +7567,10 @@ function showCloseMessage() {
                     $(".close-modal-instruction-container").html("<h3>Get Rewarded for Your Opinion</h3>");
                     var closeMessage_subtitle =
                         "<span>Vodus is a market research partner of " + app.partnerWebsiteName
-                        + " that <b>rewards you for your opinion</b> with a simple one-question survey.</span>";
+                        + " that <b>rewards you for your opinion</b> with a simple survey questions.</span>";
                     var closeMessage_paragraph =
                         "<p>You will gain 1 VPoint for every question answered.</p>"
-                        + "<p>Your VPoints can be exchanged for <b>cash vouchers or shopping discounts</b> (10 VPoints for 10% discount on popular brands!)</p>"
+                        + "<p>Your VPoints can be exchanged for <b>cash vouchers or shopping discounts</b>.</p>"
                         + "<p>Check out our rewards offering on <a target='_blank' href='" + $(".syncType4").eq(0).attr("href") + "'>Vodus Rewards</a>.</p>";
                 }
                 $(".closeMessageContent").html(closeMessage_subtitle + closeMessage_paragraph);
