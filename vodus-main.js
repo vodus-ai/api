@@ -3648,16 +3648,16 @@ function initVodus() {
                                         }
                                         if (app.availablePoints < 15) {
                                             if (random < 0.5) {
-                                                $(".close-modal-instruction").html("Dapatkan baucar tunai TNG").css("font-weight", "600");
-                                                $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik.").css("font-weight", "400");
+                                                $(".close-modal-instruction").html("Jawab soalan kaji selidik dan").css("font-weight", "400");
+                                                $(".question-purpose").html("dapatkan baucar tunai TNG.").css("font-weight", "600");
                                             } else {
                                                 $(".close-modal-instruction").html("Harap bantu kajian selidik kami dan").css("font-weight", "400");
                                                 $(".question-purpose").html("dapatkan baucar tunai TNG.").css("font-weight", "600");
                                             }
                                         } else {
                                             if (random < 0.5) {
-                                                $(".close-modal-instruction").html("Dapatkan baucar tunai TNG.").css("font-weight", "600");
-                                                $(".question-purpose").html("dengan menjawab " + totQuestionsInstruction + "soalan kajian selidik.").css("font-weight", "400");
+                                                $(".close-modal-instruction").html("Dapatkan baucar tunai TNG").css("font-weight", "600");
+                                                $(".question-purpose").html("dengan menjawab soalan kajian selidik.").css("font-weight", "400");
                                             } else {
                                                 $(".close-modal-instruction").html("Dapatkan VPoint untuk").css("font-weight", "400");
                                                 $(".question-purpose").html("menebus baucar tunai TNG.").css("font-weight", "600");
@@ -3672,16 +3672,16 @@ function initVodus() {
                                         }
                                         if (app.availablePoints < 15) {
                                             if (random < 0.5) {
-                                                $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
-                                                $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
+                                                $(".close-modal-instruction").html("回答简单的调查问题,").css("font-weight", "400");
+                                                $(".question-purpose").html("领取TNG现金券.").css("font-weight", "600");
                                             } else {
                                                 $(".close-modal-instruction").html("协助我们的研究以").css("font-weight", "400");
-                                                $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
+                                                $(".question-purpose").html("获得TNG现金券.").css("font-weight", "600");
                                             }
                                         } else {
                                             if (random < 0.5) {
-                                                $(".close-modal-instruction").html("回答" + totQuestionsInstruction + "简单的研究问题以").css("font-weight", "400");
-                                                $(".question-purpose").html("获得TNG现金.").css("font-weight", "600");
+                                                $(".close-modal-instruction").html("回答简单的调查问题").css("font-weight", "400");
+                                                $(".question-purpose").html("领取TNG现金券.").css("font-weight", "600");
                                             } else {
                                                 $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
                                                 $(".question-purpose").html("TNG现金券.").css("font-weight", "600");
@@ -3700,15 +3700,15 @@ function initVodus() {
                                         if (app.availablePoints < 15) {
                                             if (random < 0.5) {
                                                 $(".close-modal-instruction").html("Earn TNG cash vouchers").css("font-weight", "600");
-                                                $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
+                                                $(".question-purpose").html("by answering our survey questions.").css("font-weight", "400");
                                             } else {
                                                 $(".close-modal-instruction").html("Earn TNG cash vouchers").css("font-weight", "600");
-                                                $(".question-purpose").html("when you join our survey.").css("font-weight", "400");
+                                                $(".question-purpose").html("by participating in our survey.").css("font-weight", "400");
                                             }
                                         } else {
                                             if (random < 0.5) {
                                                 $(".close-modal-instruction").html("Earn TNG cash vouchers").css("font-weight", "600");
-                                                $(".question-purpose").html("by answering " + totQuestionsInstruction + "survey question" + s).css("font-weight", "400");
+                                                $(".question-purpose").html("answering our survey questions.").css("font-weight", "400");
                                             } else {
                                                 $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
                                                 $(".question-purpose").html("TNG cash vouchers.").css("font-weight", "600");
