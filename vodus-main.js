@@ -4130,26 +4130,8 @@ function initVodus() {
                             if (app.isChainQuestion) {
                                 app.interval = 0;
                                 app.isChainQuestion = true;
-                                //vodus.getCC();
-                               
-
-                                if (app != null) {
-                                    if (app.impressionInterval != null || app.impressionInterval > 0) {
-                                        if (localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null) {
-                                            var currentDate = new Date();
-                                            var memberImpressionInterval = Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60);
-                                            if (memberImpressionInterval > app.impressionInterval) {
-                                                vodus.log('Chain question in progress. Starting another cc...');
-                                                vodus.log('Impression interval passed');
-                                            } else {
-                                                vodus.log('Impression interval failed');
-                                                closeAllVodusModal();
-                                                return;
-                                            }
-                                        }
-                                    }
-                                return;
-                                    }
+                                vodus.log('Chain question in progress. Starting another cc...');
+                                vodus.getCC();
                             }
 
                             $("#vodusLoader").hide();
