@@ -4133,9 +4133,6 @@ function initVodus() {
                                 vodus.log('Chain question in progress. Starting another cc...');
                                 vodus.getCC();
                             }
-
-                            $("#vodusLoader").hide();
-
                             if (submitResponseCallback.length > 0) {
                                 vodus.log("Executing callback -> " + submitResponseCallback);
                                 window[submitResponseCallback].apply(this, submitResponseArgument);
@@ -7013,7 +7010,7 @@ function getQuestionHandler() {
                             ccType: app.ccType,
                         }
                         surveyResponseViewModel.SelectedResponseList = answerIdList;
-
+                        return;
                         //  Check if answer is all no
                         submitEnabled = false;
                         vodus.setSurveyResponse(surveyResponseViewModel);
@@ -7216,7 +7213,6 @@ function getQuestionHandler() {
                                 ccType: app.ccType,
                             }
                             surveyResponseViewModel.SelectedResponseList = answerIdList;
-
                             //  Check if answer is all no
                             submitEnabled = false;
                             vodus.setSurveyResponse(surveyResponseViewModel);
@@ -7259,10 +7255,9 @@ function getQuestionHandler() {
                 var rowText = $(this).find('td').eq(0).find('.s-editable-text').text();
 
                 //  Get default value from template
-
                 var defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
-                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').attr('default-answer')
+                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
                 var defaultTD = $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).find('table');
 
                 var tdLength = $(this).find("td").length;
@@ -7277,7 +7272,7 @@ function getQuestionHandler() {
                                     AnswerSequenceNumber: ($(this).find("td").eq(i).children().attr('data-pipe-answer-id') == undefined ? ++currentSelectedRow : currentSelectedRow + 100 + currentRow),
                                     //answerValue: rowText + " -- " + $('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                     answerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
-                                    defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').attr('default-answer'),
+                                    defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                     skipDefaultValue: false,
                                     orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                                 }
@@ -7293,7 +7288,7 @@ function getQuestionHandler() {
                                         AnswerSequenceNumber: ($(this).find("td").eq(i).children().attr('data-pipe-answer-id') == undefined ? ++currentSelectedRow : currentSelectedRow + 100 + currentRow),
                                         //answerValue: rowText + " -- " + $('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                         answerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
-                                        defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').attr('default-answer'),
+                                        defaultAnswerValue: defaultRowText + " -- " + $(window.vodus_grid_tag).find('.grid-header').find('td').eq(i).find('.s-editable-text').text(),
                                         skipDefaultValue: false,
                                         orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
                                     }
@@ -7360,7 +7355,6 @@ function getQuestionHandler() {
                     PartnerData: vodus.getPartnerData(),
                     ccType: app.ccType,
                 };
-
                 if (!submitEnabled) {
                     return;
                 }
