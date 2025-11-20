@@ -40,6 +40,10 @@ xhr.onload = () => {
             userCountryCode = "SG"
             userCookieName = ".SG";
         }
+        else if (rawData.loc == "ID") {
+            userCountryCode = "ID"
+            userCookieName = ".ID";
+        }
     }
     console.log('vodus region', userCountryCode);
     initVodus();
@@ -205,7 +209,19 @@ function initVodus() {
                 app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@a26ce68e66816aa6309f91c88f07b875e66e0ea1/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
-            } else {
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-api.vodus.com';
+                app.ccRequestUrl = 'https://id-api.vodus.com';
+                app.vodus3PRootUrl = 'https://id-api.vodus.com';
+                app.reward3PRootUrl = 'https://vodus.id';
+                app.responseRootUrl = 'https://id-api.vodus.com';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@a26ce68e66816aa6309f91c88f07b875e66e0ea1/survey.css?build=251021';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
+            }
+            else {
                 app.rootUrl = 'https://api.vodus.com';
                 app.ccRequestUrl = 'https://api.vodus.com';
                 app.vodus3PRootUrl = 'https://api.vodus.com';
@@ -229,7 +245,20 @@ function initVodus() {
                 app.surveycssUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
                 app.commonjsUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net';
-            } else {
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.ccRequestUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.vodus3PRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.reward3PRootUrl = 'https://id-voupon-uat.azurewebsites.net';
+                app.responseRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.tingleUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.surveycssUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+                app.commonjsUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-uat.azurewebsites.net';
+            }
+            else {
                 app.rootUrl = 'https://vodus-api-uat.azurewebsites.net';
                 app.ccRequestUrl = 'https://vodus-api-uat.azurewebsites.net';
                 app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
@@ -1451,13 +1480,21 @@ function initVodus() {
                 if (env == 'live') {
                     if (app.userCountryCode == "SG") {
                         requestUrl = `https://sg-vodus-api-serverless-live.azurewebsites.net/`;
-                    } else {
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-live.azurewebsites.net/`;
+                    }
+                    else {
                         requestUrl = `https://vodus-api-serverless.azurewebsites.net/`;
                     }
                 } else if (env == 'uat') {
                     if (app.userCountryCode == "SG") {
                         requestUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net/';
-                    } else {
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-uat.azurewebsites.net/`;
+                    }
+                    else {
                         requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
                     }
                 } else if (env == 'dev') {
@@ -2699,7 +2736,7 @@ function initVodus() {
                     if (app.debug) {
                         console.log("Using userCountryCode: " + app.userCountryCode);
                     }
-                    if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG") {
+                    if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG" || app.userCountryCode.toUpperCase() == "ID") {
                         isAllowed = true;
                     } else {
                         if (app.debug) {
