@@ -6026,13 +6026,31 @@ function getQuestionHandler() {
 
                 $("#vodus-submit-validation-message").remove();
                 if (answerIdList.length < parseInt(minValue)) {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
-
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
+                   
                     return;
                 }
                 if (answerIdList.length > parseInt(maxValue)) {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
-                    return;
+                    if(app.language == "en") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "en") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                        
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
+                    
+                      return;
                 }
             }
             
@@ -6478,12 +6496,31 @@ function getQuestionHandler() {
                 $("#vodus-submit-validation-message").remove();
                 if(listText.length < parseInt(listMinAnswer))
                 {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    if(app.language == "en")
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else  if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
                     return;
                 }
                 if(listText.length > parseInt(listMaxAnswer))
                 {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else if(app.language == "ms") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
+                    
                     return;
                 }
                 var openEnded = $("#divQuestionaireEditorContainer").find(".open-ended-answer")[0]
