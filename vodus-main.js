@@ -5210,8 +5210,13 @@ function addShowGetQuestionModal() {
 
             var ansDefault = app.pipeListDefault[i].split('::').pop();
             var ansDefaultArray = ansDefault.split("&&");
+            
+            console.log('ansDefault',ansDefault);
+            console.log('ansDefaultArray',ansDefaultArray);
 
             var splittedAnswers = ans.split(' && ');
+            
+            console.log('splittedAnswers',splittedAnswers)
 
             if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
                 splittedIds = app.pipeAnswerIdList;
@@ -5267,6 +5272,7 @@ function addShowGetQuestionModal() {
             $('.question-header-1').eq(1).html(newTitle.replaceAll('&&', '&'));
             // Replace answer box
             var answerCount = 0;
+            console.log(`$(".answer-box")`,$(".answer-box"));
             $(".answer-box").each(function() {
                 $(this).find('.s-editable-text').each(function() {
                     if (isQuestionPiping) {
@@ -7326,9 +7332,16 @@ function getQuestionHandler() {
                 var rowText = $(this).find('td').eq(0).find('.s-editable-text').text();
 
                 //  Get default value from template
-                var defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                var defaultRow = $('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
-                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
+                var defaultRowText = $(defaultRow).attr("default-answer");
+                
+                if(defaultRowText == null || defaultRowText == undefined){
+                    defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                    defaultName = $(defaultRow).find('input[type=radio]').attr('name');
+                    defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
+                }
+                
                 var defaultTD = $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).find('table');
 
                 var tdLength = $(this).find("td").length;
