@@ -40,6 +40,10 @@ xhr.onload = () => {
             userCountryCode = "SG"
             userCookieName = ".SG";
         }
+        else if (rawData.loc == "ID") {
+            userCountryCode = "ID"
+            userCookieName = ".ID";
+        }
     }
     console.log('vodus region', userCountryCode);
     initVodus();
@@ -183,6 +187,7 @@ function initVodus() {
             isAnswerIDZeroLogged: false,
             viewType: (global.vodus.viewType != null && global.vodus.viewType != "" ? global.vodus.viewType : "web"),
             containerHeight: global.vodus.containerHeight,
+            containerBackgroundColor: global.vodus.containerBackgroundColor,
             cookieSyncType: '',
             userCountryCode: (global.vodus.userCountryCode != null && global.vodus.userCountryCode != "" ? global.vodus.userCountryCode : ""),
             impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0)
@@ -205,7 +210,19 @@ function initVodus() {
                 app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@a26ce68e66816aa6309f91c88f07b875e66e0ea1/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
-            } else {
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-api.vodus.com';
+                app.ccRequestUrl = 'https://id-api.vodus.com';
+                app.vodus3PRootUrl = 'https://id-api.vodus.com';
+                app.reward3PRootUrl = 'https://vodus.id';
+                app.responseRootUrl = 'https://id-api.vodus.com';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@a26ce68e66816aa6309f91c88f07b875e66e0ea1/survey.css?build=251021';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
+            }
+            else {
                 app.rootUrl = 'https://api.vodus.com';
                 app.ccRequestUrl = 'https://api.vodus.com';
                 app.vodus3PRootUrl = 'https://api.vodus.com';
@@ -229,7 +246,20 @@ function initVodus() {
                 app.surveycssUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
                 app.commonjsUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net';
-            } else {
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.ccRequestUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.vodus3PRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.reward3PRootUrl = 'https://id-voupon-uat.azurewebsites.net';
+                app.responseRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.tingleUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.surveycssUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+                app.commonjsUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-uat.azurewebsites.net';
+            }
+            else {
                 app.rootUrl = 'https://vodus-api-uat.azurewebsites.net';
                 app.ccRequestUrl = 'https://vodus-api-uat.azurewebsites.net';
                 app.vodus3PRootUrl = 'https://vodus-api-uat.azurewebsites.net';
@@ -472,6 +502,10 @@ function initVodus() {
                                     }
                                 });
                             }
+                        }
+                        if(app.isMobile)
+                        {
+                            $(".vodus-banner").text("No survey available");
                         }
                         return;
                     } else {
@@ -1451,13 +1485,21 @@ function initVodus() {
                 if (env == 'live') {
                     if (app.userCountryCode == "SG") {
                         requestUrl = `https://sg-vodus-api-serverless-live.azurewebsites.net/`;
-                    } else {
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-live.azurewebsites.net/`;
+                    }
+                    else {
                         requestUrl = `https://vodus-api-serverless.azurewebsites.net/`;
                     }
                 } else if (env == 'uat') {
                     if (app.userCountryCode == "SG") {
                         requestUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net/';
-                    } else {
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-uat.azurewebsites.net/`;
+                    }
+                    else {
                         requestUrl = 'https://vodus-api-serverless-uat.azurewebsites.net/';
                     }
                 } else if (env == 'dev') {
@@ -1770,6 +1812,7 @@ function initVodus() {
                             return true;
 
                         } else {
+                            vodus.log(response.message);
                             return;
                         }
                     },
@@ -2608,7 +2651,8 @@ function initVodus() {
                 var app = vodus.getAppData();
 
                 if (app != null) {
-                    if (app.impressionInterval != null || app.impressionInterval > 0) {
+                    if (app.impressionInterval != null && app.impressionInterval > 0) {
+                        console.log('app.impressionInterva',app.impressionInterval);
                         if (localMemberProfileObject.impressionLastUpdatedAt !== undefined && localMemberProfileObject.impressionLastUpdatedAt !== null) {
                             var currentDate = new Date();
                             var memberImpressionInterval = Math.floor(((currentDate - new Date(localMemberProfileObject.impressionLastUpdatedAt)) / 1000) / 60);
@@ -2616,6 +2660,10 @@ function initVodus() {
                                 vodus.log('Impression interval passed');
                             } else {
                                 vodus.log('Impression interval failed');
+                                if(app.isMobile)
+                                {
+                                    $(".vodus-banner").text("No survey available");
+                                }
                                 return;
                             }
                         }
@@ -2699,11 +2747,15 @@ function initVodus() {
                     if (app.debug) {
                         console.log("Using userCountryCode: " + app.userCountryCode);
                     }
-                    if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG") {
+                    if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG" || app.userCountryCode.toUpperCase() == "ID") {
                         isAllowed = true;
                     } else {
                         if (app.debug) {
                             console.log('CC not allowed from : ' + app.userCountryCode);
+                        }
+                        if(app.isMobile)
+                        {
+                            $(".vodus-banner").text("No survey available");
                         }
                     }
                 } else {
@@ -3073,6 +3125,10 @@ function initVodus() {
                                 }
                             }
                             vodus.log('No more question: \n' + response.message);
+                            if(app.isMobile)
+                            {
+                                $(".vodus-banner").text("No survey available");
+                            }
                             return;
                         }
 
@@ -3808,6 +3864,10 @@ function initVodus() {
                             }, 30);
                         } else {
                             vodus.log('No more question: \n' + response.message);
+                            if(app.isMobile)
+                            {
+                                $(".vodus-banner").text("No survey available");
+                            }
                             var pointsGained = 0;
                             if (app.isChainQuestion) {
                                 showThankYouMessage(app, pointsGained);
@@ -5173,8 +5233,13 @@ function addShowGetQuestionModal() {
 
             var ansDefault = app.pipeListDefault[i].split('::').pop();
             var ansDefaultArray = ansDefault.split("&&");
+            
+            console.log('ansDefault',ansDefault);
+            console.log('ansDefaultArray',ansDefaultArray);
 
             var splittedAnswers = ans.split(' && ');
+            
+            console.log('splittedAnswers',splittedAnswers)
 
             if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
                 splittedIds = app.pipeAnswerIdList;
@@ -5230,20 +5295,38 @@ function addShowGetQuestionModal() {
             $('.question-header-1').eq(1).html(newTitle.replaceAll('&&', '&'));
             // Replace answer box
             var answerCount = 0;
+            console.log(`$(".answer-box")`,$(".answer-box").length);
             $(".answer-box").each(function() {
                 $(this).find('.s-editable-text').each(function() {
+                    var content = "";
                     if (isQuestionPiping) {
                         if ($(this).attr('id') == "GridMultipleAnswersPipingId" && app.questionData.data.QuestionTypeId == 5) {
                             return true;
                         }
-                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i].replace('&&', '&'));
+
+                        if($(this).html().includes("@")){
+
+                            for (var a in splittedAnswers) {
+                                var element = $(this).parent().clone(true, true);
+                                //splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
+                                element.find('.s-editable-text').html(splittedAnswers[a]);
+                                element.attr('data-pipe-answer-id', splittedIds[a]);
+                                element.attr('default-answer', ansDefaultArray[a].trim());
+                                element.addClass('AutoGenPiping');
+                                $(this).parent().parent().prepend(element);
+                            }
+                            $(this).parent().remove();
+                        }
+                        else{
+                            content = $(this).html().split(i.substring(0, i.lastIndexOf('@') + 1)).join(app.pipeList[i].replaceAll('&&', '&'));
+                        }
                     } else if (isPsyPiping) {
                         if ($(this).attr('id') == "GridMultipleAnswersPipingId" && app.questionData.data.QuestionTypeId == 5) {
                             return true;
                         }
-                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i].replace('&&', '&'));
+                        var content = $(this).html().split(i.substring(0, i.lastIndexOf('^') + 1)).join(app.pipeList[i].replaceAll('&&', '&'));
                     }
-                    content = content.replace(/\~/g, '&');
+                    content = content.replaceAll(/\~/g, '&');
                     $(this).html(content);
                 });
             });
@@ -5464,6 +5547,7 @@ function addShowGetQuestionModal() {
                                 return true;
                             }
                             if ($(this).attr("id") == "GridMultipleAnswersPipingId") {
+                                console.log('GridMultipleAnswersPipingId','okokokokokok')
                                 var currentGridRow = 1;
                                 var currentRow = 101;
                                 var idsCounter = 0;
@@ -5648,6 +5732,7 @@ function addShowGetQuestionModal() {
 
     NoCCCheckIsSurveyFallbackScript(app.isSurveyFallbackScript, app.GAMAdUnitId);
     if (app.viewType == "mobile-app") {
+        console.log('containerBackgroundColor');
         if (app.containerHeight != null && app.containerHeight != 0) {
             var height = Math.floor((app.containerHeight - (96 * window.devicePixelRatio)) / window.devicePixelRatio);
             $("#divQuestionaireEditorContainer").css("height", height + "px");
@@ -5658,6 +5743,10 @@ function addShowGetQuestionModal() {
             $(".left-header-container").css("width", "20%");
             $(".center-header-container").css("width", "75%");
             $(".tingle-enabled").css("position", "unset").css("overflow", "auto").css("margin", "8px 0");
+        }
+        
+        if(app.containerBackgroundColor != "" && app.containerBackgroundColor != null){
+            
         }
     }
     $("#divQuestionaireEditorContainer").css("opacity", "").css("max-height", "");
@@ -5989,13 +6078,28 @@ function getQuestionHandler() {
 
                 $("#vodus-submit-validation-message").remove();
                 if (answerIdList.length < parseInt(minValue)) {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
-
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
                     return;
                 }
                 if (answerIdList.length > parseInt(maxValue)) {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
-                    return;
+                    if(app.language == "en") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "ms") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
+                      return;
                 }
             }
             
@@ -6117,7 +6221,7 @@ function getQuestionHandler() {
         var listMinAnswer = $("#divQuestionaireEditorContainer").find(".s-editable-text").attr("data-list-answer-min-value");
         var listMaxAnswer = $("#divQuestionaireEditorContainer").find(".s-editable-text").attr("data-list-answer-max-value");
 
-        if (isList == null || isList == undefined || isList == false) {
+        if (isList == null || isList == undefined || isList == false || isList == 'false') {
             listMinAnswer = 0;
             listMaxAnswer = 0;
         } else {
@@ -6182,9 +6286,9 @@ function getQuestionHandler() {
            });
            
             */
-        }
-        
-        var autocompleteTemplate = `<div class="autocomplete-container-wrapper" style="height:250px;">
+
+
+            var autocompleteTemplate = `<div class="autocomplete-container-wrapper" style="height:250px;">
     <div id="autocomplete-container" class="autocomplete-container">
       <div class="autocomplete-input-wrapper">
         <span class="autocomplete-label"></span>
@@ -6201,50 +6305,48 @@ function getQuestionHandler() {
       <div id="dropdown" class="" style="max-height:250px; overflow-y: auto;"></div>
     </div>
   </div>`;
-        $(".template-preview-title-to-display").append(autocompleteTemplate);
+            $(".template-preview-title-to-display").append(autocompleteTemplate);
 
 // State
-        let selectedListAnswers = []
-        let highlightedIndex = 0
+            let selectedListAnswers = []
+            let highlightedIndex = 0
 
 // DOM elements
-        const input = document.getElementById("recipient-input")
-        const dropdown = document.getElementById("dropdown")
-        const selectedRecipientsContainer = document.getElementById("selected-recipients")
-        const autocompleteContainer = document.getElementById("autocomplete-container")
+            const input = document.getElementById("recipient-input")
+            const dropdown = document.getElementById("dropdown")
+            const selectedRecipientsContainer = document.getElementById("selected-recipients")
+            const autocompleteContainer = document.getElementById("autocomplete-container")
 
 // Filter contacts based on input
-        function getFilteredContacts(searchTerm) {
-            if(listAutoComplete.includes(searchTerm))
-            {
-                return listAutoComplete.filter((answer) => {
-                    if (selectedListAnswers.includes(answer)) return false
+            function getFilteredContacts(searchTerm) {
+                if (listAutoComplete.includes(searchTerm)) {
+                    return listAutoComplete.filter((answer) => {
+                        if (selectedListAnswers.includes(answer)) return false
 
-                    const searchLower = searchTerm.toLowerCase()
-                    return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
-                })
-            }
-            else{
-                let filtered = listAutoComplete.filter((answer) => {
-                    if (selectedListAnswers.includes(answer)) return false
+                        const searchLower = searchTerm.toLowerCase()
+                        return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
+                    })
+                } else {
+                    let filtered = listAutoComplete.filter((answer) => {
+                        if (selectedListAnswers.includes(answer)) return false
 
-                    const searchLower = searchTerm.toLowerCase()
-                    return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
-                })
-                filtered.unshift(searchTerm);
-                return filtered;
+                        const searchLower = searchTerm.toLowerCase()
+                        return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
+                    })
+                    filtered.unshift(searchTerm);
+                    return filtered;
+                }
+
             }
-            
-        }
 
 // Render selected recipients
-        function renderSelectedRecipients() {
-            selectedRecipientsContainer.innerHTML = ""
+            function renderSelectedRecipients() {
+                selectedRecipientsContainer.innerHTML = ""
 
-            selectedListAnswers.forEach((answer) => {
-                const chip = document.createElement("div")
-                chip.className = "autocomplete-recipient-chip"
-                chip.innerHTML = `
+                selectedListAnswers.forEach((answer) => {
+                    const chip = document.createElement("div")
+                    chip.className = "autocomplete-recipient-chip"
+                    chip.innerHTML = `
       <span class="autocomplete-recipient-name listAnswers">${answer}</span>
       <button class="autocomplete-remove-btn" data-id="${answer}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -6253,173 +6355,169 @@ function getQuestionHandler() {
       </button>
     `
 
-                selectedRecipientsContainer.appendChild(chip)
-            })
+                    selectedRecipientsContainer.appendChild(chip)
+                })
 
-            // Update placeholder
-            input.placeholder = selectedListAnswers.length === 0 ? placeHolder : ""
-        }
-
-// Render dropdown
-        function renderDropdown(answers) {
-            if (answers.length === 0) {
-                dropdown.innerHTML = "";
-                dropdown.classList.add("autocomplete-hidden")
-                return
+                // Update placeholder
+                input.placeholder = selectedListAnswers.length === 0 ? placeHolder : ""
             }
 
-            dropdown.innerHTML = ""
-            dropdown.classList.remove("autocomplete-hidden")
-            answers.forEach((answer, index) => {
-                if(answer != ""){
-                    const item = document.createElement("button")
-                    item.className = "autocomplete-dropdown-item"
-                    if (index === highlightedIndex) {
-                        item.classList.add("autocomplete-highlighted")
-                    }
-                    item.innerHTML = `
+// Render dropdown
+            function renderDropdown(answers) {
+                if (answers.length === 0) {
+                    dropdown.innerHTML = "";
+                    dropdown.classList.add("autocomplete-hidden")
+                    return
+                }
+
+                dropdown.innerHTML = ""
+                dropdown.classList.remove("autocomplete-hidden")
+                answers.forEach((answer, index) => {
+                    if (answer != "") {
+                        const item = document.createElement("button")
+                        item.className = "autocomplete-dropdown-item"
+                        if (index === highlightedIndex) {
+                            item.classList.add("autocomplete-highlighted")
+                        }
+                        item.innerHTML = `
                       <div class="autocomplete-contact-info" data-answer="${answer}">
                         <div class="autocomplete-contact-name">${answer}</div>
                       </div>
                     `
-                    item.addEventListener("mousedown", (e) => {
-                        e.preventDefault() // Prevent input blur
-                        selectRecipient(answer)
-                    })
+                        item.addEventListener("mousedown", (e) => {
+                            e.preventDefault() // Prevent input blur
+                            selectRecipient(answer)
+                        })
 
-                    item.addEventListener("mouseenter", () => {
-                        highlightedIndex = index
-                        renderDropdown(answers)
-                    })
-                    dropdown.appendChild(item)
-                }
-            })
-            
-            
-        }
+                        item.addEventListener("mouseenter", () => {
+                            highlightedIndex = index
+                            renderDropdown(answers)
+                        })
+                        dropdown.appendChild(item)
+                    }
+                })
+
+
+            }
 
 // Select a recipient
-        function selectRecipient(answer) {
-            if(answer.length === 0){
-                return;
+            function selectRecipient(answer) {
+                if (answer.length === 0) {
+                    return;
+                }
+                if (selectedListAnswers.includes(answer)) {
+                    return;
+                }
+                selectedListAnswers.push(answer)
+                input.value = ""
+                highlightedIndex = 0
+                dropdown.classList.add("autocomplete-hidden")
+                renderSelectedRecipients()
+                input.focus()
             }
-            if(selectedListAnswers.includes(answer)) {
-                return;
-            }
-            selectedListAnswers.push(answer)
-            input.value = ""
-            highlightedIndex = 0
-            dropdown.classList.add("autocomplete-hidden")
-            renderSelectedRecipients()
-            input.focus()
-        }
 
 // Remove a recipient
-        function removeRecipient(id) {
-            selectedListAnswers = selectedListAnswers.filter((r) => r !== id)
-            renderSelectedRecipients()
-            input.focus()
-        }
+            function removeRecipient(id) {
+                selectedListAnswers = selectedListAnswers.filter((r) => r !== id)
+                renderSelectedRecipients()
+                input.focus()
+            }
 
 // Handle input changes
-        input.addEventListener("input", (e) => {
-            if(e.target.value.trim().length > 0)
-            {
-                let filteredContacts = getFilteredContacts(e.target.value);
-                highlightedIndex = 0;
-                renderDropdown(filteredContacts)
-            }
-            else{
-                highlightedIndex = 0
-                renderDropdown([]);
-            }
+            input.addEventListener("input", (e) => {
+                if (e.target.value.trim().length > 0) {
+                    let filteredContacts = getFilteredContacts(e.target.value);
+                    highlightedIndex = 0;
+                    renderDropdown(filteredContacts)
+                } else {
+                    highlightedIndex = 0
+                    renderDropdown([]);
+                }
 
-        })
+            })
 
 // Handle input focus
-        input.addEventListener("focus", () => {
-            if(input.value.trim().length > 0)
-            {
-                const filteredContacts = getFilteredContacts(input.value)
-                renderDropdown(filteredContacts)
-            }
-            else{
-                highlightedIndex = 0;
-                renderDropdown([]);
-            }
+            input.addEventListener("focus", () => {
+                if (input.value.trim().length > 0) {
+                    const filteredContacts = getFilteredContacts(input.value)
+                    renderDropdown(filteredContacts)
+                } else {
+                    highlightedIndex = 0;
+                    renderDropdown([]);
+                }
 
-        })
+            })
 
 // Handle keyboard navigation
-        input.addEventListener("keydown", (e) => {
-            const filteredContacts = getFilteredContacts(input.value)
+            input.addEventListener("keydown", (e) => {
+                const filteredContacts = getFilteredContacts(input.value)
 
-            switch (e.key) {
-                case "Backspace":
-                    if (input.value === "" && selectedListAnswers.length > 0) {
-                        removeRecipient(selectedListAnswers[selectedListAnswers.length - 1].id)
-                    }
-                    if (input.value.trim().length === 0) {
+                switch (e.key) {
+                    case "Backspace":
+                        if (input.value === "" && selectedListAnswers.length > 0) {
+                            removeRecipient(selectedListAnswers[selectedListAnswers.length - 1].id)
+                        }
+                        if (input.value.trim().length === 0) {
+                            dropdown.classList.add("autocomplete-hidden")
+                            return
+                        }
+                        break
+
+                    case "ArrowDown":
+                        e.preventDefault()
+                        if (highlightedIndex < filteredContacts.length - 1) {
+                            highlightedIndex++
+                            renderDropdown(filteredContacts)
+                        }
+                        break
+
+                    case "ArrowUp":
+                        e.preventDefault()
+                        if (highlightedIndex > 0) {
+                            highlightedIndex--
+                            renderDropdown(filteredContacts)
+                        }
+                        break
+
+                    case "Enter":
+                        e.preventDefault()
+                        if (filteredContacts.length > 0) {
+                            selectRecipient(filteredContacts[highlightedIndex])
+                        } else {
+                            selectedListAnswers.push(input.value)
+                            input.value = ""
+                            highlightedIndex = -1
+                            dropdown.classList.add("autocomplete-hidden")
+                            renderSelectedRecipients()
+                            input.focus();
+                        }
+                        break
+
+                    case "Escape":
                         dropdown.classList.add("autocomplete-hidden")
-                        return
-                    }
-                    break
-
-                case "ArrowDown":
-                    e.preventDefault()
-                    if (highlightedIndex < filteredContacts.length - 1) {
-                        highlightedIndex++
-                        renderDropdown(filteredContacts)
-                    }
-                    break
-
-                case "ArrowUp":
-                    e.preventDefault()
-                    if (highlightedIndex > 0) {
-                        highlightedIndex--
-                        renderDropdown(filteredContacts)
-                    }
-                    break
-
-                case "Enter":
-                    e.preventDefault()
-                    if (filteredContacts.length > 0) {
-                        selectRecipient(filteredContacts[highlightedIndex])
-                    }
-                    else{
-                        selectedListAnswers.push(input.value)
-                        input.value = ""
-                        highlightedIndex = -1
-                        dropdown.classList.add("autocomplete-hidden")
-                        renderSelectedRecipients()
-                        input.focus();
-                    }
-                    break
-
-                case "Escape":
-                    dropdown.classList.add("autocomplete-hidden")
-                    break
-            }
-        })
+                        break
+                }
+            })
 
 // Handle remove button clicks (event delegation)
-        selectedRecipientsContainer.addEventListener("click", (e) => {
-            const removeBtn = e.target.closest(".autocomplete-remove-btn")
-            if (removeBtn) {
-                const id = removeBtn.dataset.id
-                removeRecipient(id)
-            }
-        })
+            selectedRecipientsContainer.addEventListener("click", (e) => {
+                const removeBtn = e.target.closest(".autocomplete-remove-btn")
+                if (removeBtn) {
+                    const id = removeBtn.dataset.id
+                    removeRecipient(id)
+                }
+            })
 
 // Close dropdown when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!autocompleteContainer.contains(e.target)) {
-                dropdown.classList.add("autocomplete-hidden")
-            }
-        })
+            document.addEventListener("click", (e) => {
+                if (!autocompleteContainer.contains(e.target)) {
+                    dropdown.classList.add("autocomplete-hidden")
+                }
+            })
 
 // Initialize
-        renderSelectedRecipients()
+            renderSelectedRecipients()
+        }
 
         $('.survey-submit-btn').on('click', function() {
             answerIdList = [];
@@ -6441,12 +6539,31 @@ function getQuestionHandler() {
                 $("#vodus-submit-validation-message").remove();
                 if(listText.length < parseInt(listMinAnswer))
                 {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    if(app.language == "en")
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else  if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
                     return;
                 }
                 if(listText.length > parseInt(listMaxAnswer))
                 {
-                    $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else if(app.language == "ms") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
+                    
                     return;
                 }
                 var openEnded = $("#divQuestionaireEditorContainer").find(".open-ended-answer")[0]
@@ -6702,10 +6819,10 @@ function getQuestionHandler() {
             var splittedAnswers = [];
             var splittedDefaultAnswers = [];
             for (var i in app.pipeList) {
-                var ans = app.pipeList[i].split(':').pop();
+                var ans = app.pipeList[i].split('::').pop();
                 var ansDefault = "";
                 if (app.pipeListDefault[i] != null) {
-                    var ansDefaultList = app.pipeListDefault[i].split(':').pop();
+                    var ansDefaultList = app.pipeListDefault[i].split('::').pop();
                     ansDefault = ansDefaultList.split(' && ');
                 } else {
                     ansDefault = ans.split(' && ');
@@ -7034,10 +7151,10 @@ function getQuestionHandler() {
                 var splittedAnswers = [];
                 var splittedDefaultAnswers = [];
                 for (var i in app.pipeList) {
-                    var ans = app.pipeList[i].split(':').pop();
+                    var ans = app.pipeList[i].split('::').pop();
                     var ansDefault = "";
                     if (app.pipeListDefault[i] != null) {
-                        ansDefault = app.pipeListDefault[i].split(':').pop();
+                        ansDefault = app.pipeListDefault[i].split('::').pop();
                     } else {
                         ansDefault = ans;
                     }
@@ -7255,9 +7372,16 @@ function getQuestionHandler() {
                 var rowText = $(this).find('td').eq(0).find('.s-editable-text').text();
 
                 //  Get default value from template
-                var defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                var defaultRow = $('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
-                var defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
+                var defaultRowText = $(defaultRow).attr("default-answer");
+                
+                if(defaultRowText == null || defaultRowText == undefined){
+                    defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                    defaultName = $(defaultRow).find('input[type=radio]').attr('name');
+                    defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
+                }
+                
                 var defaultTD = $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).find('table');
 
                 var tdLength = $(this).find("td").length;
