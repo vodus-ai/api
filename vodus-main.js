@@ -44,6 +44,10 @@ xhr.onload = () => {
             userCountryCode = "ID"
             userCookieName = ".ID";
         }
+        else if (rawData.loc == "ID") {
+            userCountryCode = "ID"
+            userCookieName = ".ID";
+        }
     }
     console.log('vodus region', userCountryCode);
     initVodus();
@@ -223,6 +227,19 @@ function initVodus() {
                 app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
             }
             else {
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-api.vodus.com';
+                app.ccRequestUrl = 'https://id-api.vodus.com';
+                app.vodus3PRootUrl = 'https://id-api.vodus.com';
+                app.reward3PRootUrl = 'https://vodus.id';
+                app.responseRootUrl = 'https://id-api.vodus.com';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@a26ce68e66816aa6309f91c88f07b875e66e0ea1/survey.css?build=251021';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
+            }
+            else {
                 app.rootUrl = 'https://api.vodus.com';
                 app.ccRequestUrl = 'https://api.vodus.com';
                 app.vodus3PRootUrl = 'https://api.vodus.com';
@@ -246,6 +263,20 @@ function initVodus() {
                 app.surveycssUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
                 app.commonjsUrl = 'https://sg-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net';
+            }
+            else if (app.userCountryCode == "ID") {
+                app.rootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.ccRequestUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.vodus3PRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.reward3PRootUrl = 'https://id-voupon-uat.azurewebsites.net';
+                app.responseRootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
+                app.tingleUrl = 'https://id-vodus-api-uat.azurewebsites.net';
+                app.surveycssUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/css/creator/survey.css';
+                app.commonjsUrl = 'https://id-vodus-api-uat.azurewebsites.net/cc/scripts/vodus-common.js';
+                app.serverlessUrl = 'https://id-vodus-api-serverless-uat.azurewebsites.net';
+            }
+            else {
             }
             else if (app.userCountryCode == "ID") {
                 app.rootUrl = 'https://id-vodus-api-uat.azurewebsites.net';
@@ -1490,11 +1521,21 @@ function initVodus() {
                         requestUrl = `https://id-vodus-api-serverless-live.azurewebsites.net/`;
                     }
                     else {
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-live.azurewebsites.net/`;
+                    }
+                    else {
                         requestUrl = `https://vodus-api-serverless.azurewebsites.net/`;
                     }
                 } else if (env == 'uat') {
                     if (app.userCountryCode == "SG") {
                         requestUrl = 'https://sg-vodus-api-serverless-uat.azurewebsites.net/';
+                    }
+                    else if (app.userCountryCode == "ID") {
+                        requestUrl = `https://id-vodus-api-serverless-uat.azurewebsites.net/`;
+                    }
+                    else {
                     }
                     else if (app.userCountryCode == "ID") {
                         requestUrl = `https://id-vodus-api-serverless-uat.azurewebsites.net/`;
@@ -2747,6 +2788,7 @@ function initVodus() {
                     if (app.debug) {
                         console.log("Using userCountryCode: " + app.userCountryCode);
                     }
+                    if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG" || app.userCountryCode.toUpperCase() == "ID") {
                     if (app.userCountryCode.toUpperCase() == "MY" || app.userCountryCode.toUpperCase() == "SG" || app.userCountryCode.toUpperCase() == "ID") {
                         isAllowed = true;
                     } else {
@@ -5236,8 +5278,13 @@ function addShowGetQuestionModal() {
             
             console.log('ansDefault',ansDefault);
             console.log('ansDefaultArray',ansDefaultArray);
+            
+            console.log('ansDefault',ansDefault);
+            console.log('ansDefaultArray',ansDefaultArray);
 
             var splittedAnswers = ans.split(' && ');
+            
+            console.log('splittedAnswers',splittedAnswers)
             
             console.log('splittedAnswers',splittedAnswers)
 
@@ -6087,9 +6134,28 @@ function getQuestionHandler() {
                     else{
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
                     }
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
                     return;
                 }
                 if (answerIdList.length > parseInt(maxValue)) {
+                    if(app.language == "en") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
+                    }
+                    else if(app.language == "ms") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + minValue + " hingga " + maxValue + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
+                    }
+                      return;
                     if(app.language == "en") {
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + minValue + " to " + maxValue + " answers</div>");
                     }
@@ -6549,10 +6615,32 @@ function getQuestionHandler() {
                     else{
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
                     }
+                {
+                    if(app.language == "en")
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else  if(app.language == "ms"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else{
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
                     return;
                 }
                 if(listText.length > parseInt(listMaxAnswer))
                 {
+                    if(app.language == "en"){
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
+                    }
+                    else if(app.language == "ms") {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Pilih antara " + listMinAnswer + " hingga " + listMaxAnswer + " jawapan</div>");
+                    }
+                    else
+                    {
+                        $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
+                    }
+                    
                     if(app.language == "en"){
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Select " + listMinAnswer + " to " + listMaxAnswer + " answers</div>");
                     }
@@ -7373,7 +7461,16 @@ function getQuestionHandler() {
 
                 //  Get default value from template
                 var defaultRow = $('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                var defaultRow = $('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
+                var defaultRowText = $(defaultRow).attr("default-answer");
+                
+                if(defaultRowText == null || defaultRowText == undefined){
+                    defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
+                    defaultName = $(defaultRow).find('input[type=radio]').attr('name');
+                    defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
+                }
+                
                 var defaultRowText = $(defaultRow).attr("default-answer");
                 
                 if(defaultRowText == null || defaultRowText == undefined){
