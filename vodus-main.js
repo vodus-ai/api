@@ -18,7 +18,7 @@ function extractHostname(url) {
 }
 
 
-const xhr = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 
 xhr.onload = () => {
     // process response
@@ -1844,7 +1844,7 @@ function initVodus() {
             },
             update3PToken: function update3PToken() {
 
-                const sleep = (milliseconds) => {
+                var sleep = (milliseconds) => {
                     return new Promise(resolve => setTimeout(resolve, milliseconds))
                 }
 
@@ -2759,7 +2759,7 @@ function initVodus() {
                         }
                     }
                 } else {
-                    const xhr = new XMLHttpRequest();
+                    var xhr = new XMLHttpRequest();
 
                     xhr.onload = () => {
                         // process response
@@ -4010,6 +4010,9 @@ function initVodus() {
             submitResponse: function submitResponse() {
                 var app = vodus.getAppData();
 
+                if (app.isSubmittingResponse) return;
+                app.isSubmittingResponse = true;
+
                 $("#vodus_tag").remove();
                 var pointsGained = 1
 
@@ -4138,7 +4141,7 @@ function initVodus() {
                     url: app.serverlessUrl + '/api/submitResponse',
                     success: function(response) {
                         if (response.successful) {
-
+                            app.isSubmittingResponse = false;
                             if (ccToken != null && ccToken != "") {
                                 vodus.log("Getting next question...")
                                 vodus.getCC();
@@ -4191,7 +4194,11 @@ function initVodus() {
                                 app.interval = 0;
                                 app.isChainQuestion = true;
                                 vodus.log('Chain question in progress. Starting another cc...');
-                                vodus.getCC();
+                                if(submitResponseCallback.length == 0)
+                                {
+                                    vodus.getCC();
+                                }
+                              
                             }
                             if (submitResponseCallback.length > 0) {
                                 vodus.log("Executing callback -> " + submitResponseCallback);
@@ -5758,6 +5765,14 @@ function reinitModalEvent() {
 }
 
 function getQuestionHandler() {
+    $(".answer-box").off('click');
+    $(".survey-submit-btn").off('click');
+    $(".open-ended-mcq").find("input[type=button]").off("click");
+    $(".vodus-rating-question-type").find("input[type=radio]").off('click');
+    $(".gridOption").off('click');
+    $(".vodus-slider-question-vertical-slider > input[type=range]").off("touchend click");
+    $(".slider-question-slider-control").off("click");
+    
     var app = vodus.getAppData();
     var response = app.questionData;
 
@@ -6247,7 +6262,7 @@ function getQuestionHandler() {
             /*
           
 
-           const autoCompleteJS = new autoComplete({
+           var autoCompleteJS = new autoComplete({
                placeHolder: placeHolder,
                data: {
                    src: listAutoComplete
@@ -6312,10 +6327,10 @@ function getQuestionHandler() {
             let highlightedIndex = 0
 
 // DOM elements
-            const input = document.getElementById("recipient-input")
-            const dropdown = document.getElementById("dropdown")
-            const selectedRecipientsContainer = document.getElementById("selected-recipients")
-            const autocompleteContainer = document.getElementById("autocomplete-container")
+            var input = document.getElementById("recipient-input")
+            var dropdown = document.getElementById("dropdown")
+            var selectedRecipientsContainer = document.getElementById("selected-recipients")
+            var autocompleteContainer = document.getElementById("autocomplete-container")
 
 // Filter contacts based on input
             function getFilteredContacts(searchTerm) {
@@ -6323,14 +6338,14 @@ function getQuestionHandler() {
                     return listAutoComplete.filter((answer) => {
                         if (selectedListAnswers.includes(answer)) return false
 
-                        const searchLower = searchTerm.toLowerCase()
+                        var searchLower = searchTerm.toLowerCase()
                         return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
                     })
                 } else {
                     let filtered = listAutoComplete.filter((answer) => {
                         if (selectedListAnswers.includes(answer)) return false
 
-                        const searchLower = searchTerm.toLowerCase()
+                        var searchLower = searchTerm.toLowerCase()
                         return answer.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
                     })
                     filtered.unshift(searchTerm);
@@ -6344,7 +6359,7 @@ function getQuestionHandler() {
                 selectedRecipientsContainer.innerHTML = ""
 
                 selectedListAnswers.forEach((answer) => {
-                    const chip = document.createElement("div")
+                    var chip = document.createElement("div")
                     chip.className = "autocomplete-recipient-chip"
                     chip.innerHTML = `
       <span class="autocomplete-recipient-name listAnswers">${answer}</span>
@@ -6374,7 +6389,7 @@ function getQuestionHandler() {
                 dropdown.classList.remove("autocomplete-hidden")
                 answers.forEach((answer, index) => {
                     if (answer != "") {
-                        const item = document.createElement("button")
+                        var item = document.createElement("button")
                         item.className = "autocomplete-dropdown-item"
                         if (index === highlightedIndex) {
                             item.classList.add("autocomplete-highlighted")
@@ -6439,7 +6454,7 @@ function getQuestionHandler() {
 // Handle input focus
             input.addEventListener("focus", () => {
                 if (input.value.trim().length > 0) {
-                    const filteredContacts = getFilteredContacts(input.value)
+                    var filteredContacts = getFilteredContacts(input.value)
                     renderDropdown(filteredContacts)
                 } else {
                     highlightedIndex = 0;
@@ -6450,7 +6465,7 @@ function getQuestionHandler() {
 
 // Handle keyboard navigation
             input.addEventListener("keydown", (e) => {
-                const filteredContacts = getFilteredContacts(input.value)
+                var filteredContacts = getFilteredContacts(input.value)
 
                 switch (e.key) {
                     case "Backspace":
@@ -6501,9 +6516,9 @@ function getQuestionHandler() {
 
 // Handle remove button clicks (event delegation)
             selectedRecipientsContainer.addEventListener("click", (e) => {
-                const removeBtn = e.target.closest(".autocomplete-remove-btn")
+                var removeBtn = e.target.closest(".autocomplete-remove-btn")
                 if (removeBtn) {
-                    const id = removeBtn.dataset.id
+                    var id = removeBtn.dataset.id
                     removeRecipient(id)
                 }
             })
@@ -6522,19 +6537,82 @@ function getQuestionHandler() {
         $('.survey-submit-btn').on('click', function() {
             answerIdList = [];
             var listText = [];
-            if(isList)
+            if (isList == null || isList == undefined || isList == false || isList == 'false')
             {
+                if ($(this).hasClass("greyOutButton")) {
+                    return false;
+                }
+                if ($(this).hasClass("disabledButtons")) {
+                    return false;
+                }
+                if (!submitEnabled) {
+                    return false;
+                }
+                if (!app.isMobile) {
+                    $("#divQuestionaireEditorContainer").find(".answer-box").each(function(idx, ele) {
+                        var answer = {
+                            id: $(this).attr('id'),
+                            AnswerSequenceNumber: (idx + 1),
+                            answerValue: $(this).find('.s-editable-text').text(),
+                            defaultAnswerValue: $(this).text(),
+                            skipDefaultValue: true,
+                            orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
+                        }
+                        answerIdList.push(answer);
+                    });
+                } else {
+                    $("#divQuestionaireEditorContainer").find(".open-ended-answer").each(function(idx, ele) {
+                        var answer = {
+                            id: $(this).attr('id'),
+                            AnswerSequenceNumber: (idx + 1),
+                            answerValue: $(this).text(),
+                            defaultAnswerValue: $(this).text(),
+                            skipDefaultValue: true,
+                            orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
+                        }
+                        answerIdList.push(answer);
+                    });
+                }
+                if (answerIdList.length > 0) {
+                    var endTime = new Date();
+                    var diff = Math.round((endTime.getTime() / 1000) - (startTime.getTime() / 1000));
+                    var respondTimeInSeconds = (diff + delayLength);
+
+                    var surveyResponseViewModel = {
+                        CommercialId: response.data.CommercialId,
+                        SurveyQuestionId: response.data.Id,
+                        SurveyQuestionTypeId: response.data.QuestionTypeId,
+                        DemographicTypeId: response.data.DemographicTypeId,
+                        TierId: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.Id),
+                        TierNumber: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.TierNumber),
+                        SequenceNumber: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.SequenceNumber),
+                        ParentId: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.ParentId),
+                        SurveyType: response.data.SurveyType,
+                        SelectedResponseList: answerIdList,
+                        Token: vodus.readCookie(app.cookieName),
+                        PartnerCode: app.partner_code,
+                        RespondTimeInSeconds: respondTimeInSeconds,
+                        PartnerData: vodus.getPartnerData(),
+                        ccType: app.ccType,
+                    };
+                    submitEnabled = false;
+                    vodus.setSurveyResponse(surveyResponseViewModel);
+                    vodus.submitResponse();
+                    $("#vodusLoader").css('display', 'flex');
+                }
+            }
+            else{
                 $("#divQuestionaireEditorContainer").find(".listAnswers").each(function(){
-                   var text = $(this).text();
-                   var index =  listAutoComplete.indexOf(text);
-                   if(index < 0)
-                   {
-                       listText.push(text)
-                   }
-                   else{
-                       listText.push(listAutoCompleteDefault[index])
-                   }
-                   
+                    var text = $(this).text();
+                    var index =  listAutoComplete.indexOf(text);
+                    if(index < 0)
+                    {
+                        listText.push(text)
+                    }
+                    else{
+                        listText.push(listAutoCompleteDefault[index])
+                    }
+
                 });
                 $("#vodus-submit-validation-message").remove();
                 if(listText.length < parseInt(listMinAnswer))
@@ -6563,7 +6641,7 @@ function getQuestionHandler() {
                     {
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + listMinAnswer + " 到 " + listMaxAnswer + " 个选项</div>");
                     }
-                    
+
                     return;
                 }
                 var openEnded = $("#divQuestionaireEditorContainer").find(".open-ended-answer")[0]
@@ -6603,67 +6681,7 @@ function getQuestionHandler() {
                 vodus.submitResponse();
                 $("#vodusLoader").css('display', 'flex');
                 
-            }
-            else{
-                if ($(this).hasClass("greyOutButton")) {
-                    return false;
-                }
-                if ($(this).hasClass("disabledButtons")) {
-                    return false;
-                }
-                if (!submitEnabled) {
-                    return false;
-                }
-                if (!app.isMobile) {
-                    $("#divQuestionaireEditorContainer").find(".answer-box").each(function(idx, ele) {
-                        var answer = {
-                            id: $(this).attr('id'),
-                            AnswerSequenceNumber: (idx + 1),
-                            answerValue: $(this).find('.s-editable-text').text(),
-                            skipDefaultValue: true,
-                            orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
-                        }
-                        answerIdList.push(answer);
-                    });
-                } else {
-                    $("#divQuestionaireEditorContainer").find(".open-ended-answer").each(function(idx, ele) {
-                        var answer = {
-                            id: $(this).attr('id'),
-                            AnswerSequenceNumber: (idx + 1),
-                            answerValue: $(this).text(),
-                            skipDefaultValue: true,
-                            orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
-                        }
-                        answerIdList.push(answer);
-                    });
-                }
-                if (answerIdList.length > 0) {
-                    var endTime = new Date();
-                    var diff = Math.round((endTime.getTime() / 1000) - (startTime.getTime() / 1000));
-                    var respondTimeInSeconds = (diff + delayLength);
-
-                    var surveyResponseViewModel = {
-                        CommercialId: response.data.CommercialId,
-                        SurveyQuestionId: response.data.Id,
-                        SurveyQuestionTypeId: response.data.QuestionTypeId,
-                        DemographicTypeId: response.data.DemographicTypeId,
-                        TierId: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.Id),
-                        TierNumber: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.TierNumber),
-                        SequenceNumber: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.SequenceNumber),
-                        ParentId: (response.data.SurveyQuestionTier == null ? 0 : response.data.SurveyQuestionTier.ParentId),
-                        SurveyType: response.data.SurveyType,
-                        SelectedResponseList: answerIdList,
-                        Token: vodus.readCookie(app.cookieName),
-                        PartnerCode: app.partner_code,
-                        RespondTimeInSeconds: respondTimeInSeconds,
-                        PartnerData: vodus.getPartnerData(),
-                        ccType: app.ccType,
-                    };
-                    submitEnabled = false;
-                    vodus.setSurveyResponse(surveyResponseViewModel);
-                    vodus.submitResponse();
-                    $("#vodusLoader").css('display', 'flex');
-                }
+                
             }
             
         });
