@@ -504,7 +504,6 @@ function initVodus() {
                             }
                         }
                         if (app.viewType == "mobile-app") {
-                        {
                                 console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 $(".vodus-banner").text("No survey available");
                         }
@@ -2662,7 +2661,6 @@ function initVodus() {
                             } else {
                                 vodus.log('Impression interval failed');
                                 if (app.viewType == "mobile-app") {
-                                {
                                         console.log("VODUS_NO_SURVEY_AVAILABLE");
                                         $(".vodus-banner").text("No survey available");
                                 }
@@ -3129,7 +3127,6 @@ function initVodus() {
                             }
                             vodus.log('No more question: \n' + response.message);
                             if (app.viewType == "mobile-app") {
-                            {
                                     console.log("VODUS_NO_SURVEY_AVAILABLE");
                                     $(".vodus-banner").text("No survey available");
                             }
@@ -3869,7 +3866,6 @@ function initVodus() {
                         } else {
                             vodus.log('No more question: \n' + response.message);
                             if (app.viewType == "mobile-app") {
-                            {
                                 console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 $(".vodus-banner").text("No survey available");
                             }
