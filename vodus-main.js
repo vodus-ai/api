@@ -3098,12 +3098,14 @@ function initVodus() {
 
                         if (!response.successful) {
                             if (response.code == 999) {
+                                console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 vodus.deleteCookie("Vodus.Token");
                                 vodus.deleteCookie("vodus_temp_token");
                                 vodus.log('resetting token..');
                                 $("#vodus_3PTest").html('<iframe id="vodus3PLogoutTest" width="0" height="0"  src="' + app.vodus3PRootUrl + '/v1/token/delete?partnerCode=' + app.partner_code + '" frameborder="0" allowfullscreen></iframe>');
                                 return;
                             } else if (response.code == 997) {
+                                console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 if (app.partner_code == "vodus-reward") {
                                     VodusRewardSuspended(response.message)
                                 }
@@ -3113,7 +3115,8 @@ function initVodus() {
                                     VodusRewardNoQuestionAvailable()
                                 } else if (app.partner_code == "vodus-mobile-app") {
                                     if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.sendMessage && window.webkit.messageHandlers.sendMessage.postMessage) {
-                                        vodus.log("Close Mobile App Web View");
+                                        console.log("Close Mobile App Web View");
+                                        console.log("VODUS_NO_SURVEY_AVAILABLE");
                                         noMoreSurveyMessageToApp();
                                     }
                                 } else {
@@ -3123,6 +3126,7 @@ function initVodus() {
                                     } else {
                                         closeAllVodusModal();
                                     }
+                                    console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 }
                             }
                             vodus.log('No more question: \n' + response.message);
@@ -3169,6 +3173,7 @@ function initVodus() {
                                 }
 
                                 vodus.log("Stress test in progress. No CC..");
+                                console.log("VODUS_NO_SURVEY_AVAILABLE");
                                 NoCCCheckIsSurveyFallbackScript(app.isSurveyFallbackScript, app.GAMAdUnitId)
                                 return false;
                             }
@@ -5092,6 +5097,7 @@ function scrollToBannerDiv(currentHeight) {
 }
 
 function addShowGetQuestionModal() {
+    console.log("VODUS_SURVEY_AVAILABLE");
     var app = vodus.getAppData();
     //  Check if template contain ID=0, if yes, skip the rendering
     var hasIDZero = false;
