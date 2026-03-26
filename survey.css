@@ -53,6 +53,7 @@
     display: none;
     opacity: 1;
 }
+
     #vodusLoader .vodusLoaderContent {
         display: flex;
         justify-content: center;
@@ -60,6 +61,7 @@
         height: 100%;
         width: 100%;
     }
+
         #vodusLoader .vodusLoaderContent img {
             height: 150px;
         }
@@ -475,12 +477,14 @@
     width: 100%;
     margin: auto;
 }
+
 .quesionaire-preview-question-mobile-preview .template-background-img > img {
     object-fit: cover;
     top: 0;
     left: 0;
     height: 100%;
 }
+
 .quesionaire-preview-question-mobile-preview .template-preview-answer-to-display {
     height: auto;
     border-radius: 10px;
@@ -2411,7 +2415,7 @@ desktop-header-bar-vodus .please-specify::-webkit-input-placeholder {
     .ccType2.bootstrap-vodus .questionaire-container-size-variable,
     .ccType3.bootstrap-vodus .questionaire-container-size-variable {
         height: 280px;
-        max-height: 440px;
+        max-height: unset;
     }
 }
 
@@ -3835,7 +3839,7 @@ input.gridOption {
     .ccType2.bootstrap-vodus .questionaire-container-size-variable,
     .ccType3.bootstrap-vodus .questionaire-container-size-variable {
         height: 280px;
-        max-height: 440px;
+        max-height: unset;
     }
 
     .thankyou-banner .vodus-responded-toast.banner-thankyou .rewards-logo {
@@ -3981,8 +3985,8 @@ input.gridOption {
     top: 0;
 }
 
-#RankingAnswersPipingId{
-    margin-left:20px;
+#RankingAnswersPipingId {
+    margin-left: 20px;
 }
 
 /*
@@ -4184,24 +4188,29 @@ input.gridOption {
     color: white;
 }
 
-.autocomplete-avatar.autocomplete-bg-blue {
-    background-color: #2563eb;
-}
-.autocomplete-avatar.autocomplete-bg-emerald {
-    background-color: #059669;
-}
-.autocomplete-avatar.autocomplete-bg-amber {
-    background-color: #d97706;
-}
-.autocomplete-avatar.autocomplete-bg-rose {
-    background-color: #e11d48;
-}
-.autocomplete-avatar.autocomplete-bg-orange {
-    background-color: #ea580c;
-}
-.autocomplete-avatar.autocomplete-bg-purple {
-    background-color: #9333ea;
-}
+    .autocomplete-avatar.autocomplete-bg-blue {
+        background-color: #2563eb;
+    }
+
+    .autocomplete-avatar.autocomplete-bg-emerald {
+        background-color: #059669;
+    }
+
+    .autocomplete-avatar.autocomplete-bg-amber {
+        background-color: #d97706;
+    }
+
+    .autocomplete-avatar.autocomplete-bg-rose {
+        background-color: #e11d48;
+    }
+
+    .autocomplete-avatar.autocomplete-bg-orange {
+        background-color: #ea580c;
+    }
+
+    .autocomplete-avatar.autocomplete-bg-purple {
+        background-color: #9333ea;
+    }
 
 .autocomplete-recipient-name {
     font-size: 14px;
@@ -4222,15 +4231,15 @@ input.gridOption {
     transition: color 0.2s;
 }
 
-.autocomplete-remove-btn:hover {
-    /* Light theme hover color */
-    color: #1a1a1a;
-}
+    .autocomplete-remove-btn:hover {
+        /* Light theme hover color */
+        color: #1a1a1a;
+    }
 
-.autocomplete-remove-btn svg {
-    width: 12px;
-    height: 12px;
-}
+    .autocomplete-remove-btn svg {
+        width: 12px;
+        height: 12px;
+    }
 
 .autocomplete-recipient-input {
     flex: 1;
@@ -4243,10 +4252,10 @@ input.gridOption {
     color: #1a1a1a;
 }
 
-.autocomplete-recipient-input::placeholder {
-    /* Light theme placeholder color */
-    color: #999999;
-}
+    .autocomplete-recipient-input::placeholder {
+        /* Light theme placeholder color */
+        color: #999999;
+    }
 
 .autocomplete-dropdown {
     position: absolute;
@@ -4264,9 +4273,9 @@ input.gridOption {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.autocomplete-dropdown.autocomplete-hidden {
-    display: none;
-}
+    .autocomplete-dropdown.autocomplete-hidden {
+        display: none;
+    }
 
 .autocomplete-dropdown-item {
     display: flex;
@@ -4281,11 +4290,11 @@ input.gridOption {
     text-align: left;
 }
 
-.autocomplete-dropdown-item:hover,
-.autocomplete-dropdown-item.autocomplete-highlighted {
-    /* Light theme hover background */
-    background-color: #f5f5f5;
-}
+    .autocomplete-dropdown-item:hover,
+    .autocomplete-dropdown-item.autocomplete-highlighted {
+        /* Light theme hover background */
+        background-color: #f5f5f5;
+    }
 
 .autocomplete-dropdown-avatar {
     width: 36px;
@@ -4335,7 +4344,7 @@ input.gridOption {
     border-radius: 4px;
 }
 
-.autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
-    /* Light theme scrollbar hover */
-    background: #b1b1b1;
-}
+    .autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
+        /* Light theme scrollbar hover */
+        background: #b1b1b1;
+    }
