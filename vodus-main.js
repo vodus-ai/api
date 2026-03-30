@@ -503,10 +503,6 @@ function initVodus() {
                                 });
                             }
                         }
-                        if (app.viewType == "mobile-app") {
-                                console.log("VODUS_NO_SURVEY_AVAILABLE");
-                                $(".vodus-banner").text("No survey available");
-                        }
                         return;
                     } else {
                         //vodus.getQuestionBeforeInternal();
@@ -3965,6 +3961,7 @@ function initVodus() {
 
                                         clearInterval(app.checkCounterTimer);
                                         $(".click-to-close-div").on('click', function() {
+                                            console.log('VODUS_CLOSE_SURVEY');
                                             closeAllVodusModal();
                                         });
                                         $(".vodus-responded-toast").on('click', function() {
@@ -5721,6 +5718,7 @@ function addShowGetQuestionModal() {
                 $(".click-to-close-div").show();
 
                 $(".click-to-close-div").on('click', function() {
+                    console.log('VODUS_CLOSE_SURVEY');
                     if (app.checkCounterTimer != null) {
                         clearInterval(app.checkCounterTimer);
                     }
@@ -5733,6 +5731,7 @@ function addShowGetQuestionModal() {
             $(".click-to-close-div").show();
 
             $(".click-to-close-div").on('click', function() {
+                console.log('VODUS_CLOSE_SURVEY');
                 if (app.checkCounterTimer != null) {
                     clearInterval(app.checkCounterTimer);
                 }
@@ -7807,6 +7806,7 @@ function getQuestionHandler() {
                         }
                         $(".click-to-close-div").off("click")
                         $(".click-to-close-div").on('click', function() {
+                            console.log('VODUS_CLOSE_SURVEY')
                             if (app.checkCounterTimer != null) {
                                 clearInterval(app.checkCounterTimer);
                             }
@@ -7942,6 +7942,7 @@ function showThankYouMessage(appS, pointsGainedS) {
 
         clearInterval(appS.checkCounterTimer);
         $(".click-to-close-div").on('click', function() {
+            console.log('VODUS_CLOSE_SURVEY');
             closeAllVodusModal();
         });
         $(".vodus-responded-toast").on('click', function() {
