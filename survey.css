@@ -1363,6 +1363,7 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
     font-weight: 600;
     color: #371153 !important;
     background-color: #fbf5ff !important;
+    margin-top: 0;
 }
 
     .ccType2 .mobile-question-container .survey-submit-btn:hover {
