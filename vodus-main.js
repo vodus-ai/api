@@ -229,7 +229,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.my';
                 app.responseRootUrl = 'https://api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@2f388fc221378c7523e074368e33f7d711cbc013/survey.css';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
             }
