@@ -207,7 +207,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.sg';
                 app.responseRootUrl = 'https://sg-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@b9561eeeeba3db8f52cd5df58cc4c6bb3f2ed20d/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
             }
@@ -218,7 +218,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.id';
                 app.responseRootUrl = 'https://id-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@b9561eeeeba3db8f52cd5df58cc4c6bb3f2ed20d/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
             }
@@ -229,7 +229,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.my';
                 app.responseRootUrl = 'https://api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@b9561eeeeba3db8f52cd5df58cc4c6bb3f2ed20d/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
             }
@@ -5687,9 +5687,11 @@ function addShowGetQuestionModal() {
         $(target).find(".answer-box").css("width", newWidth + "%");
     }
 
+    /*
     if (!app.skipQuestionStatusCheck) {
         vodus.checkSurveyQuestionStatus();
     }
+     */
     //  Add dynamic animation to loader
     // $(".question-countdown-bar-black").css("animation", "QUESTION-LOADER " + delayLength + "s");
 
@@ -8186,6 +8188,10 @@ function scrollFunction(app) {
             var currentScrollPosition = $(window).scrollTop();
             scrollToBannerDiv(currentScrollPosition);
         } else {
+            if($('.vodus-banner').length == 0)
+            {
+                return;
+            }
             var windowsPosition = $(window).scrollTop();
 
             var windowHeight = $(window).height();
