@@ -1787,7 +1787,7 @@ bootstrap-vodus #vodusGoogleLogin .fa-google {
 .bootstrap-vodus .mobile-question-container .mobile-column-2 {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 0.18em;
+    grid-row-gap: 0.35em;
     grid-column-gap: 1px;
     padding-bottom: 5px;
 }
