@@ -190,7 +190,8 @@ function initVodus() {
             containerBackgroundColor: global.vodus.containerBackgroundColor,
             cookieSyncType: '',
             userCountryCode: (global.vodus.userCountryCode != null && global.vodus.userCountryCode != "" ? global.vodus.userCountryCode : ""),
-            impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0)
+            impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0),
+            ccTemplate: ""
         }
 
         if (app.userCountryCode == "" && userCountryCode != "") {
@@ -207,7 +208,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.sg';
                 app.responseRootUrl = 'https://sg-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
             }
@@ -218,7 +219,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.id';
                 app.responseRootUrl = 'https://id-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
             }
@@ -229,7 +230,7 @@ function initVodus() {
                 app.reward3PRootUrl = 'https://vodus.my';
                 app.responseRootUrl = 'https://api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
-                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
+                app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@715122553ce0805b78d662f493348c5e842085e5/survey.css?build=251021';
                 app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
                 app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
             }
@@ -3049,6 +3050,7 @@ function initVodus() {
                         "Content-Type": "application/json",
                     },
                     data: JSON.stringify({
+                        skipDownloadingCCTemplate: (app.ccTemplate.length > 0 ? true : false),
                         dmpAudienceTargetCode: app.dmpAudienceTargetCode,
                         ccTargetCode: app.ccTargetCode,
                         dmpTargetCode: app.dmpTargetCode,
@@ -3144,6 +3146,11 @@ function initVodus() {
                                 logDelay(response.data, null, response.data.FunctionTimeSpent, 1, app.serverlessUrl, app.thirdPartyEnabled, app.memberProfileId, app.partner_code, app.browser);
                             }
                         }*/
+
+                        if(app.ccTemplate.length == 0){
+                            app.ccTemplate =  response.data.CommercialCallingQuestionTemplate;
+                        }
+                        
                         app.rewardsAdSubgroupId = response.data.SubgroupId;
                         app.rewardsAdDemographicStateId = response.data.DemographicStateId;
                         app.rewardsAdDemographicEthnicityId = response.data.DemographicEthnicityId;
@@ -5687,9 +5694,11 @@ function addShowGetQuestionModal() {
         $(target).find(".answer-box").css("width", newWidth + "%");
     }
 
+    /*
     if (!app.skipQuestionStatusCheck) {
         vodus.checkSurveyQuestionStatus();
     }
+     */
     //  Add dynamic animation to loader
     // $(".question-countdown-bar-black").css("animation", "QUESTION-LOADER " + delayLength + "s");
 
@@ -5697,7 +5706,8 @@ function addShowGetQuestionModal() {
     if (app.questionData.data.QuestionTypeId != 6) {
         $(".survey-submit-btn").addClass("disabledButtons");
     }
-    $(".survey-submit-btn").wrap('<a class="btn submit-btn-container" style="padding:0;margin:0;"></a>');
+    $(".survey-mcqsa-div").addClass("ripple");
+    $(".survey-submit-btn").wrap('<a class="btn ripple" style="padding:0;margin:0;"></a>');
 
 
     if (app.QuestionTypeId == 6 || app.QuestionTypeId == 7 || app.QuestionTypeId == 8) {
@@ -5792,6 +5802,37 @@ function getQuestionHandler() {
     $(".rewardCloseButton").on('click', function() {
         closeAllVodusModal();
     });
+
+    var handler = function submitAnswerClickRippleEffect(e) {
+        // create .ink element if it doesn't exist
+        var rippler = $(this);
+        rippler.append("<span class='ink'></span>");
+
+        // prevent quick double clicks
+        var ink = rippler.find(".ink");
+        ink.removeClass("animate");
+
+        // set .ink diametr
+        if (!ink.height() && !ink.width()) {
+            var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+            ink.css({
+                height: d,
+                width: d
+            });
+        }
+
+        // get click coordinates
+        var x = e.pageX - rippler.offset().left - ink.width() / 2;
+        var y = e.pageY - rippler.offset().top - ink.height() / 2;
+
+        // set .ink position and add class .animate
+        ink.css({
+            top: y + 'px',
+            left: x + 'px'
+        }).addClass("animate");
+
+    };
+    $(".ripple-effect").on('click', handler);
 
     if (app.isMobile) {
         $(".vodus-survey-question-container").css("display", "block");
@@ -7736,13 +7777,17 @@ function getQuestionHandler() {
     }
 
     vodus.log("Skipping countdown");
+    $(".survey-mcqsa-div").removeClass("ripple");
     $(".survey-mcqsa-div").removeClass("disabledButtons");
+    $(".answer-box").removeClass("ripple");
+    $(".ripple-effect").off('click', handler);
 
     if (response.data.QuestionTypeId != 6 && response.data.QuestionTypeId != 7 && response.data.QuestionTypeId != 8) {
         //  submit buttons
         $(".survey-submit-btn").removeClass("disabledButtons");
         $(".survey-submit-btn").prop('disabled', false);
         $(".survey-submit-btn").removeClass("animate");
+        $(".survey-submit-btn").removeClass("ripple");
     }
 
     submitEnabled = true;
@@ -7784,13 +7829,17 @@ function getQuestionHandler() {
 
         if (counter === 0) {
 
+            $(".survey-mcqsa-div").removeClass("ripple");
             $(".survey-mcqsa-div").removeClass("disabledButtons");
+            $(".answer-box").removeClass("ripple");
+            $(".ripple-effect").off('click', handler);
 
             if (response.data.QuestionTypeId != 6 && response.data.QuestionTypeId != 7 && response.data.QuestionTypeId != 8) {
                 //  submit buttons
                 $(".survey-submit-btn").removeClass("disabledButtons");
                 $(".survey-submit-btn").prop('disabled', false);
                 $(".survey-submit-btn").removeClass("animate");
+                $(".survey-submit-btn").removeClass("ripple");
             }
 
             submitEnabled = true;
@@ -8146,6 +8195,10 @@ function scrollFunction(app) {
             var currentScrollPosition = $(window).scrollTop();
             scrollToBannerDiv(currentScrollPosition);
         } else {
+            if($('.vodus-banner').length == 0)
+            {
+                return;
+            }
             var windowsPosition = $(window).scrollTop();
 
             var windowHeight = $(window).height();
