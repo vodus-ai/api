@@ -2658,8 +2658,8 @@ function initVodus() {
                             } else {
                                 vodus.log('Impression interval failed');
                                 if (app.viewType == "mobile-app") {
-                                        console.log("VODUS_NO_SURVEY_AVAILABLE");
-                                        $(".vodus-banner").text("No survey available");
+                                    console.log("VODUS_NO_SURVEY_AVAILABLE");
+                                    $(".vodus-banner").text("No survey available");
                                 }
                                 return;
                             }
@@ -2750,10 +2750,10 @@ function initVodus() {
                         if (app.debug) {
                             console.log('CC not allowed from : ' + app.userCountryCode);
                         }
-                        if (app.viewType == "mobile-app") 
+                        if (app.viewType == "mobile-app")
                         {
-                                console.log("VODUS_NO_SURVEY_AVAILABLE");
-                                $(".vodus-banner").text("No survey available");
+                            console.log("VODUS_NO_SURVEY_AVAILABLE");
+                            $(".vodus-banner").text("No survey available");
                         }
                     }
                 } else {
@@ -3129,8 +3129,8 @@ function initVodus() {
                             }
                             vodus.log('No more question: \n' + response.message);
                             if (app.viewType == "mobile-app") {
-                                    console.log("VODUS_NO_SURVEY_AVAILABLE");
-                                    $(".vodus-banner").text("No survey available");
+                                console.log("VODUS_NO_SURVEY_AVAILABLE");
+                                $(".vodus-banner").text("No survey available");
                             }
                             return;
                         }
@@ -3146,11 +3146,10 @@ function initVodus() {
                                 logDelay(response.data, null, response.data.FunctionTimeSpent, 1, app.serverlessUrl, app.thirdPartyEnabled, app.memberProfileId, app.partner_code, app.browser);
                             }
                         }*/
-
                         if(app.ccTemplate.length == 0){
                             app.ccTemplate =  response.data.CommercialCallingQuestionTemplate;
                         }
-                        
+
                         app.rewardsAdSubgroupId = response.data.SubgroupId;
                         app.rewardsAdDemographicStateId = response.data.DemographicStateId;
                         app.rewardsAdDemographicEthnicityId = response.data.DemographicEthnicityId;
@@ -4208,7 +4207,7 @@ function initVodus() {
                                 {
                                     vodus.getCC();
                                 }
-                              
+
                             }
                             if (submitResponseCallback.length > 0) {
                                 vodus.log("Executing callback -> " + submitResponseCallback);
@@ -5251,12 +5250,12 @@ function addShowGetQuestionModal() {
 
             var ansDefault = app.pipeListDefault[i].split('::').pop();
             var ansDefaultArray = ansDefault.split("&&");
-            
+
             console.log('ansDefault',ansDefault);
             console.log('ansDefaultArray',ansDefaultArray);
 
             var splittedAnswers = ans.split(' && ');
-            
+
             console.log('splittedAnswers',splittedAnswers)
 
             if (app.pipeAnswerIdList != null && app.pipeAnswerIdList.length > 0) {
@@ -5766,9 +5765,9 @@ function addShowGetQuestionModal() {
             $(".center-header-container").css("width", "75%");
             $(".tingle-enabled").css("position", "unset").css("overflow", "auto").css("margin", "8px 0");
         }
-        
+
         if(app.containerBackgroundColor != "" && app.containerBackgroundColor != null){
-            
+
         }
     }
     $("#divQuestionaireEditorContainer").css("opacity", "").css("max-height", "");
@@ -5787,7 +5786,7 @@ function getQuestionHandler() {
     $(".gridOption").off('click');
     $(".vodus-slider-question-vertical-slider > input[type=range]").off("touchend click");
     $(".slider-question-slider-control").off("click");
-    
+
     var app = vodus.getAppData();
     var response = app.questionData;
 
@@ -5946,7 +5945,7 @@ function getQuestionHandler() {
                 else{
                     defaultAnswerText = $(this).attr('default-answer');
                 }
-                
+
                 var answer = {
                     id: $(this).attr('id'),
                     pipeSurveyQuestionAnswerId: ($(this).attr('data-pipe-answer-id') == undefined ? 0 : $(this).attr('data-pipe-answer-id')),
@@ -6047,7 +6046,7 @@ function getQuestionHandler() {
             }
         }
     } else if (response.data.QuestionTypeId === 2) {
-       
+
         $(response.data.SurveyQuestionAnswers).each(function() {
             var sequenceNumber = response.data.SurveyQuestionAnswers[answerElementCount].AnswerSequenceNumber - 1;
             if ($(".answer-box .s-editable-text" + "#" + sequenceNumber).length == 1) {
@@ -6129,13 +6128,13 @@ function getQuestionHandler() {
                     else{
                         $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>请从中选择 " + minValue + " 到 " + maxValue + " 个选项</div>");
                     }
-                      return;
+                    return;
                 }
             }
-            
+
             if (answerIdList.length > 0) {
                 //  check if min/max if any
-                
+
                 var endTime = new Date();
                 var diff = Math.round((endTime.getTime() / 1000) - (startTime.getTime() / 1000));
                 var respondTimeInSeconds = (diff + delayLength);
@@ -6178,7 +6177,7 @@ function getQuestionHandler() {
             makeMCQAnswersSortable($("#divQuestionaireEditorContainer"), app.isMobile);
         }
 
-        
+
     } else if (response.data.QuestionTypeId === 3) {
         $(response.data.SurveyQuestionAnswers).each(function() {
 
@@ -6695,10 +6694,10 @@ function getQuestionHandler() {
                 vodus.setSurveyResponse(surveyResponseViewModel);
                 vodus.submitResponse();
                 $("#vodusLoader").css('display', 'flex');
-                
-                
+
+
             }
-            
+
         });
     } else if (response.data.QuestionTypeId === 7) {
 
@@ -7408,13 +7407,13 @@ function getQuestionHandler() {
                 var defaultRow = $('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                 var defaultName = $(defaultRow).find('input[type=radio]').attr('name');
                 var defaultRowText = $(defaultRow).attr("default-answer");
-                
+
                 if(defaultRowText == null || defaultRowText == undefined){
                     defaultRow = $(window.vodus_grid_tag).find('.template-preview-answer-to-display-table-content').eq(0).find('table').find('.grid-row').eq(currentGridRow);
                     defaultName = $(defaultRow).find('input[type=radio]').attr('name');
                     defaultRowText = $(defaultRow).find('td').eq(0).find('.s-editable-text').text()
                 }
-                
+
                 var defaultTD = $(".tingle-modal-box__content").find('.template-preview-answer-to-display-table-content').eq(0).find('table');
 
                 var tdLength = $(this).find("td").length;
