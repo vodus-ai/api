@@ -5410,11 +5410,11 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
-                                $(this).parent().parent().prepend(element);
+                                //$(this).parent().parent().prepend(element);
                                 idsCounter++;
                             }
 
-                            $(this).parent().remove();
+                            //$(this).parent().remove();
                         }
                     });
                 });
@@ -5448,10 +5448,10 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
-                                $(this).parent().parent().prepend(element);
+                                //$(this).parent().parent().prepend(element);
                                 idsCounter++;
                             }
-                            $(this).parent().remove();
+                            //$(this).parent().remove();
                         }
                     });
                 });
@@ -5480,10 +5480,10 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
-                                $(this).parent().parent().prepend(element);
+                                //$(this).parent().parent().prepend(element);
                                 idsCounter++;
                             }
-                            $(this).parent().remove();
+                            //$(this).parent().remove();
                         }
                     });
                 });
@@ -5505,11 +5505,11 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
-                                $(this).parent().parent().prepend(element);
+                                //$(this).parent().parent().prepend(element);
                                 idsCounter++;
                             }
 
-                            $(this).parent().remove();
+                            //$(this).parent().remove();
                         }
                     });
                 });
@@ -5538,7 +5538,7 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
-                                $(currnetRow).prepend(element);
+                                //$(currnetRow).prepend(element);
                                 currentCol++;
                             }
                             var rows = $(this).parent().parent().parent().find('.answer-row').length - 1;
@@ -5547,13 +5547,14 @@ function addShowGetQuestionModal() {
                                 $(this).css("height", 100 / rows + "%");
                             });
                             var target = $(this).parent().parent().parent();
-                            $(this).parent().remove();
+                            //$(this).parent().remove();
 
                             ColFormating(target);
                         }
                     });
                 });
             } else {
+                console.log('$(".answer-box")$(".answer-box")',$(".answer-box").length)
                 $(".answer-box").each(function() {
                     $(this).find('.s-editable-text').each(function() {
                         if ($(this).parent().parent().attr('class') == "grid-header") {
@@ -5620,7 +5621,7 @@ function addShowGetQuestionModal() {
                                     element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
                                     element.attr('default-answer', ansDefaultArray[answer].trim());
                                     element.addClass('AutoGenPiping');
-                                    $(currnetRow).prepend(element);
+                                    //$(currnetRow).prepend(element);
                                     currentCol++;
                                 }
                                 var rows = $(this).parent().parent().parent().find('.answer-row').length - 1;
@@ -5629,7 +5630,7 @@ function addShowGetQuestionModal() {
                                     $(this).css("height", 100 / rows + "%");
                                 });
                                 var target = $(this).parent().parent().parent();
-                                $(this).parent().remove();
+                                //$(this).parent().remove();
 
                                 ColFormating(target);
                             }
