@@ -3700,18 +3700,18 @@ function initVodus() {
                                         if (app.availablePoints < 15) {
                                             if (random < 0.5) {
                                                 $(".close-modal-instruction").html("回答简单的调查问题,").css("font-weight", "400");
-                                                $(".question-purpose").html("领取TNG现金券.").css("font-weight", "600");
+                                                $(".question-purpose").html("领取现金券.").css("font-weight", "600");
                                             } else {
                                                 $(".close-modal-instruction").html("协助我们的研究以").css("font-weight", "400");
-                                                $(".question-purpose").html("获得TNG现金券.").css("font-weight", "600");
+                                                $(".question-purpose").html("获得现金券.").css("font-weight", "600");
                                             }
                                         } else {
                                             if (random < 0.5) {
                                                 $(".close-modal-instruction").html("回答简单的调查问题").css("font-weight", "400");
-                                                $(".question-purpose").html("领取TNG现金券.").css("font-weight", "600");
+                                                $(".question-purpose").html("领取现金券.").css("font-weight", "600");
                                             } else {
                                                 $(".close-modal-instruction").html("获得更多VPoints以换取").css("font-weight", "400");
-                                                $(".question-purpose").html("TNG现金券.").css("font-weight", "600");
+                                                $(".question-purpose").html("现金券.").css("font-weight", "600");
                                             }
                                         }
                                     } else {
@@ -3738,7 +3738,7 @@ function initVodus() {
                                                 $(".question-purpose").html("answering our survey questions.").css("font-weight", "400");
                                             } else {
                                                 $(".close-modal-instruction").html("Gain VPoints to exchange for ").css("font-weight", "400");
-                                                $(".question-purpose").html("TNG cash vouchers.").css("font-weight", "600");
+                                                $(".question-purpose").html("cash vouchers.").css("font-weight", "600");
                                             }
                                         }
                                     }
@@ -4281,7 +4281,7 @@ function initVodus() {
                             dealExpirationTypeId: 2,
                             imageUrl: "https://vouponlive.blob.core.windows.net/products/143/images/small_01_134c4fd2-41c2-4660-bd05-d4d8c772c07f.jpeg",
                             productUrl: "https://vodus.my/Product/143",
-                            productTitle: "TNG E-Wallet RM30 Credit Voucher",
+                            productTitle: " E-Wallet RM30 Credit Voucher",
                             merchantName: "Vodus",
                             discountedPrice: "RM0",
                             price: "RM30",
