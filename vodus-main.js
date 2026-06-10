@@ -154,7 +154,7 @@ function initVodus() {
             fingerPrintObject: null,
             fingerprint: null,
             deviceId: (global.vodus.deviceId != null && global.vodus.deviceId != "" ? global.vodus.deviceId : ""),
-            deviceOS: (global.vodus.deviceOS != null && global.vodus.deviceOS != "" ? global.vodus.deviceOS : "1"),
+            deviceOS: (global.vodus.deviceOS != null && global.vodus.deviceOS != "" ? global.vodus.deviceOS : ""),
             isUrlSyncRequired: false,
             isFingerprintingEnabled: false,
             isUrlSyncEnabled: true,
@@ -191,7 +191,10 @@ function initVodus() {
             cookieSyncType: '',
             userCountryCode: (global.vodus.userCountryCode != null && global.vodus.userCountryCode != "" ? global.vodus.userCountryCode : ""),
             impressionInterval: (global.vodus.impressionInterval != null && global.vodus.impressionInterval != "" ? global.vodus.impressionInterval : 0),
-            ccTemplate: ""
+            ccTemplate: "",
+            trace: {
+                ipAddress:""
+            }
         }
 
         if (app.userCountryCode == "" && userCountryCode != "") {
@@ -527,13 +530,12 @@ function initVodus() {
                     'id': "resyncApiVodus3PTestContainer"
                 }).appendTo("body");
             }
-
+            
             //  check api for token
             if (resyncCookie == null || resyncCookie == "") {
 
                 //  Generate temp token if its empty
-                var deviceId = "";
-                if (deviceId == null || deviceId == "") {
+                if (app.deviceId == null || app.deviceId == "") {
                     var tempToken = vodus.readCookie("vodus_temp_token");
                     if (tempToken == null || tempToken == "") {
                         $.ajax({
@@ -638,11 +640,18 @@ function initVodus() {
                     $.ajax({
                         type: "POST",
                         dataType: 'json',
-                        cache: false,
-                        data: {
-                            deviceId: app.deviceId,
-                            os: app.deviceOS
+                        dataType: 'json',
+                        'content-Type': 'application/json',
+                        "headers": {
+                            "Content-Type": "application/json",
                         },
+                        cache: false,
+                        data: JSON.stringify({
+                            deviceId: app.deviceId,
+                            deviceOS: app.deviceOS,
+                            deviceType: "mobile",
+                            ipAddress: app.trace.ipAddress
+                        }),
                         url: resyncServerlessUrl + '/api/token/generate-token-via-device',
                         success: function(response) {
 
@@ -2780,6 +2789,7 @@ function initVodus() {
                             } else {
                                 vodus.log("GEO failed: " + rawData.loc);
                             }
+                            app.trace.ipAddress = rawData.ip;
                         } else {
                             console.error('Error!');
                             isAllowed = true;
@@ -5044,9 +5054,20 @@ function addShowLoginModalEvent() {
             $(".vodusSignupLink").attr("href", redirectUrl);
         }
     } else {
-        $(".syncType4").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("target", "_blank");
-        $(".vodusLoginLink").attr("href", app.reward3PRootUrl + "/?login");
-        $(".vodusSignupLink").attr("href", app.reward3PRootUrl + "/?login");
+        if (app.viewType == "mobile-app") {
+            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+
+            $(".syncType4").attr("href", syncType4).attr("target", "_blank");
+            $(".vodusLoginLink").attr("href", redirectUrl);
+            $(".vodusSignupLink").attr("href", redirectUrl);
+        }
+        else{
+            $(".syncType4").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("href", app.reward3PRootUrl + "/sync/redirect-to-landing").attr("target", "_blank");
+            $(".vodusLoginLink").attr("href", app.reward3PRootUrl + "/?login");
+            $(".vodusSignupLink").attr("href", app.reward3PRootUrl + "/?login");
+        }
+       
     }
 
     $(".closeQuestion").on('click', function() {
@@ -5500,6 +5521,7 @@ function addShowGetQuestionModal() {
                             $(".s-selectable-text").css("border", "none");
 
                             var idsCounter = 0;
+                            var currentIdItem = 0;
                             for (var answer in splittedAnswers) {
                                 var element = $(this).parent().clone(true, true);
                                 splittedAnswers[answer] = splittedAnswers[answer].replace(/\~/g, '&');
@@ -5507,6 +5529,24 @@ function addShowGetQuestionModal() {
                                 element.attr('data-pipe-answer-id', splittedIds[idsCounter]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
                                 element.addClass('AutoGenPiping');
+
+                                const answers = app.questionData.data.SurveyQuestionAnswers;
+
+                                if(currentIdItem >= splittedAnswers.length ) {
+                                    const pipedAnswers = answers.filter(answer =>
+                                        !answer.AnswerValue.includes("^p") || !answer.DefaultAnswerValue.includes("^p")
+                                    );
+
+                                    element.attr('id', pipedAnswers[0].Id);
+                                }
+                                else{
+                                    const pipedAnswers = answers.filter(answer =>
+                                        answer.AnswerValue.includes("^p") || answer.DefaultAnswerValue.includes("^p")
+                                    );
+
+                                    element.attr('id', pipedAnswers[0].Id);
+                                }
+                                
                                 $(this).parent().parent().prepend(element);
                                 idsCounter++;
                             }
@@ -5531,7 +5571,7 @@ function addShowGetQuestionModal() {
                             if (isNaN(colNumber)) {
                                 colNumber = 2;
                             }
-
+                            var currentIdItem = 0;
                             for (var answer in splittedAnswers) {
                                 var questionText = $(this).html().split(i.substring(0, i.indexOf('@') + 3)).join(splittedAnswers[answer]);
                                 var element = $(this).parent().clone(true, true);
@@ -5539,9 +5579,27 @@ function addShowGetQuestionModal() {
                                 element.find('.s-editable-text').html(splittedAnswers[answer]);
                                 element.attr('data-pipe-answer-id', splittedIds[currentCol - 1]);
                                 element.attr('default-answer', ansDefaultArray[answer].trim());
+                                const answers = app.questionData.data.SurveyQuestionAnswers;
+
+                                if(currentIdItem >= splittedAnswers.length ) {
+                                    const pipedAnswers = answers.filter(answer =>
+                                        !answer.AnswerValue.includes("^p") || !answer.DefaultAnswerValue.includes("^p")
+                                    );
+
+                                    element.attr('id', pipedAnswers[0].Id);
+                                }
+                                else{
+                                    const pipedAnswers = answers.filter(answer =>
+                                        answer.AnswerValue.includes("^p") || answer.DefaultAnswerValue.includes("^p")
+                                    );
+
+                                    element.attr('id', pipedAnswers[0].Id);
+                                }
+                               
                                 element.addClass('AutoGenPiping');
                                 $(currnetRow).prepend(element);
                                 currentCol++;
+                                currentIdItem++;
                             }
                             var rows = $(this).parent().parent().parent().find('.answer-row').length - 1;
 
