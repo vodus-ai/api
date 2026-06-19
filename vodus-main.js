@@ -194,7 +194,8 @@ function initVodus() {
             ccTemplate: "",
             trace: {
                 ipAddress:""
-            }
+            },
+            isList: false
         }
 
         if (app.userCountryCode == "" && userCountryCode != "") {
@@ -5761,11 +5762,21 @@ function addShowGetQuestionModal() {
     //  Add dynamic animation to loader
     // $(".question-countdown-bar-black").css("animation", "QUESTION-LOADER " + delayLength + "s");
 
+
+    
+    
     $(".survey-mcqsa-div").addClass("disabledButtons");
     if (app.questionData.data.QuestionTypeId != 6) {
         $(".survey-submit-btn").addClass("disabledButtons");
     }
+
     $(".survey-submit-btn").wrap('<a class="btn submit-btn-container" style="padding:0;margin:0;"></a>');
+    if(app.questionData.data.QuestionTypeId == 6 && app.isList){
+        if(!app.isMobile) {
+            console.log('update button')
+            $(".submit-btn-container").parent().parent().css("top","420px");
+        }
+    }
 
 
     if (app.QuestionTypeId == 6 || app.QuestionTypeId == 7 || app.QuestionTypeId == 8) {
@@ -6282,6 +6293,7 @@ function getQuestionHandler() {
             listMinAnswer = 0;
             listMaxAnswer = 0;
         } else {
+            app.isList = true;
             var app = vodus.getAppData();
             $(".template-preview-answer-to-display-table-content").hide();
             $(".questionaire-container-size-variable").css("height", "600px;");
@@ -6296,6 +6308,7 @@ function getQuestionHandler() {
                 var listAutoComplete = listDataZH.split("|").filter(part => part.trim() !== "");
             }
             listAutoComplete = listAutoComplete.filter(item => item);
+            
             var listDetail = `<div style="margin-top:5px;"><input id="autoComplete"/></div>`;
             //$(".template-preview-title-to-display").append(autocompleteTemplate);
 
@@ -6353,17 +6366,19 @@ function getQuestionHandler() {
           <div id="selected-recipients" class="autocomplete-selected-recipients"></div>
           <textarea 
             type="text" 
-            id="recipient-input" 
+            id="recipient-input" style="align-content:center;"
             class="autocomplete-recipient-input" rows="3"
             placeholder="${placeHolder}"
           ></textarea>
         </div>
       </div>
-      <div id="dropdown" class="" style="max-height:250px; overflow-y: auto;"></div>
+      <div id="dropdown" class="" style="max-height:160px; overflow-y: auto;"></div>
+     
     </div>
   </div>`;
             $(".template-preview-title-to-display").append(autocompleteTemplate);
-
+            
+           
 // State
             let selectedListAnswers = []
             let highlightedIndex = 0
@@ -6429,6 +6444,22 @@ function getQuestionHandler() {
                     dropdown.classList.add("autocomplete-hidden")
                     return
                 }
+                $(".autocomplete-container-wrapper").css("height","250px;");
+                
+           
+                /*
+                if($("#closeAutoComplete").length == 0){
+                    var closeItem = ` <div style="clear:both;"></div><button id="closeAutoComplete" style="float:right;">X</button>`
+                    $(".autocomplete-container-wrapper").append(closeItem);
+                    
+                    var closeDropdown = document.getElementById("closeAutoComplete");
+                    closeDropdown.addEventListener("click", () => {
+                        console.log('closeAutoComplete click');
+                        $("#dropdown").html("");
+                        input.focus()
+                    });
+                }
+                */
 
                 dropdown.innerHTML = ""
                 dropdown.classList.remove("autocomplete-hidden")
@@ -6448,25 +6479,19 @@ function getQuestionHandler() {
                             e.preventDefault() // Prevent input blur
                             selectRecipient(answer)
                         })
-
-                        item.addEventListener("mouseenter", () => {
-                            e.preventDefault() // Prevent input blur
-                            highlightedIndex = index
-                            renderDropdown(answers)
-                        })
                         dropdown.appendChild(item)
                     }
                 })
-
-
             }
 
 // Select a recipient
             function selectRecipient(answer) {
                 if (answer.length === 0) {
+                    dropdown.classList.add("autocomplete-hidden")
                     return;
                 }
                 if (selectedListAnswers.includes(answer)) {
+                    dropdown.classList.add("autocomplete-hidden")
                     return;
                 }
                 selectedListAnswers.push(answer)
@@ -6474,7 +6499,12 @@ function getQuestionHandler() {
                 highlightedIndex = 0
                 dropdown.classList.add("autocomplete-hidden")
                 renderSelectedRecipients()
-                input.focus()
+                $("#dropdown").html("");
+                if(!app.isMobile){
+                    $(".autocomplete-container-wrapper").css("height","0");
+                    input.focus()
+                }
+                //$("#closeAutoComplete").remove();
             }
 
 // Remove a recipient
@@ -6710,7 +6740,7 @@ function getQuestionHandler() {
                 }
                 var openEnded = $("#divQuestionaireEditorContainer").find(".open-ended-answer")[0]
                 var answer = {
-                    id: $(openEnded).attr('id'),
+                    id: response.data.SurveyQuestionAnswers[0].Id,
                     AnswerSequenceNumber: 1,
                     answerValue: listText.join(" && "),
                     defaultAnswerValue: listText.join(" && "),
