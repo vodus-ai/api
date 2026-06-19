@@ -27,6 +27,7 @@ function resizeMobileFontSize_Preview(container, type) {
             for (var i = maxTitleFontSize; i >= minTitleFontSize; i--) {
 
                 $(container).find(".question-header-1").css("font-size", i + "px");
+                $(container).find(".question-textbox").css("font-size", i + "px");
                 if ($(container).find(".mobileGridTitle").length > 0) {
                     $(container).find(".question-header-1").css("font-size", i - 2 + "px");
                     $(container).find(".mobileGridTitle").css("font-size", i - 2 + "px");
@@ -47,7 +48,7 @@ function resizeMobileFontSize_Preview(container, type) {
                     i = 0;
                 }
             }
-        };
+        }
 
         //  For grid
         if ($(container).find('.grid-row').length > 0) {
