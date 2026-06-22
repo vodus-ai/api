@@ -213,7 +213,7 @@ function initVodus() {
                 app.responseRootUrl = 'https://sg-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
                 app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
-                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@76756191dff7e6a8386508ab99e1ab1657e745da/vodus-common.js';
                 app.serverlessUrl = 'https://sg-vodus-api-serverless-live.azurewebsites.net';
             }
             else if (app.userCountryCode == "ID") {
@@ -224,7 +224,7 @@ function initVodus() {
                 app.responseRootUrl = 'https://id-api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
                 app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
-                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@76756191dff7e6a8386508ab99e1ab1657e745da/vodus-common.js';
                 app.serverlessUrl = 'https://id-vodus-api-serverless-live.azurewebsites.net';
             }
             else {
@@ -235,7 +235,7 @@ function initVodus() {
                 app.responseRootUrl = 'https://api.vodus.com';
                 app.cdnUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api';
                 app.surveycssUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@23cf8ac7d3daff06fe4b0dd4e2f4b1b280ec97c7/survey.css';
-                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api/vodus-common.js?build=250101';
+                app.commonjsUrl = 'https://cdn.jsdelivr.net/gh/vodus-ai/api@76756191dff7e6a8386508ab99e1ab1657e745da/vodus-common.js';
                 app.serverlessUrl = 'https://vodus-api-serverless.azurewebsites.net';
             }
 
