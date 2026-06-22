@@ -395,6 +395,9 @@ function makeMCQAnswersSortable(container, isMobile) {
 
 //Ranking functions
 function makeRankingAnswerSortable(container, isMobile) {
+    if (typeof jQuery !== 'undefined' && !jQuery.uniqueSort) {
+        jQuery.uniqueSort = jQuery.unique;
+    }
     //Randomize Ranking Answer
     var isRandomize = $("#divQuestionaireEditorContainer").find(".question-header-1").first().attr("israndomize");
     if (isRandomize == "true" || isRandomize == undefined) {
