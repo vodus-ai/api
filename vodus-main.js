@@ -6624,12 +6624,28 @@ function getQuestionHandler() {
                 if (!submitEnabled) {
                     return false;
                 }
+                $("#vodus-submit-validation-message").remove();
+                
                 if (!app.isMobile) {
                     $("#divQuestionaireEditorContainer").find(".answer-box").each(function(idx, ele) {
+                        if($(this).find('.open-ended-answer').text().length == 0){
+                            if(app.language == "en"){
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Answer cannot be empty</div>");
+                            }
+                            else if(app.language == "ms"){
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Jawapan tidak boleh kosong</div>");
+                            }
+                            else{
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>答案不能为空</div>");
+                            }
+                            console.log('$(this).find(\'.s-editable-text\').text()',$(this).find('.open-ended-answer').text())
+                            return;
+                        }
+
                         var answer = {
                             id: $(this).attr('id'),
                             AnswerSequenceNumber: (idx + 1),
-                            answerValue: $(this).find('.s-editable-text').text(),
+                            answerValue: $(this).find('.open-ended-answer').text(),
                             defaultAnswerValue: $(this).text(),
                             skipDefaultValue: true,
                             orderNumber: ($(this).attr('data-order-number') == undefined ? 1 : $(this).attr('data-order-number'))
@@ -6638,6 +6654,20 @@ function getQuestionHandler() {
                     });
                 } else {
                     $("#divQuestionaireEditorContainer").find(".open-ended-answer").each(function(idx, ele) {
+                        if($(this).text().length == 0){
+                            if(app.language == "en"){
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Answer cannot be empty</div>");
+                            }
+                            else if(app.language == "ms"){
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>Jawapan tidak boleh kosong</div>");
+                            }
+                            else{
+                                $(".survey-submit-btn").parent().append("<div id='vodus-submit-validation-message' style='font-style:italic;opacity:0.5;font-size:14px; padding: 2px 4px;margin:5px auto;width:max-content;background-color:#000;color:#fff'>答案不能为空</div>");
+                            }
+                            console.log('$(this).find(\'.s-editable-text\').text()',$(this).text())
+                            return;
+                        }
+
                         var answer = {
                             id: $(this).attr('id'),
                             AnswerSequenceNumber: (idx + 1),
