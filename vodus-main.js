@@ -153,8 +153,8 @@ function initVodus() {
             partnerWebsiteName: '',
             fingerPrintObject: null,
             fingerprint: null,
-            deviceId: (global.vodus.deviceId != null && global.vodus.deviceId != "" ? global.vodus.deviceId : ""),
-            deviceOS: (global.vodus.deviceOS != null && global.vodus.deviceOS != "" ? global.vodus.deviceOS : ""),
+            deviceId: (global.vodus.mobileDeviceId != null && global.vodus.mobileDeviceId != "" ? global.vodus.mobileDeviceId : ""),
+            deviceOS: (global.vodus.mobileDeviceOS != null && global.vodus.mobileDeviceOS != "" ? global.vodus.mobileDeviceOS : ""),
             isUrlSyncRequired: false,
             isFingerprintingEnabled: false,
             isUrlSyncEnabled: true,
@@ -894,6 +894,12 @@ function initVodus() {
             },
             getRootUrl: function getRootUrl() {
                 return rootUrl;
+            },
+            initIdeniti: function initIdeniti() {
+                var common = document.createElement('script');
+                common.type = "text/javascript";
+                common.src = "https://api.vodus.com/cc/scripts/ideniti-main.js?id=" + new Date()
+                document.getElementsByTagName('head')[0].appendChild(common);
             },
 
             //  Set email values
@@ -5028,7 +5034,7 @@ function addLogoutEvent() {
         vodus.createCookie('vodus_temp_token', '', -3650);
         vodus.createCookie('vodus_second_load_check', '', -3650);
         localStorage.clear();
-        window.open(app.reward3PRootUrl + "/logout?partnerWebsiteId=" + app.partnerWebsiteId);
+        window.open(app.reward3PRootUrl + "/logout?partnerWebsiteId=" + app.partnerWebsiteId + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS);
     });
 
 }
@@ -5041,14 +5047,14 @@ function addShowLoginModalEvent() {
     if (!app.thirdPartyEnabled) {
         if (token == null || token == "") {
             var tempToken = vodus.readCookie("vodus_temp_token");
-            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
-            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
             $(".syncType4").attr("href", syncType4).attr("target", "_blank");
             $(".vodusLoginLink").attr("href", redirectUrl);
             $(".vodusSignupLink").attr("href", redirectUrl);
         } else {
-            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
-            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
 
             $(".syncType4").attr("href", syncType4).attr("target", "_blank");
             $(".vodusLoginLink").attr("href", redirectUrl);
@@ -5056,8 +5062,8 @@ function addShowLoginModalEvent() {
         }
     } else {
         if (app.viewType == "mobile-app") {
-            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
-            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var redirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token  + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
+            var syncType4 = app.reward3PRootUrl + '/sync?syncType=4&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname)
 
             $(".syncType4").attr("href", syncType4).attr("target", "_blank");
             $(".vodusLoginLink").attr("href", redirectUrl);
@@ -7666,11 +7672,11 @@ function getQuestionHandler() {
         var token = vodus.readCookie(app.cookieName);
         if (token == null || token == "") {
             var tempToken = vodus.readCookie("vodus_temp_token");
-            referralRedirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken +
+            referralRedirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&tempToken=' + tempToken + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS +
                 '&referral=' + response.data.ReferralRedirectUrl + '&memberProfileId=' + response.data.UserToken.MemberProfileId + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname);
 
         } else {
-            referralRedirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token +
+            referralRedirectUrl = app.reward3PRootUrl + '/sync?syncType=2&partnerWebsiteId=' + app.partnerWebsiteId + '&questionId=' + app.questionId + '&questionType=' + app.surveyType + '&token=' + token + '&deviceId=' + app.deviceId + '&deviceOS=' + app.deviceOS +
                 '&referral=' + response.data.ReferralRedirectUrl + '&memberProfileId=' + response.data.UserToken.MemberProfileId + '&redirectUrl=' + encodeURI(window.location.href) + '&host=' + encodeURI(window.location.hostname);
         }
 
